@@ -1,31 +1,34 @@
 ---
+#YAML part
 layout: post
-title:  "Inception Movie"
-author: john
-categories: [ Jekyll, tutorial ]
-tags: [red, yellow]
+title:  "Title"
+author: Author
+categories: [ Category1, Category2 ]
+#tags: [red, yellow]
 image: assets/images/11.jpg
-description: "My review of Inception movie. Acting, plot and something else in this short description."
+description: "A brief description of the post"
 featured: true
 hidden: true
-rating: 4.5
+#rating: 4.5
 ---
 
-Review products, books, movies, restaurant and anything you like on your Jekyll blog with Mediumish! JSON-LD ready for review property.
+<!-- Markdown part -->
 
-#### How to use?
+The actual content of the post starts here
 
-It's actually really simple! Add the rating in your YAML front matter. It also supports halfs:
+#### Random Heading in between
+
+It's actually really simple!:
 
 ```html
 ---
 layout: post
-title:  "Inception Movie"
-author: john
-categories: [ Jekyll, tutorial ]
-tags: [red, yellow]
+title:  "Title"
+author: Author
+categories: [ Category1, Category2 ]
+<!-- tags: [red, yellow] -->
 image: assets/images/11.jpg
-description: "My review of Inception movie. Actors, directing and more."
-rating: 4.5
+description: "A brief description of the post"
+<!-- rating: 4.5 -->
 ---
 ```
