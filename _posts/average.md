@@ -6,6 +6,8 @@ title: Average
 author: Adit Vishnu
 featured: true
 ---
+Author: Adit Vishnu
+
 
 Someone once told me that if I was the smartest person in a room, I was in the
 wrong room. It was quite easy to say I believed in this until I had to face a complete

@@ -1,10 +1,16 @@
 ---
+#YAML part
+layout: post
 title: Ramblings on Epistemology, Science, and Cognitive Biases
-
+#categories: [  ]
 author: Raj Magesh, Julian D'Costa
+featured: true
 ---
 
-## H2 **Vignette #1**
+Authors: Raj Magesh, Julian D'Costa
+
+
+## **Vignette #1**
 
 You’re crossing the road, biting into a Subway® Double Chocolate Chip cookie, relishing the indescribable mix of flavors delighting your taste buds. Everything about the cookie is gorgeous: the vibrant brown hues, the warmth as it melts in your mouth, the delicious scent of butter wafting into your eager nostrils – even the satisfying crunches it makes as you munch down in sheer joy. Your eyes roll up involuntarily, and you moan in decadent satisfaction. The cookie is bliss; you are in Nirvana.
 
@@ -27,7 +33,7 @@ Jared, Subway® Advertising Department.
 
 Only one thought runs through your head. The cookie was a lie.
 
-## H2 **Epistemology**
+## **Epistemology**
 
 How can you trust your senses? If you’ve ever been sleep-deprived, drunk, or high on LSD, you know that your brain can play tricks on you. Paranoia, schizophrenia,
 hallucinations: popular culture is chock-full of references to psychiatric disorders that can make you see things that aren’t there, hear voices that don’t exist, and converse
@@ -58,7 +64,7 @@ No, we do not accept that reality is inherently subjective! No, we do not accept
 external objective reality independent of the internal subjective reality shaped by our individual experiences. This is an assumption. There is no a priori reason for me to
 deny our Giant-Pineapple-Prophet his delusions, but I do anyway, because assuming an objective reality makes life really interesting!
 
-## H2 **Philosophy of Science**
+## **Philosophy of Science**
 
 Why am I rambling about this? This isn’t the Indian Institute of Philosophy. You’re reading Quarks magazine, not Quacks magazine (though the Editor-in-Chief might secretly be a rubber duck!). All I’ve concluded thus far (arbitrarily) is that reality exists. A meme connoisseur would surely respond: “Such impressive, much wow”. But this assumption of the existence of empirical truth is the backbone of the scientific endeavor.
 
@@ -72,14 +78,18 @@ better with reality.
 
 Beliefs? There’s no room for subjectivity in science, you may scoff. Belief, here, is used technically: our belief in the proposition that X is true is represented by a value in the open interval (0, 1). This is the Bayesian definition of probability, where the probability of X is our degree of confidence that X is true, given available evidence. This “belief” is not subjective: given new evidence, there is exactly one correct way to update beliefs,based on the laws of probability – Bayes’ theorem.
 
-## H1 **Bayes' Theorem**
+## **Bayes' Theorem**
 
-Prob(hypothesis true | given evidence)/Prob(hypothesis false | given evidence)
-=
-Prob(evidence seen | given hypothesis true) / Prob(evidence seen | given hypothesis false) * Prob(hypothesis true)/Prob(hypothesis false)
+$$
+\frac{P(\text{hypothesis true} \mid \text{given evidence})}{P(\text{hypothesis false} \mid \text{given evidence})} =
+\frac{P(\text{evidence seen} \mid \text{hypothesis true})}{P(\text{evidence seen} \mid \text{hypothesis false})} \times 
+\frac{P(\text{hypothesis true})}{P(\text{hypothesis false})}
+$$
 
 **Cancer test example:** 10000 people, **Base Rate** =
-1/1000, **Test Accuracy** = 90% both ways
+1/1000, 
+
+**Test Accuracy** = 90% both ways
 
 **New odds = Old odds x Weight of evidence**
 
@@ -97,16 +107,16 @@ This is a restatement of the aphorism that in science, you can’t prove anythin
 If all this was obvious to you, or perhaps a formalization of something that was already intuitive, that’s good! The next step is using this framework to actually understand
 reality: the scientific method.
 
-## H2 **Vignette #2**
+## **Vignette #2**
 
-**Four thousand years ago, in Ancient Greece, ALEX and
-HELEN are standing on a cliffside, admiring the sparkling blue waters of the Mediterranean. Their marriage – sixty years ago to the very day – had surprised the entire community. Two philosophers, marrying? Those stooges wrapped up in their dusty scrolls and enraptured by hours upon hours of tedious debates? Hah! No way! But their wedding had proceeded without a hitch (well, besides theirs), and their bond had only grown stronger as the days went by, like a tender sapling maturing into a solid oak.** 
+Four thousand years ago, in Ancient Greece, ALEX and
+HELEN are standing on a cliffside, admiring the sparkling blue waters of the Mediterranean. Their marriage – sixty years ago to the very day – had surprised the entire community. Two philosophers, marrying? Those stooges wrapped up in their dusty scrolls and enraptured by hours upon hours of tedious debates? Hah! No way! But their wedding had proceeded without a hitch (well, besides theirs), and their bond had only grown stronger as the days went by, like a tender sapling maturing into a solid oak. 
 
 **ALEX:** Your beauty invigorates me, dear Helen! Like the fresh ocean breeze on a sweet summer day!
 
 **HELEN:** _[cocks an eyebrow, smiling]_ Are you sure that’s not just the fresh ocean breeze you’re feeling, Alex?
 
-**ALEX laughs, then picks up a conch shell from the ground. He presses it to his ear, listens for a moment, and passes it to Helen.**
+Alex laughs, then picks up a conch shell from the ground. He presses it to his ear, listens for a moment, and passes it to Helen.
 
 **ALEX:** My dear, tell me, why do you think we can hear the sound of the sea in conch shells?
 
@@ -123,8 +133,8 @@ blessing. What we hear are the remnants of their voices, echoing through the dee
 
 **ALEX:** _[mouth agape]_ Hades, woman you're impossible!
 
-**The sound of metal-shod hooves rings against the stony path up to the cliffside. ALEX and HELEN whirl around. A twenty-foot-tall CYCLOPS trots in on a Giant Wooden Horse
-that sounds remarkably hollow. A giant Band-Aid Ⓡ covers the left half of his eye and a web of scarring can be seen extending beneath. ALEX and HELEN wince in sympathy.The CYCLOPS dismounts from his Trojan steed and walks forward, leather boots thumping loudly on the rough-hewn stone**
+The sound of metal-shod hooves rings against the stony path up to the cliffside. Alex and Helen whirl around. A twenty-foot-tall CYCLOPS trots in on a Giant Wooden Horse
+that sounds remarkably hollow. A giant Band-Aid Ⓡ covers the left half of his eye and a web of scarring can be seen extending beneath. Alex and Helen wince in sympathy.The CYCLOPS dismounts from his Trojan steed and walks forward, leather boots thumping loudly on the rough-hewn stone
 
 **CYCLOPS:** Greetings, mortals! It is I, Polyphemus, King of the Cyclopes, and I am in the pursuit of a scoundrel with shifty eyes and a silver tongue. Hast thou seen any such man, perchance?
 
@@ -132,8 +142,9 @@ that sounds remarkably hollow. A giant Band-Aid Ⓡ covers the left half of his 
 
 **POLYPHEMUS:** _[elated]_ Nobody ? It is him! At long last, after so many fruitless summers, my search is ended! My revenge shalt be sweet! 
 
-**A hastily-aborted chuckle comes from POLYPHEMUS’ great steed, though its face remains wooden, immobile. ALEX’s eyes flick to the horse. POLYPHEMUS appears not to have
-heard. A panel on the neck of the horse slides up noiselessly. From within the horse’s body, ODYSSEUS raises a finger to his lips, eyes twinkling with mirthful laughter**
+
+A hastily-aborted chuckle comes from Polyphemus’ great steed, though its face remains wooden, immobile. Alex's eyes flick to the horse. Polyphemus appears not to have
+heard. A panel on the neck of the horse slides up noiselessly. From within the horse’s body, Odysseus raises a finger to his lips, eyes twinkling with mirthful laughter
 
 **ALEX:** Uh-
 
@@ -142,7 +153,7 @@ heard. A panel on the neck of the horse slides up noiselessly. From within the h
 **ALEX:** _[blinking]_ King Polyphemus, you honor us with your generous offer. Alas, we are but humble philosophers who seek nothing but the wisdom of great minds. We would
 seek your wisdom in resolving a minor disagreement between my wife and I.
 
-**ALEX sneaks a glance at HELEN. She rolls her eyes, feet tapping impatiently, but raises the conch shell to POLYPHEMUS. He peers down curiously at it.**
+Alex sneaks a glance at Helen. She rolls her eyes, feet tapping impatiently, but raises the conch shell to Polyphemus. He peers down curiously at it.
 
 **HELEN:** Do conch shells house the spirits of Poseidon’s water nymphs or Zeus’ wind aurae?
 
@@ -152,18 +163,18 @@ ALEX and HELEN sigh, and glare at each other.
 
 **POLYPHEMUS:** _[brightens]_ Wait! I know how to find out!
 
-**POLYPHEMUS plucks the conch shell deftly out of HELEN’s outstretched hand and crushes it within his palm. A cloud of chalky dust emerges from his fist. ALEX and HELEN stare,
-uncomprehending**
+Polyphemus’ plucks the conch shell deftly out of Helen's outstretched hand and crushes it within his palm. A cloud of chalky dust emerges from his fist. Alex and Helen stare,
+uncomprehending
 
-**With a resounding crack, a bolt of silver lightning races down from the heavens and slams into POLYPHEMUS, who wears a surprised expression. As his corpse topples to the ground,
-a gigantic waterspout emerges from the ocean, rises up to the clifftop and deftly pulls the cyclops into the sea. ALEX, HELEN and ODYSSEUS stare at where POLYPHEMUS had
-stood a scant minute ago, unblinking.**
+With a resounding crack, a bolt of silver lightning races down from the heavens and slams into Polyphemus’, who wears a surprised expression. As his corpse topples to the ground,
+a gigantic waterspout emerges from the ocean, rises up to the clifftop and deftly pulls the cyclops into the sea. Alex, Helen and Odysseus stare at where Polyphemus’ had
+stood a scant minute ago, unblinking.
 
 **ODYSSEUS:** _[from inside the Trojan horse]_ What. Just. Happened.
 
-**ALEX and HELEN look to each other, eyes wide. Then, they race back to town, whooping excitedly. Finally , something they could publish in Nature.**
+Alex and Helen look to each other, eyes wide. Then, they race back to town, whooping excitedly. Finally , something they could publish in Nature.
 
-## H1 **The Scientific Method**
+# **The Scientific Method**
 
 1. Question. What is DNA shaped like?
 2. Hypothesis. Helical
@@ -173,7 +184,7 @@ stood a scant minute ago, unblinking.**
 6. Iterate. Falsify, retest
 7. Communicate
 
-## H2 **Cognitive Biases**
+## **Cognitive Biases**
 
 There’s an oft-cited cautionary tale about making erroneous conclusions despite collecting good data.
 
@@ -196,20 +207,20 @@ by psychologists for decades in the role of human decision-making, creating a va
 Here we present a carefully-curated collection of cognitive biases and suggestions for avoiding them. Please note that reader discretion is advised: the authors are not liable
 for any loss of limbs, illusions or dignity.
 
-## H3 Confirmation Bias
+### Confirmation Bias
 **“People put a lot less effort into picking apart evidence that confirms what they already believe.” — Peter Watts, Echopraxia**
 
 As his severely-insulted wheelchair-bound colleagues pointed out, our froggologist had assumed that the only reason his beloved frogs would fail to obey their God was that they couldn’t hear him. All his experiments were designed to confirm his hypothesis and never once disprove it. In science, testing a hypothesis always involves trying to falsify it. The more you fail, the more likely your hypothesis is to be true. In our froggologist’s case, he could have simply ordered his frogs to croak twice if they loved Jesus – or for the atheistic frogs, if they loved flies! We suggest dealing with your own confirmation
 biases by assuming that your opinion on any issue is wrong and trying to figure out why that might be the case post facto. Once you think you can handle this, check out
 the 2-4-6 puzzle!
 
-## H3 Scope Insensitivity
+### Scope Insensitivity
 **“A single death is a tragedy, a million is a statistic.” — Stalin**
 
 Stalin had commendable self-awareness, despite being a terrible human being. If you’re being stalked by lions in the savannah, the difference between one lion and ten might be huge but the difference between a thousand lions and ten thousand is negligible – you’ll die anyway. We just can’t appreciate the bigness of big numbers because we never
 really needed to. We have no suggestions on overcoming this, apart from telling you to be aware of it. In case you wish to kill a million people, to fully appreciate the gravity of your actions, make sure you personally promise to pass on their last words to their families before you gently slit their throats one by one. See? I bet you just visualised doing that with one person. Not a million people. Your brain simply can’t process that feeling multiplied by a million. Smoke would come out your ears.
 
-## H3 Planning Fallacy
+### Planning Fallacy
 **(Why you can't ever get anything done on time)**
 
 As every IISc student knows, the amount of time you think it will take you to do something and the amount of time it actually will, cannot be measured in the same units without invoking a logarithmic scale. For some reason, we are terrible at planning. From iGEM to Pravega, nothing that happens in IISc happens on time. But lest you fret, this is a universal human experience: we are all broken in the same way.
@@ -218,7 +229,7 @@ We always think we know why this specific project will happen on time, unlike th
 you have more manpower to help. Maybe you bunked all your classes to focus on it. Whatever your reasons, you are lying to yourself . The only reliable measure for how
 long a project will take is how long similar projects took in the past.
 
-## H3 Sunk Cost Fallacy
+### Sunk Cost Fallacy
 **“I’m in too deep, man.” — Someone, probably**
 
 Many, many people regret doing their PhDs. They’ll come to the realization that they hate academia sometime during their PhD, of course. Maybe it’s the stress, or their
@@ -234,7 +245,7 @@ decisions that govern your life right now. You’re starting from scratch, as of
 
 Are you sure there aren’t things you want to do differently? Go do them!
 
-## H3 The Dunning-Kruger effect & Impostor Syndrome
+### The Dunning-Kruger effect & Impostor Syndrome
 **“The fool doth think he is wise, but the wise man knows himself to be a fool.” — William Shakespeare, As You Like It**
 
 The Dunning-Kruger effect has been popularized everywhere on the Internet, and most of us understand it as “Dumb people are too dumb to realize they’re dumb.” Despite
@@ -248,7 +259,7 @@ If you ever catch yourself thinking, “I’m not actually smart. I just got luc
 These are especially difficult biases to overcome because they are often tied to our notion of self-worth and we humans hate thinking rationally about things that also
 evoke strong emotions. Yet, knowing that these effects exist can help protect you against them: the next time you catch yourself shrugging off a compliment because “Oh, they’re just being nice. I’m not as great as they think I am,” you’ll know to blame impostor syndrome.
 
-## H3 Hyperbolic Discounting
+### Hyperbolic Discounting
 **(Why you can't ever get to bed on time)**
 
 Just one more game… Just one more episode… Just one more cookie…

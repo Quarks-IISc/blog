@@ -6,6 +6,8 @@ title: Contenment
 author: Adit Vishnu
 featured: true
 ---
+Author: Adit Vishnu
+
 
 The incident is set in Kerala, India.
 

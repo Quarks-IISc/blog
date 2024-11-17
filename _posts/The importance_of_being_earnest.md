@@ -1,8 +1,13 @@
 ---
+#YAML part
+layout: post
 title: The Importance Of Being Earnest
-
+#categories: [  ]
 author: Aditi A Pujar, Divyoj Singh, Bhoomika A Bhat, Akshara Sharma, R Bangari
+featured: true
 ---
+
+Authors: Aditi A Pujar, Divyoj Singh, Bhoomika A Bhat, Akshara Sharma, R Bangari
 
 Life at IISc is a vibrant fabric in which the threads of so many lives come together. To us students, if “all
 the world’s a stage”, no longer is a teacher the only central character in our daily lives.
@@ -17,7 +22,7 @@ with, is overlooked.
 So, in 2018, Quarks decided to do exactly that: we ferreted around after these guardian angels,
 (annoying them to no end), only to stumble upon story after story; reminiscence upon reminiscence; life upon life.
 
-### H3 **Mr. Seetharam: Tuck Shop Owner**
+### **Mr. Seetharam: Tuck Shop Owner**
 Mr Seetharam is literally the one true knight-inshining-armour to all undergraduates in distress.
 One of the most famous people among the UG populace, Seetharam aka. Tuck Shop Uncle,
 started off with his business at IISc about 10
@@ -46,7 +51,7 @@ he practices Palmistry and Astrology.
 The Tuck Shop is indeed an oasis for us hapless,
 hungry (not to mention, broke) undergrads.
 
-### H3 **Mr. Narasimhaiya: Cycle Repair Shop owner**
+### **Mr. Narasimhaiya: Cycle Repair Shop owner**
 As students of IISc (ahem - motorised vehicles are
 banned - ahem), we simply cannot do without our
 cycles or cycle servicing. For the past six years or
@@ -67,7 +72,7 @@ a more flourishing business elsewhere, he
 considers being at IISc a privilege, and says the
 job satisfaction here in unparalleled.
 
-### H3 **Mr. Ravi: Kabini Canteen**
+### **Mr. Ravi: Kabini Canteen**
 “You can never spend more than Rs. 100 per
 person at Kabini” is a dictum of the holy scriptures.
 Kidding of course, but it is a universal truth no
@@ -86,7 +91,7 @@ for meals, for every curse we have hurled at the
 geniuses who planted the messes so infernally far
 away, Kabini is our solace.
 
-### H3 **Mr.Janardhan: Notebook Drive**
+### **Mr.Janardhan: Notebook Drive**
 Starting 14 years ago, Mr. Janardhan has helped
 Notebook Drive every year by driving his rental
 truck out to schools to distribute notebooks to
@@ -110,7 +115,7 @@ benefit of the school children’s education. His
 collaborative efforts with the NBD are truly
 invaluable.
 
-### H3 **Mr. Ravichandran: Xerox Center**
+### **Mr. Ravichandran: Xerox Center**
 While Ravichandran has been at IISc, for more
 than three decades, the Campus Xerox Centre has
 only (only!) been running for the past twenty
@@ -187,9 +192,9 @@ them out into tiny pieces and paste it everywhere
 it appeared.
 
 He then goes on to speak about typesetting,
-hailing LaTeX (“your generation is so privileged,
+hailing LaTeX _“your generation is so privileged,
 you even have some software to format your stuff
-for you!”), while reminiscing about how it used
+for you!”_ , while reminiscing about how it used
 to be: initially in typewriters, there was no right
 justification, neither was there any proportional
 spacing between the letters, i.e. the letters ‘i’
@@ -257,6 +262,5 @@ me out for a stroll and some tea at the end of a
 day’s grueling work”. Even as he speaks, he is
 finished with binding another manuscript.
 “Well, this is how your Campus Xerox Centre has
-come to be. This is how I’ve spent my whole life:
-at IISc.”
+come to be. This is how I’ve spent my whole life: at IISc.”
 

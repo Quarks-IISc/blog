@@ -6,6 +6,8 @@ title: Hysteresis And Impedance Of An AMP
 author: Ullas Aparanji
 featured: true
 ---
+Author: Ullas Aparanji
+
 
 The best day of my life was the day I met my girlfriend. The worst day of my life was the day of our marriage. I’ll tell you about the worst day of my life. I’ll leave off talking about the best day to a better day. Now, don’t get me wrong - I have nothing against my girlfriend or marrying her. What I do object to is the concomitant charade that a marriage inevitably involves. They say that love makes the world go round, but, well, honestly, to give credit where it’s due, the centripetal force is doing a much better job of it, thank you very much.
 
