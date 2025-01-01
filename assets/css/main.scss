@@ -5,53 +5,11 @@
 
 /* We need to add display:inline in order to align the '>>' of the 'read more' link */
 .post-excerpt p {
-    display: inline;
+	display:inline;
 }
 
-// Import partials from `sass_dir` (defaults to `_sass`)
+// Import partials from sass_dir (defaults to _sass)
 @import
-    "syntax",
+	"syntax",
     "starsnonscss"
 ;
-
-/* Custom Styles for Navigation Layout */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.navbar .navbar-brand {
-    margin-right: 20px; // Adjust if needed
-}
-
-.navbar-nav {
-    display: flex;
-    align-items: center;
-}
-
-.navbar-nav .nav-item {
-    margin-left: 20px; // Adjust space between menu items
-}
-
-.navbar-toggler {
-    display: none; // If you want to hide the toggle button
-}
-
-@media (max-width: 991px) {
-    .navbar-nav {
-        display: block;
-    }
-
-    .navbar-toggler {
-        display: block;
-    }
-
-    .navbar {
-        flex-direction: column;
-    }
-
-    .navbar-nav .nav-item {
-        margin-left: 0;
-    }
-}
