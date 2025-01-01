@@ -899,3 +899,29 @@ iframe {
     opacity: 0;
     transition: opacity .25s;
 }
+
+.hamburger-menu {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .hamburger-menu span {
+    width: 25px;
+    height: 3px;
+    background: #333;
+  }
+  .menu-content {
+    display: none;
+    position: absolute;
+    top: 50px;
+    background: white;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+  .menu-content ul {
+    list-style: none;
+    padding: 0;
+  }
+  .menu-content li {
+    padding: 8px;
+  }
