@@ -56,51 +56,40 @@ ga('send', 'pageview');
 	</noscript>
 
 
-<!-- Begin Menu Navigation
-================================================== -->
+<!-- Begin Menu Navigation -->
 <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
-
-    <div class="container pr-0">
-
-    <!-- Begin Logo -->
-    <a class="navbar-brand" href="{{ site.baseurl }}/">
-    <img src="{{ site.baseurl }}/{{ site.logo }}" alt="{{ site.name }}">
-    </a>
-    <!-- End Logo -->
-
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMediumish" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarMediumish">
+    <div class="container pr-0 d-flex justify-content-between align-items-center">
+        <!-- Begin Logo -->
+        <a class="navbar-brand" href="{{ site.baseurl }}/">
+            <img src="{{ site.baseurl }}/{{ site.logo }}" alt="{{ site.name }}">
+        </a>
+        <!-- End Logo -->
 
         <!-- Begin Menu -->
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-            <a class="nav-link" href="{{ site.baseurl }}/about">About</a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link" href="{{ site.baseurl }}/stories">Stories</a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link" href="{{ site.baseurl }}/poems">Poems</a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link" href="{{ site.baseurl }}/pictures">Pictures</a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link" href="{{ site.baseurl }}/team">Team</a>
-            </li>
-            {% include search-lunr.html %}
-        </ul>
+        <div class="d-flex">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ site.baseurl }}/about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ site.baseurl }}/stories">Stories</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ site.baseurl }}/poems">Poems</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ site.baseurl }}/pictures">Pictures</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ site.baseurl }}/team">Team</a>
+                </li>
+                {% include search-lunr.html %}
+            </ul>
+        </div>
         <!-- End Menu -->
-
-    </div>
-
     </div>
 </nav>
-<!-- End Navigation
-================================================== -->
+<!-- End Navigation -->
 
 <div class="site-content">
 
@@ -128,11 +117,11 @@ ga('send', 'pageview');
     </ul>
   </div>
 
-<!-- Content
-================================================== -->
+<!-- Content -->
 <div class="main-content">
     {{ content }}
 </div>
+
 
 {% if site.mailchimp-list %}
 <!-- Bottom Alert Bar
@@ -177,8 +166,7 @@ ga('send', 'pageview');
 	</div>
 </div>
 
-<!-- Begin Footer
-================================================== -->
+<!-- Footer -->
 <footer class="footer">
     <div class="container">
         <div class="row">
@@ -191,8 +179,7 @@ ga('send', 'pageview');
         </div>
     </div>
 </footer>
-<!-- End Footer
-================================================== -->
+<!-- End Footer -->
 
 </div> <!-- /.site-content -->
 
