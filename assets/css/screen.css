@@ -926,15 +926,11 @@ iframe {
 }
 
 .navbar-toggler {
-    display: none; /* If you want to hide the toggle button */
+    display: none; /* Hides the toggle button (hamburger menu) */
 }
 
 @media (max-width: 991px) {
     .navbar-nav {
-        display: block;
-    }
-
-    .navbar-toggler {
         display: block;
     }
 
@@ -946,3 +942,4 @@ iframe {
         margin-left: 0;
     }
 }
+
