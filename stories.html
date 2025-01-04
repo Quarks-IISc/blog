@@ -3,15 +3,34 @@ layout: default
 title: Stories
 ---
 
-<h1>Stories</h1>
+<div class="container">
+  <h1 class="text-center mb-5">Stories</h1>
+  <div class="row">
+    {% for post in site.posts %}
+      {% if post.categories contains "stories" %}
+        <div class="col-md-4 mb-4">
+          <div class="card h-100">
+            <!-- Post Image -->
+            {% if post.image %}
+              <img src="{% if post.image contains '://' %}{{ post.image }}{% else %}{{ site.baseurl }}/{{ post.image }}{% endif %}" class="card-img-top" alt="{{ post.title }}">
+            {% else %}
+              <img src="{{ site.baseurl }}/assets/default-story.jpg" class="card-img-top" alt="{{ post.title }}">
+            {% endif %}
 
-<ul>
-  {% for post in site.posts %}
-    {% if post.categories contains "stories" %}
-      <li>
-        <a href="{{ post.url }}">{{ post.title }}</a>
-        <small>{{ post.date | date: "%B %d, %Y" }}</small>
-      </li>
-    {% endif %}
-  {% endfor %}
-</ul>
+            <!-- Post Content -->
+            <div class="card-body">
+              <h5 class="card-title"><a href="{{ post.url }}">{{ post.title }}</a></h5>
+              <p class="card-text">
+                <small>by {{ post.author }}</small><br>
+                {{ post.excerpt | strip_html | truncate: 100 }}
+              </p>
+            </div>
+            <div class="card-footer text-center">
+              <a href="{{ post.url }}" class="btn btn-primary">Read More</a>
+            </div>
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
