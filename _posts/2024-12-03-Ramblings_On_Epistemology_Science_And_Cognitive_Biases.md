@@ -4,6 +4,7 @@ layout: post
 title: Ramblings on Epistemology, Science, and Cognitive Biases
 #categories: [  ]
 author: Raj Magesh, Julian D'Costa
+categories: stories
 featured: true
 ---
 
