@@ -6,6 +6,7 @@ title: Contenment
 author: Adit Vishnu
 categories: stories
 image: "/assets/images/Contentment.jpeg"
+excerpt: 'Excerpt'
 featured: true
 ---
 

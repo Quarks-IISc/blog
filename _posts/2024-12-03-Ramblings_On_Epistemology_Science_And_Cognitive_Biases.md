@@ -6,6 +6,7 @@ title: Ramblings on Epistemology, Science, and Cognitive Biases
 author: Raj Magesh, Julian D'Costa
 categories: stories
 image: "/assets/images/RamblingsOnScienceEpistomology.jpeg"
+excerpt: 'Excerpt'
 featured: true
 ---
 
