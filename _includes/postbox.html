@@ -19,13 +19,7 @@
         <div class="card-body">
             <h2 class="card-title">
                 <a class="text-dark" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
-                {% if post.rating %}
-                <div class="mb-2 mt-2 font-weight-normal">
-                {% include star_rating_postbox.html %}
-                </div>
-                {% endif %}
             </h2>
-            <h4 class="card-text">{{ post.excerpt | strip_html | truncatewords:30 }}</h4>
         </div>
         <div class="card-footer bg-white">
             <div class="wrapfooter">
@@ -39,6 +33,7 @@
                 </span>
                 <span class="author-meta">
                 <span class="post-name"><a target="_blank" href="{{ author.web }}">{{ author.display_name }}</a></span><br/>
+                <h4 class="card-text">{{ post.excerpt | strip_html | truncatewords:30 }}</h4>
                 {% endif %}
                 <span class="post-date">{{ post.date | date_to_string }}</span>
                 </span>
