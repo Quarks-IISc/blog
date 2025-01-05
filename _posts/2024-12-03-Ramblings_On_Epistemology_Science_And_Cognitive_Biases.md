@@ -9,9 +9,6 @@ image: "/assets/images/RamblingsOnScienceEpistomology.jpeg"
 featured: true
 ---
 
-Authors: Raj Magesh, Julian D'Costa
-
-
 ## **Vignette #1**
 
 You’re crossing the road, biting into a Subway® Double Chocolate Chip cookie, relishing the indescribable mix of flavors delighting your taste buds. Everything about the cookie is gorgeous: the vibrant brown hues, the warmth as it melts in your mouth, the delicious scent of butter wafting into your eager nostrils – even the satisfying crunches it makes as you munch down in sheer joy. Your eyes roll up involuntarily, and you moan in decadent satisfaction. The cookie is bliss; you are in Nirvana.
