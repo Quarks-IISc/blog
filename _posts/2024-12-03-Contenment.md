@@ -8,8 +8,6 @@ categories: stories
 image: "/assets/images/Contentment.jpeg"
 featured: true
 ---
-Author: Adit Vishnu
-
 
 The incident is set in Kerala, India.
 
