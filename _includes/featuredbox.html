@@ -34,9 +34,23 @@
                         <div class="card-footer b-0 bg-white mt-auto">
                             <div class="wrapfooter">
                                 {% if post.author %}
-                                <span class="author-meta">
-                                    <span class="post-name">{{ author.display_name }}</span><br/>
-                                </span>
+                                    {% if authors_list.size > 0 %}
+                                        <span class="author-meta">
+                                            <span class="post-name">
+                                                {% for author in authors_list %}
+                                                    {% if forloop.first %}
+                                                        {{ author | strip }}
+                                                    {% else %}
+                                                        , {{ author | strip }}
+                                                    {% endif %}
+                                                {% endfor %}
+                                            </span><br/>
+                                        </span>
+                                    {% else %}
+                                        <span class="author-meta">
+                                            <span class="post-name">Unknown Author</span><br/>
+                                        </span>
+                                    {% endif %}
                                 {% endif %}
                                 <!-- Commenting Author profiles
                                 <span class="meta-footer-thumb">
