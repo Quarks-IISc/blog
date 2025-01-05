@@ -1,7 +1,7 @@
 # Site
 name: "Quarks"
 title: "Quarks"
-description: "Blog by Undergraduate Students at IISc"
+description: "By Undergraduate Students at IISc"
 logo: 'assets/images/logo.png'
 favicon: 'assets/images/logo.png'
 #baseurl: /blog
