@@ -42,7 +42,11 @@ title: Stories
 
         {% for post in site.posts %}
 
-        {% include postbox.html %}
+        {% if post.categories == stories %}
+
+            {% include postbox.html %}
+
+        {% endif %}
 
         {% endfor %}
 
