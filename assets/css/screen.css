@@ -213,11 +213,24 @@ section.recent-posts {
     font-weight: 400;
 }
 
+/*
 .author-meta {
     flex: 1 1 auto;
     white-space: nowrap !important;
     text-overflow: ellipsis !important;
     overflow: hidden !important;
+}
+
+*/
+
+.author-meta {
+    flex: 1 1 auto;
+    white-space: normal; /* Allow wrapping for multiple authors */
+    overflow: visible; /* Remove truncation to show full content */
+    text-overflow: clip; /* Ensure text doesn't get clipped */
+    word-wrap: break-word; /* Handle long words gracefully */
+    margin-top: 5px; /* Add some spacing if needed */
+    line-height: 1.5; /* Improve readability */
 }
 
 span.post-name,

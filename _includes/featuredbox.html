@@ -38,8 +38,8 @@
                                     {% if post.author contains "," %}
                                         <!-- Split the authors into a list -->
                                         {% assign authors_list = post.author | split: "," %}
-                                        <span class="author-meta">
-                                            <span class="post-name">
+                                        <div class="author-meta">
+                                            <div class="post-name">
                                                 <!-- Loop through the authors and display them -->
                                                 {% for author_name in authors_list %}
                                                     {% if forloop.first %}
@@ -48,19 +48,19 @@
                                                         , {{ author_name | strip }}
                                                     {% endif %}
                                                 {% endfor %}
-                                            </span><br/>
-                                        </span>
+                                            </div>
+                                        </div>
                                     {% else %}
                                         <!-- Display a single author -->
-                                        <span class="author-meta">
-                                            <span class="post-name">{{ post.author | strip }}</span><br/>
-                                        </span>
+                                        <div class="author-meta">
+                                            <div class="post-name">{{ post.author | strip }}</div>
+                                        </div>
                                     {% endif %}
                                 {% else %}
                                     <!-- Display "Unknown Author" if no author is provided -->
-                                    <span class="author-meta">
-                                        <span class="post-name">Unknown Author</span><br/>
-                                    </span>
+                                    <div class="author-meta">
+                                        <div class="post-name">Unknown Author</div>
+                                    </div>
                                 {% endif %}
                                 <!-- Commenting out Author profiles -->
                                 <!-- 
