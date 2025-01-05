@@ -3,54 +3,29 @@ layout: default
 title: Stories
 ---
 
-{% if page.url == "/" %}
-
-<!-- Featured
-================================================== -->
-<section class="featured-posts">
-    <div class="section-title">
-        <h2><span>Featured</span></h2>
-    </div>
-    <div class="row">
-
-    {% for post in site.posts %}
-
-        {% if post.featured == true %}
-
-            {% include featuredbox.html %}
-
-        {% endif %}
-
-    {% endfor %}
-
-    </div>
-</section>
-
-{% endif %}
-
 <!-- Posts Index
 ================================================== -->
 <section class="recent-posts">
 
-    <div class="section-title">
+  <div class="section-title">
 
-        <h2><span>All Stories</span></h2>
+      <h2><span>All Stories</span></h2>
 
-    </div>
+  </div>
 
-    <div class="row listrecent">
+  <div class="row listrecent">
 
-        {% for post in site.posts %}
+      {% for post in site.posts %}
 
-        {% if post.categories == "stories" %}
+      {% if post.categories contains "stories" %}
 
-            {% include postbox.html %}
+          {% include postbox.html %}
 
-        {% endif %}
+      {% endif %}
 
-        {% endfor %}
+      {% endfor %}
 
-    </div>
+  </div>
 
 </section>
 
