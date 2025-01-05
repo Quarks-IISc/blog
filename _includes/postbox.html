@@ -1,5 +1,6 @@
 <!-- begin post -->
-{% assign author = site.authors[post.author] %}
+{% assign authors = post.authors | default: post.author %}
+{% assign authors_list = authors | split: ',' %}
 
 <div class="col-lg-4 col-md-6 mb-30px card-group">
     <div class="card h-100">
@@ -9,7 +10,7 @@
                     {% if site.lazyimages == "enabled" %}
                         <img class="img-fluid lazyimg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAACCAQAAAA3fa6RAAAADklEQVR42mNkAANGCAUAACMAA2w/AMgAAAAASUVORK5CYII=" data-src="{% if post.image contains "://" %}{{ post.image }}{% else %}{{ site.baseurl }}/{{ post.image }}{% endif %}" alt="{{ post.title }}">
                     {% else %}
-                        <img class="img-fluid" src="{% if post.image contains "://" %}{{ post.image }}{% else %}{{ site.baseurl }}/{{ post.image }}{% endif %}" alt="{{ post.title }}"> 
+                        <img class="img-fluid" src="{% if post.image contains "://" %}{{ post.image }}{% else %}{{ site.baseurl }}/{{ post.image }}{% endif %}" alt="{{ post.title }}">
                     {% endif %}
                 {% endif %}
             </a>
@@ -21,24 +22,35 @@
         </div>
         <div class="card-footer bg-white">
             <div class="wrapfooter">
-                {% if post.author %}
+                {% if authors_list.size > 0 %}
                     <span class="meta-footer-thumb">
-                        {% assign author_avatar = site.authors[post.author].avatar %}
-                        {% if author_avatar %}
-                            <img class="author-thumb" src="{{ site.baseurl }}/{{ author_avatar }}" alt="{{ post.author }}">
-                        {% else %}
-                            <img class="author-thumb" src="https://www.gravatar.com/avatar/{{ post.author | downcase | slugify }}?s=250&d=mm&r=x" alt="{{ post.author }}">
-                        {% endif %}
+                        {% for author in authors_list %}
+                            {% assign author = author | strip %}
+                            {% assign author_data = site.authors[author] %}
+                            {% if author_data and author_data.avatar %}
+                                <img class="author-thumb" src="{{ site.baseurl }}/{{ author_data.avatar }}" alt="{{ author }}">
+                            {% else %}
+                                <img class="author-thumb" src="https://www.gravatar.com/avatar/{{ author | downcase | slugify }}?s=250&d=mm&r=x" alt="{{ author }}">
+                            {% endif %}
+                        {% endfor %}
                     </span>
                     <span class="author-meta">
-                        <span class="post-name">{{ post.author }}</span><br/>
+                        <span class="post-name">
+                            {% for author in authors_list %}
+                                {% if forloop.first %}
+                                    {{ author | strip }}
+                                {% else %}
+                                    , {{ author | strip }}
+                                {% endif %}
+                            {% endfor %}
+                        </span><br/>
                     </span>
                 {% else %}
                     <span class="author-meta">
                         <span class="post-name">Unknown Author</span><br/>
                     </span>
                 {% endif %}
-                
+
                 <h4 class="card-text">
                     {% if post.excerpt %}
                         {{ post.excerpt }}
