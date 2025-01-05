@@ -233,6 +233,12 @@ section.recent-posts {
     line-height: 1.5; /* Improve readability */
 }
 
+.author-meta .post-name {
+    font-size: 12px; /* Adjust the font size */
+    color: #4d4a4a95;  /* Change the color to any desired value */
+}
+
+
 span.post-name,
 span.post-date,
 span.author-meta {
