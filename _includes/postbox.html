@@ -22,8 +22,37 @@
         </div>
         <div class="card-footer bg-white">
             <div class="wrapfooter">
-                {% if authors_list.size > 0 %}
-                    <!-- Commenting out the profile icon section -->
+                {% if post.author %}
+                    <!-- Check if post.author contains multiple authors separated by commas -->
+                    {% if post.author contains "," %}
+                        <!-- Split the authors into a list -->
+                        {% assign authors_list = post.author | split: "," %}
+                        <div class="author-meta">
+                            <div class="post-name">
+                                <!-- Loop through the authors and display them -->
+                                {% for author_name in authors_list %}
+                                    {% if forloop.first %}
+                                        {{ author_name | strip }}
+                                    {% else %}
+                                        , {{ author_name | strip }}
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                    {% else %}
+                        <!-- Display a single author -->
+                        <div class="author-meta">
+                            <div class="post-name">{{ post.author | strip }}</div>
+                        </div>
+                    {% endif %}
+                {% else %}
+                    <!-- Display "Unknown Author" if no author is provided -->
+                    <div class="author-meta">
+                        <div class="post-name">Unknown Author</div>
+                    </div>
+                {% endif %}
+                <!-- {% if authors_list.size > 0 %}
+                    Commenting out the profile icon section -->
                     <!--
                     <span class="meta-footer-thumb">
                         {% for author in authors_list %}
@@ -36,7 +65,6 @@
                             {% endif %}
                         {% endfor %}
                     </span>
-                    -->
                     <span class="author-meta">
                         <span class="post-name">
                             {% for author in authors_list %}
@@ -52,7 +80,7 @@
                     <span class="author-meta">
                         <span class="post-name">Unknown Author</span><br/>
                     </span>
-                {% endif %}
+                {% endif %} -->
 
                 <h4 class="card-text">
                     {% if post.excerpt %}
