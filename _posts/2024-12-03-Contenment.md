@@ -10,6 +10,9 @@ excerpt: 'Excerpt'
 featured: true
 ---
 
+Author: Adit Vishnu
+
+
 The incident is set in Kerala, India.
 
 It really is a monumental achievement if you can reply “I am content” to someone asking “How

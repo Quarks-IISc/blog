@@ -10,6 +10,9 @@ excerpt: 'Excerpt'
 featured: true
 ---
 
+Authors: Aditi A Pujar, Divyoj Singh, Bhoomika A Bhat, Akshara Sharma, R Bangari
+
+
 Life at IISc is a vibrant fabric in which the threads of so many lives come together. To us students, if “all
 the world’s a stage”, no longer is a teacher the only central character in our daily lives.
 

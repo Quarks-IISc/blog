@@ -12,6 +12,9 @@ featured: true
 
 ---
 
+Author: Ullas Aparanji
+
+
 The best day of my life was the day I met my girlfriend. The worst day of my life was the day of our marriage. I’ll tell you about the worst day of my life. I’ll leave off talking about the best day to a better day. Now, don’t get me wrong - I have nothing against my girlfriend or marrying her. What I do object to is the concomitant charade that a marriage inevitably involves. They say that love makes the world go round, but, well, honestly, to give credit where it’s due, the centripetal force is doing a much better job of it, thank you very much.
 
 I am all for the idea of a blink-and-you-miss-it marriage. I wonder why that isn’t the de facto accepted norm. Forget the norm, I wonder why that isn’t even the exception. I mean, I ask you - have you even heard of such a concept? Certainly not. Perhaps it hasn’t caught on because, er... You blinked and you missed it? A marriage should be like murder. A marriage should get over in a jiffy, before anyone has time to catch on to what’s happening. Why would you want to make it a protracted, long-drawn-out affair, unless you are a sadistic psychopath who relishes in the agonies of your victims? And, like with a murder, there should ideally be zero eye witnesses, or if there are indeed n eye witnesses to your marriage, you should ensure that the value of n becomes zero eventually. Rule number 1 of Crime101.
