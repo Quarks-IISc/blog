@@ -5,6 +5,7 @@ title: Contenment
 #categories: [  ]
 author: Adit Vishnu
 categories: stories
+image: "/assets/images/Contentment.jpeg"
 featured: true
 ---
 Author: Adit Vishnu
