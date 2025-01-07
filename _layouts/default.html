@@ -64,23 +64,37 @@ ga('send', 'pageview');
             <img src="{{ site.baseurl }}/{{ site.logo }}" alt="{{ site.name }}">
         </a>
         <!-- End Logo -->
-
-        <!-- Begin Menu -->
-        <div class="d-flex">
-            <ul class="navbar-nav">
+        
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMediumish" aria-controls="navbarMediumish" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarMediumish">
+        
+            <!-- Begin Menu -->
+        
+            <ul class="navbar-nav ml-auto">
+        
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ site.baseurl }}/stories">Stories</a>
+                    <a class="nav-link">Stories</a>
                 </li>
+        
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ site.baseurl }}/poems">Poems</a>
+                    <a class="nav-link">Poems</a>
                 </li>
+        
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ site.baseurl }}/pictures">Pictures</a>
+                    <a class="nav-link">Pictures</a>
                 </li>
+        
                 {% include search-lunr.html %}
+        
             </ul>
+        
+            <!-- End Menu -->
+        
         </div>
-        <!-- End Menu -->
+        
     </div>
 </nav>
 <!-- End Navigation -->
