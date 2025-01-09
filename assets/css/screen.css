@@ -1023,7 +1023,7 @@ iframe {
 /* Editor-specific styles (for larger photos) */
 /* Editor Image Style: Adjusting height and width, with added margins */
 .editor-image {
-    width: 70%;  /* Reduce the width to make the image narrower */
+    width: 55%;  /* Decrease the width to make the image narrower */
     height: 250px;  /* Increase height to make the image taller */
     object-fit: cover;  /* Ensure the image covers the space without stretching */
     border-radius: 5px;
@@ -1041,12 +1041,12 @@ iframe {
 /* Editor Inner Rectangle Styling */
 .editor-inner-rectangle {
     background-color: #fff;
-    padding: 20px; /* Increased padding to create more space around the image */
+    padding: 5px;  /* Decreased padding to bring image closer to the box */
     border-radius: 10px;
     border: 1px solid #000;
     text-align: center;
-    width: 100%; /* Ensures inner rectangle takes the full width */
-    height: 320px; /* Adjust the height to accommodate the image and name */
+    width: 70%; /* Decreased width to make the box more narrow */
+    height: 320px; /* Increased height to accommodate the image and name */
     margin-bottom: 30px; /* Increased space below the inner rectangle */
 }
 
@@ -1093,7 +1093,7 @@ iframe {
 
 /* The Team Section Margin */
 .the-team {
-    margin-top: 60px; /* Increased space between the note and the team section */
+    margin-top: 80px; /* Increased space between the note and the team section */
 }
 
 /* Style for the Editor's Note content (improving Lorem Ipsum appearance) */
