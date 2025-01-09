@@ -86,21 +86,27 @@ title: Home
         featuredSection.style.display = 'none';
         latestSection.style.display = 'none';
 
-        // Remove the active class from both tabs and reset the borders
-        featuredTab.classList.remove('active-tab');
-        latestTab.classList.remove('active-tab');
+        // Reset the font weight and border for both tabs
+        featuredTab.style.fontWeight = 'normal';
+        latestTab.style.fontWeight = 'normal';
         featuredTab.style.borderBottom = 'none';
         latestTab.style.borderBottom = 'none';
 
-        // Show the selected section and add the active class to the clicked tab
+        // Remove the active class from both tabs
+        featuredTab.classList.remove('active-tab');
+        latestTab.classList.remove('active-tab');
+
+        // Show the selected section and update the font-weight and border for the clicked tab
         if (tabName === 'featured') {
             featuredSection.style.display = 'block';
-            featuredTab.classList.add('active-tab');
+            featuredTab.style.fontWeight = 'bold';
             featuredTab.style.borderBottom = '2px solid rgba(0, 0, 0, .44)';
+            featuredTab.classList.add('active-tab');
         } else if (tabName === 'latest') {
             latestSection.style.display = 'block';
-            latestTab.classList.add('active-tab');
+            latestTab.style.fontWeight = 'bold';
             latestTab.style.borderBottom = '2px solid rgba(0, 0, 0, .44)';
+            latestTab.classList.add('active-tab');
         }
     }
 
@@ -109,3 +115,4 @@ title: Home
         toggleTab('featured');
     };
 </script>
+
