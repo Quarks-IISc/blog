@@ -1046,7 +1046,7 @@ iframe {
     border-radius: 5px;
     border: 1px solid #000000;  /* Lighter border for inner box */
     text-align: center;
-    width: 100%; /* Ensure the inner box fills the outer one */
+    width: 90%; /* Ensure the inner box fills the outer one */
     height: 250px; /* Set height to make the image longer */
 }
 
