@@ -1,6 +1,6 @@
 <div class="outer-rectangle">
     <div class="inner-rectangle">
-        <img src="{{ site.baseurl }}/assets/images/{{ image }}" alt="{{ name }}" class="team-image {{ image_class }}">
+        <img src="{{ site.baseurl }}/assets/images/{{ image }}" alt="{{ name }}" class="team-image">
         <p><strong>{{ name }}</strong></p>
     </div>
 </div>
@@ -9,40 +9,44 @@
 <style>
     .outer-rectangle {
         display: inline-block;
-        padding: 15px;
+        padding: 20px;
         background-color: #f8f9fa;
-        border: 2px solid #ddd;
+        border: 3px solid #ddd;
         border-radius: 10px;
-        margin: 10px;
+        margin: 20px;
+        width: auto;
+        height: auto;
     }
 
     .inner-rectangle {
         background-color: #fff;
         padding: 10px;
         border-radius: 5px;
-        border: 1px solid #ddd;
-        text-align: center; /* Center the content inside the inner rectangle */
+        border: 2px solid #ddd;
+        text-align: center;
+        width: 150px; /* Set fixed width */
+        height: auto;
     }
 
     .team-image {
         width: 100%;
-        max-width: 200px; /* Set a max width to prevent the image from being too small */
+        max-width: 120px;  /* Set a max width for the image */
         height: auto;
         border-radius: 5px;
-        margin-bottom: 10px; /* Add some space below the image */
     }
 
+    /* Additional styles for editor and team member images */
     .editor-image {
-        width: 70%; /* Slightly reduce the size for editor images */
+        width: 70%; /* Slightly smaller for editor images */
     }
 
     .team-member-image {
-        width: 90%; /* Slightly increase the size for team member images */
+        width: 90%; /* Slightly bigger for team member images */
     }
 
     .image-box p {
         font-size: 1.1rem;
-        margin-top: 10px; /* Add more space above the name */
+        margin-top: 10px; /* Space between the image and name */
         font-weight: normal;
         color: #333;
     }
