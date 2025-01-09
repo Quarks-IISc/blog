@@ -86,17 +86,21 @@ title: Home
         featuredSection.style.display = 'none';
         latestSection.style.display = 'none';
 
-        // Remove the active class from both tabs
+        // Remove the active class from both tabs and reset the borders
         featuredTab.classList.remove('active-tab');
         latestTab.classList.remove('active-tab');
+        featuredTab.style.borderBottom = 'none';
+        latestTab.style.borderBottom = 'none';
 
         // Show the selected section and add the active class to the clicked tab
         if (tabName === 'featured') {
             featuredSection.style.display = 'block';
             featuredTab.classList.add('active-tab');
+            featuredTab.style.borderBottom = '2px solid rgba(0, 0, 0, .44)';
         } else if (tabName === 'latest') {
             latestSection.style.display = 'block';
             latestTab.classList.add('active-tab');
+            latestTab.style.borderBottom = '2px solid rgba(0, 0, 0, .44)';
         }
     }
 
