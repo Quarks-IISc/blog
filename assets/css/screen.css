@@ -1020,50 +1020,94 @@ iframe {
     transition: all 0.3s ease-in-out;
 }
 
-/* styles.css in the assets/css folder */
-
-/* Specific class for the outer rectangle box */
-.editor-rectangle,
-.team-member-rectangle {
-    display: inline-block;
-    padding: 10px;
-    background-color: #f0f0f0;  /* Light gray for outer box */
-    border: 2px solid #000000;  /* Darker border for outer box */
-    border-radius: 10px;
-    margin: 20px;
-    width: 180px;  /* Ensure outer box width */
-    height: auto;
-    min-height: 300px;  /* Set a minimum height for the outer box */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);  /* Optional: adds shadow to make it pop */
-}
-
-/* Specific class for the inner rectangle box */
-.editor-inner-rectangle,
-.team-member-inner-rectangle {
+/* Editor-specific styles (for larger photos) */
+.editor-inner-rectangle {
     background-color: #fff;
     padding: 10px;
     border-radius: 5px;
-    border: 1px solid #000000;  /* Lighter border for inner box */
+    border: 1px solid #000000;  /* Black border around the inner rectangle */
     text-align: center;
-    width: 100%; /* Ensure the inner box fills the outer one */
-    height: 250px; /* Set height to make the image longer */
+    width: 100%;  /* Ensure the inner box fills the space */
+    height: 280px; /* Increase height for editor's images */
+    margin-bottom: 10px; /* Reduce space between the editor boxes */
 }
 
-/* Specific class for images inside the boxes */
-.editor-image,
-.team-member-image {
-    width: 100%;  /* Make sure the width is always 100% of the inner box */
-    height: 150px; /* Fixed height to make the image taller */
-    object-fit: cover;  /* Ensure the image covers the area without stretching */
+/* Editor images should be larger than team member images */
+.editor-image {
+    width: 100%;  /* Ensure image takes up the full width of the inner rectangle */
+    height: 180px;  /* Increase height for larger editor photos */
+    object-fit: cover;  /* Ensure the image covers the area */
     border-radius: 5px;
     margin-bottom: 10px;
 }
 
-/* Specific class for the name text */
-.editor-name,
-.team-member-name {
-    font-size: 1.1rem;
+/* Editor names (make font slightly larger for better visibility) */
+.editor-name {
+    font-size: 1.2rem;  /* Slightly larger font for editor's name */
     margin-top: 10px;
     font-weight: normal;
     color: #333;
+}
+
+/* Team member-specific styles */
+.team-member-inner-rectangle {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #000000;  /* Black border around the inner rectangle */
+    text-align: center;
+    width: 100%;  /* Ensure the inner box fills the space */
+    height: 230px; /* Set height for team member's images */
+}
+
+.team-member-image {
+    width: 100%;  /* Ensure the image takes up the full width of the inner rectangle */
+    height: 150px;  /* Fixed height for team member's images */
+    object-fit: cover;  /* Ensure the image covers the area */
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.team-member-name {
+    font-size: 1rem;  /* Standard font size for team member's name */
+    margin-top: 10px;
+    font-weight: normal;
+    color: #333;
+}
+
+/* Reduce space between editor photos */
+.editors-note .row .col-md-6 {
+    margin-bottom: 20px;
+}
+
+/* Add a little more space between team member photos */
+.the-team .row .col-md-3 {
+    margin-bottom: 20px;
+}
+
+
+/* Style for the Editor's Note content (improving Lorem Ipsum appearance) */
+.editors-note-content blockquote {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: #555;
+    background-color: #f9f9f9;  /* Light gray background */
+    padding: 15px;
+    border-left: 5px solid #000;  /* Bold left border to make it stand out */
+    margin-top: 30px;
+    margin-bottom: 30px;
+    line-height: 1.6;
+    text-align: left; /* Align the text left for better readability */
+    border-radius: 8px;
+}
+
+/* Improved styling for the paragraph in the editor's note */
+.editors-note-content p {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #333;
+    padding: 20px;
+    background-color: #f4f4f4; /* Slight background color to distinguish from other sections */
+    border-radius: 8px;
+    margin-top: 10px;
 }
