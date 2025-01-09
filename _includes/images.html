@@ -1,22 +1,39 @@
-<div class="image-box">
-    <img src="/assets/images/{{ image }}" alt="{{ name }}" class="team-image">
-    <p><strong>{{ name }}</strong></p>
+<div class="outer-rectangle">
+    <div class="inner-rectangle">
+        <img src="{{ site.baseurl }}/assets/images/{{ image }}" alt="{{ name }}" class="team-image {{ image_class }}">
+        <p><strong>{{ name }}</strong></p>
+    </div>
 </div>
 
 <!-- CSS for styling the image box -->
 <style>
-    .image-box {
-        text-align: center;
-        margin: 10px;
-        padding: 10px;
+    .outer-rectangle {
+        display: inline-block;
+        padding: 15px;
+        background-color: #f8f9fa;
         border: 2px solid #ddd;
+        border-radius: 10px;
+        margin: 10px;
+    }
+
+    .inner-rectangle {
+        background-color: #fff;
+        padding: 10px;
         border-radius: 5px;
-        width: 150px;
+        border: 1px solid #ddd;
     }
 
     .team-image {
         width: 100%;
         border-radius: 5px;
+    }
+
+    .editor-image {
+        width: 80%; /* Slightly reduce the size for editor images */
+    }
+
+    .team-member-image {
+        width: 110%; /* Slightly increase the size for team member images */
     }
 
     .image-box p {
