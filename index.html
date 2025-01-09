@@ -81,3 +81,29 @@ title: Home
 </span>
 </div>
 
+<!-- JavaScript for Tab Toggling -->
+<script>
+    function toggleTab(tabName) {
+        // Hide both sections
+        document.getElementById('featured-section').style.display = 'none';
+        document.getElementById('latest-section').style.display = 'none';
+
+        // Remove the active class from both tabs
+        document.getElementById('featured-tab').classList.remove('active-tab');
+        document.getElementById('latest-tab').classList.remove('active-tab');
+
+        // Show the selected section and add the active class to the clicked tab
+        if (tabName === 'featured') {
+            document.getElementById('featured-section').style.display = 'block';
+            document.getElementById('featured-tab').classList.add('active-tab');
+        } else if (tabName === 'latest') {
+            document.getElementById('latest-section').style.display = 'block';
+            document.getElementById('latest-tab').classList.add('active-tab');
+        }
+    }
+
+    // Initialize by showing the featured section on page load
+    window.onload = function() {
+        toggleTab('featured');
+    };
+</script>
