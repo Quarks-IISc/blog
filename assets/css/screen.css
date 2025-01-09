@@ -1041,7 +1041,7 @@ iframe {
 /* Editor Inner Rectangle Styling */
 .editor-inner-rectangle {
     background-color: #fff;
-    padding: 15px;
+    padding: 20px; /* Increased padding to create more space around the image */
     border-radius: 10px;
     border: 1px solid #000;
     text-align: center;
@@ -1093,7 +1093,7 @@ iframe {
 
 /* The Team Section Margin */
 .the-team {
-    margin-top: 40px; /* Increased space between the note and the team section */
+    margin-top: 60px; /* Increased space between the note and the team section */
 }
 
 /* Style for the Editor's Note content (improving Lorem Ipsum appearance) */
