@@ -1,55 +1,6 @@
-<div class="outer-rectangle">
-    <div class="inner-rectangle">
-        <img src="{{ site.baseurl }}/assets/images/{{ image }}" alt="{{ name }}" class="team-image">
-        <p><strong>{{ name }}</strong></p>
+<div class="editor-outer-rectangle">
+    <div class="editor-inner-rectangle">
+        <img src="/assets/images/{{ image }}" alt="{{ name }}" class="editor-image">
+        <p class="editor-name"><strong>{{ name }}</strong></p>
     </div>
 </div>
-
-<!-- CSS for styling the image box -->
-<style>
-    .outer-rectangle {
-        display: inline-block;
-        padding: 10px;
-        background-color: #f8f9fa;  /* Light background for contrast */
-        border: 2px solid #ccc;  /* Gray border for outer rectangle */
-        border-radius: 10px;
-        margin: 20px;
-        width: auto;
-        height: auto;
-        min-width: 150px; /* Ensure the outer box has a minimum width */
-        min-height: 250px; /* Ensure the outer box has a minimum height */
-    }
-
-    .inner-rectangle {
-        background-color: #fff;
-        padding: 10px;
-        border-radius: 5px;
-        border: 1px solid #ddd;  /* Lighter border for inner rectangle */
-        text-align: center;
-        width: 120px; /* Fixed width to create portrait effect */
-        height: 200px; /* Set height to make the image longer */
-    }
-
-    .team-image {
-        width: 100%;  /* Make sure the width is always 100% of the inner box */
-        height: 150px; /* Set a fixed height to make the image taller */
-        object-fit: cover;  /* Ensure the image covers the area without stretching */
-        border-radius: 5px;
-    }
-
-    /* Additional styles for editor and team member images */
-    .editor-image {
-        width: 70%; /* Slightly smaller for editor images */
-    }
-
-    .team-member-image {
-        width: 90%; /* Slightly bigger for team member images */
-    }
-
-    .image-box p {
-        font-size: 1.1rem;
-        margin-top: 10px; /* Space between the image and name */
-        font-weight: normal;
-        color: #333;
-    }
-</style>
