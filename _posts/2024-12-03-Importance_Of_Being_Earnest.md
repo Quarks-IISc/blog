@@ -8,6 +8,7 @@ categories: stories
 image: "/assets/images/ImportanceofbeingEarnest.jpeg"
 excerpt: 'Excerpt'
 featured: true
+latest: true
 ---
 
 Authors: Aditi A Pujar, Divyoj Singh, Bhoomika A Bhat, Akshara Sharma, R Bangari

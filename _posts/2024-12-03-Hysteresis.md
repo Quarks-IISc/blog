@@ -7,9 +7,8 @@ author: Ullas Aparanji
 categories: stories
 image: "/assets/images/Hysteresis.jpg"
 excerpt: 'Excerpt'
-
 featured: true
-
+latest: true
 ---
 
 Author: Ullas Aparanji

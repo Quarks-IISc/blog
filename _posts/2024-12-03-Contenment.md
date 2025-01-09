@@ -8,6 +8,7 @@ categories: stories
 image: "/assets/images/Contentment.jpeg"
 excerpt: 'Excerpt'
 featured: true
+latest: true
 ---
 
 Author: Adit Vishnu

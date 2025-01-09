@@ -15,24 +15,36 @@ title: Home
 </div>
 
 
-<!-- Featured
+<!-- Featured and Latest Toggle
 ================================================== -->
 <section class="featured-posts">
     <div class="section-title">
-        <h2><span>Featured</span></h2>
+        <h2>
+            <span id="featured-tab" class="active-tab" onclick="toggleTab('featured')">Featured</span>
+            <span id="latest-tab" class="inactive-tab" onclick="toggleTab('latest')">Latest</span>
+        </h2>
     </div>
-    <div class="row">
 
-    {% for post in site.posts %}
+    <!-- Featured Posts -->
+    <div id="featured-section" class="tab-content">
+        <div class="row">
+            {% for post in site.posts %}
+                {% if post.featured == true %}
+                    {% include featuredbox.html %}
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
 
-        {% if post.featured == true %}
-
-            {% include featuredbox.html %}
-
-        {% endif %}
-
-    {% endfor %}
-
+    <!-- Latest Posts -->
+    <div id="latest-section" class="tab-content" style="display: none;">
+        <div class="row">
+            {% for post in site.posts %}
+                {% if post.latest == true %}
+                    {% include latestbox.html %}
+                {% endif %}
+            {% endfor %}
+        </div>
     </div>
 </section>
 

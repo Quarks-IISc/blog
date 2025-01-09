@@ -8,6 +8,7 @@ categories: stories
 image: "/assets/images/RamblingsOnScienceEpistomology.jpeg"
 excerpt: 'Excerpt'
 featured: true
+latest: true
 ---
 
 Authors: Raj Magesh, Julian D'Costa
