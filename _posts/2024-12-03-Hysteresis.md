@@ -5,7 +5,7 @@ title: Hysteresis And Impedance Of An AMP
 #categories: [  ]
 author: Ullas Aparanji
 categories: stories
-image: "/assets/images/Hysteresis.jpg"
+image: "/assets/images/Stories/Hysteresis.jpg"
 excerpt: 'Excerpt'
 featured: true
 latest: false

@@ -5,7 +5,7 @@ title: The Importance Of Being Earnest
 #categories: [  ]
 author: Aditi A Pujar, Divyoj Singh, Bhoomika A Bhat, Akshara Sharma, R Bangari
 categories: stories
-image: "/assets/images/ImportanceofbeingEarnest.jpeg"
+image: "/assets/images/Stories/ImportanceofbeingEarnest.jpeg"
 excerpt: 'Excerpt'
 featured: true
 latest: false
