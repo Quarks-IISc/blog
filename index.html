@@ -3,20 +3,17 @@ layout: default
 title: Home
 ---
 
-{% if page.url == "/" %}
 <head>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
-
+{% if page.url == "/" %}
 <div class="mainheading text-center">
     <h1>{{ site.title }}</h1>
     <p class="lead">{{ site.description }}</p>
 </div>
 
-
-<!-- Featured and Latest Toggle
-================================================== -->
+<!-- Featured and Latest Toggle -->
 <section class="featured-posts">
     <div class="section-title">
         <h2>
@@ -50,55 +47,56 @@ title: Home
 
 {% endif %}
 
-<!-- Posts Index
-================================================== -->
+<!-- Posts Index -->
 <section class="recent-posts">
-
     <div class="section-title">
-
         <h2><span>All Posts</span></h2>
-
     </div>
 
     <div class="row listrecent">
-
         {% for post in paginator.posts %}
-
-        {% include postbox.html %}
-
+            {% include postbox.html %}
         {% endfor %}
-
     </div>
-
 </section>
 
-<!-- Pagination
-================================================== -->
+<!-- Pagination -->
 <div class="bottompagination">
-<div class="pointerup"><i class="fa fa-caret-up"></i></div>
-<span class="navigation" role="navigation">
-    {% include pagination.html %}
-</span>
+    <div class="pointerup"><i class="fa fa-caret-up"></i></div>
+    <span class="navigation" role="navigation">
+        {% include pagination.html %}
+    </span>
 </div>
 
 <!-- JavaScript for Tab Toggling -->
 <script>
     function toggleTab(tabName) {
         // Hide both sections
-        document.getElementById('featured-section').style.display = 'none';
-        document.getElementById('latest-section').style.display = 'none';
+        const featuredSection = document.getElementById('featured-section');
+        const latestSection = document.getElementById('latest-section');
+        const featuredTab = document.getElementById('featured-tab');
+        const latestTab = document.getElementById('latest-tab');
+        
+        if (!featuredSection || !latestSection || !featuredTab || !latestTab) {
+            console.error('One or more required elements not found!');
+            return;
+        }
+
+        // Hide both sections
+        featuredSection.style.display = 'none';
+        latestSection.style.display = 'none';
 
         // Remove the active class from both tabs
-        document.getElementById('featured-tab').classList.remove('active-tab');
-        document.getElementById('latest-tab').classList.remove('active-tab');
+        featuredTab.classList.remove('active-tab');
+        latestTab.classList.remove('active-tab');
 
         // Show the selected section and add the active class to the clicked tab
         if (tabName === 'featured') {
-            document.getElementById('featured-section').style.display = 'block';
-            document.getElementById('featured-tab').classList.add('active-tab');
+            featuredSection.style.display = 'block';
+            featuredTab.classList.add('active-tab');
         } else if (tabName === 'latest') {
-            document.getElementById('latest-section').style.display = 'block';
-            document.getElementById('latest-tab').classList.add('active-tab');
+            latestSection.style.display = 'block';
+            latestTab.classList.add('active-tab');
         }
     }
 

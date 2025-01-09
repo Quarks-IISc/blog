@@ -978,7 +978,6 @@ iframe {
 }
 
 /* Latest */
-
 .section-title h2 span {
     cursor: pointer;
     padding: 10px 20px;
@@ -1001,6 +1000,15 @@ iframe {
 
 .tab-content {
     margin-top: 20px;
+    display: none; /* Hide all sections by default */
 }
 
-/* Latest - over*/
+#featured-section {
+    display: block; /* Show featured section by default */
+}
+
+/* Styling to ensure smooth transitions for the tabs */
+.tab-content {
+    transition: all 0.3s ease-in-out;
+}
+/* Latest - over */
