@@ -1021,33 +1021,36 @@ iframe {
 }
 
 /* Editor-specific styles (for larger photos) */
-.editor-inner-rectangle {
-    background-color: #fff;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #000000;  /* Black border around the inner rectangle */
-    text-align: center;
-    width: 100%;  /* Ensure the inner box fills the space */
-    height: 280px; /* Increase height for editor's images */
-    margin-bottom: 10px; /* Reduce space between the editor boxes */
-}
-
-/* Editor images should be larger than team member images */
+/* Editor Image Style: Adjusting height and width, with added margins */
+/* Editor Image Style: Adjusting height and width, with added margins */
 .editor-image {
-    width: 100%;  /* Ensure image takes up the full width of the inner rectangle */
-    height: 180px;  /* Increase height for larger editor photos */
-    object-fit: cover;  /* Ensure the image covers the area */
+    width: 70%;  /* Reduce the width to make the image narrower */
+    height: 250px;  /* Increase height to make the image taller */
+    object-fit: cover;  /* Ensure the image covers the space without stretching */
     border-radius: 5px;
-    margin-bottom: 10px;
+    margin: 10px auto;  /* Center the image and add space on left and right */
 }
 
-/* Editor names (make font slightly larger for better visibility) */
+/* Styling for editor names */
 .editor-name {
-    font-size: 1.2rem;  /* Slightly larger font for editor's name */
+    font-size: 1.1rem;
     margin-top: 10px;
     font-weight: normal;
     color: #333;
 }
+
+/* Editor Inner Rectangle Styling */
+.editor-inner-rectangle {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #000;
+    text-align: center;
+    width: 100%; /* Ensures inner rectangle takes the full width */
+    height: 320px; /* Adjust the height to accommodate the image and name */
+    margin-bottom: 30px; /* Increased space below the inner rectangle */
+}
+
 
 /* Team member-specific styles */
 .team-member-inner-rectangle {
@@ -1080,11 +1083,20 @@ iframe {
     margin-bottom: 20px;
 }
 
+/* Editor's Note Section Margin */
+.editors-note {
+    margin-bottom: 40px; /* Increased space below the editor images and note */
+}
+
 /* Add a little more space between team member photos */
 .the-team .row .col-md-3 {
     margin-bottom: 20px;
 }
 
+/* The Team Section Margin */
+.the-team {
+    margin-top: 40px; /* Increased space between the note and the team section */
+}
 
 /* Style for the Editor's Note content (improving Lorem Ipsum appearance) */
 .editors-note-content blockquote {
