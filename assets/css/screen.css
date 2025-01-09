@@ -977,38 +977,45 @@ iframe {
     font-size: 1.25rem;
 }
 
-/* Latest */
-.section-title h2 span {
-    cursor: pointer;
-    padding: 10px 20px;
-    border: 1px solid #ddd;
-    background-color: #f8f8f8;
-    margin-right: 5px;
-    border-radius: 5px;
-    transition: background-color 0.3s;
+/* Featured + Latest Style */
+.section-title h2 {
+    border-bottom: 1px solid rgba(0, 0, 0, .125);
+    margin-bottom: 25px;
+    font-weight: 700;
+    font-size: 1.4rem;
 }
 
+.section-title h2 span {
+    border-bottom: 1px solid rgba(0, 0, 0, .44); /* Add border for underline */
+    display: inline-block;
+    padding-bottom: 20px;
+    margin-bottom: -1px;
+    cursor: pointer;
+}
+
+/* Active Tab (Featured or Latest) */
 .section-title h2 span.active-tab {
-    background-color: #ddd;
     font-weight: bold;
+    border-color: rgba(0, 0, 0, .44); /* Darker border for active tab */
 }
 
 .section-title h2 span.inactive-tab {
-    background-color: #f8f8f8;
     font-weight: normal;
+    border-color: transparent; /* Remove the underline for inactive tabs */
 }
 
+/* Tabs Section */
 .tab-content {
     margin-top: 20px;
     display: none; /* Hide all sections by default */
 }
 
+/* Featured Section is visible by default */
 #featured-section {
-    display: block; /* Show featured section by default */
+    display: block; 
 }
 
 /* Styling to ensure smooth transitions for the tabs */
 .tab-content {
     transition: all 0.3s ease-in-out;
 }
-/* Latest - over */
