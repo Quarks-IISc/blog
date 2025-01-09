@@ -1047,7 +1047,7 @@ iframe {
     text-align: center;
     width: 70%; /* Decreased width to make the box more narrow */
     height: 320px; /* Increased height to accommodate the image and name */
-    margin-bottom: 30px; /* Increased space below the inner rectangle */
+    margin: 0 auto 30px; /* Center the editor boxes horizontally */
 }
 
 /* Team member-specific styles */
@@ -1121,3 +1121,4 @@ iframe {
     border-radius: 8px;
     margin-top: 10px;
 }
+
