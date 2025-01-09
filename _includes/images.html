@@ -1,0 +1,27 @@
+<div class="image-box">
+    <img src="{{ site.baseurl }}/assets/images/Members/{{ image }}" alt="{{ name }}" class="team-image">
+    <p><strong>{{ name }}</strong></p>
+</div>
+
+<!-- CSS for styling the image box -->
+<style>
+    .image-box {
+        text-align: center;
+        margin: 10px;
+        padding: 10px;
+        border: 2px solid #ddd;
+        border-radius: 5px;
+        width: 150px;
+    }
+
+    .team-image {
+        width: 100%;
+        border-radius: 5px;
+    }
+
+    .image-box p {
+        font-size: 1.1rem;
+        margin-top: 5px;
+        font-weight: normal;
+    }
+</style>

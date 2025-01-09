@@ -1,64 +1,82 @@
-<!DOCTYPE html>
-<html lang="en">
+---
+layout: default
+title: About Us
+---
+
+{% if page.url == "/" %}
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quarks Team</title>
-    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<body>
 
-    <div class="container">
-        <h1>Quarks Team</h1>
+<div class="mainheading text-center">
+    <h1>{{ site.title }}</h1>
+    <p class="lead">{{ site.description }}</p>
+</div>
 
-        <section class="team-section">
-            <h2>Chief Editors</h2>
-            <div class="team-members">
-                <div class="team-member">
-                    <img src="{{ site.baseurl }}/images/image1.jpg" alt="Chief Editor 1">
-                    <h3>Chief Editor 1</h3>
-                </div>
-                <div class="team-member">
-                    <img src="{{ site.baseurl }}/images/image2.jpg" alt="Chief Editor 2">
-                    <h3>Chief Editor 2</h3>
-                </div>
-            </div>
-        </section>
-
-        <section class="team-section">
-            <h2>Blog Team</h2>
-            <div class="team-members">
-                <div class="team-member">
-                    <img src="{{ site.baseurl }}/images/image3.jpg" alt="Blog Team Member 1">
-                    <h3>Blog Team Member 1</h3>
-                </div>
-                <div class="team-member">
-                    <img src="{{ site.baseurl }}/images/image4.jpg" alt="Blog Team Member 2">
-                    <h3>Blog Team Member 2</h3>
-                </div>
-                <!-- Add more team members as needed -->
-            </div>
-        </section>
-
-        <!-- Repeat sections for other teams -->
-        <section class="team-section">
-            <h2>Design Team</h2>
-            <div class="team-members">
-                <div class="team-member">
-                    <img src="{{ site.baseurl }}/images/image5.jpg" alt="Design Team Member 1">
-                    <h3>Design Team Member 1</h3>
-                </div>
-                <div class="team-member">
-                    <img src="{{ site.baseurl }}/images/image6.jpg" alt="Design Team Member 2">
-                    <h3>Design Team Member 2</h3>
-                </div>
-                <!-- Add more team members as needed -->
-            </div>
-        </section>
-
-        <!-- Add more teams here as needed -->
-
+<!-- Featured and Latest Toggle -->
+<section class="featured-posts">
+    <div class="section-title">
+        <h2>
+            <span id="featured-tab" class="active-tab" onclick="toggleTab('featured')">Featured</span>
+            <span id="latest-tab" class="inactive-tab" onclick="toggleTab('latest')">Latest</span>
+        </h2>
     </div>
 
-</body>
-</html>
+    <!-- Featured Posts -->
+    <div id="featured-section" class="tab-content">
+        <div class="row">
+            {% for post in site.posts %}
+                {% if post.featured == true %}
+                    {% include featuredbox.html %}
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- Latest Posts -->
+    <div id="latest-section" class="tab-content" style="display: none;">
+        <div class="row">
+            {% for post in site.posts %}
+                {% if post.latest == true %}
+                    {% include latestbox.html %}
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Editor's Note Section -->
+<section class="editors-note text-center">
+    <h2><strong>Editor's Note</strong></h2>
+    <p>By [Editor 1 Name], [Editor 2 Name]</p>
+
+    <div class="row">
+        <div class="col-md-6">
+            {% include images.html image="images/Members/editor1.jpeg" name="Editor 1 Name" %}
+        </div>
+        <div class="col-md-6">
+            {% include images.html image="images/Members/editor2.jpeg" name="Editor 2 Name" %}
+        </div>
+    </div>
+</section>
+
+<!-- The Team Section -->
+<section class="the-team text-center">
+    <h2><strong>The Team</strong></h2>
+    <div class="row">
+        <div class="col-md-3">
+            {% include images.html image="images/Members/team1.jpg" name="Team Member 1" %}
+        </div>
+        <div class="col-md-3">
+            {% include images.html image="images/Members/team2.jpg" name="Team Member 2" %}
+        </div>
+        <div class="col-md-3">
+            {% include images.html image="images/Members/team3.jpg" name="Team Member 3" %}
+        </div>
+        <div class="col-md-3">
+            {% include images.html image="images/Members/team4.jpg" name="Team Member 4" %}
+        </div>
+    </div>
+</section>
+
+{% endif %}
