@@ -1029,35 +1029,36 @@ iframe {
     display: inline-block;
     padding: 10px;
     background-color: #f0f0f0;  /* Light gray for outer box */
-    border: 2px solid #000000;  /* Darker border for outer box */
+    border: 2px solid #000000;  /* Black border for outer box */
     border-radius: 10px;
     margin: 20px;
-    width: 180px;  /* Ensure outer box width */
+    width: 180px;  /* Outer box width */
     height: auto;
-    min-height: 300px;  /* Set a minimum height for the outer box */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);  /* Optional: adds shadow to make it pop */
+    min-height: 350px;  /* Set a minimum height for the outer box */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);  /* Adds a subtle shadow */
+    text-align: center;
 }
 
 /* Specific class for the inner rectangle box */
 .editor-inner-rectangle,
 .team-member-inner-rectangle {
     background-color: #fff;
-    padding: 10px;
+    padding: 0px;  /* Remove padding to make the inner box cover the area */
     border-radius: 5px;
-    border: 1px solid #000000;  /* Lighter border for inner box */
+    border: 1px solid #000000;  /* Black border for inner box */
     text-align: center;
-    width: 90%; /* Ensure the inner box fills the outer one */
-    height: 250px; /* Set height to make the image longer */
+    width: 100%;  /* Ensure the inner box fills the outer one */
+    height: 80%;  /* Make inner box cover most of the outer box */
+    margin-bottom: 20px; /* Extra space at the bottom for the name */
 }
 
 /* Specific class for images inside the boxes */
 .editor-image,
 .team-member-image {
     width: 100%;  /* Make sure the width is always 100% of the inner box */
-    height: 150px; /* Fixed height to make the image taller */
+    height: 100%; /* Fill the height of the inner box */
     object-fit: cover;  /* Ensure the image covers the area without stretching */
     border-radius: 5px;
-    margin-bottom: 10px;
 }
 
 /* Specific class for the name text */
