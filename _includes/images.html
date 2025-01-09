@@ -21,24 +21,29 @@
         padding: 10px;
         border-radius: 5px;
         border: 1px solid #ddd;
+        text-align: center; /* Center the content inside the inner rectangle */
     }
 
     .team-image {
         width: 100%;
+        max-width: 200px; /* Set a max width to prevent the image from being too small */
+        height: auto;
         border-radius: 5px;
+        margin-bottom: 10px; /* Add some space below the image */
     }
 
     .editor-image {
-        width: 80%; /* Slightly reduce the size for editor images */
+        width: 70%; /* Slightly reduce the size for editor images */
     }
 
     .team-member-image {
-        width: 110%; /* Slightly increase the size for team member images */
+        width: 90%; /* Slightly increase the size for team member images */
     }
 
     .image-box p {
         font-size: 1.1rem;
-        margin-top: 5px;
+        margin-top: 10px; /* Add more space above the name */
         font-weight: normal;
+        color: #333;
     }
 </style>
