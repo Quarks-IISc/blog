@@ -7,43 +7,6 @@ title: About Us
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
-<div class="mainheading text-center">
-    <h1>{{ site.title }}</h1>
-    <p class="lead">{{ site.description }}</p>
-</div>
-
-<!-- Featured and Latest Toggle -->
-<section class="featured-posts">
-    <div class="section-title">
-        <h2>
-            <span id="featured-tab" class="active-tab" onclick="toggleTab('featured')">Featured</span>
-            <span id="latest-tab" class="inactive-tab" onclick="toggleTab('latest')">Latest</span>
-        </h2>
-    </div>
-
-    <!-- Featured Posts -->
-    <div id="featured-section" class="tab-content">
-        <div class="row">
-            {% for post in site.posts %}
-                {% if post.featured == true %}
-                    {% include featuredbox.html %}
-                {% endif %}
-            {% endfor %}
-        </div>
-    </div>
-
-    <!-- Latest Posts -->
-    <div id="latest-section" class="tab-content" style="display: none;">
-        <div class="row">
-            {% for post in site.posts %}
-                {% if post.latest == true %}
-                    {% include latestbox.html %}
-                {% endif %}
-            {% endfor %}
-        </div>
-    </div>
-</section>
-
 <!-- Editor's Note Section -->
 <section class="editors-note text-center">
     <h2><strong>Editor's Note</strong></h2>
