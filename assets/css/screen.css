@@ -781,10 +781,14 @@ iframe {
     max-width: 100%;
 }
 
+/* BlackBox
+
 .transpdark {
     background: rgba(0, 0, 0, 0.75);
     color: #fff;
 }
+
+*/
 
 @media (min-width:768px) {
     .jumbotron.fortags {
