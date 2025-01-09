@@ -1022,7 +1022,6 @@ iframe {
 
 /* Editor-specific styles (for larger photos) */
 /* Editor Image Style: Adjusting height and width, with added margins */
-/* Editor Image Style: Adjusting height and width, with added margins */
 .editor-image {
     width: 70%;  /* Reduce the width to make the image narrower */
     height: 250px;  /* Increase height to make the image taller */
@@ -1050,7 +1049,6 @@ iframe {
     height: 320px; /* Adjust the height to accommodate the image and name */
     margin-bottom: 30px; /* Increased space below the inner rectangle */
 }
-
 
 /* Team member-specific styles */
 .team-member-inner-rectangle {
