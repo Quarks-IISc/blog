@@ -1029,7 +1029,7 @@ iframe {
     display: inline-block;
     padding: 10px;
     background-color: #f0f0f0;  /* Light gray for outer box */
-    border: 2px solid #333;  /* Darker border for outer box */
+    border: 2px solid #000000;  /* Darker border for outer box */
     border-radius: 10px;
     margin: 20px;
     width: 180px;  /* Ensure outer box width */
@@ -1044,7 +1044,7 @@ iframe {
     background-color: #fff;
     padding: 10px;
     border-radius: 5px;
-    border: 1px solid #ddd;  /* Lighter border for inner box */
+    border: 1px solid #000000;  /* Lighter border for inner box */
     text-align: center;
     width: 100%; /* Ensure the inner box fills the outer one */
     height: 250px; /* Set height to make the image longer */
