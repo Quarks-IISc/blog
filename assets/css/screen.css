@@ -983,6 +983,9 @@ iframe {
     margin-bottom: 25px;
     font-weight: 700;
     font-size: 1.4rem;
+    display: flex; /* Use flexbox for horizontal alignment */
+    justify-content: center; /* Center the tabs horizontally */
+    gap: 30px; /* Add horizontal space between the tabs */
 }
 
 .section-title h2 span {
@@ -991,6 +994,7 @@ iframe {
     padding-bottom: 20px;
     margin-bottom: -1px;
     cursor: pointer;
+    transition: color 0.3s, border-color 0.3s; /* Smooth transition for hover effects */
 }
 
 /* Active Tab (Featured or Latest) */
