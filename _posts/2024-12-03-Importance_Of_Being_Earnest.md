@@ -2,7 +2,7 @@
 #YAML part
 layout: post
 title: The Importance Of Being Earnest
-#categories: [  ]
+tags: [Example_Tag1, ExampleTag2]
 author: Aditi A Pujar, Divyoj Singh, Bhoomika A Bhat, Akshara Sharma, R Bangari
 categories: stories
 image: "/assets/images/Stories/ImportanceofbeingEarnest.jpeg"

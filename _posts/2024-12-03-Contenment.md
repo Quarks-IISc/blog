@@ -2,7 +2,7 @@
 #YAML part
 layout: post
 title: Contenment
-#categories: [  ]
+tags: [Example_Tag1, ExampleTag2]
 author: Adit Vishnu
 categories: stories
 image: "/assets/images/Stories/Contentment.jpeg"

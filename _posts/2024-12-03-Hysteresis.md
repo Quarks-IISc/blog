@@ -2,7 +2,7 @@
 #YAML part
 layout: post
 title: Hysteresis And Impedance Of An AMP
-#categories: [  ]
+tags: [Example_Tag1, ExampleTag2]
 author: Ullas Aparanji
 categories: stories
 image: "/assets/images/Stories/Hysteresis.jpg"
