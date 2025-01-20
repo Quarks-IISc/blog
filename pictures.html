@@ -1,0 +1,18 @@
+---
+layout: default
+title: Pictures
+---
+
+<h1>Pictures</h1>
+
+<div class="pictures-container">
+    {% for picture in page.pictures %}
+    <div class="picture-outer-rectangle">
+        <div class="picture-inner-rectangle">
+            <img src="/assets/images/Pictures/{{ picture.image }}" alt="{{ picture.name }}" class="pictures-image">
+            <p class="pictures-name"><strong>{{ picture.name }}</strong></p>
+            <p class="PicturesDesc"><strong>{{ picture.description }}</strong></p>
+        </div>
+    </div>
+    {% endfor %}
+</div>

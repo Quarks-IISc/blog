@@ -1141,3 +1141,34 @@ iframe {
 .featured-posts {
     margin-top: 40px; /* Add extra space above the section */
 }
+
+
+/* Pictures Post Format */
+
+.pictures-image {
+    width: 55%;  /* Decrease the width to make the image narrower */
+    height: 250px;  /* Increase height to make the image taller */
+    object-fit: cover;  /* Ensure the image covers the space without stretching */
+    border-radius: 5px;
+    margin: 10px auto;  /* Center the image and add space on left and right */
+}
+
+/* Styling for editor names */
+.pictures-name {
+    font-size: 1.1rem;
+    margin-top: 10px;
+    font-weight: normal;
+    color: #333;
+}
+
+/* Editor Inner Rectangle Styling */
+.picture-inner-rectangle {
+    background-color: #fff;
+    padding: 5px;  /* Decreased padding to bring image closer to the box */
+    border-radius: 10px;
+    border: 1px solid #000;
+    text-align: center;
+    width: 70%; /* Decreased width to make the box more narrow */
+    height: 320px; /* Increased height to accommodate the image and name */
+    margin: 0 auto 30px; /* Center the editor boxes horizontally */
+}
