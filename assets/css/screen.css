@@ -1128,13 +1128,13 @@ iframe {
 
 /* Increase space below the intro paragraph */
 .intro-text {
-    font-size: 1.2rem; /* Slightly larger font for the paragraph */
+    font-size: 1.4rem; /* Slightly larger font for the paragraph */
     font-weight: 400; /* Regular weight for readability */
     color: #666; /* Softer gray for the text */
     text-align: center; /* Center align the text */
     line-height: 1.8; /* Add spacing between lines */
     margin: 0 auto 50px; /* Increased space below the intro paragraph */
-    max-width: 800px; /* Limit width for better readability */
+    max-width: 1000px; /* Limit width for better readability */
 }
 
 /* Optional: Add space above the Featured and Latest section */
