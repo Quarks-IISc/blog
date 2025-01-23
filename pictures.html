@@ -1,4 +1,41 @@
 ---
-layout: pictures
+layout: default
 title: Pictures
 ---
+
+<!-- Posts Index
+================================================== -->
+<section class="recent-posts">
+
+    <div class="section-title">
+  
+        <h2><span>Pictures</span></h2>
+  
+    </div>
+  
+    <div class="row listrecent">
+  
+        {% for post in site.posts %}
+  
+        {% if post.categories contains "stories" %}
+  
+            {% include PicturesFormat.html %}
+  
+        {% endif %}
+  
+        {% endfor %}
+  
+    </div>
+  
+  </section>
+  
+  <!-- Pagination
+  ================================================== -->
+  <div class="bottompagination">
+  <div class="pointerup"><i class="fa fa-caret-up"></i></div>
+  <span class="navigation" role="navigation">
+      {% include pagination.html %}
+  </span>
+  </div>
+  
+  
