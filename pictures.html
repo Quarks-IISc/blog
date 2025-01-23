@@ -19,7 +19,15 @@ title: Pictures
   
         {% if post.categories contains "pictures" %}
   
-            {% include PicturesFormat.html %}
+            <div class="pictures-container">
+                <div class="picture-outer-rectangle">
+                    <div class="picture-inner-rectangle">
+                        <img src="{{ picture.image }}" alt="{{ picture.name }}" class="pictures-image">
+                        <p class="pictures-name"><strong>{{ picture.name }}</strong></p>
+                        <p class="PicturesDesc"><strong>{{ picture.description }}</strong></p>
+                    </div>
+                </div>
+            </div>
   
         {% endif %}
   
