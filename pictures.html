@@ -11,21 +11,19 @@ title: Pictures
 
     <div class="row listrecent">
         {% for post in site.posts %}
-            <!-- Debugging: Display post title and categories -->
-            <p>Post Title: {{ post.title }}</p>
-            <p>Post Categories: {{ post.categories | join: ', ' }}</p>
-
             {% if post.categories contains "pictures" %}
                 <div class="pictures-container">
                     <div class="picture-outer-rectangle">
                         <div class="picture-inner-rectangle">
-                            <!-- Fallback for missing image -->
+                            <!-- Display the post image -->
                             <img src="{{ post.image | default: '/path/to/default-image.jpg' }}" 
                                  alt="{{ post.title }}" 
                                  class="pictures-image">
+                            <!-- Display the post title -->
                             <p class="pictures-name">
                                 <strong>{{ post.title }}</strong>
                             </p>
+                            <!-- Display the post description -->
                             <p class="PicturesDesc">
                                 <strong>{{ post.description | default: 'No description available.' }}</strong>
                             </p>
