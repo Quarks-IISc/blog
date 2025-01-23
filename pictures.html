@@ -3,35 +3,45 @@ layout: default
 title: Pictures
 ---
 
-<!-- Posts Index
-================================================== -->
+<!-- Posts Index -->
 <section class="recent-posts">
-
     <div class="section-title">
         <h2><span>Pictures</span></h2>
     </div>
 
     <div class="row listrecent">
         {% for post in site.posts %}
-        {% if post.categories contains "pictures" %}
-            <div class="pictures-container">
-                <div class="picture-outer-rectangle">
-                    <div class="picture-inner-rectangle">
-                        <img src="{{ post.image }}" alt="{{ post.title }}" class="pictures-image">
-                        <p class="pictures-name"><strong>{{ post.title }}</strong></p>
-                        <p class="PicturesDesc"><strong>{{ post.description }}</strong></p>
+            <!-- Debugging: Display post title and categories -->
+            <p>Post Title: {{ post.title }}</p>
+            <p>Post Categories: {{ post.categories | join: ', ' }}</p>
+
+            {% if post.categories contains "pictures" %}
+                <div class="pictures-container">
+                    <div class="picture-outer-rectangle">
+                        <div class="picture-inner-rectangle">
+                            <!-- Fallback for missing image -->
+                            <img src="{{ post.image | default: '/path/to/default-image.jpg' }}" 
+                                 alt="{{ post.title }}" 
+                                 class="pictures-image">
+                            <p class="pictures-name">
+                                <strong>{{ post.title }}</strong>
+                            </p>
+                            <p class="PicturesDesc">
+                                <strong>{{ post.description | default: 'No description available.' }}</strong>
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </div>
-        {% endif %}
+            {% endif %}
         {% endfor %}
     </div>
-
 </section>
 
 <!-- Pagination -->
 <div class="bottompagination">
-    <div class="pointerup"><i class="fa fa-caret-up"></i></div>
+    <div class="pointerup">
+        <i class="fa fa-caret-up"></i>
+    </div>
     <span class="navigation" role="navigation">
         {% include pagination.html %}
     </span>
