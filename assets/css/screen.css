@@ -1045,11 +1045,11 @@ iframe {
 /* Editor Inner Rectangle Styling */
 .editor-inner-rectangle {
     background-color: #fff;
-    padding: 5px;  /* Decreased padding to bring image closer to the box */
+    padding: 2px;  /* Decreased padding to bring image closer to the box */
     border-radius: 10px;
     border: 1px solid #000;
     text-align: center;
-    width: 70%; /* Decreased width to make the box more narrow */
+    width: 60%; /* Decreased width to make the box more narrow */
     height: 320px; /* Increased height to accommodate the image and name */
     margin: 0 auto 30px; /* Center the editor boxes horizontally */
 }
