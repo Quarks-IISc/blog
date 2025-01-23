@@ -462,7 +462,7 @@ blockquote {
 
     .listfeaturedtag .card {
         height: auto; /* Keep auto if content height should adjust dynamically */
-        max-height: 300px; /* Set a maximum height for the boxes */
+        max-height: 250px; /* Set a maximum height for the boxes */
         overflow: hidden;
     }
 
