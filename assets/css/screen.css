@@ -1133,7 +1133,7 @@ iframe {
     color: #666; /* Softer gray for the text */
     text-align: center; /* Center align the text */
     line-height: 1.8; /* Add spacing between lines */
-    margin: 0 auto 50px; /* Increased space below the intro paragraph */
+    margin: 0 auto 70px; /* Increased bottom margin for more space */
     max-width: 1500px; /* Limit width for better readability */
 }
 
