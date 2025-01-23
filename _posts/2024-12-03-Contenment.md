@@ -1,7 +1,7 @@
 ---
 #YAML part
 layout: post
-title: Contenment
+title: Contentment
 tags: [Example_Tag1, ExampleTag2]
 author: Adit Vishnu
 categories: stories
