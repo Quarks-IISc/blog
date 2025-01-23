@@ -8,42 +8,31 @@ title: Pictures
 <section class="recent-posts">
 
     <div class="section-title">
-  
         <h2><span>Pictures</span></h2>
-  
     </div>
-  
+
     <div class="row listrecent">
-  
         {% for post in site.posts %}
-  
         {% if post.categories contains "pictures" %}
-  
             <div class="pictures-container">
                 <div class="picture-outer-rectangle">
                     <div class="picture-inner-rectangle">
-                        <img src="{{ picture.image }}" alt="{{ picture.name }}" class="pictures-image">
-                        <p class="pictures-name"><strong>{{ picture.name }}</strong></p>
-                        <p class="PicturesDesc"><strong>{{ picture.description }}</strong></p>
+                        <img src="{{ post.image }}" alt="{{ post.title }}" class="pictures-image">
+                        <p class="pictures-name"><strong>{{ post.title }}</strong></p>
+                        <p class="PicturesDesc"><strong>{{ post.description }}</strong></p>
                     </div>
                 </div>
             </div>
-  
         {% endif %}
-  
         {% endfor %}
-  
     </div>
-  
-  </section>
-  
-  <!-- Pagination
-  ================================================== -->
-  <div class="bottompagination">
-  <div class="pointerup"><i class="fa fa-caret-up"></i></div>
-  <span class="navigation" role="navigation">
-      {% include pagination.html %}
-  </span>
-  </div>
-  
-  
+
+</section>
+
+<!-- Pagination -->
+<div class="bottompagination">
+    <div class="pointerup"><i class="fa fa-caret-up"></i></div>
+    <span class="navigation" role="navigation">
+        {% include pagination.html %}
+    </span>
+</div>
