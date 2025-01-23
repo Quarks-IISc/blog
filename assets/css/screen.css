@@ -1134,7 +1134,7 @@ iframe {
     text-align: center; /* Center align the text */
     line-height: 1.8; /* Add spacing between lines */
     margin: 0 auto 50px; /* Increased space below the intro paragraph */
-    max-width: 1000px; /* Limit width for better readability */
+    max-width: 1500px; /* Limit width for better readability */
 }
 
 /* Optional: Add space above the Featured and Latest section */
