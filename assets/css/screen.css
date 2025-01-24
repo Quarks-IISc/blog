@@ -1195,24 +1195,38 @@ iframe {
 
 .pictures-container {
     display: flex;
-    flex-wrap: wrap; /* Allow items to wrap to the next row */
-    justify-content: center; /* Center items horizontally */
-    align-items: flex-start; /* Align items at the top of their row */
-    gap: 20px; /* Add space between items */
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
     padding: 10px;
-    width: 100%; /* Full width of the container */
-    box-sizing: border-box; /* Include padding in width calculations */
+    box-sizing: border-box;
 }
 
+
 .picture-inner-rectangle {
-    flex: 0 1 calc(30% - 20px); /* Flexible size: 30% width minus gap */
-    max-width: calc(30% - 20px); /* Prevent growing too large */
-    background-color: #f0f0f0; /* Optional background color */
-    padding: 15px; /* Add padding inside each rectangle */
-    text-align: center; /* Center text inside each post */
-    border: 1px solid #ccc; /* Optional: Add a border for visibility */
-    box-sizing: border-box; /* Include padding in size calculations */
+    flex: 1 1 calc(33.33% - 20px); /* Default to three per row */
+    max-width: calc(33.33% - 20px);
+    background-color: #f0f0f0;
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
 }
+
+@media (max-width: 1200px) {
+    .picture-inner-rectangle {
+        flex: 1 1 calc(50% - 20px); /* Two per row */
+        max-width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 800px) {
+    .picture-inner-rectangle {
+        flex: 1 1 calc(100% - 20px); /* One per row */
+        max-width: calc(100% - 20px);
+    }
+}
+
 
 
 
