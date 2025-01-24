@@ -1285,3 +1285,29 @@ iframe {
     height: 100px; /* Reduce image height further */
     object-fit: cover; /* Ensure the image fills the space */
 }
+
+.edition-text {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.edition-list {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0;
+}
+
+.edition-list li {
+    margin-bottom: 8px; /* Add space between items */
+}
+
+.edition-list a {
+    text-decoration: none; /* Remove underline */
+    color: #007bff; /* Blue link color */
+    font-weight: bold;
+}
+
+.edition-list a:hover {
+    color: #0056b3; /* Darker blue on hover */
+    text-decoration: underline; /* Underline on hover */
+}
+
