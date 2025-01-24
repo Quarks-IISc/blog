@@ -1160,6 +1160,13 @@ iframe {
     margin-top: 10px;
     font-weight: normal;
     color: #333333;
+}
+
+.pictures-author {
+    font-size: 1rem;
+    margin-top: 10px;
+    font-weight: normal;
+    color: #333333;
     text-align: left;
 }
 
