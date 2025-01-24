@@ -1280,3 +1280,8 @@ iframe {
 .feature-box .col-md-6, .feature-box .col-12 {
     height: auto; /* Remove any fixed height */
 }
+
+.feature-box .wrapthumbnail img {
+    height: 150px; /* Reduce image height further */
+    object-fit: cover; /* Ensure the image fills the space */
+}
