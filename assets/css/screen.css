@@ -1369,3 +1369,61 @@ iframe {
         max-width: calc(100% - 15px);
     }
 }
+
+
+
+/* HOVER */
+
+/* Featured Box Hover */
+.listfeaturedtag {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Default shadow */
+    border-radius: 8px; /* Rounded corners */
+    overflow: hidden; /* Ensure no child elements overflow */
+}
+
+.listfeaturedtag:hover {
+    transform: translateY(-8px); /* Slight lift on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+/* Thumbnail Hover Effect */
+.wrapthumbnail img {
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.wrapthumbnail img:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+    filter: brightness(1.2); /* Brighten the image */
+}
+
+/* Card Hover Effect */
+.card {
+    transition: color 0.3s ease;
+}
+
+.card-body:hover {
+    color: #0056b3; /* Change text color on hover */
+}
+
+/* Title Link Hover Effect */
+.card-title a {
+    text-decoration: none; /* Remove underline by default */
+    color: #333; /* Default color */
+    transition: color 0.3s ease;
+}
+
+.card-title a:hover {
+    color: #007bff; /* Blue color on hover */
+    text-decoration: underline; /* Add underline on hover */
+}
+
+/* Footer Hover Effect (Optional) */
+.card-footer {
+    background-color: #f8f9fa; /* Light background */
+    transition: background-color 0.3s ease;
+}
+
+.card-footer:hover {
+    background-color: #e9ecef; /* Slightly darker background on hover */
+}
