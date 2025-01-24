@@ -6,7 +6,7 @@ tags: [Example_Tag1, ExampleTag2]
 author: Ullas Aparanji
 categories: stories
 image: "/assets/images/Stories/Hysteresis.jpeg"
-excerpt: 'A witty, humorous first-person ramble that feels like a friend's chat. Engaging, thought-provoking, and increasingly absurd with an unexpected twist.'
+excerpt: "A witty, humorous first-person ramble that feels like a friend's chat. Engaging, thought-provoking, and increasingly absurd with an unexpected twist."
 featured: true
 latest: false
 all: true
