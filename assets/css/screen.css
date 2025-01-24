@@ -1185,7 +1185,7 @@ iframe {
     border-radius: 10px;
     border: 1px solid #000;
     text-align: center;
-    width: 100%; /* Decreased width to make the box more narrow */
+    width: 450px; /* Decreased width to make the box more narrow */
     height: 450px; /* Increased height to accommodate the image and name */
     margin: 30px; /* Center the editor boxes horizontally */
 }
