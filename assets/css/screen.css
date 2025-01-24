@@ -1187,7 +1187,7 @@ iframe {
     text-align: center;
     width: 450px; /* Decreased width to make the box more narrow */
     height: 450px; /* Increased height to accommodate the image and name */
-    margin: 30px; /* Center the editor boxes horizontally */
+    margin: 20px; /* Center the editor boxes horizontally */
 }
 
 
