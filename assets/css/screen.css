@@ -1160,6 +1160,7 @@ iframe {
     margin-top: 10px;
     font-weight: normal;
     color: #333333;
+    text-align: left;
 }
 
 .pictures-desc {
@@ -1167,6 +1168,7 @@ iframe {
     margin-top: 10px;
     font-weight: normal;
     color: #333;
+    text-align: left;
 }
 
 /* Editor Inner Rectangle Styling */
@@ -1177,6 +1179,10 @@ iframe {
     border: 1px solid #000;
     text-align: center;
     width: 100%; /* Decreased width to make the box more narrow */
+    word-wrap: break-word;      /* Break long words */
+    overflow-wrap: break-word;  /* Ensure word breaks for long strings */
+    overflow: hidden;           /* Prevent content from spilling out */
+    box-sizing: border-box;
     height: 360px; /* Increased height to accommodate the image and name */
     margin: 0 auto 30px; /* Center the editor boxes horizontally */
 }
