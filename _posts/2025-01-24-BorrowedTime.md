@@ -5,7 +5,7 @@ title: Borrowed Time
 #categories: [  ]
 author: Sunreeta Bhattacharya
 categories: poems
-#image: "/assets/images/Stories/TheWall.png"
+image: "/assets/images/Poems/BorrowedTime.jpeg"
 excerpt: 'Many live troubled lives, unable to afford a break to experience or imagine life's beauty and calm. A young person strives to use her hour of prayer meaningfully.'
 featured: true
 latest: true
