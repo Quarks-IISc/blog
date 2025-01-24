@@ -1193,27 +1193,29 @@ iframe {
     margin: 20px; /* Center the editor boxes horizontally */
 }
 
+/* Container wrapping all posts */
 .pictures-container {
     display: flex;
     flex-wrap: wrap; /* Allow items to wrap */
-    justify-content: center; /* Center items in the container */
-    gap: 20px; /* Consistent spacing between items */
+    justify-content: center; /* Center items */
+    gap: 20px; /* Space between posts */
     padding: 10px; /* Padding inside the container */
-    width: 100%; /* Full width for the container */
+    width: 100%; /* Full width */
     box-sizing: border-box; /* Include padding in width calculations */
 }
 
+/* Individual post */
 .picture-inner-rectangle {
     flex: 1 1 calc(30% - 20px); /* Flexible width: 30% minus gap */
-    max-width: calc(30% - 20px); /* Prevent items from growing too large */
-    background-color: #f0f0f0; /* Optional: Add a background for visibility */
-    padding: 15px; /* Internal spacing for content */
+    max-width: calc(30% - 20px); /* Prevent growing too large */
+    background-color: #f0f0f0; /* Optional background */
+    padding: 15px; /* Internal padding */
     text-align: center; /* Center align text */
-    border: 1px solid #ccc; /* Optional: Add a border for clarity */
-    box-sizing: border-box; /* Include padding in width calculations */
+    border: 1px solid #ccc; /* Optional border */
+    box-sizing: border-box; /* Include padding in size calculations */
 }
 
-
+/* Responsive adjustments */
 @media (max-width: 1200px) {
     .picture-inner-rectangle {
         flex: 1 1 calc(45% - 20px); /* Two items per row */

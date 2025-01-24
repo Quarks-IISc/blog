@@ -4,6 +4,7 @@ title: Pictures
 ---
 
 <!-- Posts Index -->
+ <!--
 <section class="recent-posts">
     <div class="section-title">
         <h2><span>Pictures</span></h2>
@@ -14,19 +15,15 @@ title: Pictures
             {% if post.categories contains "pictures" %}
                 <div class="pictures-container">
                         <div class="picture-inner-rectangle">
-                            <!-- Display the post image -->
                             <img src="{{ post.image }}" 
                                  alt="{{ post.title }}" 
                                  class="pictures-image">
-                            <!-- Display the post title -->
                             <p class="pictures-name">
                                 <strong>{{ post.title }}</strong>
                             </p>
-                            <!-- Display the Author Name -->
                             <p class="pictures-author">
                                 <strong>{{ post.author }}</strong>
                             </p>
-                            <!-- Display the post description -->
                             <p class="pictures-desc">
                                 <strong>{{ post.description }}</strong>
                             </p>
@@ -36,6 +33,42 @@ title: Pictures
         {% endfor %}
     </div>
 </section>
+-->
+
+<section class="recent-posts">
+    <div class="section-title">
+        <h2><span>Pictures</span></h2>
+    </div>
+
+    <!-- Flex container for all posts -->
+    <div class="pictures-container">
+        {% for post in site.posts %}
+            {% if post.categories contains "pictures" %}
+                <!-- Individual post -->
+                <div class="picture-inner-rectangle">
+                    <!-- Display the post image -->
+                    <img src="{{ post.image }}" 
+                         alt="{{ post.title }}" 
+                         class="pictures-image">
+                    <!-- Display the post title -->
+                    <p class="pictures-name">
+                        <strong>{{ post.title }}</strong>
+                    </p>
+                    <!-- Display the Author Name -->
+                    <p class="pictures-author">
+                        <strong>{{ post.author }}</strong>
+                    </p>
+                    <!-- Display the post description -->
+                    <p class="pictures-desc">
+                        <strong>{{ post.description }}</strong>
+                    </p>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+</section>
+
+
 
 <!-- Pagination -->
 <div class="bottompagination">
