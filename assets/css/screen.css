@@ -1193,15 +1193,27 @@ iframe {
     margin: 20px; /* Center the editor boxes horizontally */
 }
 
+.pictures-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to the next row */
+    justify-content: center; /* Center items horizontally */
+    align-items: flex-start; /* Align items at the top of their row */
+    gap: 20px; /* Add space between items */
+    padding: 10px;
+    width: 100%; /* Full width of the container */
+    box-sizing: border-box; /* Include padding in width calculations */
+}
+
 .picture-inner-rectangle {
-    flex: 1 1 calc(30% - 20px); /* Flexible size for 3 items per row */
-    max-width: calc(30% - 20px); /* Ensure items don’t grow too large */
-    background-color: #f0f0f0; /* Optional: Add a background for visibility */
-    padding: 15px; /* Optional: Add padding for content spacing */
-    text-align: center; /* Center text inside */
-    border: 1px solid #ccc; /* Optional: Add a border for clarity */
+    flex: 0 1 calc(30% - 20px); /* Flexible size: 30% width minus gap */
+    max-width: calc(30% - 20px); /* Prevent growing too large */
+    background-color: #f0f0f0; /* Optional background color */
+    padding: 15px; /* Add padding inside each rectangle */
+    text-align: center; /* Center text inside each post */
+    border: 1px solid #ccc; /* Optional: Add a border for visibility */
     box-sizing: border-box; /* Include padding in size calculations */
 }
+
 
 
 /*
@@ -1217,16 +1229,3 @@ iframe {
 }
 */
 
-.pictures-container {
-    display: flex;
-    flex-wrap: wrap; /* Allow items to wrap */
-    justify-content: center; /* Center items horizontally */
-    align-items: flex-start; /* Align items at the top of their row */
-    align-content: center; /* Center rows if multiple exist */
-    gap: 20px; /* Add consistent spacing between items */
-    padding: 10px; /* Add padding inside the container */
-    width: 100%; /* Ensure the container spans the full width */
-    max-width: 1200px; /* Optional: Limit the container's max width */
-    margin: 0 auto; /* Center the container itself */
-    box-sizing: border-box; /* Include padding in width calculation */
-}
