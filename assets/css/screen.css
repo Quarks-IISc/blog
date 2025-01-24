@@ -1282,6 +1282,6 @@ iframe {
 }
 
 .feature-box .wrapthumbnail img {
-    height: 150px; /* Reduce image height further */
+    height: 100px; /* Reduce image height further */
     object-fit: cover; /* Ensure the image fills the space */
 }
