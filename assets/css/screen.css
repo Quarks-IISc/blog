@@ -1247,3 +1247,36 @@ iframe {
 }
 */
 
+
+/* Target the feature box specifically */
+.feature-box .wrapthumbnail img {
+    height: 200px; /* Set a fixed height for images inside feature boxes */
+    object-fit: cover; /* Ensure the image fits without distortion */
+}
+
+.feature-box .listfeaturedtag {
+    height: auto; /* Auto height for the feature box */
+    min-height: 300px; /* Optional: Set a minimum height */
+}
+
+.feature-box .card-body {
+    padding: 10px; /* Less padding inside the card */
+}
+
+.feature-box .card-footer {
+    padding: 5px 10px; /* Reduce padding */
+    margin-top: 10px;
+}
+
+.feature-box .card-title {
+    font-size: 1.2rem; /* Adjust title size */
+}
+
+.feature-box .card-text {
+    font-size: 0.9rem; /* Adjust description font size */
+    margin-bottom: 10px;
+}
+
+.feature-box .col-md-6, .feature-box .col-12 {
+    height: auto; /* Remove any fixed height */
+}
