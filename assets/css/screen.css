@@ -1198,4 +1198,5 @@ iframe {
     flex-wrap: wrap;
     justify-content: center;
     text-align: center;
+    align-items: center;
 }
