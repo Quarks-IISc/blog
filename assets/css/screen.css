@@ -1165,6 +1165,7 @@ iframe {
 .pictures-author {
     font-size: 0.9rem;
     margin-top: 10px;
+    margin-left: 10px;
     font-weight: normal;
     color: #333333;
     text-align: left;
@@ -1173,6 +1174,7 @@ iframe {
 .pictures-desc {
     font-size: 0.9rem;
     margin-top: 10px;
+    margin-left: 10px;
     font-weight: normal;
     color: #333;
     text-align: left;
