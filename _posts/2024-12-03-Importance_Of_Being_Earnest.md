@@ -8,7 +8,7 @@ categories: stories
 image: "/assets/images/Stories/ImportanceofbeingEarnest.jpeg"
 excerpt: 'In this very monotonous life, students require the daily help for myriad of tasks, this article wonderfully elucidates and interviews many such people.'
 featured: true
-latest: false
+latest: true
 all: true
 ---
 

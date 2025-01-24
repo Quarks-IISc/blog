@@ -8,7 +8,7 @@ categories: stories
 image: "/assets/images/Stories/Hysteresis.jpeg"
 excerpt: "A witty, humorous first-person ramble that feels like a friend's chat. Engaging, thought-provoking, and increasingly absurd with an unexpected twist."
 featured: true
-latest: false
+latest: true
 all: true
 ---
 
