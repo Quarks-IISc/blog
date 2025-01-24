@@ -6,7 +6,7 @@ title: Graveyard of Dead Poets
 author: Anonymous
 categories: poems
 image: "/assets/images/Poems/BorrowedTime.jpeg"
-excerpt: "Many live troubled lives, unable to afford a break to experience or imagine life's beauty and calm. A young person strives to use her hour of prayer meaningfully."
+excerpt: "A haunting elegy to love and passion, now decayed into the stifling stench of habit, entombed in the graveyard of dead poets."
 featured: false
 latest: true
 all: true

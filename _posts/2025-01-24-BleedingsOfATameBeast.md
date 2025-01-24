@@ -6,7 +6,7 @@ title: Bleedings Of A Tame Beast
 author: Prokash Kumar Kundu
 categories: poems
 image: "/assets/images/Poems/BorrowedTime.jpeg"
-excerpt: "Many live troubled lives, unable to afford a break to experience or imagine life's beauty and calm. A young person strives to use her hour of prayer meaningfully."
+excerpt: "Tame and sane, I will no longer paint the world's suffering in red, but I shall spit blood and let it speckle the walls instead."
 featured: false
 latest: true
 all: true
