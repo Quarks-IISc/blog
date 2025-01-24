@@ -1148,7 +1148,7 @@ iframe {
 /* Pictures Post Format */
 
 .pictures-image {
-    width: 55%;  /* Decrease the width to make the image narrower */
+    width: 100%;  /* Decrease the width to make the image narrower */
     height: 250px;  /* Increase height to make the image taller */
     object-fit: cover;  /* Ensure the image covers the space without stretching */
     border-radius: 5px;
@@ -1170,7 +1170,7 @@ iframe {
     border-radius: 10px;
     border: 1px solid #000;
     text-align: center;
-    width: 70%; /* Decreased width to make the box more narrow */
+    width: 100%; /* Decreased width to make the box more narrow */
     height: 320px; /* Increased height to accommodate the image and name */
     margin: 0 auto 30px; /* Center the editor boxes horizontally */
 }
