@@ -273,10 +273,11 @@ End Navigation -->
 		<div class="col-md-8 p-5 align-self-center text-center">
             {% assign categories_list = site.categories %}
             {% if categories_list.first[0] == null %}
+            <!--
                 {% for category in categories_list %}
                     <a class="mt-1 mb-1" href="{{site.baseurl}}/categories#{{ category | url_escape | strip | replace: ' ', '-' }}">{{ category | camelcase }} ({{ site.tags[category].size }})</a>
                 {% endfor %}
-            {% else %}
+            {% else %}-->
                 <!--{% for category in categories_list %}
                     <a class="mt-1 mb-1" href="{{site.baseurl}}/categories#{{ category[0] | url_escape | strip | replace: ' ', '-' }}">{{ category[0] | camelcase }} ({{ category[1].size }})</a>
                 {% endfor %}-->
