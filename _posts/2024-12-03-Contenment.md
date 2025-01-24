@@ -6,7 +6,7 @@ tags: [Example_Tag1, ExampleTag2]
 author: Adit Vishnu
 categories: stories
 image: "/assets/images/Stories/Contentment.jpeg"
-excerpt: 'Excerpt'
+excerpt: 'In an increasingly hedonistic world, the urge to consume and seek gratification often raises the question: "Am I truly happy with who I am or what I have?"'
 featured: true
 latest: false
 all: true
