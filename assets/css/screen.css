@@ -1160,6 +1160,13 @@ iframe {
     font-size: 1.1rem;
     margin-top: 10px;
     font-weight: normal;
+    color: #333333;
+}
+
+.pictures-desc {
+    font-size: 1rem;
+    margin-top: 10px;
+    font-weight: normal;
     color: #333;
 }
 
@@ -1171,6 +1178,6 @@ iframe {
     border: 1px solid #000;
     text-align: center;
     width: 100%; /* Decreased width to make the box more narrow */
-    height: 320px; /* Increased height to accommodate the image and name */
+    height: 360px; /* Increased height to accommodate the image and name */
     margin: 0 auto 30px; /* Center the editor boxes horizontally */
 }
