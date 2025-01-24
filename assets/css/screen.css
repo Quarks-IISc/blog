@@ -1156,14 +1156,14 @@ iframe {
 }
 
 .pictures-name {
-    font-size: 1rem;
+    font-size: 1.1rem;
     margin-top: 10px;
     font-weight: normal;
     color: #333333;
 }
 
 .pictures-author {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     margin-top: 10px;
     font-weight: normal;
     color: #333333;
@@ -1171,7 +1171,7 @@ iframe {
 }
 
 .pictures-desc {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     margin-top: 10px;
     font-weight: normal;
     color: #333;
