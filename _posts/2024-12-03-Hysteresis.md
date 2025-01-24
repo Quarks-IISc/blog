@@ -9,6 +9,7 @@ image: "/assets/images/Stories/Hysteresis.jpeg"
 excerpt: 'Excerpt'
 featured: true
 latest: false
+all: true
 ---
 
 Author: Ullas Aparanji

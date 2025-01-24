@@ -8,6 +8,7 @@ categories: stories
 image: "/assets/images/Stories/RamblingsOnScienceEpistomology.jpeg"
 excerpt: 'Excerpt'
 featured: true
+all: true
 latest: true
 ---
 

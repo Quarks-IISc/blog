@@ -9,6 +9,7 @@ image: "/assets/images/Stories/Contentment.jpeg"
 excerpt: 'Excerpt'
 featured: true
 latest: false
+all: true
 ---
 
 Author: Adit Vishnu

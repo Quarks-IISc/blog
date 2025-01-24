@@ -58,7 +58,9 @@ title: Home
 
     <div class="row listrecent">
         {% for post in paginator.posts %}
+        {% if post.all == true %}
             {% include postbox.html %}
+        {% endif %}
         {% endfor %}
     </div>
 </section>
