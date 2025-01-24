@@ -1181,7 +1181,8 @@ iframe {
 }
 
 /* Editor Inner Rectangle Styling */
-.picture-inner-rectangle {
+
+.UNDOpicture-inner-rectangle {
     background-color: #fff;
     padding: 5px;  /* Decreased padding to bring image closer to the box */
     border-radius: 10px;
@@ -1192,7 +1193,18 @@ iframe {
     margin: 20px; /* Center the editor boxes horizontally */
 }
 
+.picture-inner-rectangle {
+    flex: 1 1 calc(30% - 20px); /* Flexible size for 3 items per row */
+    max-width: calc(30% - 20px); /* Ensure items don’t grow too large */
+    background-color: #f0f0f0; /* Optional: Add a background for visibility */
+    padding: 15px; /* Optional: Add padding for content spacing */
+    text-align: center; /* Center text inside */
+    border: 1px solid #ccc; /* Optional: Add a border for clarity */
+    box-sizing: border-box; /* Include padding in size calculations */
+}
 
+
+/*
 .pictures-container{
     display: flex;
     justify-content: center;
@@ -1202,4 +1214,19 @@ iframe {
     gap: 20px;
     padding: 10px;
     box-sizing: border-box;
+}
+*/
+
+.pictures-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap */
+    justify-content: center; /* Center items horizontally */
+    align-items: flex-start; /* Align items at the top of their row */
+    align-content: center; /* Center rows if multiple exist */
+    gap: 20px; /* Add consistent spacing between items */
+    padding: 10px; /* Add padding inside the container */
+    width: 100%; /* Ensure the container spans the full width */
+    max-width: 1200px; /* Optional: Limit the container's max width */
+    margin: 0 auto; /* Center the container itself */
+    box-sizing: border-box; /* Include padding in width calculation */
 }
