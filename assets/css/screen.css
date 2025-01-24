@@ -1189,3 +1189,9 @@ iframe {
     height: 450px; /* Increased height to accommodate the image and name */
     margin: 0 auto 30px; /* Center the editor boxes horizontally */
 }
+
+.pictures-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}

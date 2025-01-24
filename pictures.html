@@ -13,7 +13,6 @@ title: Pictures
         {% for post in site.posts %}
             {% if post.categories contains "pictures" %}
                 <div class="pictures-container">
-                    <div class="picture-outer-rectangle">
                         <div class="picture-inner-rectangle">
                             <!-- Display the post image -->
                             <img src="{{ post.image }}" 
@@ -32,7 +31,6 @@ title: Pictures
                                 <strong>{{ post.description }}</strong>
                             </p>
                         </div>
-                    </div>
                 </div>
             {% endif %}
         {% endfor %}
