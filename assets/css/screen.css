@@ -1427,3 +1427,79 @@ iframe {
 .card-footer:hover {
     background-color: #e9ecef; /* Slightly darker background on hover */
 }
+
+
+/* Card Container */
+.card-group .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Default shadow */
+    border-radius: 8px; /* Rounded corners */
+    overflow: hidden; /* Clip child elements */
+}
+
+.card-group .card:hover {
+    transform: translateY(-8px); /* Slight lift on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Stronger shadow */
+}
+
+/* Thumbnail Hover Effect */
+.maxthumb img {
+    transition: transform 0.3s ease, filter 0.3s ease;
+    border-radius: 8px 8px 0 0; /* Round top corners */
+}
+
+.maxthumb img:hover {
+    transform: scale(1.05); /* Slight zoom */
+    filter: brightness(1.2); /* Brighten image */
+}
+
+/* Card Body Text */
+.card-body {
+    transition: color 0.3s ease;
+}
+
+.card-body:hover {
+    color: #333; /* Slight change for hover feedback */
+}
+
+/* Title Link Hover Effect */
+.card-title a {
+    text-decoration: none; /* Remove underline */
+    color: #007bff; /* Default color */
+    transition: color 0.3s ease;
+}
+
+.card-title a:hover {
+    color: #0056b3; /* Darker blue on hover */
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Excerpt Hover Effect */
+.card-text {
+    color: #666; /* Default excerpt color */
+    transition: color 0.3s ease;
+}
+
+.card-text:hover {
+    color: #444; /* Slightly darker on hover */
+}
+
+/* Footer */
+.card-footer {
+    background-color: #f8f9fa; /* Default light background */
+    transition: background-color 0.3s ease;
+}
+
+.card-footer:hover {
+    background-color: #e9ecef; /* Slightly darker background */
+}
+
+/* Post Date Hover Effect */
+.post-date {
+    color: #999; /* Default date color */
+    transition: color 0.3s ease;
+}
+
+.post-date:hover {
+    color: #666; /* Slightly darker on hover */
+}
