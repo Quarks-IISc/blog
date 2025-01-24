@@ -1286,28 +1286,86 @@ iframe {
     object-fit: cover; /* Ensure the image fills the space */
 }
 
+/*
 .edition-text {
     font-size: 1.2rem;
     margin-bottom: 10px;
 }
 
 .edition-list {
-    list-style-type: none; /* Remove bullet points */
+    list-style-type: none; 
     padding: 0;
 }
 
 .edition-list li {
-    margin-bottom: 8px; /* Add space between items */
+    margin-bottom: 8px; 
 }
 
 .edition-list a {
-    text-decoration: none; /* Remove underline */
-    color: #007bff; /* Blue link color */
+    text-decoration: none; 
+    color: #007bff;
     font-weight: bold;
 }
 
 .edition-list a:hover {
+    color: #0056b3; 
+    text-decoration: underline; 
+}
+*/
+
+.edition-container {
+    display: flex;
+    flex-wrap: wrap; /* Wrap items to the next row if needed */
+    gap: 15px; /* Space between cards */
+    margin-top: 20px; /* Space above the section */
+    justify-content: center; /* Center the grid on the page */
+}
+
+.edition-card {
+    background-color: #f8f9fa; /* Light background for the card */
+    border: 1px solid #ddd; /* Subtle border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 15px; /* Internal spacing */
+    text-align: center; /* Center-align text */
+    flex: 1 1 calc(30% - 15px); /* Cards take up 30% of the row minus gap */
+    max-width: calc(30% - 15px); /* Prevent cards from exceeding this size */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover effect */
+}
+
+.edition-card:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+.edition-card a {
+    text-decoration: none; /* Remove underline */
+    color: #007bff; /* Primary link color */
+    font-size: 1.1rem; /* Adjust font size */
+    font-weight: bold;
+}
+
+.edition-card a:hover {
     color: #0056b3; /* Darker blue on hover */
     text-decoration: underline; /* Underline on hover */
 }
 
+.edition-card p {
+    margin-top: 5px;
+    font-size: 0.9rem;
+    color: #555; /* Secondary text color */
+}
+
+@media (max-width: 768px) {
+    .edition-card {
+        flex: 1 1 calc(45% - 15px); /* Two cards per row on smaller screens */
+        max-width: calc(45% - 15px);
+    }
+}
+
+@media (max-width: 480px) {
+    .edition-card {
+        flex: 1 1 calc(100% - 15px); /* One card per row on mobile screens */
+        max-width: calc(100% - 15px);
+    }
+}
