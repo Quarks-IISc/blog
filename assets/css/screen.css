@@ -1506,8 +1506,8 @@ iframe {
 
 
 /* Toggle Button */
+/*
 
-/* Ensuring the navbar toggle button is positioned correctly */
 .navbar-toggler {
     border: none;
     background-color: transparent;
@@ -1516,7 +1516,6 @@ iframe {
     color: #333;
 }
 
-/* Styling the navbar-toggler-icon (the hamburger icon) */
 .navbar-toggler-icon {
     width: 30px;
     height: 3px;
@@ -1544,7 +1543,6 @@ iframe {
     top: 8px;
 }
 
-/* Active state when the toggle button is clicked (to animate to a close icon) */
 .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     background-color: transparent;
 }
@@ -1559,28 +1557,25 @@ iframe {
     top: 0;
 }
 
-/* Adding a backdrop for mobile */
 @media (max-width: 992px) {
     .navbar-collapse {
-        background-color: rgba(255, 255, 255, 0.9); /* Adjust backdrop for mobile view */
+        background-color: rgba(255, 255, 255, 0.9); 
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
 }
 
-/* Ensuring the toggle button and icon are centered */
 .navbar-toggler {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-/* Ensuring the collapsed navbar is responsive */
 .navbar-collapse {
     display: flex;
     justify-content: flex-end;
 }
 
-/* Optional: smooth transition for opening/closing navbar */
 .collapse {
     transition: all 0.4s ease;
 }
+*/
