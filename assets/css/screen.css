@@ -1503,3 +1503,84 @@ iframe {
 .post-date:hover {
     color: #666; /* Slightly darker on hover */
 }
+
+
+/* Toggle Button */
+
+/* Ensuring the navbar toggle button is positioned correctly */
+.navbar-toggler {
+    border: none;
+    background-color: transparent;
+    padding: 0.25rem 0.75rem;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+/* Styling the navbar-toggler-icon (the hamburger icon) */
+.navbar-toggler-icon {
+    width: 30px;
+    height: 3px;
+    background-color: #333;
+    display: block;
+    position: relative;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    background-color: #333;
+    transition: transform 0.2s ease-in-out;
+}
+
+.navbar-toggler-icon::before {
+    top: -8px;
+}
+
+.navbar-toggler-icon::after {
+    top: 8px;
+}
+
+/* Active state when the toggle button is clicked (to animate to a close icon) */
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+    background-color: transparent;
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before {
+    transform: rotate(45deg);
+    top: 0;
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
+    transform: rotate(-45deg);
+    top: 0;
+}
+
+/* Adding a backdrop for mobile */
+@media (max-width: 992px) {
+    .navbar-collapse {
+        background-color: rgba(255, 255, 255, 0.9); /* Adjust backdrop for mobile view */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+}
+
+/* Ensuring the toggle button and icon are centered */
+.navbar-toggler {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Ensuring the collapsed navbar is responsive */
+.navbar-collapse {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Optional: smooth transition for opening/closing navbar */
+.collapse {
+    transition: all 0.4s ease;
+}
