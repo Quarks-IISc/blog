@@ -1192,26 +1192,15 @@ iframe {
     margin: 20px; /* Center the editor boxes horizontally */
 }
 
-/*
+
 .pictures-container{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    text-align: center;
-    align-items: center;
+    align-items: flex-start;
     align-content: center;
-}
-*/
 
-.pictures-container {
-    display: flex;
-    /* flex-wrap: wrap; */ /* Allow items to wrap into multiple rows */
-    justify-content: space-evenly; /* Add equal space between items and keep them horizontally aligned */
-    align-items: flex-start; /* Align items at the top of their row */
-    align-content: center; /* Center the rows vertically within the container */
-    gap: 20px; /* Add consistent spacing between items */
-    text-align: center; /* Ensure text inside children is centered */
-    padding: 10px; /* Optional: Add padding inside the container */
-    width: 100%; /* Ensure the container spans the full width */
-    box-sizing: border-box; /* Include padding in width calculations */
+    gap: 20px;
+    padding: 10px;
+    box-sizing: border-box;
 }
