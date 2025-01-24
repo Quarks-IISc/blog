@@ -16,7 +16,7 @@ title: Pictures
                     <div class="picture-outer-rectangle">
                         <div class="picture-inner-rectangle">
                             <!-- Display the post image -->
-                            <img src="{{ post.image | default: '/path/to/default-image.jpg' }}" 
+                            <img src="{{ post.image }}" 
                                  alt="{{ post.title }}" 
                                  class="pictures-image">
                             <!-- Display the post title -->
@@ -25,7 +25,7 @@ title: Pictures
                             </p>
                             <!-- Display the post description -->
                             <p class="PicturesDesc">
-                                <strong>{{ post.description | default: 'No description available.' }}</strong>
+                                <strong>{{ post.description | default: '--' }}</strong>
                             </p>
                         </div>
                     </div>
