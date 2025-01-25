@@ -15,28 +15,32 @@ all: true
 Poet: Prokash Kumar Kundu
 
 
-I am tame now –
-Tame and sane.
-I will not paint any more
-In the nauseous shades of red.
-No more shall I paint the blood
-That I bleed every day;
-Every moment a lathi charge is unleashed,
-An encounter is ensued,
-A curse is hurled.
-No more shall I paint the blood
-Trickling from the vagina of the girl
-Stuffed with pebbles.
-They say she was a naxal.
-No more shall I paint the rubble that lay
-In Syria, speckled with the blood of a son,
-Caressed by the roughened fingers of a widowed
-husband,
-No more shall I paint the entrails of
-Lahore, split apart by a bomb-blast.
-No more.
-I am tame now.
-Tame and sane.
-I shall but spit,
-And spit blood
-And speckle the walls in red
+<div style="text-align: center;">
+
+I am tame now –<br>  
+Tame and sane.<br>  
+I will not paint any more<br>  
+In the nauseous shades of red.<br>  
+No more shall I paint the blood<br>  
+That I bleed every day;<br>  
+Every moment a lathi charge is unleashed,<br>  
+An encounter is ensued,<br>  
+A curse is hurled.<br>  
+No more shall I paint the blood<br>  
+Trickling from the vagina of the girl<br>  
+Stuffed with pebbles.<br>  
+They say she was a naxal.<br>  
+No more shall I paint the rubble that lay<br>  
+In Syria, speckled with the blood of a son,<br>  
+Caressed by the roughened fingers of a widowed<br>  
+husband,<br>  
+No more shall I paint the entrails of<br>  
+Lahore, split apart by a bomb-blast.<br>  
+No more.<br>  
+I am tame now.<br>  
+Tame and sane.<br>  
+I shall but spit,<br>  
+And spit blood<br>  
+And speckle the walls in red.<br>  
+
+</div>
