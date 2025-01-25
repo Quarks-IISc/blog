@@ -1578,3 +1578,21 @@ iframe {
 .collapse {
     transition: all 0.4s ease;
 }
+
+/* Custom Styles */
+
+/* tags on posts */
+.wrapthumbnail, .maxthumb {
+    position: relative;
+}
+.post-tag {
+    display: none;
+    position: absolute;
+    margin: 0 5px;
+    top: 0;
+    left: 0;
+}
+img:hover+.post-tag {
+    display: block;
+}
+

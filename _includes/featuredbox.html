@@ -12,6 +12,13 @@
                             {% else %}
                             <img class="featured-box-img-cover" src="{% if post.image contains "://" %}{{ post.image }}{% else %}{{ site.baseurl }}/{{ post.image }}{% endif %}">
                             {% endif %}
+                            {% if post.tags %}
+                                <div class="post-tag">
+                                    {% for tag in post.tags %}
+                                        <span class="badge badge-secondary">{{ tag }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
                         </a>
                     </div>
                 </div>
