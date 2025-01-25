@@ -13,53 +13,47 @@ all: true
 ---
 
 
-&nbsp;  
-&nbsp;  
-**And there we lay**  
-*Our souls entwined,*  
-*Our bodies at waste;*  
-*Passion lay dead in the tracks trodden by habit.*  
+<div style="text-align: center;">
 
-&nbsp;  
-**You wouldn’t know.**  
-*All words of love*  
-*That had done us mellow –*  
-*Colourful as the spring and sprightly as a swallow*  
-*They seem now to be*  
-*But the burnt remains of a plundered bee-hive,*  
-*In black decay.*  
+And there we lay -  
+Our souls entwined,  
+Our bodies at waste;  
+Passion lay dead in the tracks trodden by habit.  
 
-&nbsp;  
-*All words of passion*  
-*That could arouse us*  
-*And let us loose as if a raging Spanish bull;*  
-*All fantasies of the most beautiful and the artful,*  
-*- now left none but thin air*  
-*Reeking of the rotten carcasses*  
-*Of our once-throbbing hearts.*  
+You wouldn’t know.  
+All words of love  
+That had done us mellow –  
+Colourful as the spring and sprightly as a swallow  
+They seem now to be  
+But the burnt remains of a plundered bee-hive,  
+In black decay.  
 
-&nbsp;  
-*Every bullet,*  
-*Every slogan,*  
-*That had once set our faith aflame –*  
-*Left nothing but grey ash.*  
+All words of passion  
+That could arouse us  
+And let us loose as if a raging Spanish bull;  
+All fantasies of the most beautiful and the artful,  
+- now left none but thin air  
+Reeking of the rotten carcasses  
+Of our once-throbbing hearts.  
 
-&nbsp;  
-**We lay in waste.**  
-**You wouldn’t know.**  
+Every bullet,  
+Every slogan,  
+That had once set our faith aflame –  
+Left nothing but grey ash.  
 
-&nbsp;  
-*It was not a graveyard*  
-*Sombre in death,*  
-**For**  
+We lay in waste.  
+You wouldn’t know.  
 
-&nbsp;  
-*Every word truly once felt*  
-*Now hung heavy*  
-*In the mesh of dead poetry –*  
-*Rotting,*  
-*The pungent stench keeping the decaying bodies*  
-**Alive in disuse and waste**  
-*In the graveyard of dead poets.*  
+It was not a graveyard  
+Sombre in death,  
+For  
 
-&nbsp;  
+Every word truly once felt  
+Now hung heavy  
+In the mesh of dead poetry –  
+Rotting,  
+The pungent stench keeping the decaying bodies  
+Alive in disuse and waste  
+In the graveyard of dead poets.  
+
+</div>
