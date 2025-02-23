@@ -6,7 +6,7 @@ title: Ode To Diversity
 author: Subhanan Banerjee
 categories: poems
 image: "/assets/images/Poems/BleedingsOfTameBeast.jpeg"
-excerpt: 'A lyrical ode to harmony, embracing humanity's shared victories, defeats, and hopes.'
+excerpt: "A lyrical ode to harmony, embracing humanity's shared victories, defeats, and hopes."
 featured: true
 latest: true
 all: true
