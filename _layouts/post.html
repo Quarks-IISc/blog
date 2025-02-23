@@ -98,7 +98,7 @@ post_class: post-template
             <div class="after-post-cats">
                 <ul class="tags mb-4">
                     {% assign sortedCategories = page.categories | default: "" | sort %}
-                    {% assign sortedTags = page.tags | default: "" | sort %}
+                    {% for category in sortedCategories %}
                     <li>
                         <a class="smoothscroll" href="{{site.baseurl}}/categories#{{ category | replace: " ","-" }}">{{ category }}</a>
                     </li>
