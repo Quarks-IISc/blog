@@ -9,5 +9,5 @@ image: "/assets/images/Poems/BleedingsOfTameBeast.jpeg"
 excerpt: 'Nature in IISc'
 featured: false
 latest: false
-all: true
+all: false
 ---

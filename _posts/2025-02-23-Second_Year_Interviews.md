@@ -9,5 +9,5 @@ image: "/assets/images/Poems/BleedingsOfTameBeast.jpeg"
 excerpt: 'Second Years'
 featured: false
 latest: false
-all: true
+all: false
 ---
