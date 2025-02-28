@@ -22,6 +22,7 @@ title: Home
         <h2>
             <span id="featured-tab" class="active-tab" onclick="toggleTab('featured')">Featured</span>
             <span id="latest-tab" class="inactive-tab" onclick="toggleTab('latest')">Latest</span>
+            <span id="previous-tab" class="inactive-tab" onclick="toggleTab('previous')">Previous Editions</span>
         </h2>
     </div>
 
@@ -48,7 +49,7 @@ title: Home
     </div>
 
     <!-- Previous Editions -->
-    <div id="Previous-section" class="tab-content" style="display: none;">
+    <div id="previous-section" class="tab-content" style="display: none;">
         <div class="edition-container">
             <div class="edition-card">
                 <a href="https://quarks-iisc.github.io/blog/PreviousEditions/edition1.pdf" target="_blank" rel="noopener noreferrer">Quarks Edition 1</a>
@@ -89,7 +90,7 @@ title: Home
         </div>
     </div>
 
-    
+
 </section>
 
 {% endif %}
@@ -123,45 +124,44 @@ title: Home
     </span>
 </div>
 
-<!-- JavaScript for Tab Toggling -->
+
+
 <script>
     function toggleTab(tabName) {
-        // Hide both sections
-        const featuredSection = document.getElementById('featured-section');
-        const latestSection = document.getElementById('latest-section');
-        const featuredTab = document.getElementById('featured-tab');
-        const latestTab = document.getElementById('latest-tab');
-        
-        if (!featuredSection || !latestSection || !featuredTab || !latestTab) {
+        // Get all sections and tabs
+        const sections = {
+            featured: document.getElementById('featured-section'),
+            latest: document.getElementById('latest-section'),
+            previous: document.getElementById('previous-section')
+        };
+
+        const tabs = {
+            featured: document.getElementById('featured-tab'),
+            latest: document.getElementById('latest-tab'),
+            previous: document.getElementById('previous-tab')
+        };
+
+        // Check if all elements exist
+        if (!sections.featured || !sections.latest || !sections.previous ||
+            !tabs.featured || !tabs.latest || !tabs.previous) {
             console.error('One or more required elements not found!');
             return;
         }
 
-        // Hide both sections
-        featuredSection.style.display = 'none';
-        latestSection.style.display = 'none';
+        // Hide all sections and reset styles
+        Object.values(sections).forEach(section => section.style.display = 'none');
+        Object.values(tabs).forEach(tab => {
+            tab.style.fontWeight = 'normal';
+            tab.style.borderBottom = 'none';
+            tab.classList.remove('active-tab');
+        });
 
-        // Reset the font weight and border for both tabs
-        featuredTab.style.fontWeight = 'normal';
-        latestTab.style.fontWeight = 'normal';
-        featuredTab.style.borderBottom = 'none';
-        latestTab.style.borderBottom = 'none';
-
-        // Remove the active class from both tabs
-        featuredTab.classList.remove('active-tab');
-        latestTab.classList.remove('active-tab');
-
-        // Show the selected section and update the font-weight and border for the clicked tab
-        if (tabName === 'featured') {
-            featuredSection.style.display = 'block';
-            featuredTab.style.fontWeight = 'bold';
-            featuredTab.style.borderBottom = '2px solid rgba(0, 0, 0, .44)';
-            featuredTab.classList.add('active-tab');
-        } else if (tabName === 'latest') {
-            latestSection.style.display = 'block';
-            latestTab.style.fontWeight = 'bold';
-            latestTab.style.borderBottom = '2px solid rgba(0, 0, 0, .44)';
-            latestTab.classList.add('active-tab');
+        // Show the selected section and update styles
+        if (sections[tabName] && tabs[tabName]) {
+            sections[tabName].style.display = 'block';
+            tabs[tabName].style.fontWeight = 'bold';
+            tabs[tabName].style.borderBottom = '2px solid rgba(0, 0, 0, .44)';
+            tabs[tabName].classList.add('active-tab');
         }
     }
 
@@ -170,4 +170,3 @@ title: Home
         toggleTab('featured');
     };
 </script>
-
