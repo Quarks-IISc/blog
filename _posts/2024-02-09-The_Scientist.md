@@ -5,7 +5,7 @@ title: The Scientist
 #tags: [Example_Tag1, ExampleTag2]
 author: Subhanan Banerjee
 categories: poems
-image: "/assets/images/Poems/BleedingsOfTameBeast.jpeg"
+image: "/assets/images/Poems/The_Scientist.jpg"
 excerpt: 'An invention born from love and courage can resurrect even the faintest hearts.'
 featured: true
 latest: true
