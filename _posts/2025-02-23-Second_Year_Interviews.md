@@ -9,7 +9,7 @@ image: "/assets/images/Stories/Second_Years.jpeg"
 excerpt: '"The second-year undergrad stands at the crossroads of idealism and pragmatism, still holding onto a thread of youthful passion."'
 featured: true
 latest: true
-all: false
+all: true
 ---
 
 ## The Mind of a Second-Year Undergraduate  

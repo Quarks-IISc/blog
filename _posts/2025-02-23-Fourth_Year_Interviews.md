@@ -9,7 +9,7 @@ image: "/assets/images/Poems/BleedingsOfTameBeast.jpeg"
 excerpt: 'The final year at IISc’s UG program is a time of crucial decisions, deep reflection, and a mix of pride, gratitude, and uncertainty about the future, as captured through interviews with nine diverse students.'
 featured: true
 latest: true
-all: false
+all: true
 ---
 
 # 4th Years in Conversation
