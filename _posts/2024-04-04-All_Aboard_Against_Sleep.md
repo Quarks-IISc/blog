@@ -28,7 +28,7 @@ a rainbow — dainty yet resplendent —<br>
 paints itself<br>  
 into the restive canvas of the mind.<br>  
 
----
+<br><br>
 
 My rainbow transcends the darkness —<br>  
 And soars high —<br>  
@@ -41,7 +41,7 @@ And in its own reflective biome,<br>
 the creation defines itself —<br>  
 just as it defines me.<br>  
 
----
+<br><br>
 
 Where does the hue come from?<br>  
 Is it the intoxication<br>  
