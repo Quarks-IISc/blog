@@ -5,7 +5,7 @@ title: Quarks has seen it all!
 #tags: [Example_Tag1, ExampleTag2]
 author: Mihir Kapse
 categories: stories
-image: "/assets/images/Stories/Contentment.jpeg"
+image: "/assets/images/Stories/favicon.ico"
 excerpt: 'Quarks, the IISc UG magazine, stands as a collective voice of undergraduates, capturing their science, stories, struggles, and creativity across generations.'
 featured: true
 latest: true
