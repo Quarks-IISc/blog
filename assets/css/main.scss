@@ -72,4 +72,175 @@
     margin: 0 auto;
     opacity: 0; /* Start hidden for animation */
     animation: fadeInSlideUp 1s ease-out 0.5s forwards; /* Animate this text */
+
 }
+
+/* --- Posts Carousel --- */
+
+.posts-carousel-section {
+    margin-top: 3rem;
+}
+.carousel-wrapper {
+    position: relative;
+    padding: 0 40px; /* Add some padding so arrows don't overlap content too much */
+}
+.posts-carousel {
+    overflow: hidden;
+}
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+.carousel-item {
+    flex-shrink: 0;
+    width: calc(100% / 3); /* Default to 3 items */
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+@media (max-width: 992px) {
+    .carousel-item {
+        width: 50%; /* 2 items */
+    }
+}
+@media (max-width: 768px) {
+    .carousel-item {
+        width: 100%; /* 1 item */
+    }
+}
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: white;
+    border: 1px solid #eee;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    z-index: 10;
+    font-size: 24px;
+    line-height: 48px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    transition: all 0.2s ease;
+}
+.carousel-arrow:hover {
+    background-color: #f8f8f8;
+    transform: translateY(-50%) scale(1.05);
+}
+.carousel-arrow.prev {
+    left: 0px;
+}
+.carousel-arrow.next {
+    right: 0px;
+}
+
+
+/* --- Card Widget Improvements --- */
+.card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    border-radius: 8px; /* Subtle rounded corners */
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Lift effect */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15); /* Stronger shadow */
+}
+
+.card .card-body h2.card-title a {
+    font-size: 1.3rem; /* Slightly larger title */
+    line-height: 1.4;
+}
+
+.card .card-body h4.card-text {
+    font-size: 0.95rem; /* Slightly smaller excerpt */
+    color: #666;
+}
+
+
+.card .maxthumb img {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.card .card-footer {
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+/* --- Edition Card Improvements (Revised) --- */
+.edition-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Ensure wider cards */
+    gap: 20px; /* Slightly reduced gap */
+    padding: 30px 0;
+}
+
+@media (max-width: 992px) {
+    .edition-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjust for tablet */
+        gap: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .edition-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adjust for mobile */
+        gap: 15px;
+    }
+}
+
+.edition-card {
+    background-color: #ffffff; /* Explicitly white */
+    border: 1px solid #e0e0e0; /* Subtle border */
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15); /* Stronger elegant shadow */
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    text-align: center;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 180px; /* Decreased height */
+    min-width: 300px; /* Explicit minimum width to prevent collapsing */
+}
+
+.edition-card:hover {
+    transform: translateY(-5px); /* Gentle lift */
+    box-shadow: 0 15px 35px rgba(0,0,0,0.25); /* Even stronger shadow on hover */
+}
+
+.edition-card a {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit; /* Inherit color, then define for spans */
+}
+
+.edition-card .edition-title {
+    font-size: 1.5rem; /* Larger title */
+    font-weight: 700;
+    color: #333; /* Dark text for readability */
+    margin-bottom: 5px;
+    line-height: 1.3;
+}
+
+.edition-card .edition-description {
+    font-size: 0.95rem;
+    color: #6c757d;
+    font-weight: 400;
+}
+
+.edition-card a:hover .edition-title {
+    color: #007bff; /* Standard link hover color */
+}
+.edition-card a:hover .edition-description {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+
+
+

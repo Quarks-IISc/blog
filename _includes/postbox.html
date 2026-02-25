@@ -1,8 +1,3 @@
-<!-- begin post -->
-{% assign authors = post.authors | default: post.author %}
-{% assign authors_list = authors | split: ',' %}
-
-<div class="col-lg-4 col-md-6 mb-30px card-group">
     <div class="card h-100">
         <div class="maxthumb">
             <a href="{{ site.baseurl }}{{ post.url }}">
@@ -107,5 +102,3 @@
             </div>
         </div>
     </div>
-</div>
-<!-- end post -->
