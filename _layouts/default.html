@@ -321,18 +321,37 @@ End Navigation -->
 
       <!-- Footer -->
 
-      <footer class="footer">
+      <footer class="footer mt-5 py-5">
         <div class="container">
           <div class="row">
-            <div class="col-md-6 col-sm-6 text-center text-lg-left">
-              IISc Quarks - {{ site.time | date: "%Y" }}
+            <!-- Brand Column -->
+            <div class="col-md-4 col-sm-12 mb-4 mb-md-0 text-center text-md-left">
+              <img src="{{ site.baseurl }}/{{ site.logo }}" alt="{{ site.name }}" class="footer-logo mb-3" style="max-height: 40px;">
+              <p class="mb-1">&copy; {{ site.time | date: "%Y" }} IISc Quarks.</p>
+              <p class="small">Picture Courtesy: Hridesh Gupta</p>
             </div>
-            <div class="col-md-6 col-sm-6 text-center text-lg-right">
-              <!-- href="https://www.wowthemes.net/mediumish-free-jekyll-template/" -->
-              <a target="_blank">Mediumish Jekyll Theme</a> by WowThemes.net
+            
+            <!-- All Posts Column -->
+            <div class="col-md-3 col-sm-4 mb-4 mb-md-0 text-center text-md-left">
+              <h5 class="font-weight-bold mb-3" style="font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px;">All Posts</h5>
+              <ul class="list-unstyled">
+                  <!-- Empty placeholder for future links -->
+              </ul>
             </div>
-            <div class="col-md-6 col-sm-6 text-center text-lg-right">
-              <a target="_blank">Picture Courtesy: Hridesh Gupta </a>
+            
+            <!-- Connect with Us Column -->
+            <div class="col-md-3 col-sm-4 mb-4 mb-md-0 text-center text-md-left">
+              <h5 class="font-weight-bold mb-3" style="font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px;">Connect with Us</h5>
+              <ul class="list-unstyled">
+                  <!-- Empty placeholder for future links -->
+              </ul>
+            </div>
+
+            <!-- Credits Column -->
+            <div class="col-md-2 col-sm-4 text-center text-md-right">
+              <p class="small">
+                Theme inspired by <a target="_blank" href="https://www.wowthemes.net/mediumish-free-jekyll-template/">Mediumish</a>
+              </p>
             </div>
           </div>
         </div>
