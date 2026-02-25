@@ -18,8 +18,8 @@ title: Home
     </p>
 </div>
 <!-- Featured Posts -->
-<section class="featured-posts">
-    <div class="section-title">
+<section class="featured-posts" id="featured-posts-section">
+    <div class="section-title section-hero-header">
         <h2><span>FEATURED</span></h2>
     </div>
     <div class="row">
@@ -29,54 +29,5 @@ title: Home
             {% endif %}
         {% endfor %}
     </div>
-</section>
 
 {% endif %}
-
-
-
-
-<script>
-    function toggleTab(tabName) {
-        // Get all sections and tabs
-        const sections = {
-            featured: document.getElementById('featured-section'),
-            latest: document.getElementById('latest-section'),
-            previous: document.getElementById('previous-section')
-        };
-
-        const tabs = {
-            featured: document.getElementById('featured-tab'),
-            latest: document.getElementById('latest-tab'),
-            previous: document.getElementById('previous-tab')
-        };
-
-        // Check if all elements exist
-        if (!sections.featured || !sections.latest || !sections.previous ||
-            !tabs.featured || !tabs.latest || !tabs.previous) {
-            console.error('One or more required elements not found!');
-            return;
-        }
-
-        // Hide all sections and reset styles
-        Object.values(sections).forEach(section => section.style.display = 'none');
-        Object.values(tabs).forEach(tab => {
-            tab.style.fontWeight = 'normal';
-            tab.style.borderBottom = 'none';
-            tab.classList.remove('active-tab');
-        });
-
-        // Show the selected section and update styles
-        if (sections[tabName] && tabs[tabName]) {
-            sections[tabName].style.display = 'block';
-            tabs[tabName].style.fontWeight = 'bold';
-            tabs[tabName].style.borderBottom = '2px solid rgba(0, 0, 0, .44)';
-            tabs[tabName].classList.add('active-tab');
-        }
-    }
-
-    // Initialize by showing the featured section on page load
-    window.onload = function() {
-        toggleTab('featured');
-    };
-</script>
