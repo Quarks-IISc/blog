@@ -16,6 +16,9 @@ title: Home
     <p class="powerful-intro-text">
         Quarks is the undergraduate magazine of IISc, offering a glimpse into our vibrant student community.
     </p>
+    <div class="mt-4">
+        <a href="#recent-posts-section" class="magazine-link">Check out Latest posts <span class="arrow">&xrarr;</span></a>
+    </div>
 </div>
 <!-- Featured Posts -->
 <section class="featured-posts" id="featured-posts-section">
@@ -29,5 +32,22 @@ title: Home
             {% endif %}
         {% endfor %}
     </div>
+</section>
+
+<!-- Latest Posts -->
+<section class="recent-posts mt-5" id="recent-posts-section">
+    <div class="section-title section-hero-header">
+        <h2><span>LATEST READS</span></h2>
+    </div>
+    <div class="row listrecent">
+        {% for post in site.posts limit:6 %}
+            {% if post.featured != true %}
+                <div class="col-lg-4 col-md-6 mb-30px">
+                    {% include postbox.html %}
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+</section>
 
 {% endif %}

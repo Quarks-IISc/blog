@@ -126,3 +126,58 @@
 .dark-mode-toggle i {
     font-size: 0.9rem;
 }
+
+.magazine-link {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem; /* Slightly larger */
+    font-weight: 500;
+    color: #000;
+    text-decoration: none;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    padding-bottom: 5px;
+    letter-spacing: 0.5px;
+    transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
+}
+
+.magazine-link .arrow {
+    display: inline-block;
+    margin-left: 12px;
+    font-size: 1.8rem;
+    line-height: 1;
+    transition: transform 0.4s cubic-bezier(0.2, 0, 0, 1);
+}
+
+.magazine-link:hover {
+    color: #000;
+    transform: scale(1.02);
+    text-decoration: none;
+}
+
+.magazine-link:hover .arrow {
+    transform: translateX(12px);
+}
+
+.magazine-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1.5px;
+    bottom: 0;
+    left: 0;
+    background-color: currentColor;
+    transition: width 0.4s cubic-bezier(0.2, 0, 0, 1);
+}
+
+.magazine-link:hover::after {
+    width: 100%;
+}
+
+/* Dark Mode Support for Magazine Link */
+body.dark-mode .magazine-link {
+    color: #fff;
+}
+body.dark-mode .magazine-link:hover {
+    color: #fff;
+}
