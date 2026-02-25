@@ -6,7 +6,7 @@
 .post-excerpt p { display:inline; }
 
 // Import partials from sass_dir (defaults to _sass)
-@import "syntax", "starsnonscss";
+@import "syntax", "starsnonscss", "darkmode";
 
 /* --- Hero Header --- */
 @keyframes fastFadeIn {
@@ -24,7 +24,7 @@
     left: 50%;
     transform: translateX(-50%);
     /* --- Styling & Centering --- */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('{{ site.baseurl }}/assets/images/header_bg.png');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('../images/header_bg.png');
     background-size: cover;
     background-position: center;
     min-height: 50vh; /* Original hero height */
@@ -55,24 +55,6 @@
     margin: 0 auto;
     opacity: 0; /* Start hidden for animation */
     animation: fadeInSlideUp 1s ease-out 0.5s forwards; /* Animate this text */
-}
-
-/* --- Scroll Down Arrow Styling (currently unused but kept for reference if needed again) --- */
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
-    40% { transform: translateY(-10px) translateX(-50%); }
-    60% { transform: translateY(-5px) translateX(-50%); }
-}
-.scroll-down-arrow {
-    position: absolute;
-    bottom: 20px; /* Consistent bottom positioning */
-    left: 50%;
-    transform: translateX(-50%);
-    color: #fff; /* White color for visibility on hero background */
-    font-size: 2.5rem;
-    cursor: pointer;
-    animation: bounce 2s infinite;
-    z-index: 10;
 }
 
 /* --- Card Widget Improvements (General) --- */
@@ -115,4 +97,32 @@
 .section-hero-header h2, .section-hero-header h1 {
     font-family: 'Playfair Display', serif; color: #343a40; font-size: 3.5rem;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.2); text-align: center; line-height: 1.2; margin: 0;
+}
+
+/* Navbar Search & Toggle Alignment */
+.navbar-nav {
+    display: flex;
+    align-items: center;
+}
+.bd-search {
+    margin-bottom: 0;
+}
+.dark-mode-toggle {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    padding: 0 !important;
+    margin-left: 10px;
+    transition: all 0.2s ease;
+}
+.dark-mode-toggle:hover {
+    background-color: #f8f9fa;
+    border-color: #ccc;
+}
+.dark-mode-toggle i {
+    font-size: 0.9rem;
 }
