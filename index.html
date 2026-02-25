@@ -8,14 +8,15 @@ title: Home
 </head>
 
 {% if page.url == "/" %}
-<div class="mainheading text-center">
-    <!-- WHY WHY WHY, JUST WHY ARENT WE HAVING THE TITLE AND INTRO PROPERLY, it was so much better before, sigh - the developer -->
-    <!-- <h1>About Us</h1> -->
-    <!-- <p class="lead">{{ site.description }}</p> -->
+<div class="hero-header">
+    <img src="{{ site.baseurl }}/assets/images/quarks_black.png" alt="Quarks Logo" class="hero-logo">
 </div>
-<p class="intro-text">
-    Quarks is the undergraduate magazine of IISc, offering a glimpse into our vibrant student community.
-</p>
+
+<div class="intro-section">
+    <p class="powerful-intro-text">
+        Quarks is the undergraduate magazine of IISc, offering a glimpse into our vibrant student community.
+    </p>
+</div>
 <!-- Featured and Latest Toggle -->
 <section class="featured-posts">
     <div class="section-title">

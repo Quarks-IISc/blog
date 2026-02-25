@@ -13,3 +13,63 @@
 	"syntax",
     "starsnonscss"
 ;
+
+/* --- Hero Header --- */
+@keyframes fastFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-header {
+    /* --- Full-width breakout --- */
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    /* --- Styling & Centering --- */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('{{ site.baseurl }}/assets/images/header_bg.png');
+    background-size: cover;
+    background-position: center;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+.hero-header .hero-logo {
+    filter: invert(1); /* Turns the black logo to white */
+    max-width: 500px;
+    width: 80%;
+    opacity: 0; /* Start hidden for animation */
+    animation: fastFadeIn 0.8s ease-out 0.2s forwards; /* Stable fade-in with 0.2s delay */
+}
+
+.intro-section {
+    padding: 2rem 2rem 4rem 2rem; /* Reduced top padding */
+    text-align: center;
+}
+
+.intro-section .powerful-intro-text {
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: #343a40;
+    line-height: 1.4;
+    max-width: 1100px; /* Increased width */
+    margin: 0 auto;
+    opacity: 0; /* Start hidden for animation */
+    animation: fadeInSlideUp 1s ease-out 0.5s forwards; /* Animate this text */
+}
