@@ -26,10 +26,9 @@ title: Home
         <h2><span>FEATURED</span></h2>
     </div>
     <div class="row">
-        {% for post in site.posts %}
-            {% if post.featured == true %}
-                {% include featuredbox.html %}
-            {% endif %}
+        {% assign featured_posts = site.posts | where: "featured", true %}
+        {% for post in featured_posts limit:8 %}
+            {% include featuredbox.html %}
         {% endfor %}
     </div>
 </section>
