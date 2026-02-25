@@ -1,13 +1,13 @@
 ---
 layout: default
-title: Pictures
+title: Gallery
 ---
 
 <!-- Posts Index -->
  <!--
 <section class="recent-posts">
     <div class="section-title">
-        <h2><span>Pictures</span></h2>
+        <h2><span>Gallery</span></h2>
     </div>
 
     <div class="row listrecent">
@@ -36,32 +36,17 @@ title: Pictures
 -->
 
 <section class="recent-posts">
-    <div class="section-title">
-        <h2><span>Pictures</span></h2>
+    <div class="section-title section-hero-header">
+        <h2><span>Gallery</span></h2>
     </div>
 
     <!-- Flex container for all posts -->
-    <div class="pictures-container">
+    <div class="row listrecent">
         {% for post in site.posts %}
             {% if post.categories contains "pictures" %}
                 <!-- Individual post -->
-                <div class="picture-inner-rectangle">
-                    <!-- Display the post image -->
-                    <img src="{{ post.image }}" 
-                         alt="{{ post.title }}" 
-                         class="pictures-image">
-                    <!-- Display the post title -->
-                    <p class="pictures-name">
-                        <strong>{{ post.title }}</strong>
-                    </p>
-                    <!-- Display the Author Name -->
-                    <p class="pictures-author">
-                        <strong>{{ post.author }}</strong>
-                    </p>
-                    <!-- Display the post description -->
-                    <p class="pictures-desc">
-                        <strong>{{ post.description }}</strong>
-                    </p>
+                <div class="col-lg-4 col-md-6 mb-30px">
+                    {% include picturebox.html %}
                 </div>
             {% endif %}
         {% endfor %}

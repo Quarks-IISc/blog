@@ -28,12 +28,14 @@ post_class: post-template
                         {% if author.avatar %}
                         <img class="author-thumb" src="{{site.baseurl}}/{{ author.avatar }}" alt="{{ author.display_name }}">
                         {% else %}
-                        <img class="author-thumb" src="https://www.gravatar.com/avatar/{{ author.gravatar }}?s=250&d=mm&r=x" alt="{{ author.display_name }}">
+                        <img class="author-thumb" src="https://www.gravatar.com/avatar/{{ author.gravatar | default: 'unknown' }}?s=250&d=mm&r=x" alt="{{ author.display_name | default: page.author }}">
                         {% endif %}
                     </div>
                     <div class="col-xs-12 col-md-9 col-lg-10 text-center text-md-left">
-                        <a target="_blank" class="link-dark" href="{{ author.web }}">{{ author.display_name }}</a><a target="_blank" href="{{ author.twitter }}" class="btn follow">Follow</a>
-                        <span class="author-description">{{ author.description }}</span>
+                        <span class="link-dark font-weight-bold" style="font-size: 1.2rem;">{{ author.display_name | default: page.author }}</span>
+                        {% if author.twitter %}<a target="_blank" href="{{ author.twitter }}" class="btn follow">Follow</a>{% endif %}
+                        <br>
+                        <span class="author-description">{{ author.description | default: "Contributor to Quarks" }}</span>
                     </div>
                 </div>
                 {% endif %}
@@ -51,11 +53,19 @@ post_class: post-template
 
             <!-- Post Featured Image -->
             {% if page.image %}
+            
+            {% assign img_url = page.image %}
+            {% unless img_url contains "://" %}
+                {% unless img_url contains site.baseurl %}
+                    {% assign img_url = img_url | prepend: site.baseurl %}
+                {% endunless %}
+            {% endunless %}
+            {% assign img_url = img_url | replace: '//', '/' | replace: ':/', '://' %}
 
             {% if site.lazyimages == "enabled" %}
-            <img class="featured-image img-fluid lazyimg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAACCAQAAAA3fa6RAAAADklEQVR42mNkAANGCAUAACMAA2w/AMgAAAAASUVORK5CYII=" data-src="{% if page.image contains "://" %}{{ page.image }}{% else %}{{ site.baseurl }}/{{ page.image }}{% endif %}" alt="{{ page.title }}">
+            <img class="featured-image img-fluid lazyimg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAACCAQAAAA3fa6RAAAADklEQVR42mNkAANGCAUAACMAA2w/AMgAAAAASUVORK5CYII=" data-src="{{ img_url }}" alt="{{ page.title }}" style="width: 100%; border-radius: 8px; margin-bottom: 2rem;">
             {% else %}
-            <img class="featured-image img-fluid" src="{% if page.image contains "://" %}{{ page.image }}{% else %}{{ site.baseurl }}/{{ page.image }}{% endif %}" alt="{{ page.title }}">
+            <img class="featured-image img-fluid" src="{{ img_url }}" alt="{{ page.title }}" style="width: 100%; border-radius: 8px; margin-bottom: 2rem;">
             {% endif %}
 
             {% endif %}

@@ -7,7 +7,7 @@ title: Stories
 ================================================== -->
 <section class="recent-posts">
 
-  <div class="section-title">
+  <div class="section-title section-hero-header">
 
       <h2><span>All Stories</span></h2>
 
@@ -19,7 +19,9 @@ title: Stories
 
       {% if post.categories contains "stories" %}
 
-          {% include postbox.html %}
+          <div class="col-lg-4 col-md-6 mb-30px">
+              {% include postbox.html %}
+          </div>
 
       {% endif %}
 
