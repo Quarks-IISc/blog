@@ -960,10 +960,6 @@ iframe {
         display: block;
     }
 
-    .navbar {
-        flex-direction: column;
-    }
-
     .navbar-nav .nav-item {
         margin-left: 0;
     }
