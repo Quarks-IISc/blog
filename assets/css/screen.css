@@ -1394,7 +1394,7 @@ iframe {
 }
 
 .wrapthumbnail img:hover {
-    transform: scale(1.05); /* Slight zoom on hover */
+    transform: scale(1.1); /* Slight zoom on hover */
     filter: brightness(1.2); /* Brighten the image */
 }
 
@@ -1450,7 +1450,7 @@ iframe {
 }
 
 .maxthumb img:hover {
-    transform: scale(1.05); /* Slight zoom */
+    transform: scale(1.1); /* Slight zoom */
     filter: brightness(1.2); /* Brighten image */
 }
 

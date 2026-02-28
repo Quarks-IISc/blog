@@ -52,14 +52,27 @@ body.dark-mode .post-top-meta .author-description {
 body.dark-mode .link-dark {
     color: #90caf9 !important;
 }
-body.dark-mode .post-date, body.dark-mode span.post-read, body.dark-mode .author-meta {
-    color: #bdbdbd;
+body.dark-mode .post-date, body.dark-mode span.post-read, body.dark-mode .author-meta, body.dark-mode .text-muted {
+    color: #bdbdbd !important;
 }
 
 /* Navbar */
 body.dark-mode .navbar {
     background-color: #1e1e1e !important;
     border-bottom: 1px solid #333;
+}
+body.dark-mode .navbar-collapse {
+    background-color: #1e1e1e !important;
+}
+body.dark-mode .navbar-toggler-icon {
+    background-color: #e0e0e0;
+}
+body.dark-mode .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+    background-color: transparent !important;
+}
+body.dark-mode .navbar-toggler-icon::before,
+body.dark-mode .navbar-toggler-icon::after {
+    background-color: #e0e0e0;
 }
 body.dark-mode .navbar-brand {
     color: #e0e0e0;
