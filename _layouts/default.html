@@ -13,6 +13,10 @@
 
     {% seo %}
 
+    <!-- Resource Hints for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
@@ -23,10 +27,29 @@
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
     <link href="{{ site.baseurl }}/assets/css/screen.css" rel="stylesheet" />
 
     <link href="{{ site.baseurl }}/assets/css/main.css" rel="stylesheet" />
+
+    <!-- Instant Dark Mode Check (Prevents Flash of White) -->
+    <script>
+      (function () {
+        var currentTheme = localStorage.getItem("theme");
+        if (
+          currentTheme === "dark-mode" ||
+          (!currentTheme &&
+            window.matchMedia &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches)
+        ) {
+          document.documentElement.classList.add("dark-mode");
+        }
+      })();
+    </script>
 
     <script src="{{ site.baseurl }}/assets/js/jquery.min.js"></script>
     <script src="{{ site.baseurl }}/assets/js/darkmode.js"></script>
@@ -156,7 +179,11 @@
     >
       <div class="container pr-0">
         <!-- Begin Logo -->
-        <a class="navbar-brand" href="{{ site.baseurl }}/" title="Go to Homepage">
+        <a
+          class="navbar-brand"
+          href="{{ site.baseurl }}/"
+          title="Go to Homepage"
+        >
           <img src="{{ site.baseurl }}/{{ site.logo }}" alt="{{ site.name }}" />
         </a>
         <!-- End Logo -->
@@ -321,33 +348,57 @@ End Navigation -->
         <div class="container">
           <div class="row">
             <!-- Brand Column -->
-            <div class="col-md-4 col-sm-12 mb-4 mb-md-0 text-center text-md-left">
-              <img src="{{ site.baseurl }}/{{ site.logo }}" alt="{{ site.name }}" class="footer-logo mb-3" style="max-height: 40px;">
-              <p class="mb-1">&copy; {{ site.time | date: "%Y" }} IISc Quarks.</p>
+            <div
+              class="col-md-4 col-sm-12 mb-4 mb-md-0 text-center text-md-left"
+            >
+              <img
+                src="{{ site.baseurl }}/{{ site.logo }}"
+                alt="{{ site.name }}"
+                class="footer-logo mb-3"
+                style="max-height: 40px"
+              />
+              <p class="mb-1">
+                &copy; {{ site.time | date: "%Y" }} IISc Quarks.
+              </p>
               <p class="small">Picture Courtesy: Hridesh Gupta</p>
             </div>
-            
+
             <!-- All Posts Column -->
-            <div class="col-md-3 col-sm-4 mb-4 mb-md-0 text-center text-md-left">
-              <h5 class="font-weight-bold mb-3" style="font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px;">All Posts</h5>
+            <div
+              class="col-md-3 col-sm-4 mb-4 mb-md-0 text-center text-md-left"
+            >
+              <h5
+                class="font-weight-bold mb-3"
+                style="
+                  font-size: 0.95rem;
+                  text-transform: uppercase;
+                  letter-spacing: 1px;
+                "
+              >
+                All Posts
+              </h5>
               <ul class="list-unstyled">
-                  <!-- Empty placeholder for future links -->
-              </ul>
-            </div>
-            
-            <!-- Connect with Us Column -->
-            <div class="col-md-3 col-sm-4 mb-4 mb-md-0 text-center text-md-left">
-              <h5 class="font-weight-bold mb-3" style="font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px;">Connect with Us</h5>
-              <ul class="list-unstyled">
-                  <!-- Empty placeholder for future links -->
+                <!-- Empty placeholder for future links -->
               </ul>
             </div>
 
-            <!-- Credits Column -->
-            <div class="col-md-2 col-sm-4 text-center text-md-right">
-              <p class="small">
-                Theme inspired by <a target="_blank" href="https://www.wowthemes.net/mediumish-free-jekyll-template/">Mediumish</a>
-              </p>
+            <!-- Connect with Us Column -->
+            <div
+              class="col-md-3 col-sm-4 mb-4 mb-md-0 text-center text-md-left"
+            >
+              <h5
+                class="font-weight-bold mb-3"
+                style="
+                  font-size: 0.95rem;
+                  text-transform: uppercase;
+                  letter-spacing: 1px;
+                "
+              >
+                Connect with Us
+              </h5>
+              <ul class="list-unstyled">
+                <!-- Empty placeholder for future links -->
+              </ul>
             </div>
           </div>
         </div>
@@ -386,5 +437,25 @@ End Navigation -->
       src="//{{site.disqus}}.disqus.com/count.js"
     ></script>
     {% endif %}
+
+    <!-- Scroll Fade Up Logic -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+              }
+            });
+          },
+          { threshold: 0.1 },
+        );
+
+        document.querySelectorAll(".fade-up-element").forEach((el) => {
+          observer.observe(el);
+        });
+      });
+    </script>
   </body>
 </html>

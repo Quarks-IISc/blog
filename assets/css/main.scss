@@ -140,6 +140,59 @@
     transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
 }
 
+/* --- Typography Pairing --- */
+body {
+    font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+h1, h2, h3, h4, h5, h6, .navbar-brand {
+    font-family: 'Playfair Display', serif !important;
+}
+
+/* --- Micro-Interactions: Page Transition --- */
+.site-content, .intro-section, .jumbotron {
+    animation: pageFadeIn 0.6s ease-out forwards;
+}
+
+@keyframes pageFadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* --- Micro-Interactions: Scroll Fade-Up --- */
+.fade-up-element {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-up-element.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- Masonry Grid for Gallery --- */
+.masonry-grid {
+    column-count: 3;
+    column-gap: 30px;
+}
+
+@media (max-width: 991px) {
+    .masonry-grid { column-count: 2; }
+}
+
+@media (max-width: 767px) {
+    .masonry-grid { column-count: 1; }
+}
+
+.masonry-item {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    display: inline-block;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+
 .magazine-link .arrow {
     display: inline-block;
     margin-left: 12px;
@@ -174,10 +227,10 @@
 }
 
 /* Dark Mode Support for Magazine Link */
-body.dark-mode .magazine-link {
+.dark-mode .magazine-link {
     color: #fff;
 }
-body.dark-mode .magazine-link:hover {
+.dark-mode .magazine-link:hover {
     color: #fff;
 }
 
@@ -200,7 +253,7 @@ body.dark-mode .magazine-link:hover {
 }
 
 /* Dark Mode adjustment for shadow */
-body.dark-mode .team-card:hover {
+.dark-mode .team-card:hover {
     box-shadow: 0 10px 25px rgba(0,0,0,0.5) !important;
 }
 
@@ -222,10 +275,31 @@ body.dark-mode .team-card:hover {
     transform: scale(1.1);
 }
 
-body.dark-mode .picture-card:hover {
+.dark-mode .picture-card:hover {
     box-shadow: 0 10px 25px rgba(0,0,0,0.5) !important;
 }
 
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+    .section-hero-header {
+        background-attachment: scroll; /* Fixed is buggy on mobile */
+        min-height: 120px;
+        padding: 1rem;
+    }
+    .section-hero-header h2, .section-hero-header h1 {
+        font-size: 2.2rem;
+    }
+    .intro-section .powerful-intro-text {
+        font-size: 1.6rem;
+    }
+    .carousel-arrow.left { left: 5px; }
+    .carousel-arrow.right { right: 5px; }
+    
+    .hero-header {
+        min-height: 40vh;
+    }
+}
 
 #latest-posts-carousel::-webkit-scrollbar { display: none; }
 
@@ -234,14 +308,13 @@ body.dark-mode .picture-card:hover {
 
 /* Carousel Arrow Styles */
 .carousel-arrow {
-position: absolute; top: 50%; transform: translateY(-50%); width: 40px; height: 40px;
-background: #fff; border: 1px solid #ddd; border-radius: 50%; display: flex; align-items: center; justify-content: center;
-cursor: pointer; z-index: 10; box-shadow: 0 2px 10px rgba(0,0,0,0.1); color: #333; transition: all 0.3s ease; outline: none;
-}
-.carousel-arrow:hover { background: #333; color: #fff; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+    position: absolute; top: calc(50% - 10px); transform: translateY(-50%); width: 40px; height: 40px;
+    background: #fff; border: 1px solid #ddd; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    cursor: pointer; z-index: 10; box-shadow: 0 2px 10px rgba(0,0,0,0.1); color: #333; transition: all 0.3s ease; outline: none;
+}.carousel-arrow:hover { background: #333; color: #fff; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
 .carousel-arrow.left { left: -10px; }
 .carousel-arrow.right { right: -10px; }
 
 /* Dark Mode overrides */
-body.dark-mode .carousel-arrow { background: #222; border-color: #444; color: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.5); }
-body.dark-mode .carousel-arrow:hover { background: #fff; color: #222; }
+.dark-mode .carousel-arrow { background: #222; border-color: #444; color: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.5); }
+.dark-mode .carousel-arrow:hover { background: #fff; color: #222; }
