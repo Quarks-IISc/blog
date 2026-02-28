@@ -3,7 +3,7 @@ layout: post
 title: "Redemption"
 author: "Rohith R"
 categories: poems
-image: "/assets/images/quarks_black.png"
+image: "/assets/images/Stories/Nature.jpeg"
 excerpt: "A reflection on battling an inner monster and finally finding freedom and love."
 ---
 

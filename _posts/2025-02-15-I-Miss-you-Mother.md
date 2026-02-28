@@ -3,7 +3,7 @@ layout: post
 title: "I Miss you Mother"
 author: "Nikunj Goel"
 categories: poems
-image: "/assets/images/quarks_black.png"
+image: "/assets/images/Stories/Nature.jpeg"
 excerpt: "An expression of loss and love, remembering a mother through the twinkling stars."
 ---
 

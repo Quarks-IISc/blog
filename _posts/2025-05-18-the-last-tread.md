@@ -3,7 +3,7 @@ layout: post
 title: "The last tread"
 author: "Rekha Nawal Jyoti"
 categories: poems
-image: "/assets/images/quarks_black.png"
+image: "/assets/images/Stories/Nature.jpeg"
 excerpt: "A thoughtful reflection on time, missed opportunities, and the steps we take in life."
 ---
 

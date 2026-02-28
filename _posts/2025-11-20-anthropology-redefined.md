@@ -3,7 +3,7 @@ layout: post
 title: "Anthropology Redefined"
 author: "Sushant Bangru"
 categories: stories
-image: "/assets/images/quarks_black.png"
+image: "/assets/images/Stories/Nature.jpeg"
 excerpt: "Exploring the paradigm shift towards deep ecology, moving from an anthropocentric view to recognizing our place within the web of life."
 ---
 

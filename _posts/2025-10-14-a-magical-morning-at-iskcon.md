@@ -3,7 +3,7 @@ layout: post
 title: "A Magical Morning at ISKCON Bengaluru"
 author: "Sukhbir Singh"
 categories: stories
-image: "/assets/images/quarks_black.png"
+image: "/assets/images/Stories/Nature.jpeg"
 excerpt: "A spontaneous 4 AM cycling trip to the ISKCON temple that turned into an unforgettable experience blending spirituality, art, and culture."
 ---
 
