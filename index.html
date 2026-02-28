@@ -25,7 +25,7 @@ title: Home
     <div class="section-title section-hero-header">
         <h2><span>FEATURED</span></h2>
     </div>
-    <div class="row">
+    <div class="row fade-up-element">
         {% assign featured_posts = site.posts | where: "featured", true %}
         {% for post in featured_posts limit:8 %}
             {% include featuredbox.html %}
@@ -39,7 +39,7 @@ title: Home
         <h2><span>LATEST READS</span></h2>
     </div>
     
-    <div class="carousel-container position-relative px-4">
+    <div class="carousel-container position-relative px-4 fade-up-element">
         <!-- Left Arrow -->
         <button class="carousel-arrow left" onclick="scrollCarousel('left')" aria-label="Scroll Left">
             <i class="fas fa-chevron-left"></i>
