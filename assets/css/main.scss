@@ -182,6 +182,30 @@ body.dark-mode .magazine-link:hover {
     color: #fff;
 }
 
+/* --- Team Card Hover Effects --- */
+.team-card {
+    cursor: pointer;
+}
+
+.team-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15) !important;
+}
+
+.team-card img {
+    transition: transform 0.5s cubic-bezier(0.2, 0, 0, 1);
+}
+
+.team-card:hover img {
+    transform: scale(1.1);
+}
+
+/* Dark Mode adjustment for shadow */
+body.dark-mode .team-card:hover {
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5) !important;
+}
+
+
 #latest-posts-carousel::-webkit-scrollbar { display: none; }
 
 /* Small Post Card Size */
