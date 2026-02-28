@@ -280,6 +280,27 @@ body.dark-mode .picture-card:hover {
 }
 
 
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+    .section-hero-header {
+        background-attachment: scroll; /* Fixed is buggy on mobile */
+        min-height: 120px;
+        padding: 1rem;
+    }
+    .section-hero-header h2, .section-hero-header h1 {
+        font-size: 2.2rem;
+    }
+    .intro-section .powerful-intro-text {
+        font-size: 1.6rem;
+    }
+    .carousel-arrow.left { left: 5px; }
+    .carousel-arrow.right { right: 5px; }
+    
+    .hero-header {
+        min-height: 40vh;
+    }
+}
+
 #latest-posts-carousel::-webkit-scrollbar { display: none; }
 
 /* Small Post Card Size */
