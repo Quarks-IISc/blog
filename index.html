@@ -48,21 +48,25 @@ title: Home
         <div class="latest-carousel" id="latest-posts-carousel" style="display: flex; overflow-x: auto; gap: 20px; padding-bottom: 20px; scrollbar-width: none;">
 
             <div id="carousel-track" style="display: flex; gap: 20px;">
-                {% for post in site.posts limit:10 %}
-                    {% if post.featured != true %}
-                        <div class="carousel-item-custom mb-30px">
-                            {% assign is_picture = false %}
-                            {% if post.categories contains "pictures" or post.categories contains "Pictures" %}
-                                {% assign is_picture = true %}
-                            {% endif %}
-                            
-                            {% if is_picture %}
-                                {% include picturebox.html disable_lazy=true %}
-                            {% else %}
-                                {% include postbox.html disable_lazy=true %}
-                            {% endif %}
-                        </div>
-                    {% endif %}
+                {% assign recent_stories = site.categories.stories | where_exp: "item", "item.featured != true" | limit: 5 %}
+                {% assign recent_poems = site.categories.poems | where_exp: "item", "item.featured != true" | limit: 5 %}
+                {% assign recent_pictures = site.categories.pictures | where_exp: "item", "item.featured != true" | limit: 5 %}
+                
+                {% assign all_recent = recent_stories | concat: recent_poems | concat: recent_pictures | sort: "date" %}
+                
+                {% for post in all_recent %}
+                    <div class="carousel-item-custom mb-30px">
+                        {% assign is_picture = false %}
+                        {% if post.categories contains "pictures" or post.categories contains "Pictures" %}
+                            {% assign is_picture = true %}
+                        {% endif %}
+                        
+                        {% if is_picture %}
+                            {% include picturebox.html disable_lazy=true %}
+                        {% else %}
+                            {% include postbox.html disable_lazy=true %}
+                        {% endif %}
+                    </div>
                 {% endfor %}
             </div>
         </div>
