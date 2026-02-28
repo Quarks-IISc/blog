@@ -13,6 +13,10 @@
 
     {% seo %}
 
+    <!-- Resource Hints for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
@@ -23,10 +27,21 @@
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap"
       rel="stylesheet"
     />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <link href="{{ site.baseurl }}/assets/css/screen.css" rel="stylesheet" />
 
     <link href="{{ site.baseurl }}/assets/css/main.css" rel="stylesheet" />
+
+    <!-- Instant Dark Mode Check (Prevents Flash of White) -->
+    <script>
+      (function() {
+        var currentTheme = localStorage.getItem('theme');
+        if (currentTheme === 'dark-mode' || (!currentTheme && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark-mode');
+        }
+      })();
+    </script>
 
     <script src="{{ site.baseurl }}/assets/js/jquery.min.js"></script>
     <script src="{{ site.baseurl }}/assets/js/darkmode.js"></script>
@@ -386,5 +401,22 @@ End Navigation -->
       src="//{{site.disqus}}.disqus.com/count.js"
     ></script>
     {% endif %}
+
+    <!-- Scroll Fade Up Logic -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+            }
+          });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-up-element').forEach((el) => {
+          observer.observe(el);
+        });
+      });
+    </script>
   </body>
 </html>
