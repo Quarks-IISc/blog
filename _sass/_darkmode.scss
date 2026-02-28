@@ -1,5 +1,8 @@
 /* --- Dark Mode Styles --- */
-html.dark-mode, .dark-mode {
+html.dark-mode, 
+html.dark-mode body,
+.dark-mode,
+.dark-mode body {
     background-color: #121212;
     color: #e0e0e0;
 }
