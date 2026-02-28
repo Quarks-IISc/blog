@@ -18,11 +18,14 @@
             <h2 class="card-title" style="font-family: 'Playfair Display', serif; font-size: 1.2rem; margin-bottom: 2px; color: #fff; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">
                 {{ post.title }}
             </h2>
-            {% if post.author %}
-                <p class="pictures-author" style="font-size: 0.85rem; color: #ddd; margin-bottom: 0; text-shadow: 0 1px 2px rgba(0,0,0,0.5);">
-                    <em>by {{ post.author }}</em>
-                </p>
-            {% endif %}
+            <div class="d-flex justify-content-between align-items-end">
+                {% if post.author %}
+                    <p class="pictures-author" style="font-size: 0.85rem; color: #ddd; margin-bottom: 0; text-shadow: 0 1px 2px rgba(0,0,0,0.5);">
+                        <em>by {{ post.author }}</em>
+                    </p>
+                {% endif %}
+                <span class="post-date" style="font-size: 0.75rem; color: #bbb; text-shadow: 0 1px 2px rgba(0,0,0,0.5);">{{ post.date | date_to_string }}</span>
+            </div>
         </div>
     </a>
 </div>
