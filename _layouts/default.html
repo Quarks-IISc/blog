@@ -457,5 +457,20 @@ End Navigation -->
         });
       });
     </script>
+    <!-- Handle Featured Image Fade -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const featuredImg = document.querySelector(".featured-image");
+        if (featuredImg) {
+          if (featuredImg.complete) {
+            featuredImg.classList.add("loaded");
+          } else {
+            featuredImg.addEventListener("load", function () {
+              featuredImg.classList.add("loaded");
+            });
+          }
+        }
+      });
+    </script>
   </body>
 </html>

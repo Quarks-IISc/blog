@@ -22,7 +22,7 @@ comments: true
 
 <!-- <p>Head over to our <a href="https://github.com/wowthemesnet/mediumish-theme-jekyll">Github repository</a>!</p> -->
 
-<p>Head over to our <a href="https://github.com/Quarks-IISc/blog">Github repository</a>!</p>
+<p>Head over to our <a href="https://github.com/Quarks-IISc/quarks-iisc.github.io">Github repository</a>!</p>
 
 </div>
 

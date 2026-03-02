@@ -148,14 +148,15 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
     font-family: 'Playfair Display', serif !important;
 }
 
-/* --- Micro-Interactions: Page Transition --- */
-.site-content, .intro-section, .jumbotron {
-    animation: pageFadeIn 0.6s ease-out forwards;
+/* --- Micro-Interactions: Independent Image Fade-in --- */
+.featured-image {
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+    background-color: #f0f0f0; /* Placeholder color */
 }
 
-@keyframes pageFadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
+.featured-image.loaded {
+    opacity: 1;
 }
 
 /* --- Micro-Interactions: Scroll Fade-Up --- */
