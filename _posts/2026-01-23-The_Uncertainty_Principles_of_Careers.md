@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Takeaways from "The Uncertainty Principles of Careers""
+title: 'Takeaways from "The Uncertainty Principles of Careers"'
 author: "Arvind Ayyer"
-categories: stories
+categories: [stories]
 image: "/assets/images/Stories/Nature.jpeg"
 excerpt: "Insights from the 4th edition on the unpredictable nature of career paths and the importance of self-discovery in education."
 ---

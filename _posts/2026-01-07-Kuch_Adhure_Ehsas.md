@@ -2,7 +2,7 @@
 layout: post
 title: "कुछ अधूरे एहसास"
 author: "Heet"
-categories: poems
+categories: [poems]
 image: "/assets/images/Stories/Nature.jpeg"
 excerpt: "एक कविता जो साथ बिताए लम्हों और उनकी कमी से उपजी तन्हाई को बयां करती है।"
 ---

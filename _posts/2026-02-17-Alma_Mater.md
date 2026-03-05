@@ -2,7 +2,7 @@
 layout: post
 title: "Alma Mater"
 author: "Souvik Chakraborty"
-categories: poems
+categories: [poems]
 image: "/assets/images/Stories/Nature.jpeg"
 excerpt: "A poignant free verse reflecting on the bittersweet experience of leaving one's alma mater and the memories attached to a simple room."
 ---

@@ -4,7 +4,7 @@ layout: post
 title: The Mind of a Second-Year Undergraduate 
 #tags: [Example_Tag1, ExampleTag2]
 author: Blank
-categories: stories
+categories: [stories]
 image: "/assets/images/Stories/Second_Years.jpeg"
 excerpt: '"The second-year undergrad stands at the crossroads of idealism and pragmatism, still holding onto a thread of youthful passion."'
 latest: true

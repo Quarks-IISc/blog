@@ -2,7 +2,7 @@
 layout: post
 title: "Logic and Life"
 author: "S. Athmanathan"
-categories: stories
+categories: [stories]
 image: "/assets/images/Stories/Nature.jpeg"
 excerpt: "A non-fiction piece from the 2nd edition exploring the connection between logic, reason, intuition, and our decision-making processes."
 ---

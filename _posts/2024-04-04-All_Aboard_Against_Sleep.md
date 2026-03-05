@@ -4,7 +4,7 @@ layout: post
 title: All aboard against sleep
 #tags: [Example_Tag1, ExampleTag2]
 author: Souvik Chakraborty
-categories: poems
+categories: [poems]
 image: "/assets/images/Poems/All_aboard_against_Sleep.jpg"
 excerpt: 'In the darkest hour, a dainty rainbow rises, born of chaos, painting peace upon a restless mind.'
 latest: true

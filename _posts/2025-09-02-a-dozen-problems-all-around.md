@@ -2,7 +2,7 @@
 layout: post
 title: "A dozen problems all around"
 author: "Sriraj Chandra"
-categories: stories
+categories: [stories]
 image: "/assets/images/Stories/Nature.jpeg"
 excerpt: "A deep dive into how simulating conversations and analysing conversational parameters can reveal the intricate structure of human interactions."
 ---

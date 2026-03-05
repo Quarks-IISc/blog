@@ -2,7 +2,7 @@
 layout: post
 title: "And the journey continues..."
 author: "Avani, Anurag"
-categories: stories
+categories: [stories]
 image: "/assets/images/Stories/Nature.jpeg"
 excerpt: "A deep dive into the mindset of a second-year undergraduate student at IISc, exploring the transition from idealism to pragmatism."
 ---

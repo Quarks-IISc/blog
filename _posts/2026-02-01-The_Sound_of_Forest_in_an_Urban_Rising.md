@@ -2,7 +2,7 @@
 layout: post
 title: "The Sound of Forest in an Urban Rising"
 author: "Divija Nanavati"
-categories: stories
+categories: [stories]
 image: "/assets/images/Stories/Nature.jpeg"
 excerpt: "An exploration of the rich flora and fauna coexisting within the 400-acre haven of the Indian Institute of Science."
 ---

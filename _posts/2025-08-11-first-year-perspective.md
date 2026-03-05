@@ -2,7 +2,7 @@
 layout: post
 title: "A first-year perspective"
 author: "Aditey, Mihir, Parth"
-categories: stories
+categories: [stories]
 image: "/assets/images/Stories/Nature.jpeg"
 excerpt: "Change is never easy. Each year, around 160 students join IISc, coming together to form a close-knit undergraduate community..."
 ---

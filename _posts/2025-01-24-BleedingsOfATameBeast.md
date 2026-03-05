@@ -4,7 +4,7 @@ layout: post
 title: Bleedings Of A Tame Beast
 #categories: [  ]
 author: Prokash Kumar Kundu
-categories: poems
+categories: [poems]
 image: "/assets/images/Poems/BleedingsOfTameBeast.jpeg"
 excerpt: "Tame and sane, I will no longer paint the world's suffering in red, but I shall spit blood and let it speckle the walls instead."
 featured: true

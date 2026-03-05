@@ -2,7 +2,7 @@
 layout: post
 title: "Exploring Skandagiri and Kuntibetta"
 author: "Kabyadeep Das"
-categories: stories
+categories: [stories]
 image: "/assets/images/Stories/skandagiri-kabyadeep/sk1.jpg"
 excerpt: "A thrilling adventure exploring two of Bangalore's most beautiful trekking locations: Skandagiri and Kuntibetta."
 ---

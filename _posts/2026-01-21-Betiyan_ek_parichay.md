@@ -2,7 +2,7 @@
 layout: post
 title: "बेटियाँ - एक परिचय"
 author: "Richa Naja Jain"
-categories: poems
+categories: [poems]
 image: "/assets/images/Stories/Nature.jpeg"
 excerpt: "बेटियों के सम्मान और महत्व को दर्शाती एक मर्मस्पर्शी कविता।"
 ---

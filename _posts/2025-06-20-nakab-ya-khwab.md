@@ -2,7 +2,7 @@
 layout: post
 title: "नकाब या ख्वाब!"
 author: "Pratibha Mahale"
-categories: poems
+categories: [poems]
 image: "/assets/images/Stories/Nature.jpeg"
 excerpt: "A Hindi free verse exploring the many masks people wear and the dreams or compulsions hidden behind them."
 featured: true

@@ -2,7 +2,7 @@
 layout: post
 title: "Away from Home..."
 author: "Suhas Mahesh"
-categories: stories
+categories: [stories]
 image: "/assets/images/Stories/Nature.jpeg"
 excerpt: "An extract from the 2nd edition, reflecting on the last day at home and the love of a mother's cooking before heading to IISc."
 ---

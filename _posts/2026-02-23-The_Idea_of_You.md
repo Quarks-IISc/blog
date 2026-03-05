@@ -2,7 +2,7 @@
 layout: post
 title: "The Idea of You"
 author: "Shreya Pithva"
-categories: poems
+categories: [poems]
 image: "/assets/images/Stories/Nature.jpeg"
 excerpt: "A romantic expression of the sacredness of an idealized love, found and guarded within the quiet rooms of the mind."
 ---
