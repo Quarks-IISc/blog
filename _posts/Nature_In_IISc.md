@@ -7,7 +7,6 @@ author: Blank
 categories: stories
 image: "/assets/images/Stories/Nature.jpeg"
 excerpt: 'Nature in IISc'
-featured: false
 latest: false
 all: false
 ---

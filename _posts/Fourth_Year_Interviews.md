@@ -7,7 +7,6 @@ author: Blank
 categories: stories
 image: "/assets/images/Stories/Fourth_Years.jpeg"
 excerpt: 'The final year at IISc’s UG program is a time of crucial decisions, deep reflection, and a mix of pride, gratitude, and uncertainty about the future, as captured through interviews with nine diverse students.'
-featured: true
 latest: true
 all: true
 ---

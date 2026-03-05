@@ -7,7 +7,6 @@ author: Raj Magesh, Julian D'Costa
 categories: stories
 image: "/assets/images/Stories/RamblingsOnScienceEpistomology.jpeg"
 excerpt: 'The appeal to rationality, has become something of a very popular phrase in the recent past. But, in some sense, how do we even know if the basis of such appeals, is logical in itself!'
-featured: true
 all: true
 latest: true
 ---

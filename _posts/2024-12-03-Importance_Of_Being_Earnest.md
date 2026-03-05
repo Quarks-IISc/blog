@@ -7,7 +7,6 @@ author: Aditi A Pujar, Divyoj Singh, Bhoomika A Bhat, Akshara Sharma, R Bangar
 categories: stories
 image: "/assets/images/Stories/ImportanceofbeingEarnest.jpeg"
 excerpt: 'In this very monotonous life, students require the daily help for myriad of tasks, this article wonderfully elucidates and interviews many such people.'
-featured: true
 latest: true
 all: true
 ---

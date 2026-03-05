@@ -7,7 +7,6 @@ author: Subhanan Banerjee
 categories: stories
 image: "/assets/images/Poems/BleedingsOfTameBeast.jpeg"
 excerpt: 'Third Years'
-featured: true
 latest: true
 all: true
 ---
