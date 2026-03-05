@@ -4,10 +4,9 @@ layout: post
 title: First Years' first experiences
 #tags: [Example_Tag1, ExampleTag2]
 author: Parth Kalyani, Aditey Nandan, Mihir Kapse
-categories: stories
+categories: [stories]
 image: "/assets/images/Stories/First_Years.jpeg"
 excerpt: 'First Years'
-featured: true
 latest: true
 all: true
 ---

@@ -4,10 +4,9 @@ layout: post
 title: Ode To Diversity
 #tags: [Example_Tag1, ExampleTag2]
 author: Subhanan Banerjee
-categories: poems
+categories: [poems]
 image: "/assets/images/Poems/Ode_To_Diversity.jpg"
 excerpt: "A lyrical ode to harmony, embracing humanity's shared victories, defeats, and hopes."
-featured: true
 latest: true
 all: true
 ---

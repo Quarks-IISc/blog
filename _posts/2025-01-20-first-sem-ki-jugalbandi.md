@@ -2,7 +2,7 @@
 layout: post
 title: "FiRST SEM KI जुगलबंदी"
 author: "Pratibha Mahale"
-categories: stories
+categories: [stories]
 image: "/assets/images/Stories/Nature.jpeg"
 excerpt: "A humorous and nostalgic reflection on the chaotic, overwhelming, yet ultimately rewarding experience of the very first semester at IISc."
 ---

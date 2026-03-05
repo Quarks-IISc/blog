@@ -2,7 +2,7 @@
 layout: post
 title: "Bharathnatyam"
 author: "Sunanda Srikanth"
-categories: stories
+categories: [stories]
 image: "/assets/images/Stories/Nature.jpeg"
 excerpt: "A personal narrative on the journey of learning Bharathnatyam and how it shaped the author's life, focus, and happiness."
 ---
