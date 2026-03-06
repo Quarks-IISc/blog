@@ -1,16 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
     const toggleButton = document.getElementById('dark-mode-toggle');
-    const body = document.body;
+    const html = document.documentElement;
     const currentTheme = localStorage.getItem('theme');
 
-    // Apply saved theme on load
-    if (currentTheme) {
-        body.classList.add(currentTheme);
-        updateToggleButtonIcon(currentTheme);
-    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        // Apply system preference if no theme saved
-        body.classList.add('dark-mode');
-        localStorage.setItem('theme', 'dark-mode');
+    // The inline script in <head> already applies the class to <html>.
+    // We just need to set the initial toggle icon state correctly.
+    if (html.classList.contains('dark-mode')) {
         updateToggleButtonIcon('dark-mode');
     }
 
@@ -18,12 +13,14 @@ document.addEventListener('DOMContentLoaded', () => {
     if (toggleButton) {
         toggleButton.addEventListener('click', (e) => {
             e.preventDefault();
-            if (body.classList.contains('dark-mode')) {
-                body.classList.remove('dark-mode');
+            if (html.classList.contains('dark-mode')) {
+                html.classList.remove('dark-mode');
+                document.body.classList.remove('dark-mode'); // For fallback support
                 localStorage.setItem('theme', 'light-mode');
                 updateToggleButtonIcon('light-mode');
             } else {
-                body.classList.add('dark-mode');
+                html.classList.add('dark-mode');
+                document.body.classList.add('dark-mode'); // For fallback support
                 localStorage.setItem('theme', 'dark-mode');
                 updateToggleButtonIcon('dark-mode');
             }

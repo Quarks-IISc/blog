@@ -4,7 +4,7 @@ title: "Quarks"
 description: "By IISc UG"
 logo: 'assets/images/logo.png'
 favicon: 'assets/images/logo.png'
-baseurl: /blog
+baseurl: ""
 #baseurl: /
 # google_analytics: 'UA-46278016-1'
 # disqus: 'demowebsite'

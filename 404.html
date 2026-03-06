@@ -4,6 +4,15 @@ title: 404
 permalink: /404.html
 ---
 
+<script>
+  // Redirect legacy /blog/ paths to the new root structure
+  var path = window.location.pathname;
+  if (path.indexOf('/blog/') === 0) {
+    var newPath = path.replace('/blog/', '/');
+    window.location.href = window.location.origin + newPath;
+  }
+</script>
+
 <div class="text-center">
 <h1 class="display-1 mt-5 mb-4"><span class="badge badge-danger">404</span> Page does not exist!</h1>
 <p>Please use the search bar at the top or visit our <a href="{{site.baseurl}}/">homepage</a>!</p>

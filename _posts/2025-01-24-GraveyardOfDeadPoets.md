@@ -4,10 +4,9 @@ layout: post
 title: Graveyard of Dead Poets
 #categories: [  ]
 author: Anonymous
-categories: poems
+categories: [poems]
 image: "/assets/images/Poems/DeadPoets.jpeg"
 excerpt: "A haunting elegy to love and passion, now decayed into the stifling stench of habit, entombed in the graveyard of dead poets."
-featured: false
 latest: true
 all: true
 ---

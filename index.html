@@ -25,7 +25,7 @@ title: Home
     <div class="section-title section-hero-header">
         <h2><span>FEATURED</span></h2>
     </div>
-    <div class="row">
+    <div class="row fade-up-element">
         {% assign featured_posts = site.posts | where: "featured", true %}
         {% for post in featured_posts limit:8 %}
             {% include featuredbox.html %}
@@ -39,7 +39,7 @@ title: Home
         <h2><span>LATEST READS</span></h2>
     </div>
     
-    <div class="carousel-container position-relative px-4">
+    <div class="carousel-container position-relative px-4 fade-up-element">
         <!-- Left Arrow -->
         <button class="carousel-arrow left" onclick="scrollCarousel('left')" aria-label="Scroll Left">
             <i class="fas fa-chevron-left"></i>
@@ -48,21 +48,25 @@ title: Home
         <div class="latest-carousel" id="latest-posts-carousel" style="display: flex; overflow-x: auto; gap: 20px; padding-bottom: 20px; scrollbar-width: none;">
 
             <div id="carousel-track" style="display: flex; gap: 20px;">
-                {% for post in site.posts limit:10 %}
-                    {% if post.featured != true %}
-                        <div class="carousel-item-custom mb-30px">
-                            {% assign is_picture = false %}
-                            {% if post.categories contains "pictures" or post.categories contains "Pictures" %}
-                                {% assign is_picture = true %}
-                            {% endif %}
-                            
-                            {% if is_picture %}
-                                {% include picturebox.html disable_lazy=true %}
-                            {% else %}
-                                {% include postbox.html disable_lazy=true %}
-                            {% endif %}
-                        </div>
-                    {% endif %}
+                {% assign recent_stories = site.categories.stories | where_exp: "item", "item.featured != true" | limit: 5 %}
+                {% assign recent_poems = site.categories.poems | where_exp: "item", "item.featured != true" | limit: 5 %}
+                {% assign recent_pictures = site.categories.pictures | where_exp: "item", "item.featured != true" | limit: 5 %}
+                
+                {% assign all_recent = recent_stories | concat: recent_poems | concat: recent_pictures | sort: "date" %}
+                
+                {% for post in all_recent %}
+                    <div class="carousel-item-custom mb-30px">
+                        {% assign is_picture = false %}
+                        {% if post.categories contains "pictures" or post.categories contains "Pictures" %}
+                            {% assign is_picture = true %}
+                        {% endif %}
+                        
+                        {% if is_picture %}
+                            {% include picturebox.html disable_lazy=true %}
+                        {% else %}
+                            {% include postbox.html disable_lazy=true %}
+                        {% endif %}
+                    </div>
                 {% endfor %}
             </div>
         </div>

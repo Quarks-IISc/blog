@@ -2,16 +2,16 @@
 layout: pictures
 title: Pictures Gallery
 pictures:
-  - image: "C:/Users/Adite/blog/assets/images/Pictures/team1.jpg"
-    name: "Picture 1"
-    description: "Description 1"
-  - image: "C:\\Users\\Adite\\blog\\assets\\images\Pictures\\team2.jpg"
-    name: "Picture 2"
-    description: "Description 2"
-  - image: "C:\\Users\\Adite\\blog\\assets\\images\Pictures\\team3.jpg"
-    name: "Picture 1"
-    description: "Description 1"
-  - image: "C:\\Users\\Adite\\blog\\assets\\images\Pictures\\team4.jpg"
-    name: "Picture 2"
-    description: "Description 2"
+  - image: "/assets/images/Pictures/IISc_Main_Building-Krishna_Bhikadiya.jpg"
+    name: "IISc Main Building"
+    description: "Shot of IISc Main Building at night"
+  - image: "/assets/images/Pictures/Flowers1-Krishna_Bhikadiya.jpg"
+    name: "Purple Flowers"
+    description: "Purple coloured flowers under the shining bright sun"
+  - image: "/assets/images/Pictures/Flowers2-Krishna_Bhikadiya.jpg"
+    name: "Serenity Beneath the Canopy"
+    description: "A tranquil moment captured beneath the soft shade of towering trees"
+  - image: "/assets/images/Pictures/View_from_Skandagiri_Hills-Ayan_Ashraf.jpg"
+    name: "View from Skandagiri Hills"
+    description: "Picturesque view from the top of the hills of Skandagiri."
 ---

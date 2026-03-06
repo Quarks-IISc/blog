@@ -4,10 +4,9 @@ layout: post
 title: Introspections on the Third Step
 #tags: [Example_Tag1, ExampleTag2]
 author: Subhanan Banerjee
-categories: stories
+categories: [stories]
 image: "/assets/images/Poems/BleedingsOfTameBeast.jpeg"
 excerpt: 'Third Years'
-featured: true
 latest: true
 all: true
 ---
