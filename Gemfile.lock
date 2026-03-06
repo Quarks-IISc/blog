@@ -209,7 +209,7 @@ CHECKSUMS
   google-protobuf (4.33.5-aarch64-linux-gnu) sha256=f70ca066e37a7ac60b4f34a836bb48ca3fc41a9371310052e484d8c9f925ff39
   google-protobuf (4.33.5-aarch64-linux-musl) sha256=d9ae90025f05db642e5603de5dbb2390cd1215bac7507fa575cc20b0db7e11a1
   google-protobuf (4.33.5-arm64-darwin) sha256=996d4e93c4232cc42f0facd821a92b4f4a926c3c9c1a768e7d768b33d9ef72f9
-  google-protobuf (4.33.5-x64-mingw-ucrt)
+  google-protobuf (4.33.5-x64-mingw-ucrt) sha256=2286e8fd91dff6a161c45b66ad2a1a46e9a5eefb2496c68636b31d6e80eb5820
   google-protobuf (4.33.5-x86-linux-gnu) sha256=8d0d056743449221c723bffcf423ee8028a7028b4fca159db9692ec79fa4d185
   google-protobuf (4.33.5-x86-linux-musl) sha256=08de722ce05e619dcfa75a1a998615694e7a0c4254d4bb1557834d98d5090851
   google-protobuf (4.33.5-x86_64-darwin) sha256=173d1d6c9f0de93fd9ee25fde172d6fb6376099dca8844e19bc5782bbc7b93b0
