@@ -1,7 +1,7 @@
 {
   "date": "2026-03-21",
   "size": [5, 5],
-
+  "author": "Ananth",
   "blocks": [
     [1, 4],
     [1, 5],
@@ -15,8 +15,13 @@
       "clue": "Camping site for Undergraduates",
       "ans": "OPB"
     },
-    { "n": 2, "where": 2, "clue": "Biryani with gravy and ____", "ans": "" },
-    { "n": 3, "where": 3, "clue": "When necessary or needed.", "ans": "" },
+    {
+      "n": 2,
+      "where": 2,
+      "clue": "Biryani with gravy and _____",
+      "ans": "RAITA"
+    },
+    { "n": 3, "where": 3, "clue": "When necessary or needed.", "ans": "ADHOC" },
     {
       "n": 4,
       "where": 4,
@@ -27,18 +32,18 @@
       "n": 5,
       "where": 5,
       "clue": "Indian classical stringed instrument",
-      "ans": "SITAR"
+      "ans": "SAROD"
     }
   ],
 
   "down": [
     { "n": 1, "where": 1, "clue": "Pop Singer Rita", "ans": "ORA" },
-    { "n": 2, "where": 2, "clue": "Harry Potter twin", "ans": "" },
+    { "n": 2, "where": 2, "clue": "Harry Potter twin", "ans": "PADMA" },
     {
       "n": 3,
       "where": 3,
       "clue": "Indian State, often misunderstood",
-      "ans": "ASSAM"
+      "ans": "BIHAR"
     },
     {
       "n": 4,

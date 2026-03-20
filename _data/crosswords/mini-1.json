@@ -2,7 +2,7 @@
   "date": "2026-03-19",
   "size": [5, 5],
   "blocks": [],
-
+  "author": "Ananth",
   "across": [
     { "n": 1, "where": 1, "clue": "By God’s _____!", "ans": "GRACE" },
     { "n": 2, "where": 2, "clue": "Regular Expression.", "ans": "REGEX" },
@@ -10,13 +10,13 @@
       "n": 3,
       "where": 3,
       "clue": "When the test tube exploded, the experiment came to _ ____.",
-      "ans": "AN END"
+      "ans": "A HALT"
     },
     {
       "n": 4,
       "where": 4,
       "clue": "All he asked of the shrew was for her to be _____.",
-      "ans": ""
+      "ans": "TAMER"
     },
     {
       "n": 5,
@@ -36,6 +36,6 @@
       "ans": "AGAMA"
     },
     { "n": 4, "where": 4, "clue": "Kim Kardashian, for one.", "ans": "CELEB" },
-    { "n": 5, "where": 5, "clue": "MORE!", "ans": "AGAIN" }
+    { "n": 5, "where": 5, "clue": "MORE!", "ans": "EXTRA" }
   ]
 }

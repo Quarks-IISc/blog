@@ -230,112 +230,45 @@ title: Home
             <div class="mt-4 text-center d-flex flex-column align-items-center justify-content-center" style="min-height: 400px; background: rgba(128,128,128,0.05); border-radius: 15px; padding: 30px;">
                 <div class="crossword-visual mb-4 fade-up-element">
                     <div class="cw-grid">
-                        <div class="cw-tile">T<span class="cw-number">1</span></div><div class="cw-tile">R</div><div class="cw-tile">Y</div><div class="cw-tile black"></div><div class="cw-tile">O<span class="cw-number">2</span></div><div class="cw-tile">U</div><div class="cw-tile">R</div>
+                        <!-- Row 0 -->
                         <div class="cw-tile black"></div><div class="cw-tile black"></div><div class="cw-tile black"></div><div class="cw-tile black"></div><div class="cw-tile black"></div><div class="cw-tile black"></div><div class="cw-tile black"></div>
-                        <div class="cw-tile">Q<span class="cw-number">3</span></div><div class="cw-tile">U</div><div class="cw-tile">A</div><div class="cw-tile">R</div><div class="cw-tile">K</div><div class="cw-tile">S</div><div class="cw-tile black"></div>
-                        <div class="cw-tile black"></div><div class="cw-tile black"></div><div class="cw-tile black"></div><div class="cw-tile black"></div><div class="cw-tile black"></div><div class="cw-tile black"></div><div class="cw-tile black"></div>
-                        <div class="cw-tile black"></div><div class="cw-tile">M<span class="cw-number">4</span></div><div class="cw-tile">I</div><div class="cw-tile">N</div><div class="cw-tile">I</div><div class="cw-tile black"></div><div class="cw-tile black"></div>
+                        
+                        <!-- Row 1: MINI start -->
+                        <div class="cw-tile black"></div><div class="cw-tile black"></div><div class="cw-tile black"></div><div class="cw-tile">M<span class="cw-number">1</span></div><div class="cw-tile black"></div><div class="cw-tile black"></div><div class="cw-tile black"></div>
+                        
+                        <!-- Row 2: MINI cont -->
+                        <div class="cw-tile black"></div><div class="cw-tile black"></div><div class="cw-tile black"></div><div class="cw-tile">I</div><div class="cw-tile black"></div><div class="cw-tile black"></div><div class="cw-tile black"></div>
+                        
+                        <!-- Row 3: Vertical starts (Q, N, S) -->
+                        <div class="cw-tile black"></div><div class="cw-tile">Q<span class="cw-number">2</span></div><div class="cw-tile black"></div><div class="cw-tile">N</div><div class="cw-tile">S<span class="cw-number">3</span></div><div class="cw-tile black"></div><div class="cw-tile black"></div>
+                        
+                        <!-- Row 4: CURIOUS bridge, intersects QUARKS (U), MINI (I), SOLVE (O) -->
+                        <div class="cw-tile">C<span class="cw-number">4</span></div><div class="cw-tile">U</div><div class="cw-tile">R</div><div class="cw-tile">I</div><div class="cw-tile">O</div><div class="cw-tile">U</div><div class="cw-tile">S</div>
+                        
+                        <!-- Row 5: Vertical cont (A, L) -->
+                        <div class="cw-tile black"></div><div class="cw-tile">A</div><div class="cw-tile black"></div><div class="cw-tile black"></div><div class="cw-tile">L</div><div class="cw-tile black"></div><div class="cw-tile black"></div>
+                        
+                        <!-- Row 6: Vertical cont (R, V) -->
+                        <div class="cw-tile black"></div><div class="cw-tile">R</div><div class="cw-tile black"></div><div class="cw-tile black"></div><div class="cw-tile">V</div><div class="cw-tile black"></div><div class="cw-tile black"></div>
+                        
+                        <!-- Row 7: Vertical cont (K, E) -->
+                        <div class="cw-tile black"></div><div class="cw-tile">K</div><div class="cw-tile black"></div><div class="cw-tile black"></div><div class="cw-tile">E</div><div class="cw-tile black"></div><div class="cw-tile black"></div>
+                        
+                        <!-- Row 8: Vertical end (S) -->
+                        <div class="cw-tile black"></div><div class="cw-tile">S</div><div class="cw-tile black"></div><div class="cw-tile black"></div><div class="cw-tile black"></div><div class="cw-tile black"></div><div class="cw-tile black"></div>
                     </div>
                 </div>
-                <p class="powerful-intro-text mb-4" style="font-size: 1.3rem;">Put your IISc knowledge to the test with our latest crosswords!</p>
-                <a href="{{ site.baseurl }}/crosswords" class="magazine-link" style="font-size: 1.2rem;">Try Crossword Mini <span class="arrow">&xrarr;</span></a>
+                <p class="powerful-intro-text mb-4" style="font-size: 1.3rem;">The Daily Puzzle for Curious Minds.</p>
+                <a href="{{ site.baseurl }}/crosswords" class="magazine-link" style="font-size: 1.2rem;">Solve Today's Mini <span class="arrow">&xrarr;</span></a>
             </div>
         </div>
     </div>
 </section>
-
-<style>
-    .deadline-badge {
-        background: rgba(0,0,0,0.05);
-        padding: 4px 12px;
-        border-radius: 50px;
-        font-size: 0.8rem;
-        color: #555;
-        border: 1px solid rgba(0,0,0,0.1);
-        display: inline-flex;
-        align-items: center;
-        font-weight: 500;
-    }
-    .dark-mode .deadline-badge {
-        background: rgba(255,255,255,0.1);
-        color: #ccc;
-        border-color: rgba(255,255,255,0.2);
-    }
-    /* Custom scrollbar for announcements */
-    .announcements-scroll-container::-webkit-scrollbar {
-        width: 6px;
-    }
-    .announcements-scroll-container::-webkit-scrollbar-track {
-        background: rgba(0,0,0,0.05);
-        border-radius: 10px;
-    }
-    .announcements-scroll-container::-webkit-scrollbar-thumb {
-        background: rgba(0,0,0,0.2);
-        border-radius: 10px;
-    }
-    .dark-mode .announcements-scroll-container::-webkit-scrollbar-track {
-        background: rgba(255,255,255,0.05);
-    }
-    .dark-mode .announcements-scroll-container::-webkit-scrollbar-thumb {
-        background: rgba(255,255,255,0.2);
-    }
-
-    /* Crossword Styles */
-    .cw-grid {
-        display: grid;
-        grid-template-columns: repeat(7, 32px);
-        grid-gap: 4px;
-        justify-content: center;
-        background: #333;
-        padding: 8px;
-        border-radius: 8px;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    }
-    .cw-tile {
-        width: 32px;
-        height: 32px;
-        background: #fff;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: 700;
-        color: #000;
-        font-size: 1rem;
-        font-family: 'Orbitron', sans-serif;
-        text-transform: uppercase;
-        border-radius: 2px;
-        position: relative;
-    }
-    .cw-number {
-        position: absolute;
-        top: 2px;
-        left: 2px;
-        font-size: 0.5rem;
-        color: #666;
-        line-height: 1;
-    }
-    .cw-tile.black {
-        background: #111;
-    }
-    .dark-mode .cw-tile:not(.black) {
-        background: #ccc;
-        color: #000;
-    }
-    .dark-mode .cw-grid {
-        background: #444;
-    }
-    @media (max-width: 576px) {
-        .cw-grid {
-            grid-template-columns: repeat(7, 25px);
-            grid-gap: 3px;
-            padding: 5px;
-        }
-        .cw-tile {
-            width: 25px;
-            height: 25px;
-            font-size: 0.8rem;
-        }
-    }
-</style>
+        </div>
+    </div>
+</section>
+        </div>
+    </div>
+</section>
 
 {% endif %}
