@@ -1,0 +1,41 @@
+{
+  "date": "2026-03-19",
+  "size": [5, 5],
+  "blocks": [],
+  "author": "Ananth",
+  "across": [
+    { "n": 1, "where": 1, "clue": "By God’s _____!", "ans": "GRACE" },
+    { "n": 2, "where": 2, "clue": "Regular Expression.", "ans": "REGEX" },
+    {
+      "n": 3,
+      "where": 3,
+      "clue": "When the test tube exploded, the experiment came to _ ____.",
+      "ans": "A HALT"
+    },
+    {
+      "n": 4,
+      "where": 4,
+      "clue": "All he asked of the shrew was for her to be _____.",
+      "ans": "TAMER"
+    },
+    {
+      "n": 5,
+      "where": 5,
+      "clue": "Suffix of Ethiopia’s capital",
+      "ans": "ABABA"
+    }
+  ],
+
+  "down": [
+    { "n": 1, "where": 1, "clue": "Persona Non-_____", "ans": "GRATA" },
+    { "n": 2, "where": 2, "clue": "De-addiction resort", "ans": "REHAB" },
+    {
+      "n": 3,
+      "where": 3,
+      "clue": "Ancient Scripture of India; Small Old world lizard.",
+      "ans": "AGAMA"
+    },
+    { "n": 4, "where": 4, "clue": "Kim Kardashian, for one.", "ans": "CELEB" },
+    { "n": 5, "where": 5, "clue": "MORE!", "ans": "EXTRA" }
+  ]
+}

@@ -3,7 +3,7 @@ layout: post
 title: "Bharathnatyam"
 author: "Sunanda Srikanth"
 categories: [stories]
-image: "/assets/images/Stories/Nature.jpeg"
+image: "/assets/images/Stories/Bharatnatyam.png"
 excerpt: "A personal narrative on the journey of learning Bharathnatyam and how it shaped the author's life, focus, and happiness."
 ---
 
@@ -67,3 +67,4 @@ To me, Bharathnatyam is not just any art form. It is my passion. Even
 though there are times, due to my education, when I am not able to dance
 as much as I want to, my passion for this magnificent art form continues
 now and forever....
+

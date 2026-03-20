@@ -5,7 +5,6 @@ author: "Pratibha Mahale"
 categories: [poems]
 image: "/assets/images/Stories/Nature.jpeg"
 excerpt: "A Hindi free verse exploring the many masks people wear and the dreams or compulsions hidden behind them."
-featured: true
 ---
 
 Poet: Pratibha Mahale

@@ -5,7 +5,6 @@ author: "Kalidas Viswan"
 categories: [stories]
 image: "/assets/images/Stories/Nature.jpeg"
 excerpt: "A thrilling account of a 1500km road trip across Andhra Pradesh, exploring the 'Grand Canyon of India' and the resilience of friendship."
-featured: true
 ---
 
 The third semester at IISc is usually a very good time of your life, if you are an undergrad. You had figured out how to live on campus, made a friend group, adjusted to the course load and are finally set to explore. The first year had not been easy, and things are now back in cycle again after the long summer vacation. Bangalore's weather is nice, and people are out trekking or roaming. It was in this setting that a guy pitched a friend of mine for a road trip.

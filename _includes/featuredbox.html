@@ -16,9 +16,9 @@
                             {% assign img_url = img_url | replace: '//', '/' | replace: ':/', '://' %}
 
                             {% if site.lazyimages == "enabled" %}
-                            <img class="featured-box-img-cover lazyimg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAACCAQAAAA3fa6RAAAADklEQVR42mNkAANGCAUAACMAA2w/AMgAAAAASUVORK5CYII=" data-src="{{ img_url }}" style="object-fit: cover;">
+                            <img class="featured-box-img-cover lazyimg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAACCAQAAAA3fa6RAAAADklEQVR42mNkAANGCAUAACMAA2w/AMgAAAAASUVORK5CYII=" data-src="{{ img_url }}" style="object-fit: cover;" decoding="async">
                             {% else %}
-                            <img class="featured-box-img-cover" src="{{ img_url }}" style="object-fit: cover;">
+                            <img class="featured-box-img-cover" src="{{ img_url }}" style="object-fit: cover;" loading="lazy" decoding="async">
                             {% endif %}
                             {% if post.tags %}
                                 <div class="post-tag">

@@ -1,0 +1,70 @@
+{
+  "date": "2026-03-23",
+  "size": [5, 5],
+  "author": "Ananth",
+  "blocks": [
+    [1, 4],
+    [5, 5]
+  ],
+
+  "across": [
+    {
+      "n": 1,
+      "where": 1,
+      "clue": "Camping site for Undergraduates",
+      "ans": "OPB"
+    },
+    {
+      "n": 2,
+      "where": 2,
+      "clue": "Biryani with gravy and ____",
+      "ans": ""
+    },
+    { "n": 3, "where": 3, "clue": "When necessary or needed.", "ans": "" },
+    {
+      "n": 4,
+      "where": 4,
+      "clue": "Australians love to call their friends this.",
+      "ans": ""
+    },
+    {
+      "n": 5,
+      "where": 5,
+      "clue": "Indian classical stringed instrument",
+      "ans": ""
+    }
+  ],
+
+  "down": [
+    {
+      "n": 1,
+      "where": 1,
+      "clue": "Playing a violin from tip to frog. (Two words)",
+      "ans": ""
+    },
+    {
+      "n": 2,
+      "where": 2,
+      "clue": "Child with last name Longstocking.",
+      "ans": ""
+    },
+    {
+      "n": 3,
+      "where": 3,
+      "clue": "Most beautiful of the Iliad.",
+      "ans": ""
+    },
+    {
+      "n": 4,
+      "where": 4,
+      "clue": "Indian diet’s source of probiotics",
+      "ans": ""
+    },
+    {
+      "n": 5,
+      "where": 5,
+      "clue": "A biome of plateau; The way jar-jar binks refers to himself",
+      "ans": ""
+    }
+  ]
+}
