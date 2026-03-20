@@ -55,7 +55,7 @@ title: Crosswords
 <!-- Past Mini's Section -->
 <section class="mt-5 pt-5 border-top fade-up-element" id="past-minis-section" style="display: none;">
     <h3 class="text-center mb-5 font-weight-bold" style="font-family: 'Playfair Display', serif;">Past Mini's</h3>
-    <div class="row justify-content-center" id="past-minis-list" style="gap: 20px;">
+    <div id="past-minis-list" style="display: flex; gap: 20px; overflow-x: auto; padding: 10px 5px 25px 5px; scroll-behavior: smooth; -webkit-overflow-scrolling: touch;">
         <!-- Past minis will be injected here -->
     </div>
 </section>
@@ -67,13 +67,15 @@ title: Crosswords
         --border-color: #ddd;
         --highlight-color: rgba(0, 123, 255, 0.1);
         --active-cell-color: rgba(0, 123, 255, 0.2);
+        --block-color: #000;
     }
 
     .dark-mode {
         --accent-color: #fff;
-        --border-color: #333;
+        --border-color: #555;
         --highlight-color: rgba(255, 255, 255, 0.1);
         --active-cell-color: rgba(255, 255, 255, 0.2);
+        --block-color: #fff;
     }
 
     .clue-header { color: #fff !important; }
@@ -102,8 +104,8 @@ title: Crosswords
     }
 
     .crossword-cell.block {
-        background: #fff !important;
-        border: 1px solid #fff !important; /* Matches background to prevent dark seams */
+        background: var(--block-color) !important;
+        border: 1px solid var(--block-color) !important;
     }
 
     .crossword-cell input {
@@ -143,10 +145,11 @@ title: Crosswords
         border: 1px solid rgba(128,128,128,0.1);
         border-radius: 12px;
         padding: 20px;
-        width: 180px;
+        min-width: 180px; /* Changed width to min-width for flex scroll */
         cursor: pointer;
         transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
         text-align: center;
+        flex: 0 0 auto; /* Prevent cards from shrinking */
     }
     .mini-card:hover {
         transform: translateY(-5px);
@@ -159,24 +162,36 @@ title: Crosswords
     }
     .mini-card h5 { font-weight: 700; margin-bottom: 5px; }
     .mini-card p { font-size: 0.85rem; margin-bottom: 0; opacity: 0.7; }
+
+    /* Custom Scrollbar for Past Minis */
+    #past-minis-list::-webkit-scrollbar {
+        height: 6px;
+    }
+    #past-minis-list::-webkit-scrollbar-track {
+        background: rgba(128,128,128,0.05);
+        border-radius: 10px;
+    }
+    #past-minis-list::-webkit-scrollbar-thumb {
+        background: rgba(128,128,128,0.2);
+        border-radius: 10px;
+    }
+    #past-minis-list::-webkit-scrollbar-thumb:hover {
+        background: var(--accent-color);
+    }
 </style>
 
 <script>
-    const START_DATE = new Date('2026-03-19');
-    const INTERVAL_DAYS = 2;
-
     const allCrosswordData = {{ site.data.crosswords | jsonify }};
-    const crosswordKeys = Object.keys(allCrosswordData).sort((a, b) => {
-        const aNum = parseInt(a.replace('mini-', '')) || 0;
-        const bNum = parseInt(b.replace('mini-', '')) || 0;
-        return aNum - bNum;
-    });
+    const crosswordSchedule = Object.keys(allCrosswordData).map(key => {
+        // Appending T00:00:00 to ensure local date interpretation across browsers
+        const dateStr = allCrosswordData[key].date;
+        return {
+            key: key,
+            date: dateStr ? new Date(dateStr + 'T00:00:00') : new Date(0)
+        };
+    }).sort((a, b) => a.date - b.date);
 
-    const crosswordSchedule = crosswordKeys.map((key, index) => {
-        const date = new Date(START_DATE);
-        date.setDate(date.getDate() + (index * INTERVAL_DAYS));
-        return { key, date };
-    });
+    const crosswordKeys = crosswordSchedule.map(item => item.key);
 
     let currentIndex = 0;
     let crosswordData = null;
@@ -209,7 +224,8 @@ title: Crosswords
 
         if (todayIdx === -1) {
             statusHeader.textContent = "No crosswords available yet!";
-            dateHeader.textContent = "Coming soon starting " + formatDate(START_DATE);
+            const firstDate = crosswordSchedule.length > 0 ? formatDate(crosswordSchedule[0].date) : "soon";
+            dateHeader.textContent = "Coming soon starting " + firstDate;
             document.getElementById('crossword-container').style.display = 'none';
             document.querySelector('.clues-container').style.display = 'none';
         } else {
@@ -223,7 +239,7 @@ title: Crosswords
             }
 
             // Past Minis UI
-            if (todayIdx > 0) {
+            if (todayIdx >= 0) {
                 pastMinisSection.style.display = 'block';
                 renderPastMinis(todayIdx);
             }

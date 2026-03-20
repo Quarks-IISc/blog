@@ -3,7 +3,7 @@ layout: post
 title: "Anthropology Redefined"
 author: "Sushant Bangru"
 categories: [stories]
-image: "/assets/images/Stories/Nature.jpeg"
+image: "/assets/images/Stories/anthropology_redefined.jpg"
 excerpt: "Exploring the paradigm shift towards deep ecology, moving from an anthropocentric view to recognizing our place within the web of life."
 ---
 
@@ -40,3 +40,4 @@ of being part of the web of life, then we will be inclined to care for
 all of living nature.
 
 To read the full article, check out the first edition of Quarks.
+

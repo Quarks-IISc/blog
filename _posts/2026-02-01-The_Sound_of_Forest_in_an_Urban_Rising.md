@@ -3,23 +3,23 @@ layout: post
 title: "The Sound of Forest in an Urban Rising"
 author: "Divija Nanavati"
 categories: [stories]
-image: "/assets/images/Stories/Nature.jpeg"
+image: "/assets/images/Stories/the_sound_of_the_forest_in_urban_rising.jpg"
 excerpt: "An exploration of the rich flora and fauna coexisting within the 400-acre haven of the Indian Institute of Science."
 ---
 
 **The Sound of Forest in an Urban Rising**
 
-*"For a time, I rest in the grace of the world and am free..."*
+_"For a time, I rest in the grace of the world and am free..."_
 
-- *The peace of wild things by Wendell Berry*
+- _The peace of wild things by Wendell Berry_
 
-*A crisp breeze floods the campus premises this fresh morning. A
+_A crisp breeze floods the campus premises this fresh morning. A
 symphony of trills heralds a new day, bringing about the routine hustle
 of students rushing to their classes and researchers racing against time
 to meet deadlines. Immersed in the punishingly demanding stresses of
 collegiate activities, they are often oblivious to an entirely different
 facet of Earthly life - the flora and fauna coexisting quietly with the
-research enthusiasts.*
+research enthusiasts._
 
 Nestled in the heart of the 'Garden City of India', the Indian Institute
 of Science offers a 400-acre haven for an eclectic mix of birds,
@@ -49,7 +49,7 @@ native to Bangalore; others are of exotic varieties. Real Ashoka,
 sandalwood and Indian Laburnum are some of the precious inhabitants.
 
 The CES mini forest boasts nearly 45 tree species from the Western Ghats
-(e.g. Western Ghats jackfruit). A gigantic liana - *Entada rheedei*
+(e.g. Western Ghats jackfruit). A gigantic liana - _Entada rheedei_
 Spreng -- flourishes nearby, despite being difficult to cultivate
 outside of its native habitat.
 
@@ -100,7 +100,7 @@ Lycaenidae family to the large Papilionidae family. Common ones like the
 
 Both ground-dwelling and arboreal ants populate the area. Ants are one
 of the most diverse of in-campus insect species. More than ~100 species
-reside here, of which *Dilobocondyla bangalorica* and *Tapinoma onaele*
+reside here, of which _Dilobocondyla bangalorica_ and _Tapinoma onaele_
 are described from the campus itself! A substantial amount of ongoing
 research in the Centre for Ecological Sciences aims to investigate the
 mechanical properties of ant parts, their distribution pattern, their
@@ -141,7 +141,7 @@ warbler to Sulphur-bellied warbler, adorn all of the foliage in the
 campus, Indian Pittas add dazzle to the forest floors, while the
 Indian-paradise flycatcher set ablaze the forest canopy.
 
-***Creatures of the night***
+**_Creatures of the night_**
 
 As the maiden of night softly drapes her star-studded cape over the
 azure of the sky, the nocturnal animals emerge to rule the dark.
@@ -169,7 +169,7 @@ sessions and walks organised by the IISc Nature club and learn beyond
 the four walls of a classroom.
 
 **Info Credits: Kedar, Shakur, Subhasmita, Rahul, Utsav, Narashiman
-(*IISc Nature Club*)**
+(_IISc Nature Club_)**
 
 **References**
 
