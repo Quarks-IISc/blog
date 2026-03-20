@@ -1,0 +1,49 @@
+{
+  "size": [5, 5],
+
+  "blocks": [
+    [4, 5],
+    [5, 5]
+  ],
+
+  "across": [
+    { "n": 1, "where": 1, "clue": "Nobel Prize CEO", "ans": "" },
+    {
+      "n": 2,
+      "where": 2,
+      "clue": "Make (someone) ecstatically happy",
+      "ans": ""
+    },
+    {
+      "n": 3,
+      "where": 3,
+      "clue": "Of a wave; A hi-fi music service.",
+      "ans": ""
+    },
+    {
+      "n": 4,
+      "where": 4,
+      "clue": "And others- Latin (two words)",
+      "ans": ""
+    },
+    { "n": 5, "where": 5, "clue": "Ratatouille main character;", "ans": "REMY" }
+  ],
+
+  "down": [
+    {
+      "n": 1,
+      "where": 1,
+      "clue": "Discourage (someone) from doing something",
+      "ans": ""
+    },
+    {
+      "n": 2,
+      "where": 2,
+      "clue": "Epstein files have exposed a corrupt _____",
+      "ans": ":"
+    },
+    { "n": 3, "where": 3, "clue": "Expansion of Ma'am", "ans": "" },
+    { "n": 4, "where": 4, "clue": "Country shaped like boot", "ans": "" },
+    { "n": 5, "where": 5, "clue": "Cute and short for Selvam", "ans": "" }
+  ]
+}

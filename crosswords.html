@@ -3,48 +3,66 @@ layout: default
 title: Crosswords
 ---
 
-<div class="container py-5 mt-5">
-    <div class="section-title section-hero-header mb-5">
-        <h2 style="font-size: 2.5rem;">CROSSWORDS</h2>
+<div class="section-title section-hero-header mb-4">
+    <h2 style="font-size: 2.5rem;">CROSSWORDS</h2>
+</div>
+
+<!-- Next Unlock Banner -->
+<div id="next-unlock-container" class="text-center mb-4 fade-up-element" style="display: none;">
+    <span class="text-muted italic" style="font-size: 0.95rem; letter-spacing: 0.5px;">
+        Next one coming up on <span id="next-unlock-date" class="font-weight-bold"></span>
+    </span>
+</div>
+
+<!-- Today's Header -->
+<div class="text-center mb-5 fade-up-element">
+    <h3 id="current-status-header" class="font-weight-bold" style="font-family: 'Playfair Display', serif; font-size: 2rem;">Crossword Mini for Today!</h3>
+    <p id="current-display-date" class="text-muted" style="font-size: 1.1rem;"></p>
+</div>
+
+<div class="row fade-up-element">
+    <!-- Left: Crossword Grid -->
+    <div class="col-lg-7 mb-5 text-center">
+        <div id="crossword-container" class="d-inline-block">
+            <div class="crossword-grid" id="crossword-grid"></div>
+            
+            <div class="mt-4 d-flex justify-content-center align-items-center flex-wrap" style="gap: 20px;">
+                <button class="magazine-link border-0 bg-transparent p-0" onclick="checkCrossword()">Check Crossword <span class="arrow">&xrarr;</span></button>
+                <button class="magazine-link border-0 bg-transparent p-0 text-muted" onclick="resetCrossword()" style="font-size: 1.1rem;">Reset</button>
+            </div>
+            <div id="check-message" class="mt-3 font-weight-bold" style="min-height: 24px;"></div>
+        </div>
     </div>
 
-    <div class="row fade-up-element">
-        <!-- Left: Crossword Grid -->
-        <div class="col-lg-7 mb-5 text-center">
-            <div id="crossword-container" class="d-inline-block">
-                <div class="crossword-grid" id="crossword-grid"></div>
-                
-                <div class="mt-4 d-flex justify-content-center align-items-center flex-wrap" style="gap: 20px;">
-                    <button class="magazine-link border-0 bg-transparent p-0" onclick="checkCrossword()">Check Crossword <span class="arrow">&xrarr;</span></button>
-                    <button class="magazine-link border-0 bg-transparent p-0 text-muted" onclick="resetCrossword()" style="font-size: 1.1rem;">Reset</button>
-                </div>
-                <div id="check-message" class="mt-3 font-weight-bold" style="min-height: 24px;"></div>
+    <!-- Right: Clues -->
+    <div class="col-lg-5">
+        <div class="clues-container p-4" style="background: rgba(128,128,128,0.05); border-radius: 15px;">
+            <h3 class="font-weight-bold mb-4" style="font-family: 'Playfair Display', serif;">Clues</h3>
+            
+            <div class="mb-5">
+                <h5 class="text-uppercase font-weight-bold border-bottom pb-2 clue-header">Across</h5>
+                <ul class="list-unstyled mt-3" id="across-clues"></ul>
             </div>
-        </div>
-
-        <!-- Right: Clues -->
-        <div class="col-lg-5">
-            <div class="clues-container p-4" style="background: rgba(128,128,128,0.05); border-radius: 15px;">
-                <h3 class="font-weight-bold mb-4" style="font-family: 'Playfair Display', serif;">Clues</h3>
-                
-                <div class="row">
-                    <div class="col-md-6 mb-4">
-                        <h5 class="text-uppercase font-weight-bold border-bottom pb-2 clue-header" style="letter-spacing: 1px; font-size: 0.85rem; color: #fff;">Across</h5>
-                        <ul class="list-unstyled mt-3" id="across-clues"></ul>
-                    </div>
-                    <div class="col-md-6">
-                        <h5 class="text-uppercase font-weight-bold border-bottom pb-2 clue-header" style="letter-spacing: 1px; font-size: 0.85rem; color: #fff;">Down</h5>
-                        <ul class="list-unstyled mt-3" id="down-clues"></ul>
-                    </div>
-                </div>
+            
+            <div>
+                <h5 class="text-uppercase font-weight-bold border-bottom pb-2 clue-header">Down</h5>
+                <ul class="list-unstyled mt-3" id="down-clues"></ul>
             </div>
         </div>
     </div>
 </div>
 
+<!-- Past Mini's Section -->
+<section class="mt-5 pt-5 border-top fade-up-element" id="past-minis-section" style="display: none;">
+    <h3 class="text-center mb-5 font-weight-bold" style="font-family: 'Playfair Display', serif;">Past Mini's</h3>
+    <div class="row justify-content-center" id="past-minis-list" style="gap: 20px;">
+        <!-- Past minis will be injected here -->
+    </div>
+</section>
+
 <style>
     :root {
-        --cell-size: clamp(45px, 9vw, 65px);
+        --cell-size: clamp(40px, 9vw, 65px);
         --accent-color: #000;
         --border-color: #ddd;
         --highlight-color: rgba(0, 123, 255, 0.1);
@@ -58,23 +76,25 @@ title: Crosswords
         --active-cell-color: rgba(255, 255, 255, 0.2);
     }
 
-    .clue-header {
-        color: #fff !important;
-    }
+    .clue-header { color: #fff !important; }
 
+    /* Improved Grid for Mobile (No sub-pixel gaps) */
     .crossword-grid {
         display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        gap: 0;
-        border: 1px solid var(--border-color);
+        border-top: 1px solid var(--border-color);
+        border-left: 1px solid var(--border-color);
         background: transparent;
+        width: fit-content;
+        margin: 0 auto;
     }
 
     .crossword-cell {
         width: var(--cell-size);
         height: var(--cell-size);
         background: transparent;
-        border: 1px solid var(--border-color);
+        border-right: 1px solid var(--border-color);
+        border-bottom: 1px solid var(--border-color);
+        box-sizing: border-box;
         position: relative;
         display: flex;
         align-items: center;
@@ -83,81 +103,178 @@ title: Crosswords
 
     .crossword-cell.block {
         background: #fff !important;
-        border: 1px solid #fff !important;
+        border: 1px solid #fff !important; /* Matches background to prevent dark seams */
     }
 
     .crossword-cell input {
-        width: 100%;
-        height: 100%;
-        border: none;
-        background: transparent;
-        text-align: center;
-        font-size: 1.5rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        color: inherit;
-        outline: none;
-        cursor: pointer;
+        width: 100%; height: 100%; border: none; background: transparent;
+        text-align: center; font-size: 1.5rem; font-weight: 700;
+        text-transform: uppercase; color: inherit; outline: none; cursor: pointer;
     }
 
     .crossword-cell .cell-number {
-        position: absolute;
-        top: 2px;
-        left: 4px;
-        font-size: 0.7rem;
-        font-weight: 700;
-        color: #888;
-        line-height: 1;
+        position: absolute; top: 2px; left: 4px; font-size: 0.7rem;
+        font-weight: 700; color: #888; line-height: 1;
     }
 
-    .crossword-cell.active-word {
-        background-color: var(--highlight-color) !important;
-    }
-    
-    .crossword-cell.focused-cell {
-        background-color: var(--active-cell-color) !important;
-    }
+    .crossword-cell.active-word { background-color: var(--highlight-color) !important; }
+    .crossword-cell.focused-cell { background-color: var(--active-cell-color) !important; }
 
     .clue-item {
-        font-size: 0.95rem;
-        margin-bottom: 12px;
-        line-height: 1.4;
-        cursor: pointer;
-        padding: 4px;
-        border-radius: 4px;
-        transition: background 0.2s;
+        font-size: 1rem; margin-bottom: 15px; line-height: 1.4;
+        cursor: pointer; padding: 8px 12px; border-radius: 8px; transition: all 0.2s;
     }
+    .clue-item:hover { background: rgba(128,128,128,0.1); }
+    .clue-item.active-clue { background: var(--highlight-color); font-weight: 600; }
+    .clue-n { font-weight: 700; margin-right: 8px; color: var(--accent-color); }
 
-    .clue-item:hover {
-        background: rgba(128,128,128,0.1);
+    .clue-image-container {
+        margin-top: 10px; max-width: 100%; overflow: hidden;
+        border-radius: 6px; border: 1px solid var(--border-color);
     }
-
-    .clue-item.active-clue {
-        background: var(--highlight-color);
-        font-weight: 600;
-    }
-
-    .clue-n {
-        font-weight: 700;
-        margin-right: 6px;
-        color: var(--accent-color);
-    }
+    .clue-image { display: block; width: 100%; height: auto; }
 
     .crossword-cell.correct input { color: #28a745 !important; }
     .crossword-cell.incorrect input { color: #dc3545 !important; }
+
+    /* Past Mini Cards */
+    .mini-card {
+        background: rgba(128,128,128,0.05);
+        border: 1px solid rgba(128,128,128,0.1);
+        border-radius: 12px;
+        padding: 20px;
+        width: 180px;
+        cursor: pointer;
+        transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
+        text-align: center;
+    }
+    .mini-card:hover {
+        transform: translateY(-5px);
+        background: rgba(128,128,128,0.1);
+        border-color: var(--accent-color);
+    }
+    .mini-card.active-mini {
+        border-color: var(--accent-color);
+        background: var(--active-cell-color);
+    }
+    .mini-card h5 { font-weight: 700; margin-bottom: 5px; }
+    .mini-card p { font-size: 0.85rem; margin-bottom: 0; opacity: 0.7; }
 </style>
 
 <script>
-    const crosswordData = {{ site.data.crosswords['mini-2'] | jsonify }};
-    const gridEl = document.getElementById('crossword-grid');
-    const acrossCluesEl = document.getElementById('across-clues');
-    const downCluesEl = document.getElementById('down-clues');
-    const msgEl = document.getElementById('check-message');
+    const START_DATE = new Date('2026-03-19');
+    const INTERVAL_DAYS = 2;
 
+    const allCrosswordData = {{ site.data.crosswords | jsonify }};
+    const crosswordKeys = Object.keys(allCrosswordData).sort((a, b) => {
+        const aNum = parseInt(a.replace('mini-', '')) || 0;
+        const bNum = parseInt(b.replace('mini-', '')) || 0;
+        return aNum - bNum;
+    });
+
+    const crosswordSchedule = crosswordKeys.map((key, index) => {
+        const date = new Date(START_DATE);
+        date.setDate(date.getDate() + (index * INTERVAL_DAYS));
+        return { key, date };
+    });
+
+    let currentIndex = 0;
+    let crosswordData = null;
     let grid = [];
     let currentDir = 'across';
 
-    function init() {
+    const gridEl = document.getElementById('crossword-grid');
+    const acrossCluesEl = document.getElementById('across-clues');
+    const downCluesEl = document.getElementById('down-clues');
+    const statusHeader = document.getElementById('current-status-header');
+    const dateHeader = document.getElementById('current-display-date');
+    const msgEl = document.getElementById('check-message');
+    const nextUnlockContainer = document.getElementById('next-unlock-container');
+    const nextUnlockDateEl = document.getElementById('next-unlock-date');
+    const pastMinisSection = document.getElementById('past-minis-section');
+    const pastMinisList = document.getElementById('past-minis-list');
+
+    function formatDate(date) {
+        return date.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+    }
+
+    function initScheduler() {
+        const today = new Date();
+        today.setHours(0,0,0,0);
+
+        let todayIdx = -1;
+        crosswordSchedule.forEach((item, index) => {
+            if (item.date <= today) todayIdx = index;
+        });
+
+        if (todayIdx === -1) {
+            statusHeader.textContent = "No crosswords available yet!";
+            dateHeader.textContent = "Coming soon starting " + formatDate(START_DATE);
+            document.getElementById('crossword-container').style.display = 'none';
+            document.querySelector('.clues-container').style.display = 'none';
+        } else {
+            currentIndex = todayIdx;
+            
+            // Next unlock logic
+            const nextItem = crosswordSchedule.find(item => item.date > today);
+            if (nextItem) {
+                nextUnlockContainer.style.display = 'block';
+                nextUnlockDateEl.textContent = formatDate(nextItem.date);
+            }
+
+            // Past Minis UI
+            if (todayIdx > 0) {
+                pastMinisSection.style.display = 'block';
+                renderPastMinis(todayIdx);
+            }
+
+            loadCrossword(currentIndex);
+        }
+    }
+
+    function renderPastMinis(todayIdx) {
+        pastMinisList.innerHTML = '';
+        for (let i = 0; i <= todayIdx; i++) {
+            const item = crosswordSchedule[i];
+            const card = document.createElement('div');
+            card.className = `mini-card ${i === currentIndex ? 'active-mini' : ''}`;
+            card.innerHTML = `
+                <h5>Mini ${i + 1}</h5>
+                <p>${formatDate(item.date)}</p>
+            `;
+            card.onclick = () => loadCrossword(i);
+            pastMinisList.appendChild(card);
+        }
+    }
+
+    function loadCrossword(index) {
+        currentIndex = index;
+        crosswordData = allCrosswordData[crosswordKeys[index]];
+        const item = crosswordSchedule[index];
+        const today = new Date();
+        today.setHours(0,0,0,0);
+
+        // Update headers
+        const maxUnlockedIdx = crosswordSchedule.filter(it => it.date <= today).length - 1;
+        if (index === maxUnlockedIdx) {
+            statusHeader.textContent = "Crossword Mini for Today!";
+        } else {
+            statusHeader.textContent = `Crossword Mini #${index + 1}`;
+        }
+        dateHeader.textContent = formatDate(item.date);
+
+        // Refresh past minis selection
+        document.querySelectorAll('.mini-card').forEach((c, idx) => {
+            c.classList.toggle('active-mini', idx === index);
+        });
+
+        // Grid Init
+        gridEl.innerHTML = '';
+        acrossCluesEl.innerHTML = '';
+        downCluesEl.innerHTML = '';
+        msgEl.textContent = '';
+        grid = [];
+        
         const [rows, cols] = crosswordData.size;
         gridEl.style.gridTemplateColumns = `repeat(${cols}, 1fr)`;
         
@@ -168,7 +285,11 @@ title: Crosswords
             }
         }
 
-        crosswordData.blocks.forEach(([r, c]) => grid[r][c].isBlock = true);
+        if (crosswordData.blocks) {
+            crosswordData.blocks.forEach(([r, c]) => {
+                if (grid[r] && grid[r][c]) grid[r][c].isBlock = true;
+            });
+        }
 
         crosswordData.across.forEach(clue => {
             const r = clue.where;
@@ -227,7 +348,12 @@ title: Crosswords
         const li = document.createElement('li');
         li.className = 'clue-item';
         li.id = `clue-${dir}-${clue.n}`;
-        li.innerHTML = `<span class="clue-n">${clue.n}.</span> ${clue.clue}`;
+        let html = `<div><span class="clue-n">${clue.n}.</span> ${clue.clue}</div>`;
+        if (clue.image) {
+            const cleanPath = clue.image.replace(/^images\//, '');
+            html += `<div class="clue-image-container"><img src="{{ site.baseurl }}/assets/images/crosswords/${cleanPath}" class="clue-image" alt="Clue Image"></div>`;
+        }
+        li.innerHTML = html;
         li.onclick = () => {
             const startCell = findStartCell(clue, dir);
             focusCell(startCell.r, startCell.c);
@@ -333,7 +459,7 @@ title: Crosswords
             if (val) {
                 filled++;
                 if (correctChar && val === correctChar.toUpperCase()) input.parentElement.classList.add('correct');
-                else if (correctChar) { input.parentElement.classList.add('incorrect'); allCorrect = false; }
+                else if (correctChar && correctChar !== "") { input.parentElement.classList.add('incorrect'); allCorrect = false; }
             } else { allCorrect = false; }
         });
         msgEl.textContent = filled === 0 ? "Start typing to check!" : (allCorrect && filled === total ? "Solved! 🎉" : "Keep trying!");
@@ -345,5 +471,5 @@ title: Crosswords
         msgEl.textContent = "";
     }
 
-    init();
+    initScheduler();
 </script>
