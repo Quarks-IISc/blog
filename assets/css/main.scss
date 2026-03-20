@@ -59,10 +59,36 @@
 
 /* --- Card Widget Improvements (General) --- */
 .card {
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08); border-radius: 8px;
+    transition: transform 0.2s cubic-bezier(0.2, 0, 0.4, 1), box-shadow 0.2s cubic-bezier(0.2, 0, 0.4, 1);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.06); border-radius: 8px;
+    overflow: hidden; /* Ensure aspect ratio clipping */
+    contain: paint; /* Performance: helps browser isolate rendering */
 }
-.card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.15); }
+.card:hover { transform: translateY(-5px); box-shadow: 0 8px 16px rgba(0,0,0,0.12); }
+
+/* Aspect Ratio Reservation to prevent Layout Shift */
+.maxthumb {
+    width: 100%;
+    aspect-ratio: 16 / 9; /* Standard post image ratio */
+    background-color: #f8f8f8; /* Placeholder color */
+    overflow: hidden;
+    contain: strict;
+}
+
+.wrapthumbnail {
+    width: 100%;
+    aspect-ratio: 4 / 5; /* Featured box image ratio (vertical focus) */
+    background-color: #f8f8f8;
+    overflow: hidden;
+    contain: strict;
+}
+
+@media (max-width: 991px) {
+    .wrapthumbnail {
+        aspect-ratio: 16 / 9; /* Switch to horizontal on mobile for featured */
+    }
+}
+
 .card .card-body h2.card-title a { font-size: 1.3rem; line-height: 1.4; }
 .card .card-body h4.card-text { font-size: 0.95rem; color: #666; }
 .card .maxthumb img { border-top-left-radius: 8px; border-top-right-radius: 8px; }
@@ -163,8 +189,9 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
 /* --- Micro-Interactions: Scroll Fade-Up --- */
 .fade-up-element {
     opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    transform: translateY(20px);
+    transition: opacity 0.6s cubic-bezier(0.2, 0, 0.4, 1), transform 0.6s cubic-bezier(0.2, 0, 0.4, 1);
+    will-change: opacity, transform;
 }
 
 .fade-up-element.visible {
