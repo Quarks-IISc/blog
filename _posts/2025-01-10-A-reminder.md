@@ -5,7 +5,6 @@ author: "Aditi Mishra"
 categories: [poems]
 image: "/assets/images/Stories/Nature.jpeg"
 excerpt: "A free verse on faint memories and the brilliant spark of courage in the dark."
-featured: true
 ---
 
 Poet: Aditi Mishra

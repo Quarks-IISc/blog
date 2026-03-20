@@ -9,7 +9,7 @@ title: Home
 
 {% if page.url == "/" %}
 <div class="hero-header">
-    <img src="{{ site.baseurl }}/assets/images/quarks_black.png" alt="Quarks Logo" class="hero-logo">
+    <img src="{{ site.baseurl }}/assets/images/quarks_black.png" alt="Quarks Logo" class="hero-logo" fetchpriority="high" decoding="async">
 </div>
 
 <div class="intro-section text-center">
@@ -227,9 +227,18 @@ title: Home
             <div class="section-title section-hero-header">
                 <h2 style="font-size: 2.5rem;">CROSSWORDS</h2>
             </div>
-            <div class="mt-4 text-center d-flex flex-column align-items-center justify-content-center" style="min-height: 350px; background: rgba(128,128,128,0.05); border-radius: 15px; padding: 30px;">
+            <div class="mt-4 text-center d-flex flex-column align-items-center justify-content-center" style="min-height: 400px; background: rgba(128,128,128,0.05); border-radius: 15px; padding: 30px;">
+                <div class="crossword-visual mb-4 fade-up-element">
+                    <div class="cw-grid">
+                        <div class="cw-tile">T<span class="cw-number">1</span></div><div class="cw-tile">R</div><div class="cw-tile">Y</div><div class="cw-tile black"></div><div class="cw-tile">O<span class="cw-number">2</span></div><div class="cw-tile">U</div><div class="cw-tile">R</div>
+                        <div class="cw-tile black"></div><div class="cw-tile black"></div><div class="cw-tile black"></div><div class="cw-tile black"></div><div class="cw-tile black"></div><div class="cw-tile black"></div><div class="cw-tile black"></div>
+                        <div class="cw-tile">Q<span class="cw-number">3</span></div><div class="cw-tile">U</div><div class="cw-tile">A</div><div class="cw-tile">R</div><div class="cw-tile">K</div><div class="cw-tile">S</div><div class="cw-tile black"></div>
+                        <div class="cw-tile black"></div><div class="cw-tile black"></div><div class="cw-tile black"></div><div class="cw-tile black"></div><div class="cw-tile black"></div><div class="cw-tile black"></div><div class="cw-tile black"></div>
+                        <div class="cw-tile black"></div><div class="cw-tile">M<span class="cw-number">4</span></div><div class="cw-tile">I</div><div class="cw-tile">N</div><div class="cw-tile">I</div><div class="cw-tile black"></div><div class="cw-tile black"></div>
+                    </div>
+                </div>
                 <p class="powerful-intro-text mb-4" style="font-size: 1.3rem;">Put your IISc knowledge to the test with our latest crosswords!</p>
-                <a href="{{ site.baseurl }}/crosswords" class="magazine-link" style="font-size: 1.2rem;">Try out crosswords <span class="arrow">&xrarr;</span></a>
+                <a href="{{ site.baseurl }}/crosswords" class="magazine-link" style="font-size: 1.2rem;">Try Crossword Mini <span class="arrow">&xrarr;</span></a>
             </div>
         </div>
     </div>
@@ -269,6 +278,63 @@ title: Home
     }
     .dark-mode .announcements-scroll-container::-webkit-scrollbar-thumb {
         background: rgba(255,255,255,0.2);
+    }
+
+    /* Crossword Styles */
+    .cw-grid {
+        display: grid;
+        grid-template-columns: repeat(7, 32px);
+        grid-gap: 4px;
+        justify-content: center;
+        background: #333;
+        padding: 8px;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+    .cw-tile {
+        width: 32px;
+        height: 32px;
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        color: #000;
+        font-size: 1rem;
+        font-family: 'Orbitron', sans-serif;
+        text-transform: uppercase;
+        border-radius: 2px;
+        position: relative;
+    }
+    .cw-number {
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        font-size: 0.5rem;
+        color: #666;
+        line-height: 1;
+    }
+    .cw-tile.black {
+        background: #111;
+    }
+    .dark-mode .cw-tile:not(.black) {
+        background: #ccc;
+        color: #000;
+    }
+    .dark-mode .cw-grid {
+        background: #444;
+    }
+    @media (max-width: 576px) {
+        .cw-grid {
+            grid-template-columns: repeat(7, 25px);
+            grid-gap: 3px;
+            padding: 5px;
+        }
+        .cw-tile {
+            width: 25px;
+            height: 25px;
+            font-size: 0.8rem;
+        }
     }
 </style>
 
