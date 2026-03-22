@@ -49,11 +49,11 @@ title: Home
         <div class="latest-carousel" id="latest-posts-carousel" style="display: flex; overflow-x: auto; gap: 20px; padding-bottom: 20px; scrollbar-width: none;">
 
             <div id="carousel-track" style="display: flex; gap: 20px;">
-                {% assign recent_stories = site.categories.stories | where_exp: "item", "item.featured != true" | limit: 5 %}
-                {% assign recent_poems = site.categories.poems | where_exp: "item", "item.featured != true" | limit: 5 %}
-                {% assign recent_pictures = site.categories.pictures | where_exp: "item", "item.featured != true" | limit: 5 %}
+                {% assign recent_stories = site.categories.stories | where_exp: "item", "item.featured != true" | sort: "date" | reverse | limit: 5 %}
+                {% assign recent_poems = site.categories.poems | where_exp: "item", "item.featured != true" | sort: "date" | reverse | limit: 5 %}
+                {% assign recent_pictures = site.categories.pictures | where_exp: "item", "item.featured != true" | sort: "date" | reverse | limit: 5 %}
                 
-                {% assign all_recent = recent_stories | concat: recent_poems | concat: recent_pictures | sort: "date" %}
+                {% assign all_recent = recent_stories | concat: recent_poems | concat: recent_pictures | sort: "date" | reverse %}
                 
                 {% for post in all_recent %}
                     <div class="carousel-item-custom mb-30px">
@@ -147,7 +147,7 @@ title: Home
                 <h2 style="font-size: 2.5rem;">ANNOUNCEMENTS</h2>
             </div>
             <div class="announcements-scroll-container mt-4 px-2" style="max-height: 400px; overflow-y: auto; scrollbar-width: thin;">
-                {% assign current_date = "now" | date: "%Y-%m-%d" %}
+                {% assign current_date = "now" | date: "%Y%m%d" | plus: 0 %}
                 
                 <!-- Active Announcements -->
                 <ul class="list-unstyled">
@@ -155,7 +155,8 @@ title: Home
                     
                     <!-- 1. Active with Deadlines (Sorted) -->
                     {% for announcement in sorted_announcements %}
-                        {% if announcement.deadline != nil and announcement.deadline != "" and announcement.deadline >= current_date %}
+                        {% assign announcement_date = announcement.deadline | date: "%Y%m%d" | plus: 0 %}
+                        {% if announcement.deadline != nil and announcement.deadline != "" and announcement_date >= current_date %}
                         <li class="mb-4 pb-3 border-bottom">
                             <div class="font-weight-bold" style="font-size: 1.15rem; line-height: 1.4;">
                                 {{ announcement.title }}
@@ -190,7 +191,8 @@ title: Home
                 <!-- Past Announcements -->
                 {% assign past_count = 0 %}
                 {% for announcement in site.data.announcements %}
-                    {% if announcement.deadline != nil and announcement.deadline != "" and announcement.deadline < current_date %}
+                    {% assign announcement_date = announcement.deadline | date: "%Y%m%d" | plus: 0 %}
+                    {% if announcement.deadline != nil and announcement.deadline != "" and announcement_date < current_date %}
                         {% assign past_count = past_count | plus: 1 %}
                     {% endif %}
                 {% endfor %}
@@ -202,7 +204,8 @@ title: Home
                 <ul class="list-unstyled">
                     {% assign sorted_past = site.data.announcements | sort: "deadline" | reverse %}
                     {% for announcement in sorted_past %}
-                        {% if announcement.deadline != nil and announcement.deadline != "" and announcement.deadline < current_date %}
+                        {% assign announcement_date = announcement.deadline | date: "%Y%m%d" | plus: 0 %}
+                        {% if announcement.deadline != nil and announcement.deadline != "" and announcement_date < current_date %}
                         <li class="mb-3 pb-2 border-bottom">
                             <div class="font-weight-bold" style="font-size: 1.15rem; line-height: 1.4;">
                                 {{ announcement.title }}

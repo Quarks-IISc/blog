@@ -11,27 +11,27 @@
     {
       "n": 1,
       "where": 1,
-      "clue": "Camping site for Undergraduates",
-      "ans": "OPB"
+      "clue": "Undergraduate Phyics course",
+      "ans": "UPH"
     },
     {
       "n": 2,
       "where": 2,
-      "clue": "Biryani with gravy and ____",
-      "ans": ""
+      "clue": "Part of a whole",
+      "ans": "PIECE"
     },
-    { "n": 3, "where": 3, "clue": "When necessary or needed.", "ans": "" },
+    { "n": 3, "where": 3, "clue": "8/10 of IISc", "ans": "BPLUS" },
     {
       "n": 4,
       "where": 4,
-      "clue": "Australians love to call their friends this.",
-      "ans": ""
+      "clue": "Dramatic musical work(western)",
+      "ans": "OPERA"
     },
     {
       "n": 5,
       "where": 5,
-      "clue": "Indian classical stringed instrument",
-      "ans": ""
+      "clue": "To fart or to pass ____",
+      "ans": "WIND"
     }
   ],
 
@@ -40,31 +40,31 @@
       "n": 1,
       "where": 1,
       "clue": "Playing a violin from tip to frog. (Two words)",
-      "ans": ""
+      "ans": "UPBOW"
     },
     {
       "n": 2,
       "where": 2,
-      "clue": "Child with last name Longstocking.",
-      "ans": ""
+      "clue": "Children's character with last name Longstocking.",
+      "ans": "PIPPI"
     },
     {
       "n": 3,
       "where": 3,
       "clue": "Most beautiful of the Iliad.",
-      "ans": ""
+      "ans": "HELEN"
     },
     {
       "n": 4,
       "where": 4,
       "clue": "Indian diet’s source of probiotics",
-      "ans": ""
+      "ans": "CURD"
     },
     {
       "n": 5,
       "where": 5,
       "clue": "A biome of plateau; The way jar-jar binks refers to himself",
-      "ans": ""
+      "ans": "MESA"
     }
   ]
 }
