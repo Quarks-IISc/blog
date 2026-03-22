@@ -3,7 +3,7 @@ layout: post
 title: "Before infinity"
 author: "Jahin Sadat Mollah"
 categories: [poems]
-image: "/assets/images/Poems/Before_infinity.jpg"
+image: "/assets/images/Poems/before_infinity.jpg"
 excerpt: "A romantic free verse on the feeling of insignificance in the vast cosmos, where only the love for another remains constant."
 ---
 

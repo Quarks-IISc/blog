@@ -3,7 +3,7 @@ layout: post
 title: "Wheels in frame"
 author: "Kabyadeep Das"
 categories: [pictures]
-image: "/assets/images/Pictures/Wheels_in_frame.jpg"
+image: "/assets/images/Pictures/wheels_in_frame.jpg"
 featured: true
 ---
 

@@ -3,7 +3,7 @@ layout: post
 title: "Leap of faith!"
 author: "Mihir Kapse"
 categories: [stories]
-image: "/assets/images/Stories/Leap_of_faith.jpg"
+image: "/assets/images/Stories/leap_of_faith.jpg"
 excerpt: "The story of Professor Anand Srivastava and the 'leap of faith' that led him from naval architecture to biophysics."
 ---
 
@@ -29,6 +29,6 @@ Anand began his training as a naval architect, studied nanomaterials for 5 years
 
 "I am also a little bit more foolhardy that way. Like sometimes I jump before I think, so that's my problem too," shares Anand. "Sometimes it works, sometimes it doesn't. You can call it foolish, you can call it ignorance, ignorance leading to something nice."
 
-Challenges like finding a good university, giving exams, and later teaching biology to students at IISc were present throughout Anand's journey. Still, with support from his family and friends, he got through them. "My parents had strong trust in me. If I were happy, they didn't care about (*anything else)*," shared Anand.
+Challenges like finding a good university, giving exams, and later teaching biology to students at IISc were present throughout Anand's journey. Still, with support from his family and friends, he got through them. "My parents had strong trust in me. If I were happy, they didn't care about (_anything else)_," shared Anand.
 
 Looking at Professor Anand's life, maybe sometimes it is a good idea to just 'jump'. Who knows what lies ahead?

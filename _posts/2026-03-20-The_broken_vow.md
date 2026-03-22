@@ -3,7 +3,7 @@ layout: post
 title: "The broken vow"
 author: "Debosmita Biswas"
 categories: [poems]
-image: "/assets/images/Poems/The_broken_vow.jpg"
+image: "/assets/images/Poems/the_broken_vow.jpg"
 excerpt: "A poignant poem about a broken life and the search for an ideal."
 ---
 

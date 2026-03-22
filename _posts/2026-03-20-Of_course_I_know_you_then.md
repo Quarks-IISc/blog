@@ -3,7 +3,7 @@ layout: post
 title: "Of course! I know you then..."
 author: "Shubhanan Banerjee"
 categories: [poems]
-image: "/assets/images/Poems/Of_course_I_know_you_then.jpg"
+image: "/assets/images/Poems/of_course_i_know_you_then.jpg"
 excerpt: "A poem about recognition and shared moments of beauty."
 ---
 
