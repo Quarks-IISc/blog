@@ -1,6 +1,3 @@
-^\\
-
-^\
 <script src="{{site.baseurl}}/assets/js/lunr.js"></script>
 
 <style>
@@ -13,7 +10,7 @@
 
 
 <form class="bd-search" onSubmit="return lunr_search(document.getElementById('lunrsearch').value);">
-    <input type="text" class="form-control text-small launch-modal-search" id="lunrsearch" name="q" maxlength="255" value="" placeholder=Search"/>
+    <input type="text" class="form-control text-small launch-modal-search" id="lunrsearch" name="q" maxlength="255" value="" placeholder="Search"/>
 </form>
 
 <div id="lunrsearchresults">

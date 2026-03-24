@@ -1,4 +1,4 @@
-
+# Quarks
 **Quarks**, the undergraduate magazine of the Indian Institute of Science (IISc).
 
 This repository contains the source code for the Quarks website, which is built using Jekyll, a static site generator. The website hosts a collection of stories, poems, photographs and more contributed by IISc students.
