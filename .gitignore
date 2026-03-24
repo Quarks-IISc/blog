@@ -5,4 +5,4 @@ _site
 *~
 .vscode/
 vendor/bundle/ruby/3.3.0
-vendor/
+**vendor/**
