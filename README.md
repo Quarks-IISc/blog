@@ -1,4 +1,3 @@
-# Quarks
 
 **Quarks**, the undergraduate magazine of the Indian Institute of Science (IISc).
 
