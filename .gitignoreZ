@@ -1,0 +1,8 @@
+_site
+.DS_Store
+*.swp
+.sass-cache
+*~
+.vscode/
+vendor/bundle/ruby/3.3.0
+
