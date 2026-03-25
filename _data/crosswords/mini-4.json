@@ -8,24 +8,24 @@
   ],
 
   "across": [
-    { "n": 1, "where": 1, "clue": "Nobel Prize CEO", "ans": "" },
+    { "n": 1, "where": 1, "clue": "Nobel Prize CEO", "ans": "DEMIS" },
     {
       "n": 2,
       "where": 2,
       "clue": "Make (someone) ecstatically happy",
-      "ans": ""
+      "ans": "ELATE"
     },
     {
       "n": 3,
       "where": 3,
       "clue": "Of a wave; A hi-fi music service.",
-      "ans": ""
+      "ans": "TIDAL"
     },
     {
       "n": 4,
       "where": 4,
       "clue": "And others- Latin (two words)",
-      "ans": ""
+      "ans": "ETAL"
     },
     { "n": 5, "where": 5, "clue": "Ratatouille main character;", "ans": "REMY" }
   ],
@@ -35,16 +35,16 @@
       "n": 1,
       "where": 1,
       "clue": "Discourage (someone) from doing something",
-      "ans": ""
+      "ans": "DETER"
     },
     {
       "n": 2,
       "where": 2,
       "clue": "Epstein files have exposed a corrupt _____",
-      "ans": ":"
+      "ans": "ELITE"
     },
-    { "n": 3, "where": 3, "clue": "Expansion of Ma'am", "ans": "" },
-    { "n": 4, "where": 4, "clue": "Country shaped like boot", "ans": "" },
-    { "n": 5, "where": 5, "clue": "Cute and short for Selvam", "ans": "" }
+    { "n": 3, "where": 3, "clue": "Expansion of Ma'am", "ans": "MADAM" },
+    { "n": 4, "where": 4, "clue": "Country shaped like boot", "ans": "ITALY" },
+    { "n": 5, "where": 5, "clue": "Cute and short for Selvam", "ans": "SEL" }
   ]
 }
