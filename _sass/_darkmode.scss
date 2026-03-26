@@ -272,3 +272,14 @@ html.dark-mode body,
 .dark-mode .footer a:hover {
     color: #bbdefb;
 }
+
+/* --- Crossword Page & Widget Styles --- */
+.dark-mode .check-answer-btn {
+    background: #fff;
+    color: #000 !important;
+}
+.dark-mode .check-answer-btn:hover {
+    background: #eee;
+    color: #000 !important;
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.1);
+}

@@ -349,6 +349,32 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
 .dark-mode .carousel-arrow:hover { background: #fff; color: #222; }
 
 /* --- Crossword Page & Widget Styles --- */
+.check-answer-btn {
+    background: #000;
+    color: #fff;
+    border: none;
+    padding: 8px 24px;
+    border-radius: 50px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    outline: none;
+}
+.check-answer-btn:hover {
+    background: #333;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    color: #fff;
+    text-decoration: none;
+}
+.check-answer-btn:active {
+    transform: translateY(0);
+}
+
 :root {
     --cell-size: clamp(40px, 9vw, 65px);
     --accent-color: #000;
