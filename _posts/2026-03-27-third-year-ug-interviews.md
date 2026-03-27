@@ -4,6 +4,7 @@ title: "Third Year UG Interviews"
 author: "Subhanan Banerjee"
 description: "A series of interviews with third-year undergraduates at IISc across different majors"
 categories: [stories]
+image: "/assets/images/Stories/Nature.jpg"
 ---
 
 A series of interviews conducted by Rahul, a third-year undergraduate at
