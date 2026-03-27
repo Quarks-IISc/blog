@@ -1,10 +1,9 @@
-name: Build and Deploy Jekyll with WebP
+name: Build and Deploy Jekyll
 
 on:
   push:
-    branches: [ main, master ]
+    branches: [main, master]
   pull_request:
-    branches: [ main, master ]
   workflow_dispatch:
 
 permissions:
@@ -26,7 +25,7 @@ jobs:
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.3'
+          ruby-version: "3.3"
           bundler-cache: true
 
       - name: Cache WebP conversions
@@ -65,5 +64,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-
-
