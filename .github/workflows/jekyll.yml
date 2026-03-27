@@ -38,8 +38,7 @@ jobs:
           find assets/images -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" \) | while read img; do
             webp_file="${img%.*}.webp"
             if [ ! -f "$webp_file" ]; then
-              convert "$img" -quality 80 "$webp_file"
-              echo "Converted: $img → $webp_file"
+              convert "$img" -quality 80 "$webp_file" 2>/dev/null && echo "Converted: $img" || echo "Skipped (corrupted): $img"
             fi
           done
 
