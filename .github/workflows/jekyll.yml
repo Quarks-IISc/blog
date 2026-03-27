@@ -28,18 +28,20 @@ jobs:
           ruby-version: "3.3"
           bundler-cache: true
 
-      - name: Cache WebP conversions
-        uses: actions/cache@v4
-        with:
-          path: _site/assets/images/**/*.webp
-          key: webp-cache-${{ hashFiles('assets/images/**/*.{jpg,jpeg,png,JPG,JPEG,PNG}') }}
-          restore-keys: |
-            webp-cache-
-
       - name: Install ImageMagick
         run: |
           sudo apt-get update
           sudo apt-get install -y imagemagick webp
+
+      - name: Convert images to WebP
+        run: |
+          find assets/images -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" \) | while read img; do
+            webp_file="${img%.*}.webp"
+            if [ ! -f "$webp_file" ]; then
+              convert "$img" -quality 80 "$webp_file"
+              echo "Converted: $img → $webp_file"
+            fi
+          done
 
       - name: Setup Pages
         id: pages
