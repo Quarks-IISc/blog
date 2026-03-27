@@ -41,7 +41,6 @@ jobs:
             if [ ! -f "$webp_file" ]; then
               if convert "$img" -quality 80 -define webp:method=6 "$webp_file" 2>/dev/null; then
                 echo "✓ ${img##*/} -> ${webp_file##*/}"
-                rm "$img"
               else
                 echo "✗ ${img##*/} (skipped - corrupted)"
               fi
