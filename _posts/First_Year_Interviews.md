@@ -6,8 +6,7 @@ title: First Years' first experiences
 author: Parth Kalyani, Aditey Nandan, Mihir Kapse
 categories: [stories]
 image: "/assets/images/Stories/First_Years.jpeg"
-excerpt: 'First Years'
-latest: true
+excerpt: "First Years"
 all: true
 ---
 
@@ -18,7 +17,7 @@ To find the answers to these challenging questions, we decided to interview our 
 And now that we are at the end of our first year in IISc, it is time to reflect…
 <br><br>
 “So, what was coming to IISc like? What was the experience of coming here like?”<br>
- It is obvious from the vivid and passionate responses to this question that life at IISc is, to say the least, is quite interesting. “When I just came to campus, there was a lot of uncertainty about how I’ll make friends, and how the campus will be, and whether I’ll be able to cope...”, a student recalled. For most of them, it was THE first-time experience. First time living in a hostel, first time being surrounded by such a highly intelligent peer group, first time staying away from their parents… and what not. “There were a lot of challenges. How will I manage my own room? Can I ever score well here?”, questions like this bothered all of them. But often, reality is much less agonizing than our imaginations, and the students learned this the easy way. THE IISc WAY.
+It is obvious from the vivid and passionate responses to this question that life at IISc is, to say the least, is quite interesting. “When I just came to campus, there was a lot of uncertainty about how I’ll make friends, and how the campus will be, and whether I’ll be able to cope...”, a student recalled. For most of them, it was THE first-time experience. First time living in a hostel, first time being surrounded by such a highly intelligent peer group, first time staying away from their parents… and what not. “There were a lot of challenges. How will I manage my own room? Can I ever score well here?”, questions like this bothered all of them. But often, reality is much less agonizing than our imaginations, and the students learned this the easy way. THE IISc WAY.
 According to most responses, it seems the IISc way is a smooth and rewarding transition. “The transition to IISc was pretty smooth”, many said, “seniors were very helpful”. Indeed, most students agreed that the seniors were the key ingredient in cooking the experience.<br>
 On the contrary, students reported that one of the bitter points was the management on the day of the admission, with many people commenting on how the entire process was a huge avoidable mess.
 <br><br>

@@ -35,13 +35,19 @@ jobs:
 
       - name: Convert images to WebP
         run: |
+          echo "Converting images to WebP..."
           find assets/images -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" \) | while read img; do
             webp_file="${img%.*}.webp"
             if [ ! -f "$webp_file" ]; then
-              convert "$img" -quality 80 "$webp_file"
-              echo "Converted: $img → $webp_file"
+              if convert "$img" -quality 80 -define webp:method=6 "$webp_file" 2>/dev/null; then
+                echo "✓ ${img##*/} -> ${webp_file##*/}"
+                rm "$img"
+              else
+                echo "✗ ${img##*/} (skipped - corrupted)"
+              fi
             fi
           done
+          echo "WebP conversion complete!"
 
       - name: Setup Pages
         id: pages

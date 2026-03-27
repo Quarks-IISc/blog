@@ -7,12 +7,10 @@ author: Prokash Kumar Kundu
 categories: [poems]
 image: "/assets/images/Poems/BleedingsOfTameBeast.jpeg"
 excerpt: "Tame and sane, I will no longer paint the world's suffering in red, but I shall spit blood and let it speckle the walls instead."
-latest: true
 all: true
 ---
 
 Poet: Prokash Kumar Kundu
-
 
 <div style="text-align: center;">
 
@@ -40,6 +38,6 @@ I am tame now.<br>
 Tame and sane.<br>  
 I shall but spit,<br>  
 And spit blood<br>  
-And speckle the walls in red.<br>  
+And speckle the walls in red.<br>
 
 </div>

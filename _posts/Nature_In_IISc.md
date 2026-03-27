@@ -6,10 +6,10 @@ title: Nature
 author: Blank
 categories: [stories]
 image: "/assets/images/Stories/Nature.jpeg"
-excerpt: 'Nature in IISc'
-latest: false
+excerpt: "Nature in IISc"
 all: false
 ---
 
 Article in progress...
 You didn't see anything
+

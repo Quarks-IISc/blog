@@ -34,7 +34,7 @@ Jekyll::Hooks.register :site, :post_write do |site|
             end
             
             # Convert to WebP
-            success = system("magick", image_path, "-quality", "85", "-define", "webp:method=6", webp_path, err: File::NULL, out: File::NULL)
+            success = system("magick", image_path, "-quality", "80", "-define", "webp:method=6", webp_path, err: File::NULL, out: File::NULL)
             
             if success && File.exist?(webp_path)
               original_size = File.size(image_path) / 1024.0
