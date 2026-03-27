@@ -3,7 +3,7 @@ layout: post
 title: "The Old Physics Building"
 author: "Amogh Kinikar"
 categories: [stories]
-image: "/assets/images/Stories/Nature.jpeg"
+image: "/assets/images/Stories/old_physics_building.jpg"
 excerpt: "A historical account of the Old Physics Building (OPB) at IISc, tracing its origins, founding departments, and its role in the institute's early controversies."
 ---
 

@@ -1,24 +1,131 @@
 <style>
-    #result {
-        padding-top: 2vh;
-    }
+  .subscription-form .form-control {
+    border-radius: 4px 0 0 4px;
+    border: 1px solid #ced4da;
+    padding: 0.6rem 1rem;
+    height: auto;
+  }
+  .subscription-form .btn {
+    border-radius: 0 4px 4px 0;
+    padding: 0.6rem 1.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+  }
+  #subscription-message {
+    transition: all 0.3s ease;
+    min-height: 1.5rem;
+  }
+  /* Dark mode support */
+  .dark-mode .subscription-form .form-control {
+    background-color: #2b2b2b;
+    border-color: #444;
+    color: #eee;
+  }
+  .dark-mode .subscription-form .form-control::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+  }
+  .dark-mode .subscription-form .btn-dark {
+    background-color: #eee;
+    color: #111;
+    border-color: #eee;
+  }
+  /* Modal Dark Mode */
+  .dark-mode .modal-content {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    border: 1px solid #333;
+  }
+  .dark-mode .modal-header .close {
+    color: #e0e0e0;
+    text-shadow: none;
+    opacity: 0.8;
+  }
+  .dark-mode .modal-header .close:hover {
+    color: #fff;
+    opacity: 1;
+  }
+  .dark-mode .modal-body p.lead {
+    color: #bdbdbd;
+  }
 </style>
 
-<h5 
-    class="font-weight-bold mb-3"
-    style="
-        font-size: 0.95rem;
-        text-transform: uppercase;
-        letter-spacing: 1px;          
-    "
->
-    Subscribe to Our Newsletter
-</h5>
+<h5 class="font-weight-bold footer-heading">Subscribe to Our Newsletter</h5>
+<p class="small text-muted mb-3">
+  Stay updated with the latest stories and insights from the IISc community.
+</p>
 
-<form id="emailForm">
-    <input type="email" name="email" id="email" required placeholder="Enter your email address">
-    <button type="submit" id="submit">Submit</button>
+<form id="emailForm" class="subscription-form">
+  <div class="input-group">
+    <input
+      type="email"
+      name="email"
+      id="email"
+      class="form-control"
+      required
+      placeholder="Enter your email"
+      aria-label="Email address"
+    />
+    <div class="input-group-append">
+      <button class="btn btn-dark" type="submit" id="submit">
+        <span class="submit-text">Join</span>
+        <span
+          class="spinner-border spinner-border-sm d-none"
+          role="status"
+          aria-hidden="true"
+        ></span>
+      </button>
+    </div>
+  </div>
+  <div id="subscription-message" class="small mt-2"></div>
 </form>
 
+<!-- Subscription Success Modal -->
+<div
+  class="modal fade"
+  id="subscriptionModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="subscriptionModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header border-0">
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body text-center pb-5">
+        <div class="mb-4">
+          <i
+            class="fas fa-check-circle text-success"
+            style="font-size: 4rem"
+          ></i>
+        </div>
+        <h3 class="modal-title mb-3" id="subscriptionModalLabel">
+          Thanks for subscribing to Quarks!
+        </h3>
+        <p class="lead">
+          We will keep you posted about our upcoming newsletters, posts, and
+          more.
+        </p>
+        <button
+          type="button"
+          class="btn btn-dark mt-4 px-5"
+          data-dismiss="modal"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <script src="{{ site.baseurl }}/assets/js/subscription.js"></script>

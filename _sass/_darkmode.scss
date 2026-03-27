@@ -21,6 +21,12 @@ html.dark-mode body,
 .dark-mode .mainheading h1, .dark-mode .mainheading .lead, .dark-mode .intro-section .powerful-intro-text, .dark-mode .section-title h2 span {
     color: #e0e0e0;
 }
+.dark-mode .section-title h2 {
+    border-bottom-color: rgba(255, 255, 255, 0.125);
+}
+.dark-mode .section-title h2 span, .dark-mode .section-title span {
+    border-bottom-color: rgba(255, 255, 255, 0.44);
+}
 .dark-mode .article-post, .dark-mode .article-post p, .dark-mode .article-post h1, .dark-mode .article-post h2, .dark-mode .article-post h3, .dark-mode .article-post h4, .dark-mode .article-post h5, .dark-mode .article-post h6, .dark-mode .article-post blockquote, .dark-mode .article-post div {
     color: #e0e0e0 !important;
 }
@@ -265,4 +271,15 @@ html.dark-mode body,
 }
 .dark-mode .footer a:hover {
     color: #bbdefb;
+}
+
+/* --- Crossword Page & Widget Styles --- */
+.dark-mode .check-answer-btn {
+    background: #fff;
+    color: #000 !important;
+}
+.dark-mode .check-answer-btn:hover {
+    background: #eee;
+    color: #000 !important;
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.1);
 }

@@ -1,0 +1,50 @@
+{
+  "date": "2026-03-25",
+  "size": [5, 5],
+  "author": "Ananth",
+  "blocks": [
+    [4, 5],
+    [5, 5]
+  ],
+
+  "across": [
+    { "n": 1, "where": 1, "clue": "Nobel Prize CEO", "ans": "DEMIS" },
+    {
+      "n": 2,
+      "where": 2,
+      "clue": "Make (someone) ecstatically happy",
+      "ans": "ELATE"
+    },
+    {
+      "n": 3,
+      "where": 3,
+      "clue": "Of a wave; A hi-fi music service.",
+      "ans": "TIDAL"
+    },
+    {
+      "n": 4,
+      "where": 4,
+      "clue": "And others- Latin (two words)",
+      "ans": "ETAL"
+    },
+    { "n": 5, "where": 5, "clue": "Ratatouille main character;", "ans": "REMY" }
+  ],
+
+  "down": [
+    {
+      "n": 1,
+      "where": 1,
+      "clue": "Discourage (someone) from doing something",
+      "ans": "DETER"
+    },
+    {
+      "n": 2,
+      "where": 2,
+      "clue": "Epstein files have exposed a corrupt _____",
+      "ans": "ELITE"
+    },
+    { "n": 3, "where": 3, "clue": "Expansion of Ma'am", "ans": "MADAM" },
+    { "n": 4, "where": 4, "clue": "Country shaped like boot", "ans": "ITALY" },
+    { "n": 5, "where": 5, "clue": "Cute and short for Selvam", "ans": "SEL" }
+  ]
+}

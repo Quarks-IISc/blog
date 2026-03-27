@@ -98,16 +98,15 @@ title: About Us
     <p class="text-muted mb-4"><em>Meet the passionate minds keeping the Quarks engine running for 2026—part-time editors, full-time science enthusiasts!</em></p>
     
     <div class="row justify-content-center">
-        <!-- Loop through Core Team Members -->
-        {% assign core_members = "Aaitijhya|Abhimanyu_A|Aditya De|Ananth|Anirudh|Aviral|Debosmita|Jahin|Kabyadeep|Kalidas|Kushal|Manya|Shloak|Shreya_Pithva|Souharda|Subhanan " | split: "|" %}
+        <!-- Loop through Core Team Members with extensions -->
+        {% assign core_members = "Aaitijhya.jpg|Abhimanyu_A.jpg|Aditya_De.jpg|Ananth.jpg|Anirudh_Gupta.jpg|Aviral.jpg|Debosmita.jpg|Jahin.jpg|Kabyadeep.jpg|Kalidas.jpg|Kushal.jpg|Lisa.png|Manya.jpg|Sankalp.jpg|Shloak.jpg|Shreya_Pithva.jpg|Soham.jpg|Souharda.jpg|Subhanan.jpg" | split: "|" %}
         
-        {% for member in core_members %}
-            {% assign ext = "jpg" %}
+        {% for member_file in core_members %}
+            {% assign filename_parts = member_file | split: "." %}
+            {% assign member_base = filename_parts | first %}
+            {% assign formatted_name = member_base | replace: "_", " " %}
             
-            {% assign formatted_name = member | replace: "_", " " %}
-            {% assign image_file = member | append: "." | append: ext %}
-            
-            {% include membercard.html name=formatted_name role="Core Team" image=image_file %}
+            {% include membercard.html name=formatted_name role="Core Team" image=member_file %}
         {% endfor %}
     </div>
 </div>
@@ -119,15 +118,15 @@ title: About Us
     <p class="text-muted mb-4"><em>The architects of this digital sanctuary—turning caffeine and code into the magazine you see today.</em></p>
     
     <div class="row justify-content-center">
-        <!-- Loop through Web Dev Members with images -->
-        {% assign dev_members = "Anirudh|Aditya De" | split: "|" %}
+        <!-- Loop through Web Dev Members with extensions -->
+        {% assign dev_members = "Anirudh_Gupta.jpg|Aditya_De.jpg|Soham.jpg|Mrigank_Pawagi.jpg|Aditey_Nandan.jpg" | split: "|" %}
         
-        {% for dev in dev_members %}
-            {% assign dev_ext = "jpg" %}
-            {% assign formatted_dev_name = dev | replace: "_", " " %}
-            {% assign dev_image_file = dev | append: "." | append: dev_ext %}
+        {% for dev_file in dev_members %}
+            {% assign dev_filename_parts = dev_file | split: "." %}
+            {% assign dev_base = dev_filename_parts | first %}
+            {% assign formatted_dev_name = dev_base | replace: "_", " " %}
             
-            {% include membercard.html name=formatted_dev_name role="Website Editor" image=dev_image_file %}
+            {% include membercard.html name=formatted_dev_name role="Website Editor" image=dev_file %}
         {% endfor %}
     </div>
 </div>

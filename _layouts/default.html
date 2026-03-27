@@ -127,53 +127,6 @@
 
     <!-- Begin Menu Navigation
 ================================================== -->
-    <!--
-<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
-
-    <div class="container pr-0">
-
-    <a class="navbar-brand" href="{{ site.baseurl }}/">
-    <img src="{{ site.baseurl }}/{{ site.logo }}" alt="{{ site.name }}">
-    </a>
-
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMediumish" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarMediumish">
-
-
-            <ul class="navbar-nav ml-auto">
-
-                <li class="nav-item">
-                <a class="nav-link" href="{{ site.baseurl }}/stories">Stories</a>
-                </li>
-
-                <li class="nav-item">
-                <a class="nav-link" href="{{ site.baseurl }}/poems">Poems</a>
-                </li>
-
-                <li class="nav-item">
-                <a class="nav-link" href="{{ site.baseurl }}/gallery">Gallery</a>
-                </li>
-
-                <li class="nav-item">
-                <a class="nav-link" href="{{ site.baseurl }}/aboutus">About Us</a>
-                </li>
-
-                {% include search-lunr.html %}
-
-            </ul>
-
-
-    </div>
-
-    </div>
-</nav>
--->
-
-    <!-- Begin Menu Navigation
-================================================== -->
     <nav
       class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down"
     >
@@ -251,170 +204,128 @@
     <!-- End Navigation
 ================================================== -->
 
-    <!-- End Navigation
-================================================== -->
-
-    <!--
-    Begin Menu Navigation
-<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
-    <div class="container pr-0 d-flex justify-content-between align-items-center">
-        <a class="navbar-brand" href="{{ site.baseurl }}/">
-            <img src="{{ site.baseurl }}/{{ site.logo }}" alt="{{ site.name }}">
-        </a>
-        
-        <div class="collapse navbar-collapse" id="navbarMediumish">
-
-    
-            <ul class="navbar-nav ml-auto">
-                    
-            <div class="d-flex">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ site.baseurl }}/stories">Stories</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ site.baseurl }}/poems">Poems</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ site.baseurl }}/gallery">Gallery</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ site.baseurl }}/aboutus">About Us</a>
-                    </li>
-                    {% include search-lunr.html %}
-                </ul>
-            </div>
-    </div>
-</nav>
-End Navigation -->
-
     <div class="site-content">
       <div class="container">
-        <!-- Site Title
-================================================== -->
-        <!--
-<div class="mainheading">
-    <p class="lead">
-        {{ site.description }}
-    </p>
-</div>
--->
-
         <!-- Content -->
         <div class="main-content">{{ content }}</div>
-
-        {% if site.mailchimp-list %}
-        <!-- Bottom Alert Bar
-================================================== -->
-        <!-- <div class="alertbar">
-	<div class="container text-center">
-		<span><img src="{{ site.baseurl }}/{{ site.logo }}" alt="{{site.title}}"> &nbsp; Never miss a <b>story</b> from us, subscribe to our newsletter</span>
-        <form action="{{site.mailchimp-list}}" method="post" name="mc-embedded-subscribe-form" class="wj-contact-form validate" target="_blank" novalidate>
-            <div class="mc-field-group">
-            <input type="email" placeholder="Email" name="EMAIL" class="required email" id="mce-EMAIL" autocomplete="on" required>
-            <input type="submit" value="Subscribe" name="subscribe" class="heart">
-            </div>
-        </form>
-	</div>
-</div> -->
-        {% endif %}
       </div>
-
-      <!-- Categories Jumbotron
-================================================== -->
-      <div class="jumbotron fortags">
-        <div class="d-md-flex h-100">
-          <div class="col-md-8 p-5 align-self-center text-center mx-auto">
-            <!--
-            {% assign categories_list = site.categories %}
-            {% if categories_list.first[0] == null %}
-                {% for category in categories_list %}
-                    <a class="mt-1 mb-1" href="{{site.baseurl}}/categories#{{ category | url_escape | strip | replace: ' ', '-' }}">{{ category | camelcase }} ({{ site.tags[category].size }})</a>
-                {% endfor %}
-            {% else %}
-                {% for category in categories_list %}
-                    <a class="mt-1 mb-1" href="{{site.baseurl}}/categories#{{ category[0] | url_escape | strip | replace: ' ', '-' }}">{{ category[0] | camelcase }} ({{ category[1].size }})</a>
-                {% endfor %}
-            {% endif %}
-            {% assign categories_list = nil %}
-            -->
-          </div>
-        </div>
-      </div>
-
-      <!-- Footer -->
-
-      <footer class="footer mt-5 py-5">
-        <div class="container">
-          <div class="row">
-            <!-- Brand Column -->
-            <div
-              class="col-md-4 col-sm-12 mb-4 mb-md-0 text-center text-md-left"
-            >
-              <img
-                src="{{ site.baseurl }}/{{ site.logo }}"
-                alt="{{ site.name }}"
-                class="footer-logo mb-3"
-                style="max-height: 40px"
-              />
-              <p class="mb-1">
-                &copy; {{ site.time | date: "%Y" }} IISc Quarks.
-              </p>
-              <p class="small">Picture Courtesy: Hridesh Gupta</p>
-            </div>
-
-            <!-- All Posts Column -->
-            <div
-              class="col-md-3 col-sm-4 mb-4 mb-md-0 text-center text-md-left"
-            >
-              <h5
-                class="font-weight-bold mb-3"
-                style="
-                  font-size: 0.95rem;
-                  text-transform: uppercase;
-                  letter-spacing: 1px;
-                "
-              >
-                All Posts
-              </h5>
-              <ul class="list-unstyled">
-                <!-- Empty placeholder for future links -->
-              </ul>
-            </div>
-
-            <!-- Connect with Us Column -->
-            <div
-              class="col-md-3 col-sm-4 mb-4 mb-md-0 text-center text-md-left"
-            >
-              <h5
-                class="font-weight-bold mb-3"
-                style="
-                  font-size: 0.95rem;
-                  text-transform: uppercase;
-                  letter-spacing: 1px;
-                "
-              >
-                Connect with Us
-              </h5>
-              <ul class="list-unstyled">
-                <!-- Empty placeholder for future links -->
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="container" style="padding-top: 5vh">
-          <div class="row">
-            <div
-              class="col-md-4 col-sm-12 mb-4 mb-md-0 text-center text-md-left"
-            >
-              {% include subscription.html %}
-            </div>
-          </div>
-        </div>
-      </footer>
-      <!-- End Footer -->
     </div>
-    <!-- /.site-content -->
+
+    <!-- Categories Jumbotron
+================================================== -->
+    <div class="jumbotron fortags"></div>
+
+    <style>
+      .footer-heading {
+        font-size: 1.2rem !important;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 1.2rem !important;
+      }
+      .footer-link-list li {
+        margin-bottom: 0.6rem;
+        font-size: 1rem;
+      }
+      .footer-link-list a {
+        transition: all 0.2s ease-in-out;
+        display: inline-block;
+      }
+      .footer-link-list a:hover {
+        color: #000 !important;
+        transform: translateX(5px);
+        text-decoration: none;
+      }
+      .dark-mode .footer-link-list a:hover {
+        color: #fff !important;
+      }
+      .footer-link-list i {
+        margin-right: 10px;
+        width: 20px;
+        text-align: center;
+        color: #6c757d;
+        font-size: 0.9rem;
+      }
+      .dark-mode .footer-link-list i {
+        color: #adb5bd;
+      }
+    </style>
+
+    <!-- Footer -->
+    <footer id="site-footer" class="footer mt-5 py-5 border-top">
+      <div class="container">
+        <div class="row">
+          <!-- Brand Column -->
+          <div class="col-md-3 col-sm-6 mb-4 mb-md-0 text-center text-md-left">
+            <img
+              src="{{ site.baseurl }}/{{ site.logo }}"
+              alt="{{ site.name }}"
+              class="footer-logo mb-3"
+              style="max-height: 40px"
+            />
+            <p class="mb-1">&copy; {{ site.time | date: "%Y" }} IISc Quarks.</p>
+            <p class="small">Picture Courtesy: Hridesh Gupta</p>
+          </div>
+
+          <!-- Connect Column -->
+          <div class="col-md-3 col-sm-6 mb-4 mb-md-0 text-center text-md-left">
+            <h5 class="font-weight-bold footer-heading">Connect with Us</h5>
+            <ul class="list-unstyled footer-link-list">
+              <li>
+                <a href="{{ site.baseurl }}/aboutus" class="text-muted">
+                  <i class="fas fa-info-circle"></i>About Us
+                </a>
+              </li>
+              <li>
+                <a href="mailto:quarks.ug@iisc.ac.in" class="text-muted">
+                  <i class="fas fa-envelope"></i>Email Us
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.linkedin.com/company/quarks-iisc/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-muted"
+                >
+                  <i class="fab fa-linkedin"></i>LinkedIn
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- All Posts Column -->
+          <div class="col-md-2 col-sm-6 mb-4 mb-md-0 text-center text-md-left">
+            <h5 class="font-weight-bold footer-heading">All Posts</h5>
+            <ul class="list-unstyled footer-link-list">
+              <li>
+                <a href="{{ site.baseurl }}/stories" class="text-muted"
+                  >Stories</a
+                >
+              </li>
+              <li>
+                <a href="{{ site.baseurl }}/poems" class="text-muted">Poems</a>
+              </li>
+              <li>
+                <a href="{{ site.baseurl }}/gallery" class="text-muted"
+                  >Gallery</a
+                >
+              </li>
+              <li>
+                <a href="{{ site.baseurl }}/crosswords" class="text-muted"
+                  >Crosswords</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Subscribe Column -->
+          <div class="col-md-4 col-sm-12 text-center text-md-left">
+            {% include subscription.html %}
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- End Footer -->
 
     <!-- Scripts
 ================================================== -->

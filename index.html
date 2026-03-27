@@ -4,20 +4,22 @@ title: Home
 ---
 
 <head>
+    <link rel="preload" as="image" href="{{ site.baseurl }}/assets/images/header_bg.webp" fetchpriority="high">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 {% if page.url == "/" %}
 <div class="hero-header">
-    <img src="{{ site.baseurl }}/assets/images/quarks_black.png" alt="Quarks Logo" class="hero-logo">
+    <img src="{{ site.baseurl }}/assets/images/quarks_black.png" alt="Quarks Logo" class="hero-logo" fetchpriority="high" decoding="async">
 </div>
 
-<div class="intro-section">
-    <p class="powerful-intro-text">
+<div class="intro-section text-center">
+    <p class="powerful-intro-text mx-auto">
         Quarks is the undergraduate magazine of IISc, offering a glimpse into our vibrant student community.
     </p>
-    <div class="mt-4">
+    <div class="mt-4 d-flex justify-content-center align-items-center flex-wrap" style="gap: 7rem;">
         <a href="#recent-posts-section" class="magazine-link">Check out Latest posts <span class="arrow">&xrarr;</span></a>
+        <a href="#site-footer" class="magazine-link">Subscribe to our newsletter <span class="arrow">&xrarr;</span></a>
     </div>
 </div>
 <!-- Featured Posts -->
@@ -48,11 +50,11 @@ title: Home
         <div class="latest-carousel" id="latest-posts-carousel" style="display: flex; overflow-x: auto; gap: 20px; padding-bottom: 20px; scrollbar-width: none;">
 
             <div id="carousel-track" style="display: flex; gap: 20px;">
-                {% assign recent_stories = site.categories.stories | where_exp: "item", "item.featured != true" | limit: 5 %}
-                {% assign recent_poems = site.categories.poems | where_exp: "item", "item.featured != true" | limit: 5 %}
-                {% assign recent_pictures = site.categories.pictures | where_exp: "item", "item.featured != true" | limit: 5 %}
+                {% assign recent_stories = site.categories.stories | where_exp: "item", "item.featured != true" | sort: "date" | reverse | limit: 5 %}
+                {% assign recent_poems = site.categories.poems | where_exp: "item", "item.featured != true" | sort: "date" | reverse | limit: 5 %}
+                {% assign recent_pictures = site.categories.pictures | where_exp: "item", "item.featured != true" | sort: "date" | reverse | limit: 5 %}
                 
-                {% assign all_recent = recent_stories | concat: recent_poems | concat: recent_pictures | sort: "date" %}
+                {% assign all_recent = recent_stories | concat: recent_poems | concat: recent_pictures | sort: "date" | reverse %}
                 
                 {% for post in all_recent %}
                     <div class="carousel-item-custom mb-30px">
@@ -135,6 +137,142 @@ title: Home
             carousel.addEventListener('touchend', () => { if (AUTO_SCROLL_ENABLED) isAutoScrolling = true; });
         });
     </script>
+</section>
+
+<!-- Announcements & Crosswords Section -->
+<section class="announcements-crosswords mt-5 mb-5 fade-up-element" id="announcements-crosswords-section">
+    <div class="row">
+        <!-- Announcements (Left Half) -->
+        <div class="col-md-6 mb-4">
+            <div class="section-title section-hero-header">
+                <h2 style="font-size: 2.5rem;">ANNOUNCEMENTS</h2>
+            </div>
+            <div class="announcements-scroll-container mt-4 px-2" style="max-height: 400px; overflow-y: auto; scrollbar-width: thin;">
+                {% assign current_date = "now" | date: "%Y%m%d" | plus: 0 %}
+                
+                <!-- Active Announcements -->
+                <ul class="list-unstyled">
+                    {% assign sorted_announcements = site.data.announcements | sort: "deadline" %}
+                    
+                    <!-- 1. Active with Deadlines (Sorted) -->
+                    {% for announcement in sorted_announcements %}
+                        {% assign announcement_date = announcement.deadline | date: "%Y%m%d" | plus: 0 %}
+                        {% if announcement.deadline != nil and announcement.deadline != "" and announcement_date >= current_date %}
+                        <li class="mb-4 pb-3 border-bottom">
+                            <div class="font-weight-bold" style="font-size: 1.15rem; line-height: 1.4;">
+                                {{ announcement.title }}
+                                <span class="text-muted" style="font-weight: 400; font-size: 0.95rem; margin-left: 8px;">— {{ announcement.description }}</span>
+                            </div>
+                            <div class="mt-3 d-flex align-items-center justify-content-between flex-wrap" style="gap: 10px;">
+                                <a href="{{ announcement.link }}" target="_blank" rel="noopener noreferrer" class="magazine-link" style="font-size: 0.95rem; padding-bottom: 2px;">{{ announcement.link_text }} <span class="arrow" style="font-size: 1.2rem; margin-left: 8px;">&xrarr;</span></a>
+                                <span class="deadline-badge">
+                                    <i class="far fa-calendar-alt mr-1"></i> Deadline: {{ announcement.deadline_text }}
+                                </span>
+                            </div>
+                        </li>
+                        {% endif %}
+                    {% endfor %}
+
+                    <!-- 2. Active without Deadlines (Ongoing) -->
+                    {% for announcement in site.data.announcements %}
+                        {% if announcement.deadline == nil or announcement.deadline == "" %}
+                        <li class="mb-4 pb-3 border-bottom">
+                            <div class="font-weight-bold" style="font-size: 1.15rem; line-height: 1.4;">
+                                {{ announcement.title }}
+                                <span class="text-muted" style="font-weight: 400; font-size: 0.95rem; margin-left: 8px;">— {{ announcement.description }}</span>
+                            </div>
+                            <div class="mt-3">
+                                <a href="{{ announcement.link }}" target="_blank" rel="noopener noreferrer" class="magazine-link" style="font-size: 0.95rem; padding-bottom: 2px;">{{ announcement.link_text }} <span class="arrow" style="font-size: 1.2rem; margin-left: 8px;">&xrarr;</span></a>
+                            </div>
+                        </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+
+                <!-- Past Announcements -->
+                {% assign past_count = 0 %}
+                {% for announcement in site.data.announcements %}
+                    {% assign announcement_date = announcement.deadline | date: "%Y%m%d" | plus: 0 %}
+                    {% if announcement.deadline != nil and announcement.deadline != "" and announcement_date < current_date %}
+                        {% assign past_count = past_count | plus: 1 %}
+                    {% endif %}
+                {% endfor %}
+
+                {% if past_count > 0 %}
+                <div class="mt-5 mb-3">
+                    <h5 class="text-muted text-uppercase" style="letter-spacing: 2px; font-size: 0.9rem; font-weight: 700; border-bottom: 1px solid rgba(128,128,128,0.2); padding-bottom: 10px;">Past Announcements</h5>
+                </div>
+                <ul class="list-unstyled">
+                    {% assign sorted_past = site.data.announcements | sort: "deadline" | reverse %}
+                    {% for announcement in sorted_past %}
+                        {% assign announcement_date = announcement.deadline | date: "%Y%m%d" | plus: 0 %}
+                        {% if announcement.deadline != nil and announcement.deadline != "" and announcement_date < current_date %}
+                        <li class="mb-3 pb-2 border-bottom">
+                            <div class="font-weight-bold" style="font-size: 1.15rem; line-height: 1.4;">
+                                {{ announcement.title }}
+                                <span class="text-muted" style="font-weight: 400; font-size: 0.95rem; margin-left: 8px;">— {{ announcement.description }}</span>
+                            </div>
+                            <div class="mt-2 d-flex align-items-center justify-content-between flex-wrap" style="gap: 10px;">
+                                <a href="{{ announcement.link }}" target="_blank" rel="noopener noreferrer" class="magazine-link" style="font-size: 0.85rem; padding-bottom: 2px;">Details <span class="arrow" style="font-size: 1rem; margin-left: 5px;">&xrarr;</span></a>
+                                <span class="deadline-badge">
+                                    <i class="far fa-calendar-alt mr-1"></i> Deadline: {{ announcement.deadline_text }}
+                                </span>
+                            </div>
+                        </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            </div>
+        </div>
+
+        <!-- Crosswords (Right Half) -->
+        <div class="col-md-6 mb-4">
+            <div class="section-title section-hero-header">
+                <h2 style="font-size: 2.5rem;">CROSSWORDS</h2>
+            </div>
+            <div class="mt-4 text-center d-flex flex-column align-items-center justify-content-center" style="min-height: 400px; background: rgba(128,128,128,0.05); border-radius: 15px; padding: 30px;">
+                <div class="crossword-visual mb-4 fade-up-element">
+                    <div class="cw-grid">
+                        <!-- Row 0 -->
+                        <div class="cw-tile black"></div><div class="cw-tile black"></div><div class="cw-tile black"></div><div class="cw-tile black"></div><div class="cw-tile black"></div><div class="cw-tile black"></div><div class="cw-tile black"></div>
+                        
+                        <!-- Row 1: MINI start -->
+                        <div class="cw-tile black"></div><div class="cw-tile black"></div><div class="cw-tile black"></div><div class="cw-tile">M<span class="cw-number">1</span></div><div class="cw-tile black"></div><div class="cw-tile black"></div><div class="cw-tile black"></div>
+                        
+                        <!-- Row 2: MINI cont -->
+                        <div class="cw-tile black"></div><div class="cw-tile black"></div><div class="cw-tile black"></div><div class="cw-tile">I</div><div class="cw-tile black"></div><div class="cw-tile black"></div><div class="cw-tile black"></div>
+                        
+                        <!-- Row 3: Vertical starts (Q, N, S) -->
+                        <div class="cw-tile black"></div><div class="cw-tile">Q<span class="cw-number">2</span></div><div class="cw-tile black"></div><div class="cw-tile">N</div><div class="cw-tile">S<span class="cw-number">3</span></div><div class="cw-tile black"></div><div class="cw-tile black"></div>
+                        
+                        <!-- Row 4: CURIOUS bridge, intersects QUARKS (U), MINI (I), SOLVE (O) -->
+                        <div class="cw-tile">C<span class="cw-number">4</span></div><div class="cw-tile">U</div><div class="cw-tile">R</div><div class="cw-tile">I</div><div class="cw-tile">O</div><div class="cw-tile">U</div><div class="cw-tile">S</div>
+                        
+                        <!-- Row 5: Vertical cont (A, L) -->
+                        <div class="cw-tile black"></div><div class="cw-tile">A</div><div class="cw-tile black"></div><div class="cw-tile black"></div><div class="cw-tile">L</div><div class="cw-tile black"></div><div class="cw-tile black"></div>
+                        
+                        <!-- Row 6: Vertical cont (R, V) -->
+                        <div class="cw-tile black"></div><div class="cw-tile">R</div><div class="cw-tile black"></div><div class="cw-tile black"></div><div class="cw-tile">V</div><div class="cw-tile black"></div><div class="cw-tile black"></div>
+                        
+                        <!-- Row 7: Vertical cont (K, E) -->
+                        <div class="cw-tile black"></div><div class="cw-tile">K</div><div class="cw-tile black"></div><div class="cw-tile black"></div><div class="cw-tile">E</div><div class="cw-tile black"></div><div class="cw-tile black"></div>
+                        
+                        <!-- Row 8: Vertical end (S) -->
+                        <div class="cw-tile black"></div><div class="cw-tile">S</div><div class="cw-tile black"></div><div class="cw-tile black"></div><div class="cw-tile black"></div><div class="cw-tile black"></div><div class="cw-tile black"></div>
+                    </div>
+                </div>
+                <p class="powerful-intro-text mb-4" style="font-size: 1.3rem;">Stay Curious, Solve Quarks Mini Crossword.</p>
+                <a href="{{ site.baseurl }}/crosswords" class="magazine-link" style="font-size: 1.2rem;">Solve Today's Mini <span class="arrow">&xrarr;</span></a>
+            </div>
+        </div>
+    </div>
+</section>
+        </div>
+    </div>
+</section>
+        </div>
+    </div>
 </section>
 
 {% endif %}
