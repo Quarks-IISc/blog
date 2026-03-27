@@ -15,10 +15,17 @@
                             {% endunless %}
                             {% assign img_url = img_url | replace: '//', '/' | replace: ':/', '://' %}
 
+                            {% assign webp_url = img_url | replace: '.jpg', '.webp' | replace: '.jpeg', '.webp' | replace: '.png', '.webp' | replace: '.JPG', '.webp' | replace: '.JPEG', '.webp' | replace: '.PNG', '.webp' %}
                             {% if site.lazyimages == "enabled" %}
-                            <img class="featured-box-img-cover lazyimg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAACCAQAAAA3fa6RAAAADklEQVR42mNkAANGCAUAACMAA2w/AMgAAAAASUVORK5CYII=" data-src="{{ img_url }}" style="object-fit: cover;" decoding="async">
+                            <picture>
+                                <source type="image/webp" data-srcset="{{ webp_url }}">
+                                <img class="featured-box-img-cover lazyimg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAACCAQAAAA3fa6RAAAADklEQVR42mNkAANGCAUAACMAA2w/AMgAAAAASUVORK5CYII=" data-src="{{ img_url }}" style="object-fit: cover;" decoding="async">
+                            </picture>
                             {% else %}
-                            <img class="featured-box-img-cover" src="{{ img_url }}" style="object-fit: cover;" loading="lazy" decoding="async">
+                            <picture>
+                                <source type="image/webp" srcset="{{ webp_url }}">
+                                <img class="featured-box-img-cover" src="{{ img_url }}" style="object-fit: cover;" loading="lazy" decoding="async">
+                            </picture>
                             {% endif %}
                             {% if post.tags %}
                                 <div class="post-tag">

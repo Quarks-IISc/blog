@@ -283,3 +283,9 @@ html.dark-mode body,
     color: #000 !important;
     box-shadow: 0 8px 25px rgba(255, 255, 255, 0.1);
 }
+
+/* Gallery Loading Skeleton Dark Mode */
+.dark-mode .skeleton-card {
+    background: linear-gradient(90deg, #2a2a2a 25%, #333 50%, #2a2a2a 75%);
+    background-size: 200% 100%;
+}

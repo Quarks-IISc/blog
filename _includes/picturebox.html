@@ -8,10 +8,17 @@
     {% assign img_url = img_url | replace: '//', '/' | replace: ':/', '://' %}
     
     <a href="{{ site.baseurl }}{{ post.url }}" style="display: block; width: 100%; {% if include.masonry != true %}height: 100%; position: absolute; top: 0; left: 0;{% else %}position: relative;{% endif %}">
+        {% assign webp_url = img_url | replace: '.jpg', '.webp' | replace: '.jpeg', '.webp' | replace: '.png', '.webp' | replace: '.JPG', '.webp' | replace: '.JPEG', '.webp' | replace: '.PNG', '.webp' %}
         {% if site.lazyimages == "enabled" and include.disable_lazy != true %}
-            <img class="img-fluid lazyimg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAACCAQAAAA3fa6RAAAADklEQVR42mNkAANGCAUAACMAA2w/AMgAAAAASUVORK5CYII=" data-src="{{ img_url }}" alt="{{ post.title }}" style="width: 100%; {% if include.masonry != true %}height: 100%; object-fit: cover;{% else %}height: auto; display: block;{% endif %}" decoding="async">
+            <picture>
+                <source type="image/webp" data-srcset="{{ webp_url }}">
+                <img class="img-fluid lazyimg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAACCAQAAAA3fa6RAAAADklEQVR42mNkAANGCAUAACMAA2w/AMgAAAAASUVORK5CYII=" data-src="{{ img_url }}" alt="{{ post.title }}" style="width: 100%; {% if include.masonry != true %}height: 100%; object-fit: cover;{% else %}height: auto; display: block;{% endif %}" decoding="async">
+            </picture>
         {% else %}
-            <img class="img-fluid" src="{{ img_url }}" alt="{{ post.title }}" style="width: 100%; {% if include.masonry != true %}height: 100%; object-fit: cover;{% else %}height: auto; display: block;{% endif %}" {% if include.disable_lazy != true %}loading="lazy"{% else %}fetchpriority="high"{% endif %} decoding="async">
+            <picture>
+                <source type="image/webp" srcset="{{ webp_url }}">
+                <img class="img-fluid" src="{{ img_url }}" alt="{{ post.title }}" style="width: 100%; {% if include.masonry != true %}height: 100%; object-fit: cover;{% else %}height: auto; display: block;{% endif %}" {% if include.disable_lazy != true %}loading="lazy"{% else %}fetchpriority="high"{% endif %} decoding="async">
+            </picture>
         {% endif %}
         
         <div class="picture-overlay" style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 60%, transparent 100%); padding: 30px 15px 15px; text-align: left; transition: all 0.3s ease;">
