@@ -6,13 +6,11 @@ title: Ramblings on Epistemology, Science, and Cognitive Biases
 author: Raj Magesh, Julian D'Costa
 categories: [stories]
 image: "/assets/images/Stories/RamblingsOnScienceEpistomology.jpeg"
-excerpt: 'The appeal to rationality, has become something of a very popular phrase in the recent past. But, in some sense, how do we even know if the basis of such appeals, is logical in itself!'
+excerpt: "The appeal to rationality, has become something of a very popular phrase in the recent past. But, in some sense, how do we even know if the basis of such appeals, is logical in itself!"
 all: true
-latest: true
 ---
 
 Authors: Raj Magesh, Julian D'Costa
-
 
 ## **Vignette #1**
 
@@ -86,12 +84,12 @@ Beliefs? There’s no room for subjectivity in science, you may scoff. Belief, h
 
 $$
 \frac{P(\text{hypothesis true} \mid \text{given evidence})}{P(\text{hypothesis false} \mid \text{given evidence})} =
-\frac{P(\text{evidence seen} \mid \text{hypothesis true})}{P(\text{evidence seen} \mid \text{hypothesis false})} \times 
+\frac{P(\text{evidence seen} \mid \text{hypothesis true})}{P(\text{evidence seen} \mid \text{hypothesis false})} \times
 \frac{P(\text{hypothesis true})}{P(\text{hypothesis false})}
 $$
 
 **Cancer test example:** 10000 people, **Base Rate** =
-1/1000, 
+1/1000,
 
 **Test Accuracy** = 90% both ways
 
@@ -102,7 +100,7 @@ that mean we can never unequivocally state that X is true or that Y is false?
 
 Yes! This is a direct consequence of the fact that we are working from a position of incomplete knowledge. Even the statement “This is an apple” cannot have probability 1
 despite the red object looking like, smelling like, and tasting like an apple, because we can’t rule out the infinitesimal possibility that Jared the Demon, is messing with you.
- 
+
 **_Only the Sith deal in absolutes._**
 
 This is a restatement of the aphorism that in science, you can’t prove anything. Nonetheless, you can be pretty Pineapple-damned certain that something is true: P(X)
@@ -114,7 +112,7 @@ reality: the scientific method.
 ## **Vignette #2**
 
 Four thousand years ago, in Ancient Greece, ALEX and
-HELEN are standing on a cliffside, admiring the sparkling blue waters of the Mediterranean. Their marriage – sixty years ago to the very day – had surprised the entire community. Two philosophers, marrying? Those stooges wrapped up in their dusty scrolls and enraptured by hours upon hours of tedious debates? Hah! No way! But their wedding had proceeded without a hitch (well, besides theirs), and their bond had only grown stronger as the days went by, like a tender sapling maturing into a solid oak. 
+HELEN are standing on a cliffside, admiring the sparkling blue waters of the Mediterranean. Their marriage – sixty years ago to the very day – had surprised the entire community. Two philosophers, marrying? Those stooges wrapped up in their dusty scrolls and enraptured by hours upon hours of tedious debates? Hah! No way! But their wedding had proceeded without a hitch (well, besides theirs), and their bond had only grown stronger as the days went by, like a tender sapling maturing into a solid oak.
 
 **ALEX:** Your beauty invigorates me, dear Helen! Like the fresh ocean breeze on a sweet summer day!
 
@@ -129,7 +127,7 @@ blessing. What we hear are the remnants of their voices, echoing through the dee
 
 **ALEX:** _[shakes his head]_ You must be joking, Helen! After all, all voices that we hear come from the air, the domain of Lord Zeus. The rumbling of thunder, the crack of lightning! The sound we hear in conch shells must be the resonances from the souls of the Wind Aurae who helped Zeus during his struggles.
 
-**HELEN:**  Hippocampus droppings! There’s no way that we could hear the sea in a conch shell because of Zeus . Poseidon would never stand for his brother usurping his domain!
+**HELEN:** Hippocampus droppings! There’s no way that we could hear the sea in a conch shell because of Zeus . Poseidon would never stand for his brother usurping his domain!
 
 **ALEX:** No, no! All you’re hearing is the wind , Helen, and mistaking it for the sea! Think for a moment, there’s no water in a conch shell. How could Poseidon have any dominion there? Air, on the other hand–
 
@@ -144,8 +142,7 @@ that sounds remarkably hollow. A giant Band-Aid Ⓡ covers the left half of his 
 
 **ALEX:** _[stammers]_ King Polyphemus, N-n-nobody has been this way.
 
-**POLYPHEMUS:** _[elated]_ Nobody ? It is him! At long last, after so many fruitless summers, my search is ended! My revenge shalt be sweet! 
-
+**POLYPHEMUS:** _[elated]_ Nobody ? It is him! At long last, after so many fruitless summers, my search is ended! My revenge shalt be sweet!
 
 A hastily-aborted chuckle comes from Polyphemus’ great steed, though its face remains wooden, immobile. Alex's eyes flick to the horse. Polyphemus appears not to have
 heard. A panel on the neck of the horse slides up noiselessly. From within the horse’s body, Odysseus raises a finger to his lips, eyes twinkling with mirthful laughter
@@ -192,7 +189,7 @@ Alex and Helen look to each other, eyes wide. Then, they race back to town, whoo
 
 There’s an oft-cited cautionary tale about making erroneous conclusions despite collecting good data.
 
- A froggologist is investigating the sensory systems of well-trained frogs. He begins his experiment: placing a frog on a table, he barks the command, “Jump!” and the frog leaps up three feet into the air! The froggologist meticulously notes this down. Now, he grabs a pair of shears, snips off the frog’s front legs, and barks “Jump!”
+A froggologist is investigating the sensory systems of well-trained frogs. He begins his experiment: placing a frog on a table, he barks the command, “Jump!” and the frog leaps up three feet into the air! The froggologist meticulously notes this down. Now, he grabs a pair of shears, snips off the frog’s front legs, and barks “Jump!”
 
 Tears streaming from its eyes, the frog jumps up two feet into the air. The froggologist notes this down too. Dispassionately, he cuts off its rear legs, and barks “Jump!” but the frog doesn’t move. He repeats himself, louder and louder, but the frog simply does not jump any further. The froggologist rubs his chin excitedly and concludes: “Upon surgical amputation of all four legs, the frog becomes deaf!”
 
@@ -212,6 +209,7 @@ Here we present a carefully-curated collection of cognitive biases and suggestio
 for any loss of limbs, illusions or dignity.
 
 ### Confirmation Bias
+
 **“People put a lot less effort into picking apart evidence that confirms what they already believe.” — Peter Watts, Echopraxia**
 
 As his severely-insulted wheelchair-bound colleagues pointed out, our froggologist had assumed that the only reason his beloved frogs would fail to obey their God was that they couldn’t hear him. All his experiments were designed to confirm his hypothesis and never once disprove it. In science, testing a hypothesis always involves trying to falsify it. The more you fail, the more likely your hypothesis is to be true. In our froggologist’s case, he could have simply ordered his frogs to croak twice if they loved Jesus – or for the atheistic frogs, if they loved flies! We suggest dealing with your own confirmation
@@ -219,12 +217,14 @@ biases by assuming that your opinion on any issue is wrong and trying to figure 
 the 2-4-6 puzzle!
 
 ### Scope Insensitivity
+
 **“A single death is a tragedy, a million is a statistic.” — Stalin**
 
 Stalin had commendable self-awareness, despite being a terrible human being. If you’re being stalked by lions in the savannah, the difference between one lion and ten might be huge but the difference between a thousand lions and ten thousand is negligible – you’ll die anyway. We just can’t appreciate the bigness of big numbers because we never
 really needed to. We have no suggestions on overcoming this, apart from telling you to be aware of it. In case you wish to kill a million people, to fully appreciate the gravity of your actions, make sure you personally promise to pass on their last words to their families before you gently slit their throats one by one. See? I bet you just visualised doing that with one person. Not a million people. Your brain simply can’t process that feeling multiplied by a million. Smoke would come out your ears.
 
 ### Planning Fallacy
+
 **(Why you can't ever get anything done on time)**
 
 As every IISc student knows, the amount of time you think it will take you to do something and the amount of time it actually will, cannot be measured in the same units without invoking a logarithmic scale. For some reason, we are terrible at planning. From iGEM to Pravega, nothing that happens in IISc happens on time. But lest you fret, this is a universal human experience: we are all broken in the same way.
@@ -234,6 +234,7 @@ you have more manpower to help. Maybe you bunked all your classes to focus on it
 long a project will take is how long similar projects took in the past.
 
 ### Sunk Cost Fallacy
+
 **“I’m in too deep, man.” — Someone, probably**
 
 Many, many people regret doing their PhDs. They’ll come to the realization that they hate academia sometime during their PhD, of course. Maybe it’s the stress, or their
@@ -250,6 +251,7 @@ decisions that govern your life right now. You’re starting from scratch, as of
 Are you sure there aren’t things you want to do differently? Go do them!
 
 ### The Dunning-Kruger effect & Impostor Syndrome
+
 **“The fool doth think he is wise, but the wise man knows himself to be a fool.” — William Shakespeare, As You Like It**
 
 The Dunning-Kruger effect has been popularized everywhere on the Internet, and most of us understand it as “Dumb people are too dumb to realize they’re dumb.” Despite
@@ -264,6 +266,7 @@ These are especially difficult biases to overcome because they are often tied to
 evoke strong emotions. Yet, knowing that these effects exist can help protect you against them: the next time you catch yourself shrugging off a compliment because “Oh, they’re just being nice. I’m not as great as they think I am,” you’ll know to blame impostor syndrome.
 
 ### Hyperbolic Discounting
+
 **(Why you can't ever get to bed on time)**
 
 Just one more game… Just one more episode… Just one more cookie…

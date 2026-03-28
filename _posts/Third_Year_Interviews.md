@@ -6,11 +6,9 @@ title: Introspections on the Third Step
 author: Subhanan Banerjee
 categories: [stories]
 image: "/assets/images/Poems/BleedingsOfTameBeast.jpeg"
-excerpt: 'Third Years'
-latest: true
+excerpt: "Third Years"
 all: true
 ---
-
 
 A series of interviews taken by Rahul, a third-year undergraduate in IISc, with his fellows across different majors unveils the beauty and the beast… Of what is going on in the lives of the third year UGs these days. It not only upholds the insights of the courses and thriving in academics and the overview of summer internships but also their motivation and interest in research as well as friendship and non-academic activities; which still make the most of us, isn’t it so?<br>
 There were eight of them across the different disciplines: Saumy, Shreya and Jay from Physics, Aditya from Biology, Mohana and Vamsi from Materials, Dattabhasvant (fondly known as Datta) from Mathematics and Amogh from Chemistry. As the course was designed at its birth, we have thesis in fourth year. Thus, they are literally at the brink of starting what is perhaps the soul of research. They also have specific fields of interests; Saumy specializing in quantum computing, Mohana interested in semiconductors and nanoscience, Aditya working in bioengineering, specifically on delivering immunotherapeutic drugs with minimal side effects and timed release, Shreya primarily interested in astrophysics and also pursuing a quantum technology minor, Jay planning to go on with either of astronomy or theoretical cosmology, Datta still exploring the beauty of Mathematics, Amogh interested in inorganic and physical chemistry with a focus on catalysis and spectroscopy and Vamsi interested in nanoscience.<br>
@@ -35,7 +33,7 @@ So, what are the plans? “I started a project this winter, and it’s extending
 “I’ve asked a professor from the Quantum Technologies department if I can work in his lab. Hopefully, if he allows me, I’ll be doing my work there over the summer” says Saumy. When asked about the opportunities in the industrial counterparts, he adds, “Most internship opportunities are for master’s students, but some companies allow BS and BTech students as well. So, I’m applying wherever possible”<br>
 Struggle is life. What matters is if one’s motivation is resilient enough. Well, there is a greater part of our life; friends, pals, comrades, companions, fellows whatever… In A P J Abdul Kalam’s word, “A good book is equivalent of a friend, but a good friend is equivalent of library.” So were our panel asked about their friend circles; how else do their friends help them than creating peer pressure!<br>
 Before hearing them its vital to note a connection and a friend differ. For how I define: A ‘friend’ becomes friend on its own, a connection is befriended for a purpose… When Rahul asked if they made friends to stay a lifetime, Saumy says, “We have a group of six or seven people, and I’d very much like to continue this bond even after college. I’d like to meet up and stay in touch. I’ve met very nice people here, including you.” Sentences are not merely summation of words, but some sentences are like unevaluable integrals, people of physics know how vital they are… <br>
-Mohana says, “We do have differences sometimes, but I’ve made a couple of good friends here” 
+Mohana says, “We do have differences sometimes, but I’ve made a couple of good friends here”
 “That’s a complicated question.” Aditya takes a moment and continues, “being at IISc has taught me who to be with and who to avoid. I have a few people I consider friends for life, but it’s been a learning experience figuring out who those people are.” <br>
 However, Jay doesn’t feel the same. “I’m okay with that. Life is dynamic. People come and go, and you just have to adapt. I believe in enjoying life as it happens without getting too attached.” That’s too a way, anyway who knows what’s the rightest, if that’s a word…<br>
 “I’m not sure yet.” Vamsi says. “I’ve made friends, and we’ve had good times, but I wouldn’t say for sure if they’re lifelong connections” So, what I interpret, friendship is superposed state, measurement of which destroys the state and reduces it to ‘friend’ or ‘not-friend’. However, it’s a non-ideal system, so it interacts with you and again becomes a superposition, that needs to be measured again… That’s a nice property, nonetheless.<br>

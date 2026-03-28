@@ -1,18 +1,15 @@
 ---
-#YAML part
 layout: post
 title: All aboard against sleep
 #tags: [Example_Tag1, ExampleTag2]
 author: Souvik Chakraborty
 categories: [poems]
 image: "/assets/images/Poems/All_aboard_against_Sleep.jpg"
-excerpt: 'In the darkest hour, a dainty rainbow rises, born of chaos, painting peace upon a restless mind.'
-latest: true
+excerpt: "In the darkest hour, a dainty rainbow rises, born of chaos, painting peace upon a restless mind."
 all: true
 ---
 
 Poet: Souvik Chakraborty
-
 
 <div style="text-align: center;">
 
@@ -25,7 +22,7 @@ into that sleepless night —<br>
 the darkest hour —<br>  
 a rainbow — dainty yet resplendent —<br>  
 paints itself<br>  
-into the restive canvas of the mind.<br>  
+into the restive canvas of the mind.<br>
 
 <br><br>
 
@@ -38,7 +35,7 @@ I play muse to my own imagination —<br>
 as it does to me —<br>  
 And in its own reflective biome,<br>  
 the creation defines itself —<br>  
-just as it defines me.<br>  
+just as it defines me.<br>
 
 <br><br>
 
@@ -52,6 +49,6 @@ under the sun —<br>
 the rise and fall of the tides —<br>  
 the diurnal magic<br>  
 that tonight's stygian darkness<br>  
-can dare not hide.<br>  
+can dare not hide.<br>
 
 </div>

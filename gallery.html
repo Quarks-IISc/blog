@@ -3,37 +3,16 @@ layout: default
 title: Gallery
 ---
 
-<!-- Posts Index -->
- <!--
-<section class="recent-posts">
-    <div class="section-title">
-        <h2><span>Gallery</span></h2>
-    </div>
-
-    <div class="row listrecent">
-        {% for post in site.posts %}
-            {% if post.categories contains "pictures" %}
-                <div class="pictures-container">
-                        <div class="picture-inner-rectangle">
-                            <img src="{{ post.image }}" 
-                                 alt="{{ post.title }}" 
-                                 class="pictures-image">
-                            <p class="pictures-name">
-                                <strong>{{ post.title }}</strong>
-                            </p>
-                            <p class="pictures-author">
-                                <strong>{{ post.author }}</strong>
-                            </p>
-                            <p class="pictures-desc">
-                                <strong>{{ post.description }}</strong>
-                            </p>
-                        </div>
-                </div>
-            {% endif %}
+<!-- Loading Skeleton -->
+<div id="gallery-loading" class="gallery-loading-skeleton">
+    <div class="masonry-grid">
+        {% for i in (1..12) %}
+        <div class="masonry-item">
+            <div class="skeleton-card"></div>
+        </div>
         {% endfor %}
     </div>
-</section>
--->
+</div>
 
 <section class="recent-posts">
     <div class="section-title section-hero-header">
@@ -41,7 +20,7 @@ title: Gallery
     </div>
 
     <!-- Flex container for all posts -->
-    <div class="masonry-grid fade-up-element">
+    <div class="masonry-grid" id="gallery-grid" style="opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease;">
         {% for post in site.posts %}
             {% if post.categories contains "pictures" %}
                 <!-- Individual post -->
@@ -52,6 +31,24 @@ title: Gallery
         {% endfor %}
     </div>
 </section>
+
+<script>
+// Hide skeleton and fade up gallery when images load
+window.addEventListener('load', function() {
+    document.getElementById('gallery-loading').style.display = 'none';
+    var grid = document.getElementById('gallery-grid');
+    grid.style.opacity = '1';
+    grid.style.transform = 'translateY(0)';
+});
+
+// Fallback: hide skeleton and fade up after 3 seconds regardless
+setTimeout(function() {
+    document.getElementById('gallery-loading').style.display = 'none';
+    var grid = document.getElementById('gallery-grid');
+    grid.style.opacity = '1';
+    grid.style.transform = 'translateY(0)';
+}, 3000);
+</script>
 
 
 
