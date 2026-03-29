@@ -148,81 +148,9 @@ title: Home
                 <h2 style="font-size: 2.5rem;">ANNOUNCEMENTS</h2>
             </div>
             <div class="announcements-scroll-container mt-4 px-2" style="max-height: 400px; overflow-y: auto; scrollbar-width: thin;">
-                {% assign current_date = "now" | date: "%Y%m%d" | plus: 0 %}
-                
-                <!-- Active Announcements -->
-                <ul class="list-unstyled">
-                    {% assign sorted_announcements = site.data.announcements | sort: "deadline" %}
-                    
-                    <!-- 1. Active with Deadlines (Sorted) -->
-                    {% for announcement in sorted_announcements %}
-                        {% assign announcement_date = announcement.deadline | date: "%Y%m%d" | plus: 0 %}
-                        {% if announcement.deadline != nil and announcement.deadline != "" and announcement_date >= current_date %}
-                        <li class="mb-4 pb-3 border-bottom">
-                            <div class="font-weight-bold" style="font-size: 1.15rem; line-height: 1.4;">
-                                {{ announcement.title }}
-                                <span class="text-muted" style="font-weight: 400; font-size: 0.95rem; margin-left: 8px;">— {{ announcement.description }}</span>
-                            </div>
-                            <div class="mt-3 d-flex align-items-center justify-content-between flex-wrap" style="gap: 10px;">
-                                <a href="{{ announcement.link }}" target="_blank" rel="noopener noreferrer" class="magazine-link" style="font-size: 0.95rem; padding-bottom: 2px;">{{ announcement.link_text }} <span class="arrow" style="font-size: 1.2rem; margin-left: 8px;">&xrarr;</span></a>
-                                <span class="deadline-badge">
-                                    <i class="far fa-calendar-alt mr-1"></i> Deadline: {{ announcement.deadline_text }}
-                                </span>
-                            </div>
-                        </li>
-                        {% endif %}
-                    {% endfor %}
-
-                    <!-- 2. Active without Deadlines (Ongoing) -->
-                    {% for announcement in site.data.announcements %}
-                        {% if announcement.deadline == nil or announcement.deadline == "" %}
-                        <li class="mb-4 pb-3 border-bottom">
-                            <div class="font-weight-bold" style="font-size: 1.15rem; line-height: 1.4;">
-                                {{ announcement.title }}
-                                <span class="text-muted" style="font-weight: 400; font-size: 0.95rem; margin-left: 8px;">— {{ announcement.description }}</span>
-                            </div>
-                            <div class="mt-3">
-                                <a href="{{ announcement.link }}" target="_blank" rel="noopener noreferrer" class="magazine-link" style="font-size: 0.95rem; padding-bottom: 2px;">{{ announcement.link_text }} <span class="arrow" style="font-size: 1.2rem; margin-left: 8px;">&xrarr;</span></a>
-                            </div>
-                        </li>
-                        {% endif %}
-                    {% endfor %}
+                <ul class="list-unstyled" id="announcements-list">
+                    <li class="text-muted text-center py-3">Loading announcements...</li>
                 </ul>
-
-                <!-- Past Announcements -->
-                {% assign past_count = 0 %}
-                {% for announcement in site.data.announcements %}
-                    {% assign announcement_date = announcement.deadline | date: "%Y%m%d" | plus: 0 %}
-                    {% if announcement.deadline != nil and announcement.deadline != "" and announcement_date < current_date %}
-                        {% assign past_count = past_count | plus: 1 %}
-                    {% endif %}
-                {% endfor %}
-
-                {% if past_count > 0 %}
-                <div class="mt-5 mb-3">
-                    <h5 class="text-muted text-uppercase" style="letter-spacing: 2px; font-size: 0.9rem; font-weight: 700; border-bottom: 1px solid rgba(128,128,128,0.2); padding-bottom: 10px;">Past Announcements</h5>
-                </div>
-                <ul class="list-unstyled">
-                    {% assign sorted_past = site.data.announcements | sort: "deadline" | reverse %}
-                    {% for announcement in sorted_past %}
-                        {% assign announcement_date = announcement.deadline | date: "%Y%m%d" | plus: 0 %}
-                        {% if announcement.deadline != nil and announcement.deadline != "" and announcement_date < current_date %}
-                        <li class="mb-3 pb-2 border-bottom">
-                            <div class="font-weight-bold" style="font-size: 1.15rem; line-height: 1.4;">
-                                {{ announcement.title }}
-                                <span class="text-muted" style="font-weight: 400; font-size: 0.95rem; margin-left: 8px;">— {{ announcement.description }}</span>
-                            </div>
-                            <div class="mt-2 d-flex align-items-center justify-content-between flex-wrap" style="gap: 10px;">
-                                <a href="{{ announcement.link }}" target="_blank" rel="noopener noreferrer" class="magazine-link" style="font-size: 0.85rem; padding-bottom: 2px;">Details <span class="arrow" style="font-size: 1rem; margin-left: 5px;">&xrarr;</span></a>
-                                <span class="deadline-badge">
-                                    <i class="far fa-calendar-alt mr-1"></i> Deadline: {{ announcement.deadline_text }}
-                                </span>
-                            </div>
-                        </li>
-                        {% endif %}
-                    {% endfor %}
-                </ul>
-                {% endif %}
             </div>
         </div>
 
@@ -268,11 +196,7 @@ title: Home
         </div>
     </div>
 </section>
-        </div>
-    </div>
-</section>
-        </div>
-    </div>
-</section>
 
 {% endif %}
+
+<script src="{{ site.baseurl }}/assets/js/announcements-loader.js"></script>
