@@ -260,6 +260,26 @@ html.dark-mode body,
     color: #bdbdbd;
 }
 
+/* Share Sidebar */
+.dark-mode .share {
+    background: transparent;
+    border: none;
+    padding: 0;
+}
+.dark-mode .share p {
+    color: rgba(255, 255, 255, 0.9);
+}
+.dark-mode .share ul li i {
+    color: rgba(255, 255, 255, 0.9);
+    border-color: rgba(255, 255, 255, 0.3);
+    background: transparent;
+}
+.dark-mode .share ul li a:hover i {
+    color: #fff;
+    border-color: #90caf9;
+    background: rgba(144, 202, 249, 0.2);
+}
+
 /* Footer */
 .dark-mode .footer {
     background-color: #1e1e1e;
