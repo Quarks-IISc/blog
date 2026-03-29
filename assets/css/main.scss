@@ -95,22 +95,145 @@
 .card .card-footer { border-bottom-left-radius: 8px; border-bottom-right-radius: 8px; }
 
 /* --- Edition Card Improvements (Revised) --- */
-.edition-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 20px; padding: 30px 0; }
-@media (max-width: 992px) { .edition-grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; } }
-@media (max-width: 768px) { .edition-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; } }
-.edition-card {
-    background-color: #ffffff; border: 1px solid #e0e0e0; border-radius: 8px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15); overflow: hidden;
-    transition: transform 0.2s ease, box-shadow 0.2s ease; text-align: center;
-    padding: 25px; display: flex; flex-direction: column; justify-content: space-between;
-    min-height: 180px; min-width: 300px;
+.edition-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    padding: 40px 0;
 }
-.edition-card:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(0,0,0,0.25); }
-.edition-card a { display: flex; flex-direction: column; text-decoration: none; color: inherit; }
-.edition-card .edition-title { font-size: 1.5rem; font-weight: 700; color: #333; margin-bottom: 5px; line-height: 1.3; }
-.edition-card .edition-description { font-size: 0.95rem; color: #6c757d; font-weight: 400; }
-.edition-card a:hover .edition-title { color: #007bff; }
-.edition-card a:hover .edition-description { color: #0056b3; text-decoration: underline; }
+
+@media (max-width: 992px) {
+    .edition-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+    }
+}
+
+.edition-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 250px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+}
+
+.dark-mode .edition-card {
+    background: rgba(30, 30, 30, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.edition-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+}
+
+.dark-mode .edition-card:hover {
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+.edition-card a {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.edition-icon {
+    width: 60px;
+    height: 60px;
+    background: #f8f9fa;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+}
+
+.dark-mode .edition-icon {
+    background: #2a2a2a;
+    color: #fff;
+}
+
+.edition-card:hover .edition-icon {
+    transform: rotate(10deg);
+}
+
+.edition-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.dark-mode .edition-title {
+    color: #fff;
+}
+
+.edition-description {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 25px;
+    display: block;
+    line-height: 1.5;
+}
+
+.dark-mode .edition-description {
+    color: #aaa;
+}
+
+.edition-action {
+    margin-top: auto;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #007bff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.edition-card:hover .edition-action {
+    gap: 12px;
+}
+
+/* Themes (Can be applied randomly) */
+.card-theme-1 .edition-title { color: #007bff; }
+.card-theme-2 .edition-title { color: #6f42c1; }
+.card-theme-3 .edition-title { color: #fd7e14; }
+.card-theme-4 .edition-title { color: #20c997; }
+.card-theme-5 .edition-title { color: #e83e8c; }
+
+.card-theme-1:hover { border-color: #007bff44; box-shadow: 0 15px 35px rgba(0, 123, 255, 0.1); }
+.card-theme-2:hover { border-color: #6f42c144; box-shadow: 0 15px 35px rgba(111, 66, 193, 0.1); }
+.card-theme-3:hover { border-color: #fd7e1444; box-shadow: 0 15px 35px rgba(253, 126, 20, 0.1); }
+.card-theme-4:hover { border-color: #20c99744; box-shadow: 0 15px 35px rgba(32, 201, 151, 0.1); }
+.card-theme-5:hover { border-color: #e83e8c44; box-shadow: 0 15px 35px rgba(232, 62, 140, 0.1); }
+
+.dark-mode .card-theme-1:hover { box-shadow: 0 15px 35px rgba(0, 123, 255, 0.25); }
+.dark-mode .card-theme-2:hover { box-shadow: 0 15px 35px rgba(111, 66, 193, 0.25); }
+.dark-mode .card-theme-3:hover { box-shadow: 0 15px 35px rgba(253, 126, 20, 0.25); }
+.dark-mode .card-theme-4:hover { box-shadow: 0 15px 35px rgba(32, 201, 151, 0.25); }
+.dark-mode .card-theme-5:hover { box-shadow: 0 15px 35px rgba(232, 62, 140, 0.25); }
 
 /* --- Section Hero Headers --- */
 .section-hero-header {

@@ -241,24 +241,7 @@ html.dark-mode body,
     color: #bdbdbd;
 }
 
-/* Edition Cards */
-.dark-mode .edition-card {
-    background-color: #1e1e1e;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-    border: 1px solid #333;
-}
-.dark-mode .edition-card:hover {
-    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
-}
-.dark-mode .edition-card a .edition-title {
-    color: #e0e0e0;
-}
-.dark-mode .edition-card a:hover .edition-title {
-    color: #90caf9;
-}
-.dark-mode .edition-card .edition-description {
-    color: #bdbdbd;
-}
+/* Edition Cards are now handled in main.scss */
 
 /* Share Sidebar */
 .dark-mode .share {

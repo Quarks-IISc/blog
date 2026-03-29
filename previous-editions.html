@@ -8,14 +8,16 @@ permalink: /previous-editions/
     <style>
         .incoming-message {
             text-align: center;
-            font-weight: 700; /* Bold */
-            color: #000; /* Black */
-            font-size: 1.4rem; /* Slightly larger */
-            margin-top: 4rem; /* Space from cards */
-            margin-bottom: 2rem; /* Space before footer */
-            text-transform: uppercase; /* For excitement */
-            letter-spacing: 1px;
-            padding: 1rem;
+            font-weight: 700;
+            color: #333;
+            font-size: 1.4rem;
+            margin-top: 4rem;
+            margin-bottom: 4rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .dark-mode .incoming-message {
+            color: #eee;
         }
     </style>
 </head>
@@ -25,68 +27,116 @@ permalink: /previous-editions/
         <h2><span>Previous Editions</span></h2>
     </div>
 
-    <div class="container text-center py-4">
-        <p class="lead">
-            Dive into the rich history and creative expressions of Quarks! We invite you to explore our past editions, each a testament to the vibrant talent within IISc. Enjoy reading through the memories, stories, and artworks that have shaped our community over the years.
+    <div class="container text-center py-5">
+        <p class="lead mb-0" style="max-width: 800px; margin: 0 auto; line-height: 1.8;">
+            Dive into the rich history and creative expressions of Quarks! Explore our past editions, each a testament to the vibrant talent within IISc. Enjoy reading through the memories, stories, and artworks that have shaped our community.
         </p>
     </div>
 
-    <div class="edition-grid">
-        <div class="edition-card card-theme-1">
-            <a href="{{ site.baseurl }}/PreviousEditions/edition1.pdf" target="_blank" rel="noopener noreferrer">
-                <span class="edition-title">Quarks Edition 1</span>
-                <span class="edition-description">Explore our first edition!</span>
-            </a>
-        </div>
-        <div class="edition-card card-theme-2">
-            <a href="{{ site.baseurl }}/PreviousEditions/edition2.pdf" target="_blank" rel="noopener noreferrer">
-                <span class="edition-title">Quarks Edition 2</span>
-                <span class="edition-description">Dive into our second edition!</span>
-            </a>
-        </div>
-        <div class="edition-card card-theme-3">
-            <a href="{{ site.baseurl }}/PreviousEditions/edition3.pdf" target="_blank" rel="noopener noreferrer">
-                <span class="edition-title">Quarks Edition 3</span>
-                <span class="edition-description">Discover Edition 3!</span>
-            </a>
-        </div>
-        <div class="edition-card card-theme-1">
-            <a href="{{ site.baseurl }}/PreviousEditions/edition4.pdf" target="_blank" rel="noopener noreferrer">
-                <span class="edition-title">Quarks Edition 4</span>
-                <span class="edition-description">Browse through Edition 4!</span>
-            </a>
-        </div>
-        <div class="edition-card card-theme-2">
-            <a href="{{ site.baseurl }}/PreviousEditions/edition5.pdf" target="_blank" rel="noopener noreferrer">
-                <span class="edition-title">Quarks Edition 5</span>
-                <span class="edition-description">Take a look at Edition 5!</span>
-            </a>
-        </div>
-        <div class="edition-card card-theme-3">
-            <a href="{{ site.baseurl }}/PreviousEditions/edition6.pdf" target="_blank" rel="noopener noreferrer">
-                <span class="edition-title">Quarks Edition 6</span>
-                <span class="edition-description">Explore Edition 6!</span>
-            </a>
-        </div>
-        <div class="edition-card card-theme-1">
-            <a href="{{ site.baseurl }}/PreviousEditions/edition7.pdf" target="_blank" rel="noopener noreferrer">
-                <span class="edition-title">Quarks Edition 7</span>
-                <span class="edition-description">Edition 7 is here!</span>
-            </a>
-        </div>
-        <div class="edition-card card-theme-2">
-            <a href="{{ site.baseurl }}/PreviousEditions/edition8.pdf" target="_blank" rel="noopener noreferrer">
-                <span class="edition-title">Quarks Edition 8</span>
-                <span class="edition-description">Check out Edition 8!</span>
-            </a>
-        </div>
-        <div class="edition-card card-theme-3">
-            <a href="{{ site.baseurl }}/PreviousEditions/edition9.pdf" target="_blank" rel="noopener noreferrer">
-                <span class="edition-title">Quarks Edition 9</span>
-                <span class="edition-description">Don’t miss Edition 9!</span>
-            </a>
+    <div class="container">
+        <div class="edition-grid">
+            <!-- Edition 1 -->
+            <div class="edition-card card-theme-1">
+                <a href="{{ site.baseurl }}/PreviousEditions/edition1.pdf" target="_blank" rel="noopener noreferrer">
+                    <span class="edition-title">Quarks Edition 1</span>
+                    <span class="edition-description">Explore our very first edition and the beginning of Quarks!</span>
+                    <div class="edition-action">
+                        Read Now <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Edition 2 -->
+            <div class="edition-card card-theme-4">
+                <a href="{{ site.baseurl }}/PreviousEditions/edition2.pdf" target="_blank" rel="noopener noreferrer">
+                    <span class="edition-title">Quarks Edition 2</span>
+                    <span class="edition-description">Dive into our second edition filled with fresh perspectives!</span>
+                    <div class="edition-action">
+                        Read Now <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Edition 3 -->
+            <div class="edition-card card-theme-2">
+                <a href="{{ site.baseurl }}/PreviousEditions/edition3.pdf" target="_blank" rel="noopener noreferrer">
+                    <span class="edition-title">Quarks Edition 3</span>
+                    <span class="edition-description">Discover the third volume of creative excellence at IISc!</span>
+                    <div class="edition-action">
+                        Read Now <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Edition 4 -->
+            <div class="edition-card card-theme-5">
+                <a href="{{ site.baseurl }}/PreviousEditions/edition4.pdf" target="_blank" rel="noopener noreferrer">
+                    <span class="edition-title">Quarks Edition 4</span>
+                    <span class="edition-description">Browse through the fourth edition of our student magazine!</span>
+                    <div class="edition-action">
+                        Read Now <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Edition 5 -->
+            <div class="edition-card card-theme-3">
+                <a href="{{ site.baseurl }}/PreviousEditions/edition5.pdf" target="_blank" rel="noopener noreferrer">
+                    <span class="edition-title">Quarks Edition 5</span>
+                    <span class="edition-description">Take a look at the fifth milestone in our journey!</span>
+                    <div class="edition-action">
+                        Read Now <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Edition 6 -->
+            <div class="edition-card card-theme-1">
+                <a href="{{ site.baseurl }}/PreviousEditions/edition6.pdf" target="_blank" rel="noopener noreferrer">
+                    <span class="edition-title">Quarks Edition 6</span>
+                    <span class="edition-description">Explore the artistic and literary depth of Edition 6!</span>
+                    <div class="edition-action">
+                        Read Now <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Edition 7 -->
+            <div class="edition-card card-theme-4">
+                <a href="{{ site.baseurl }}/PreviousEditions/edition7.pdf" target="_blank" rel="noopener noreferrer">
+                    <span class="edition-title">Quarks Edition 7</span>
+                    <span class="edition-description">Edition 7 is here with more stories and amazing artworks!</span>
+                    <div class="edition-action">
+                        Read Now <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Edition 8 -->
+            <div class="edition-card card-theme-2">
+                <a href="{{ site.baseurl }}/PreviousEditions/edition8.pdf" target="_blank" rel="noopener noreferrer">
+                    <span class="edition-title">Quarks Edition 8</span>
+                    <span class="edition-description">Check out the incredible talent featured in Edition 8!</span>
+                    <div class="edition-action">
+                        Read Now <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Edition 9 -->
+            <div class="edition-card card-theme-5">
+                <a href="{{ site.baseurl }}/PreviousEditions/edition9.pdf" target="_blank" rel="noopener noreferrer">
+                    <span class="edition-title">Quarks Edition 9</span>
+                    <span class="edition-description">Don’t miss the latest past edition of our vibrant magazine!</span>
+                    <div class="edition-action">
+                        Read Now <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+            </div>
         </div>
     </div>
 </section>
 
-<p class="incoming-message">And more incoming...</p>
+<div class="container text-center">
+    <p class="incoming-message">And more incoming...</p>
+</div>
