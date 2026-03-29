@@ -126,7 +126,7 @@ title: Crosswords
       display: flex;
       gap: 20px;
       overflow-x: auto;
-      padding: 10px 5px 25px 5px;
+      padding: 10px 20px 25px 20px;
       scroll-behavior: smooth;
       -webkit-overflow-scrolling: touch;
     "
@@ -150,16 +150,16 @@ title: Crosswords
         const numClues = this.view.getUint16(0x2E, true);
         const gridSize = width * height;
         
-        const gridOffset = 0x34;
-        const solutionOffset = gridOffset + gridSize;
+        const solutionOffset = 0x34;
+        const gridOffset = solutionOffset + gridSize;
         
-        const grid = String.fromCharCode(...Array.from(this.data.slice(gridOffset, gridOffset + gridSize)));
         const solution = String.fromCharCode(...Array.from(this.data.slice(solutionOffset, solutionOffset + gridSize)));
+        const grid = String.fromCharCode(...Array.from(this.data.slice(gridOffset, gridOffset + gridSize)));
         
-        let offset = solutionOffset + gridSize;
+        let offset = gridOffset + gridSize;
         const strings = [];
         
-        while (strings.length < (numClues + 4) && offset < this.data.length) {
+        while (strings.length < (numClues + 3) && offset < this.data.length) {
           let start = offset;
           while (offset < this.data.length && this.data[offset] !== 0) offset++;
           strings.push(String.fromCharCode(...Array.from(this.data.slice(start, offset))));
@@ -180,19 +180,20 @@ title: Crosswords
   }
 
   function convertPuzToFormat(puzData) {
-    const { width, height, solution, clues, author, numClues } = puzData;
+    const { width, height, solution, clues, author } = puzData;
     const blocks = [];
     const acrossClues = [];
     const downClues = [];
     
     let cellNum = 1;
-    let acrossIdx = 0, downIdx = Math.ceil(numClues / 2);
+    let clueIdx = 0;
     
     for (let i = 0; i < solution.length; i++) {
       const r = Math.floor(i / width);
       const c = i % width;
+      const char = solution[i];
       
-      if (solution[i] === '.') {
+      if (char === '.') {
         blocks.push([r + 1, c + 1]);
         continue;
       }
@@ -201,26 +202,24 @@ title: Crosswords
       const isDownStart = (r === 0 || solution[i - width] === '.') && (r + 1 < height && solution[i + width] !== '.');
       
       if (isAcrossStart || isDownStart) {
-        if (isAcrossStart && acrossIdx < Math.ceil(numClues / 2)) {
-          const ans = extractAnswerAcross(solution, r, c, width, height);
+        if (isAcrossStart) {
           acrossClues.push({
             n: cellNum,
-            where: r + 1,
-            clue: clues[acrossIdx] || '',
-            ans: ans
+            r: r + 1,
+            c: c + 1,
+            clue: clues[clueIdx++] || '',
+            ans: extractAnswerAcross(solution, r, c, width, height)
           });
-          acrossIdx++;
         }
         
-        if (isDownStart && downIdx < clues.length) {
-          const ans = extractAnswerDown(solution, r, c, width, height);
+        if (isDownStart) {
           downClues.push({
             n: cellNum,
-            where: c + 1,
-            clue: clues[downIdx] || '',
-            ans: ans
+            r: r + 1,
+            c: c + 1,
+            clue: clues[clueIdx++] || '',
+            ans: extractAnswerDown(solution, r, c, width, height)
           });
-          downIdx++;
         }
         
         cellNum++;
@@ -403,6 +402,10 @@ title: Crosswords
       card.onclick = () => loadCrossword(i);
       pastMinisList.appendChild(card);
     }
+    // Auto-scroll to the right to show the latest ones
+    setTimeout(() => {
+      pastMinisList.scrollLeft = pastMinisList.scrollWidth;
+    }, 100);
   }
 
   function loadCrossword(index) {
@@ -467,37 +470,19 @@ title: Crosswords
     }
 
     crosswordData.across.forEach((clue) => {
-      const r = clue.where;
-      let startC = -1;
-      for (let c = 1; c <= cols; c++) {
-        if (!grid[r][c].isBlock) {
-          startC = c;
-          break;
-        }
-      }
-      if (startC !== -1) {
-        grid[r][startC].n = clue.n;
-        for (let c = startC; c <= cols && !grid[r][c].isBlock; c++) {
-          grid[r][c].clues.across = clue;
-        }
+      const { r, c: startC } = clue;
+      grid[r][startC].n = clue.n;
+      for (let c = startC; c <= cols && !grid[r][c].isBlock; c++) {
+        grid[r][c].clues.across = clue;
       }
       renderClue(clue, "across");
     });
 
     crosswordData.down.forEach((clue) => {
-      const c = clue.where;
-      let startR = -1;
-      for (let r = 1; r <= rows; r++) {
-        if (!grid[r][c].isBlock) {
-          startR = r;
-          break;
-        }
-      }
-      if (startR !== -1) {
-        if (!grid[startR][c].n) grid[startR][c].n = clue.n;
-        for (let r = startR; r <= rows && !grid[r][c].isBlock; r++) {
-          grid[r][c].clues.down = clue;
-        }
+      const { r: startR, c } = clue;
+      if (!grid[startR][c].n) grid[startR][c].n = clue.n;
+      for (let r = startR; r <= rows && !grid[r][c].isBlock; r++) {
+        grid[r][c].clues.down = clue;
       }
       renderClue(clue, "down");
     });
@@ -519,7 +504,9 @@ title: Crosswords
           input.maxLength = 1;
           input.dataset.r = r;
           input.dataset.c = c;
-          input.addEventListener("focus", () => handleFocus(r, c));
+          input.addEventListener("focus", (e) => {
+            handleFocus(r, c);
+          });
           input.addEventListener("input", (e) => handleInput(e, r, c));
           input.addEventListener("keydown", (e) => handleKeydown(e, r, c));
           cell.appendChild(input);
@@ -540,25 +527,14 @@ title: Crosswords
     }
     li.innerHTML = html;
     li.onclick = () => {
-      const startCell = findStartCell(clue, dir);
-      focusCell(startCell.r, startCell.c);
-      updateUI(startCell.r, startCell.c, { dir, clue });
+      focusCell(clue.r, clue.c);
+      updateUI(clue.r, clue.c, { dir, clue });
     };
     (dir === "across" ? acrossCluesEl : downCluesEl).appendChild(li);
   }
 
   function findStartCell(clue, dir) {
-    const [rows, cols] = crosswordData.size;
-    if (dir === "across") {
-      for (let c = 1; c <= cols; c++)
-        if (grid[clue.where][c].clues.across === clue)
-          return { r: clue.where, c: c };
-    } else {
-      for (let r = 1; r <= rows; r++)
-        if (grid[r][clue.where].clues.down === clue)
-          return { r: r, c: clue.where };
-    }
-    return null;
+    return { r: clue.r, c: clue.c };
   }
 
   function handleFocus(r, c) {
@@ -629,6 +605,14 @@ title: Crosswords
   }
 
   function handleKeydown(e, r, c) {
+    // Character replacement: if a letter is typed, replace existing and move
+    if (e.key.length === 1 && e.key !== " " && !e.ctrlKey && !e.metaKey) {
+      e.target.value = e.key;
+      handleInput(e, r, c);
+      e.preventDefault();
+      return;
+    }
+
     if (e.key === "Backspace" && !e.target.value) {
       e.preventDefault();
       currentDir === "across" ? focusCell(r, c - 1) : focusCell(r - 1, c);
@@ -645,7 +629,9 @@ title: Crosswords
 
   function focusCell(r, c) {
     const el = document.querySelector(`input[data-r="${r}"][data-c="${c}"]`);
-    if (el) el.focus();
+    if (el) {
+      el.focus();
+    }
   }
 
   function checkCrossword() {
