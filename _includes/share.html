@@ -1,23 +1,48 @@
+{% assign share_url = page.url | absolute_url %}
+{% assign share_url_escaped = share_url | uri_escape %}
+{% capture share_msg %}Check out *{{ page.title }}* on Quarks (IISc UG Blog){% endcapture %}
+{% assign share_msg_escaped = share_msg | uri_escape %}
+{% capture full_share_text %}{{ share_msg }}
+
+Read more at: {{ share_url }}{% endcapture %}
+
 <div class="share sticky-top sticky-top-offset">
     <p>
         Share
     </p>
     <ul>
+        <!-- WhatsApp -->
         <li class="ml-1 mr-1">
-            <a target="_blank" href="https://twitter.com/intent/tweet?text={{ page.title }}&url={{ page.url | absolute_url }}" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
-                <i class="fab fa-twitter"></i>
+            <a target="_blank" href="https://wa.me/?text={{ share_msg_escaped }}%0A%0ARead more at: {{ share_url_escaped }}" onclick="window.open(this.href, 'whatsapp-share', 'width=550,height=435');return false;">
+                <i class="fab fa-whatsapp"></i>
             </a>
         </li>
 
+        <!-- LinkedIn -->
         <li class="ml-1 mr-1">
-            <a target="_blank" href="https://facebook.com/sharer.php?u={{ page.url | absolute_url }}" onclick="window.open(this.href, 'facebook-share', 'width=550,height=435');return false;">
+            <a target="_blank" href="https://www.linkedin.com/sharing/share-offsite/?url={{ share_url_escaped }}" onclick="window.open(this.href, 'linkedin-share', 'width=550,height=435');return false;">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        </li>
+
+        <!-- Instagram (Copy Content) -->
+        <li class="ml-1 mr-1">
+            <a href="javascript:void(0)" onclick="navigator.clipboard.writeText({{ full_share_text | jsonify }}).then(() => alert('Content copied! You can now paste it into your Instagram Story or DM.'))" title="Copy for Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </li>
+
+        <!-- Facebook -->
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://facebook.com/sharer.php?u={{ share_url_escaped }}" onclick="window.open(this.href, 'facebook-share', 'width=550,height=435');return false;">
                 <i class="fab fa-facebook-f"></i>
             </a>
         </li>
 
+        <!-- X (formerly Twitter) -->
         <li class="ml-1 mr-1">
-            <a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url={{ page.url | absolute_url }}" onclick="window.open(this.href, 'width=550,height=435');return false;">
-                <i class="fab fa-linkedin-in"></i>
+            <a target="_blank" href="https://twitter.com/intent/tweet?text={{ share_msg_escaped }}&url={{ share_url_escaped }}" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="fab fa-twitter"></i>
             </a>
         </li>
 
