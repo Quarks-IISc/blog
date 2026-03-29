@@ -277,7 +277,21 @@ html.dark-mode body,
 .dark-mode .share ul li a:hover i {
     color: #fff;
     border-color: #90caf9;
-    background: rgba(144, 202, 249, 0.2);
+    background: rgba(144, 202, 249, 0.1);
+}
+
+/* Literary Improvements - Dark Mode */
+.dark-mode .reading-progress-bar {
+    background: #90caf9;
+}
+.dark-mode .article-post p:first-of-type::first-letter,
+.dark-mode .article-post .dropcap::first-letter {
+    color: #ffffff !important;
+}
+.dark-mode .article-post blockquote {
+    background-color: rgba(144, 202, 249, 0.05);
+    border-left-color: #90caf9;
+    color: #e0e0e0 !important;
 }
 
 /* Footer */
