@@ -8,7 +8,6 @@ excerpt: "Every human being is blessed with a natural ability to appreciate and 
 featured: true
 ---
 
-Author: Kushal Chaudhari
 
 Every human being, each one of us, is indiscriminately blessed with a sixth sense, which by all means distinguishes us from the rest of living creatures. Even you ---the reader ---as you read through, are wielding that very ability, to discern the appeal these words bear. This evolutionary inheritance, which helped our forefathers to reign supreme among all forms of creation, still flows through you. This is nothing but your natural ability to appreciate and interpret art! Spotting the colour contrast between fruits and leaves, forging symmetrical tools, and finding resourceful landscapes were skills essential for the caveman. Through these initial endeavours, we can trace our evolutionary preference to aesthetics.
 

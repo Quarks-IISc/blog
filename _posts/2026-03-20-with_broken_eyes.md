@@ -8,8 +8,6 @@ excerpt: "A poem about awakening, new beginnings, and the quiet acceptance of re
 featured: true
 ---
 
-Poets: Sankalp Malkapure and Kushal Chaudhari
-
 <div style="text-align: center;">
 
 (with broken eyes i awoke)<br><br>

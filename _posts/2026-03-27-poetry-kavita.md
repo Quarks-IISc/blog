@@ -10,7 +10,6 @@ all: true
 image: "/assets/images/Stories/Nature.jpeg"
 ---
 
-Poet: Parth Kalani
 
 <div style="text-align: center;">
 

@@ -7,7 +7,6 @@ image: "/assets/images/Stories/Nature.jpeg"
 excerpt: "A reflection on battling an inner monster and finally finding freedom and love."
 ---
 
-Poet: Rohith R
 
 <div style="text-align: center;">
 

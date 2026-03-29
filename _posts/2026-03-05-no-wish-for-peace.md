@@ -7,7 +7,6 @@ image: "/assets/images/Stories/Nature.jpeg"
 excerpt: "A powerful free verse exploring guilt, anguish, and the resilient pursuit of redemption amidst an inner storm."
 ---
 
-Poet: Manas Kaushik Das
 
 <div style="text-align: center;">
 

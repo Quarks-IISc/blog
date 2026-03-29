@@ -7,7 +7,6 @@ image: "/assets/images/Stories/Nature.jpeg"
 excerpt: "एक कविता जो स्वतंत्रता की चाह और जीवन के बंधनों से मुक्त होने की इच्छा को व्यक्त करती है।"
 ---
 
-Poet: Irfan Ansari
 
 <div style="text-align: center;">
 

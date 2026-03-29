@@ -7,7 +7,6 @@ image: "/assets/images/Poems/of_course_i_know_you_then.jpg"
 excerpt: "A poem about recognition and shared moments of beauty."
 ---
 
-Poet: Shubhanan Banerjee
 
 <div style="text-align: center;">
 

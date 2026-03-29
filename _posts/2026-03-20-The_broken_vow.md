@@ -7,7 +7,6 @@ image: "/assets/images/Poems/the_broken_vow.jpg"
 excerpt: "A poignant poem about a broken life and the search for an ideal."
 ---
 
-Poet: Debosmita Biswas
 
 <div style="text-align: center;">
 

@@ -7,7 +7,6 @@ image: "/assets/images/Stories/Nature.jpeg"
 excerpt: "A romantic free verse on the feeling of insignificance in the vast cosmos, where only the love for another remains constant."
 ---
 
-Poet: Jahin
 
 <div style="text-align: center;">
 

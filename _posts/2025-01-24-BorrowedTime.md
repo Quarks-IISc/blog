@@ -10,7 +10,6 @@ excerpt: "Many live troubled lives, unable to afford a break to experience or im
 all: true
 ---
 
-Poet: Sunreeta Bhattacharya
 
 <div style="text-align: center;">
 

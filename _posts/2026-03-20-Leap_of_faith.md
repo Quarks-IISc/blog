@@ -7,7 +7,6 @@ image: "/assets/images/Stories/leap_of_faith.jpg"
 excerpt: "The story of Professor Anand Srivastava and the 'leap of faith' that led him from naval architecture to biophysics."
 ---
 
-Author: Mihir Kapse
 
 The time you choose to do something right despite all the negative things you see down that road- that's a leap of faith. There are multiple ways to look at it. People will ask what is 'right' here. My experience has led me to this: 'Right' is anything you do that makes you feel more alive. I recently came across this quote that said, "We only live once. Wrong! We only die once. We live every day!"
 

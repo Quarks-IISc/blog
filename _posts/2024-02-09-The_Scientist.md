@@ -10,8 +10,6 @@ excerpt: "An invention born from love and courage can resurrect even the faintes
 all: true
 ---
 
-Poet: Subhanan Banerjee
-
 <div style="text-align: center;">
 
 The scientist told his best friend<br>  

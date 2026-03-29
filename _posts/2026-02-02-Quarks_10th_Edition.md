@@ -10,7 +10,6 @@ excerpt: "Quarks, the IISc UG magazine, stands as a collective voice of undergra
 all: true
 ---
 
-Author: Mihir Kapse
 
 It all starts with a group of people coming together and committing to volunteer their time and effort for one task. Here, the task being to publish a magazine, Quarks. Like everyone, I wondered, out of everything, why the name “Quarks”. The answer can be found in the editor’s note of the 1st edition by Pratibha Mahale: “It is an elementary particle and a fundamental constituent of matter, so are we, the undergrads, learning the elementary concepts of science.” She continued to add, “Further, there are six types of quarks, known as flavors: up, down, strange, charm, bottom, and top. So do we learn six different subjects and come from various parts of the country.”
 First published in 2012, Quarks magazine became a tool and a medium for expression for the UG community. Throughout these years, it has captured stories of the people, including undergraduates, professors, instructors, workers, and many more. Saakshi Porwal, the editor of the 9th edition, described Quarks as the “sanctuary to the stirring creative voices of our community.”

@@ -10,7 +10,6 @@ excerpt: "Tame and sane, I will no longer paint the world's suffering in red, bu
 all: true
 ---
 
-Poet: Prokash Kumar Kundu
 
 <div style="text-align: center;">
 

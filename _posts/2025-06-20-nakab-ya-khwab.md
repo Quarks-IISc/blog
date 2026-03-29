@@ -7,7 +7,6 @@ image: "/assets/images/Stories/Nature.jpeg"
 excerpt: "A Hindi free verse exploring the many masks people wear and the dreams or compulsions hidden behind them."
 ---
 
-Poet: Pratibha Mahale
 
 <div style="text-align: center;">
 

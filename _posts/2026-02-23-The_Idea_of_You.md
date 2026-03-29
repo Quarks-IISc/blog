@@ -7,7 +7,6 @@ image: "/assets/images/Stories/Nature.jpeg"
 excerpt: "A romantic expression of the sacredness of an idealized love, found and guarded within the quiet rooms of the mind."
 ---
 
-Poet: Shreya Pithva
 
 <div style="text-align: center;">
 

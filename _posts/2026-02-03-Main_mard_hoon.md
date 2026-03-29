@@ -7,7 +7,6 @@ image: "/assets/images/Stories/Nature.jpeg"
 excerpt: "पुरुषों के संघर्ष, उत्तरदायित्व और अपनी भावनाओं को छिपाने की प्रवृत्ति पर आधारित एक सशक्त कविता।"
 ---
 
-Poet: Abhijeet
 
 <div style="text-align: center;">
 

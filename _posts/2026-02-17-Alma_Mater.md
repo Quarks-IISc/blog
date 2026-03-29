@@ -7,7 +7,6 @@ image: "/assets/images/Stories/Nature.jpeg"
 excerpt: "A poignant free verse reflecting on the bittersweet experience of leaving one's alma mater and the memories attached to a simple room."
 ---
 
-Poet: Souvik Chakraborty
 
 <div style="text-align: center;">
 

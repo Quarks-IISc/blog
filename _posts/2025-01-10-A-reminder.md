@@ -7,7 +7,6 @@ image: "/assets/images/Stories/Nature.jpeg"
 excerpt: "A free verse on faint memories and the brilliant spark of courage in the dark."
 ---
 
-Poet: Aditi Mishra
 
 <div style="text-align: center;">
 

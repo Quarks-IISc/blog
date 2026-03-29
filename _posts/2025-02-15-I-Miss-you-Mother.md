@@ -7,7 +7,6 @@ image: "/assets/images/Stories/Nature.jpeg"
 excerpt: "An expression of loss and love, remembering a mother through the twinkling stars."
 ---
 
-Poet: Nikunj Goel
 
 <div style="text-align: center;">
 

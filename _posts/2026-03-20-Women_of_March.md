@@ -8,7 +8,6 @@ excerpt: "A reflection on the March sisters from 'Little Women' and how their st
 featured: true
 ---
 
-Author: Manya Ganapathy
 
 Isn't it such a happy coincidence that the month chosen to celebrate women around the world shares its name with some of the most loved, cherished and lionised women over generations? The March sisters and their story continue to be a favourite among present-day readers. Their tale has been featured as the framework of several movies and TV series adaptations. The story resonates with generations of women, transcending both time and space.
 
