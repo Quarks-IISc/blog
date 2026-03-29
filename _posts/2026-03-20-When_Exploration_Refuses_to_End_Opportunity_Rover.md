@@ -8,7 +8,6 @@ excerpt: "A look at the legacy of the Opportunity Rover, a mission that redefine
 featured: true
 ---
 
-Author: Abhimanyu Ambikapathy
 
 Watching the documentary Good Night Oppy is, at first, an exercise in observation. We are introduced to the rover right at the start - functional, distant, and engineered with precision for a task millions of kilometres away. Through archival footage, mission logs, and the voices of engineers, the rover begins to feel less like a machine and more like a participant in a long and uncertain journey. The viewer follows not just data being collected on the Martian surface, but the passage of time, setbacks, recoveries, and quiet triumphs - things that are unseen by the public. By the end, what remains is not merely an account of a space mission, but the memory of endurance. Beneath this emotional narrative, however, lies a mission driven by a fundamental scientific question - one that shaped decades of planetary exploration.
 

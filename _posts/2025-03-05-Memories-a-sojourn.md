@@ -7,7 +7,6 @@ image: "/assets/images/Stories/Nature.jpeg"
 excerpt: "A reflection on the bygone moments that elusively peek into the undulating crevices of time."
 ---
 
-Poet: Souvik Chakraborty
 
 <div style="text-align: center;">
 

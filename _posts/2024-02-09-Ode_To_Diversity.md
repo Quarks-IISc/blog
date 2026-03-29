@@ -10,8 +10,6 @@ excerpt: "A lyrical ode to harmony, embracing humanity's shared victories, defea
 all: true
 ---
 
-Poet: Subhanan Banerjee
-
 <div style="text-align: center;">
 
 As long as the sky embraces<br>  

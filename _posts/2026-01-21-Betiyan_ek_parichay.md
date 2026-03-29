@@ -7,7 +7,6 @@ image: "/assets/images/Stories/Nature.jpeg"
 excerpt: "बेटियों के सम्मान और महत्व को दर्शाती एक मर्मस्पर्शी कविता।"
 ---
 
-Poet: Richa Naja Jain
 
 <div style="text-align: center;">
 

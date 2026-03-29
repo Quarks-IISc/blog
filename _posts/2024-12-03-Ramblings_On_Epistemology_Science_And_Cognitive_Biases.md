@@ -10,7 +10,6 @@ excerpt: "The appeal to rationality, has become something of a very popular phra
 all: true
 ---
 
-Authors: Raj Magesh, Julian D'Costa
 
 ## **Vignette #1**
 

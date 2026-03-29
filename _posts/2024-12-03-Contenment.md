@@ -10,7 +10,6 @@ excerpt: "In an increasingly hedonistic world, the urge to consume and seek grat
 all: true
 ---
 
-Author: Adit Vishnu
 
 The incident is set in Kerala, India.
 

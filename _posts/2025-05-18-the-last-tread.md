@@ -7,7 +7,6 @@ image: "/assets/images/Stories/Nature.jpeg"
 excerpt: "A thoughtful reflection on time, missed opportunities, and the steps we take in life."
 ---
 
-Poet: Rekha Nawal Jyoti
 
 <div style="text-align: center;">
 

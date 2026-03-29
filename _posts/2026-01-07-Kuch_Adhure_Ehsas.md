@@ -7,7 +7,6 @@ image: "/assets/images/Stories/Nature.jpeg"
 excerpt: "एक कविता जो साथ बिताए लम्हों और उनकी कमी से उपजी तन्हाई को बयां करती है।"
 ---
 
-Poet: Heet
 
 <div style="text-align: center;">
 

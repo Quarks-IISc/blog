@@ -7,7 +7,6 @@ image: "/assets/images/Stories/Nature.jpeg"
 excerpt: "A Hindi poem expressing deep inner sorrow under the beauty of a full moon night."
 ---
 
-Poet: Anubhav Srivastava
 
 <div style="text-align: center;">
 

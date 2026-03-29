@@ -9,7 +9,6 @@ excerpt: "In the darkest hour, a dainty rainbow rises, born of chaos, painting p
 all: true
 ---
 
-Poet: Souvik Chakraborty
 
 <div style="text-align: center;">
 

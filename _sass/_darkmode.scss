@@ -260,6 +260,40 @@ html.dark-mode body,
     color: #bdbdbd;
 }
 
+/* Share Sidebar */
+.dark-mode .share {
+    background: transparent;
+    border: none;
+    padding: 0;
+}
+.dark-mode .share p {
+    color: rgba(255, 255, 255, 0.9);
+}
+.dark-mode .share ul li i {
+    color: rgba(255, 255, 255, 0.9);
+    border-color: rgba(255, 255, 255, 0.3);
+    background: transparent;
+}
+.dark-mode .share ul li a:hover i {
+    color: #fff;
+    border-color: #90caf9;
+    background: rgba(144, 202, 249, 0.1);
+}
+
+/* Literary Improvements - Dark Mode */
+.dark-mode .reading-progress-bar {
+    background: #90caf9;
+}
+.dark-mode .article-post p:first-of-type::first-letter,
+.dark-mode .article-post .dropcap::first-letter {
+    color: #ffffff !important;
+}
+.dark-mode .article-post blockquote {
+    background-color: rgba(144, 202, 249, 0.05);
+    border-left-color: #90caf9;
+    color: #e0e0e0 !important;
+}
+
 /* Footer */
 .dark-mode .footer {
     background-color: #1e1e1e;
