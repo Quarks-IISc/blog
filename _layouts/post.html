@@ -21,27 +21,19 @@ post_class: post-template
         <div class="col-md-9 flex-first flex-md-unordered">
             <div class="mainheading">
 
+                <!-- Post Title -->
+                <h1 class="posttitle text-center">{{ page.title }}</h1>
+
                 <!-- Author Box -->
                 {% if page.author %}
-                <div class="row post-top-meta">
-                    <div class="col-xs-12 col-md-3 col-lg-2 text-center text-md-left mb-4 mb-md-0">
-                        {% if author.avatar %}
-                        <img class="author-thumb" src="{{site.baseurl}}/{{ author.avatar }}" alt="{{ author.display_name }}">
-                        {% else %}
-                        <img class="author-thumb" src="https://www.gravatar.com/avatar/{{ author.gravatar | default: 'unknown' }}?s=250&d=mm&r=x" alt="{{ author.display_name | default: page.author }}">
-                        {% endif %}
-                    </div>
-                    <div class="col-xs-12 col-md-9 col-lg-10 text-center text-md-left">
-                        <span class="link-dark font-weight-bold" style="font-size: 1.2rem;">{{ author.display_name | default: page.author }}</span>
-                        {% if author.twitter %}<a target="_blank" href="{{ author.twitter }}" class="btn follow">Follow</a>{% endif %}
-                        <br>
-                        <span class="author-description">{{ author.description | default: "Contributor to Quarks" }}</span>
-                    </div>
+                <div style="text-align: center; margin: 1rem 0;">
+                    {% if author.website or author.url %}
+                    <a href="{{ author.website | default: author.url }}" target="_blank" class="link-dark font-weight-bold" style="font-size: 1.2rem;">{{ author.display_name | default: page.author }}</a>
+                    {% else %}
+                    <span class="link-dark font-weight-bold" style="font-size: 1.2rem;">{{ author.display_name | default: page.author }}</span>
+                    {% endif %}
                 </div>
                 {% endif %}
-
-                <!-- Post Title -->
-                <h1 class="posttitle">{{ page.title }}</h1>
 
             </div>
 
@@ -133,10 +125,10 @@ post_class: post-template
             <!-- Prev/Next -->
             <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
             {% if page.previous.url %}
-            <a class="prev d-block col-md-6" href="{{ site.baseurl }}/{{page.previous.url}}"> &laquo; {{page.previous.title}}</a>
+            <a class="prev d-block col-md-6" href="{{ site.baseurl }}{{ page.previous.url }}"> &laquo; {{page.previous.title}}</a>
             {% endif %}
             {% if page.next.url %}
-            <a class="next d-block col-md-6 text-lg-right" href="{{ site.baseurl }}/{{page.next.url}}">{{page.next.title}} &raquo; </a>
+            <a class="next d-block col-md-6 text-lg-right" href="{{ site.baseurl }}{{ page.next.url }}">{{page.next.title}} &raquo; </a>
             {% endif %}
             <div class="clearfix"></div>
             </div>
