@@ -16,24 +16,59 @@ post_class: post-template
         </div>
 
         <!-- Post -->
-        {% assign author = site.authors[page.author] %}
+        {% assign authors = page.author | split: "," %}
 
         <div class="col-md-9 flex-first flex-md-unordered">
             <div class="mainheading">
 
                 <!-- Post Title -->
-                <h1 class="posttitle text-center">{{ page.title }}</h1>
+                <h1 class="posttitle text-center mb-3 display-4 font-weight-bold">{{ page.title }}</h1>
 
-                <!-- Author Box -->
-                {% if page.author %}
-                <div style="text-align: center; margin: 1rem 0;">
-                    {% if author.website or author.url %}
-                    <a href="{{ author.website | default: author.url }}" target="_blank" class="link-dark font-weight-bold" style="font-size: 1.2rem;">{{ author.display_name | default: page.author }}</a>
-                    {% else %}
-                    <span class="link-dark font-weight-bold" style="font-size: 1.2rem;">{{ author.display_name | default: page.author }}</span>
-                    {% endif %}
-                </div>
+                <!-- Post Excerpt/Subtitle -->
+                {% if page.excerpt %}
+                <p class="text-center text-muted lead mb-4" style="font-style: italic; font-size: 1.25rem;">
+                    {{ page.excerpt | strip_html }}
+                </p>
                 {% endif %}
+
+                <!-- Post Meta -->
+                <div class="post-top-meta text-center mb-4">
+                    <!-- Author Names -->
+                    <div class="author-meta mb-1">
+                        {% for author_id in authors %}
+                            {% assign author_id_stripped = author_id | strip %}
+                            {% assign author = site.authors[author_id_stripped] %}
+                            {% if author.website or author.url %}
+                                <a target="_blank" class="link-dark font-weight-bold" href="{{ author.website | default: author.url }}" style="font-size: 1.1rem;">{{ author.display_name | default: author_id_stripped }}</a>
+                            {% else %}
+                                <span class="link-dark font-weight-bold" style="font-size: 1.1rem;">{{ author.display_name | default: author_id_stripped }}</span>
+                            {% endif %}
+                            {% unless forloop.last %}<span class="mx-1">,</span>{% endunless %}
+                        {% endfor %}
+                    </div>
+                    
+                    <!-- Post Date and Reading Time -->
+                    <div class="post-meta-details text-muted small">
+                        <span class="post-date">
+                            <time class="post-date" datetime="{{ page.date | date:"%Y-%m-%d" }}">{{ page.date | date_to_string }}</time>
+                        </span>
+                        {% if page.last_modified_at %}
+                        <span class="ml-1">(Updated: <time datetime="{{ page.last_modified_at | date_to_xmlschema }}" itemprop="dateModified">{{ page.last_modified_at | date: "%b %-d, %Y" }}</time>)</span>
+                        {% endif %}
+                        <span class="dot mx-1"></span>
+                        <span class="post-read">
+                            {% assign words = content | number_of_words %}
+                            {% if words < 360 %}
+                                1 min read
+                            {% else %}
+                                {{ words | divided_by: 180 }} min read
+                            {% endif %}
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Subtle Divider -->
+                <hr class="mb-5" style="width: 60px; border-top: 2px solid #eee;">
 
             </div>
 
@@ -55,9 +90,9 @@ post_class: post-template
             {% assign img_url = img_url | replace: '//', '/' | replace: ':/', '://' %}
 
             {% if site.lazyimages == "enabled" %}
-            <img class="featured-image img-fluid lazyimg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAACCAQAAAA3fa6RAAAADklEQVR42mNkAANGCAUAACMAA2w/AMgAAAAASUVORK5CYII=" data-src="{{ img_url }}" alt="{{ page.title }}" style="width: 100%; border-radius: 8px; margin-bottom: 2rem;">
+            <img class="featured-image img-fluid lazyimg shadow-sm" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAACCAQAAAA3fa6RAAAADklEQVR42mNkAANGCAUAACMAA2w/AMgAAAAASUVORK5CYII=" data-src="{{ img_url }}" alt="{{ page.title }}" style="width: 100%; border-radius: 12px; margin-bottom: 3rem;">
             {% else %}
-            <img class="featured-image img-fluid" src="{{ img_url }}" alt="{{ page.title }}" style="width: 100%; border-radius: 8px; margin-bottom: 2rem;">
+            <img class="featured-image img-fluid shadow-sm" src="{{ img_url }}" alt="{{ page.title }}" style="width: 100%; border-radius: 12px; margin-bottom: 3rem;">
             {% endif %}
 
             {% endif %}
@@ -86,16 +121,6 @@ post_class: post-template
             </div>
             {% endif %}
 
-            <!-- Post Date -->
-            <p>
-            <small>
-                <span class="post-date"><time class="post-date" datetime="{{ page.date | date:"%Y-%m-%d" }}">{{ page.date | date_to_string }}</time></span>           
-                {% if page.last_modified_at %}
-                (Updated: <time datetime="{{ page.last_modified_at | date_to_xmlschema }}" itemprop="dateModified">{{ page.last_modified_at | date: "%b %-d, %Y" }}</time>)
-                {% endif %}
-                </small>
-            </p>
-
             <!-- Post Categories -->
             <div class="after-post-cats">
                 <ul class="tags mb-4">
@@ -123,7 +148,7 @@ post_class: post-template
             <!-- End Tags -->
 
             <!-- Prev/Next -->
-            <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
+            <div class="row PageNavigation d-flex justify-content-between font-weight-bold mt-5">
             {% if page.previous.url %}
             <a class="prev d-block col-md-6" href="{{ site.baseurl }}{{ page.previous.url }}"> &laquo; {{page.previous.title}}</a>
             {% endif %}
