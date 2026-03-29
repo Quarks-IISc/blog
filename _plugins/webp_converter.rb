@@ -2,6 +2,11 @@ require 'fileutils'
 require 'thread'
 
 Jekyll::Hooks.register :site, :post_write do |site|
+  if ENV['SKIP_WEBP'] == 'true'
+    puts "Skipping WebP conversion (SKIP_WEBP=true)"
+    next
+  end
+  
   puts "Converting images to WebP..."
   
   site_images_dir = File.join(site.dest, 'assets', 'images')
