@@ -108,9 +108,10 @@
     ga("create", "{{site.google_analytics}}", "auto");
     ga("send", "pageview");
   </script>
-  {% endif %}
-  {% capture layout %}layout-{{ page.layout | default: 'default' }}{% endcapture %}
-  {% capture body_class %}{{ layout }} {% if page.categories %}{% for category in page.categories %}category-{{ category | slugify }} {% endfor %}{% endif %}{% endcapture %}
+  {% endif %} {% capture layout %}layout-{{ page.layout | default: 'default'
+  }}{% endcapture %} {% capture body_class %}{{ layout }} {% if page.categories
+  %}{% for category in page.categories %}category-{{ category | slugify }} {%
+  endfor %}{% endif %}{% endcapture %}
   <body class="{{ body_class | strip }}">
     <!-- defer loading of font and font awesome -->
     <noscript id="deferred-styles">
@@ -289,6 +290,16 @@
                   class="text-muted"
                 >
                   <i class="fab fa-linkedin"></i>LinkedIn
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.facebook.com/QuarksIISc/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-muted"
+                >
+                  <i class="fab fa-facebook"></i>Facebook
                 </a>
               </li>
             </ul>
