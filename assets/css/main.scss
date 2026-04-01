@@ -472,6 +472,41 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
     }
 }
 
+/* --- Side-Scroll List Widget (Common for Announcements, News, etc.) --- */
+.side-scroll-list-widget {
+    background: rgba(128, 128, 128, 0.05);
+    border-radius: 15px;
+    padding: 25px;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+}
+
+.side-scroll-list-container {
+    margin-top: 15px;
+    padding-right: 10px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    flex-grow: 1;
+}
+
+.side-scroll-list-container::-webkit-scrollbar {
+    width: 6px;
+}
+.side-scroll-list-container::-webkit-scrollbar-track {
+    background: rgba(128, 128, 128, 0.05);
+    border-radius: 10px;
+}
+.side-scroll-list-container::-webkit-scrollbar-thumb {
+    background: rgba(128, 128, 128, 0.2);
+    border-radius: 10px;
+}
+
+.side-scroll-list-widget .section-title h2 {
+    font-size: 1.8rem !important;
+    margin-bottom: 0;
+}
+
 /* --- Reusable Carousel Widget Style --- */
 .carousel-container {
     position: relative;
@@ -722,23 +757,26 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
 /* Custom Scrollbar for Past Minis & Announcements */
 #past-minis-list::-webkit-scrollbar,
 .announcements-scroll-container::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
+    width: 8px;
+    height: 8px;
 }
 #past-minis-list::-webkit-scrollbar-track,
 .announcements-scroll-container::-webkit-scrollbar-track {
-    background: rgba(128,128,128,0.05);
+    background: rgba(0, 0, 0, 0.05);
     border-radius: 10px;
 }
 #past-minis-list::-webkit-scrollbar-thumb,
 .announcements-scroll-container::-webkit-scrollbar-thumb {
-    background: rgba(128,128,128,0.2);
+    background: rgba(0, 0, 0, 0.2); /* Default for light mode */
+    border: 2px solid transparent;
+    background-clip: content-box;
     border-radius: 10px;
 }
 #past-minis-list::-webkit-scrollbar-thumb:hover,
 .announcements-scroll-container::-webkit-scrollbar-thumb:hover {
-    background: var(--accent-color);
+    background: rgba(0, 0, 0, 0.4);
 }
+
 
 /* --- Announcements Styles --- */
 .deadline-badge {

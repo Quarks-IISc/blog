@@ -22,7 +22,8 @@ title: Home
         <a href="#site-footer" class="magazine-link">Subscribe to our newsletter <span class="arrow">&xrarr;</span></a>
     </div>
 </div>
-<!-- Featured Posts -->
+
+<!-- SECTION 1: Featured Posts -->
 <section class="featured-posts" id="featured-posts-section">
     <div class="section-title section-hero-header">
         <h2><span>FEATURED</span></h2>
@@ -35,7 +36,36 @@ title: Home
     </div>
 </section>
 
-<!-- Latest Posts -->
+<!-- SECTION 2: NEWS & ANNOUNCEMENTS -->
+<section class="news-announcements mt-5 fade-up-element" id="news-announcements-section">
+    <div class="row">
+        <!-- News Column -->
+        <div class="col-md-6 mb-4">
+            <div class="section-title section-hero-header">
+                <h2 style="font-size: 2.5rem;">NEWS & UPDATES</h2>
+            </div>
+            <div class="announcements-scroll-container mt-4 px-2" style="max-height: 400px; overflow-y: auto; scrollbar-width: thin;">
+                <ul class="list-unstyled" id="news-list">
+                    <li class="text-muted text-center py-3">Loading news...</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Announcements Column -->
+        <div class="col-md-6 mb-4">
+            <div class="section-title section-hero-header">
+                <h2 style="font-size: 2.5rem;">ANNOUNCEMENTS</h2>
+            </div>
+            <div class="announcements-scroll-container mt-4 px-2" style="max-height: 400px; overflow-y: auto; scrollbar-width: thin;">
+                <ul class="list-unstyled" id="announcements-list">
+                    <li class="text-muted text-center py-3">Loading announcements...</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SECTION 3: Latest Reads (Carousel) -->
 <section class="recent-posts mt-5" id="recent-posts-section">
     <div class="section-title section-hero-header position-relative">
         <h2><span>LATEST READS</span></h2>
@@ -77,77 +107,43 @@ title: Home
             <i class="fas fa-chevron-right"></i>
         </button>
     </div>
-
-    <script src="{{ site.baseurl }}/assets/js/carousel-logic.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            initCarousel('latest-posts-carousel', 'carousel-track', {
-                autoScroll: true,
-                scrollSpeed: 1,
-                scrollAmount: 320
-            });
-        });
-    </script>
 </section>
 
-<!-- Announcements & Crosswords Section -->
-<section class="announcements-crosswords mt-5 mb-5 fade-up-element" id="announcements-crosswords-section">
+<!-- SECTION 4: Crosswords -->
+<section class="crosswords mt-5 mb-5 fade-up-element" id="crosswords-section">
     <div class="row">
-        <!-- Announcements (Left Half) -->
+        <!-- Left Side: Placeholder -->
         <div class="col-md-6 mb-4">
             <div class="section-title section-hero-header">
-                <h2 style="font-size: 2.5rem;">ANNOUNCEMENTS</h2>
+                <h2 style="font-size: 2.5rem;">WHAT'S HERE?</h2>
             </div>
-            <div class="announcements-scroll-container mt-4 px-2" style="max-height: 400px; overflow-y: auto; scrollbar-width: thin;">
-                <ul class="list-unstyled" id="announcements-list">
-                    <li class="text-muted text-center py-3">Loading announcements...</li>
-                </ul>
+            <div class="mt-4 text-center d-flex flex-column align-items-center justify-content-center" style="min-height: 400px; background: rgba(128,128,128,0.05); border-radius: 15px; padding: 30px;">
+                <h3 class="font-weight-bold" style="font-family: 'Playfair Display', serif; opacity: 0.3; letter-spacing: 2px;">COMING SOON...</h3>
+                <p class="text-muted mt-3">We are working on something exciting for this section!</p>
             </div>
         </div>
 
-        <!-- Crosswords (Right Half) -->
+        <!-- Right Side: Crossword -->
         <div class="col-md-6 mb-4">
-            <div class="section-title section-hero-header">
-                <h2 style="font-size: 2.5rem;">CROSSWORDS</h2>
-            </div>
-            <div class="mt-4 text-center d-flex flex-column align-items-center justify-content-center" style="min-height: 400px; background: rgba(128,128,128,0.05); border-radius: 15px; padding: 30px;">
-                <div class="crossword-visual mb-4 fade-up-element">
-                    <div class="cw-grid">
-                        <!-- Row 0 -->
-                        <div class="cw-tile black"></div><div class="cw-tile black"></div><div class="cw-tile black"></div><div class="cw-tile black"></div><div class="cw-tile black"></div><div class="cw-tile black"></div><div class="cw-tile black"></div>
-                        
-                        <!-- Row 1: MINI start -->
-                        <div class="cw-tile black"></div><div class="cw-tile black"></div><div class="cw-tile black"></div><div class="cw-tile">M<span class="cw-number">1</span></div><div class="cw-tile black"></div><div class="cw-tile black"></div><div class="cw-tile black"></div>
-                        
-                        <!-- Row 2: MINI cont -->
-                        <div class="cw-tile black"></div><div class="cw-tile black"></div><div class="cw-tile black"></div><div class="cw-tile">I</div><div class="cw-tile black"></div><div class="cw-tile black"></div><div class="cw-tile black"></div>
-                        
-                        <!-- Row 3: Vertical starts (Q, N, S) -->
-                        <div class="cw-tile black"></div><div class="cw-tile">Q<span class="cw-number">2</span></div><div class="cw-tile black"></div><div class="cw-tile">N</div><div class="cw-tile">S<span class="cw-number">3</span></div><div class="cw-tile black"></div><div class="cw-tile black"></div>
-                        
-                        <!-- Row 4: CURIOUS bridge, intersects QUARKS (U), MINI (I), SOLVE (O) -->
-                        <div class="cw-tile">C<span class="cw-number">4</span></div><div class="cw-tile">U</div><div class="cw-tile">R</div><div class="cw-tile">I</div><div class="cw-tile">O</div><div class="cw-tile">U</div><div class="cw-tile">S</div>
-                        
-                        <!-- Row 5: Vertical cont (A, L) -->
-                        <div class="cw-tile black"></div><div class="cw-tile">A</div><div class="cw-tile black"></div><div class="cw-tile black"></div><div class="cw-tile">L</div><div class="cw-tile black"></div><div class="cw-tile black"></div>
-                        
-                        <!-- Row 6: Vertical cont (R, V) -->
-                        <div class="cw-tile black"></div><div class="cw-tile">R</div><div class="cw-tile black"></div><div class="cw-tile black"></div><div class="cw-tile">V</div><div class="cw-tile black"></div><div class="cw-tile black"></div>
-                        
-                        <!-- Row 7: Vertical cont (K, E) -->
-                        <div class="cw-tile black"></div><div class="cw-tile">K</div><div class="cw-tile black"></div><div class="cw-tile black"></div><div class="cw-tile">E</div><div class="cw-tile black"></div><div class="cw-tile black"></div>
-                        
-                        <!-- Row 8: Vertical end (S) -->
-                        <div class="cw-tile black"></div><div class="cw-tile">S</div><div class="cw-tile black"></div><div class="cw-tile black"></div><div class="cw-tile black"></div><div class="cw-tile black"></div><div class="cw-tile black"></div>
-                    </div>
-                </div>
-                <p class="powerful-intro-text mb-4" style="font-size: 1.3rem;">Stay Curious, Solve Quarks Mini Crossword.</p>
-                <a href="{{ site.baseurl }}/crosswords" class="magazine-link" style="font-size: 1.2rem;">Solve Today's Mini <span class="arrow">&xrarr;</span></a>
-            </div>
+            {% include crossword-teaser.html %}
         </div>
     </div>
 </section>
 
 {% endif %}
 
+<script src="{{ site.baseurl }}/assets/js/date-utils.js"></script>
+<script src="{{ site.baseurl }}/assets/js/carousel-logic.js"></script>
 <script src="{{ site.baseurl }}/assets/js/announcements-loader.js"></script>
+<script src="{{ site.baseurl }}/assets/js/news-loader.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        if (typeof initCarousel === 'function') {
+            initCarousel('latest-posts-carousel', 'carousel-track', {
+                autoScroll: true,
+                scrollSpeed: 1,
+                scrollAmount: 320
+            });
+        }
+    });
+</script>
