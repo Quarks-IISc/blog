@@ -108,6 +108,58 @@ title: Crosswords
   </div>
 </div>
 
+<!-- Featured Posts Section -->
+<section class="featured-posts mt-5 pt-5 border-top fade-up-element" id="featured-posts-section">
+    <div class="section-title section-hero-header mb-4">
+        <h2 style="font-size: 2.2rem;"><span>FEATURED</span></h2>
+    </div>
+    
+    <div class="carousel-container fade-up-element">
+        <!-- Left Arrow -->
+        <button class="carousel-arrow left" onclick="window.scroll_featured_posts_carousel('left')" aria-label="Scroll Left">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        
+        <div class="latest-carousel" id="featured-posts-carousel">
+            <div id="featured-carousel-track" class="carousel-track">
+                {% assign featured_posts = site.posts | where: "featured", true %}
+                {% for post in featured_posts limit:8 %}
+                    <div class="carousel-item-custom mb-30px">
+                        {% assign is_picture = false %}
+                        {% if post.categories contains "pictures" or post.categories contains "Pictures" %}
+                            {% assign is_picture = true %}
+                        {% endif %}
+                        
+                        {% if is_picture %}
+                            {% include picturebox.html disable_lazy=true %}
+                        {% else %}
+                            {% include postbox.html disable_lazy=true %}
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        
+        <!-- Right Arrow -->
+        <button class="carousel-arrow right" onclick="window.scroll_featured_posts_carousel('right')" aria-label="Scroll Right">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+    </div>
+
+    <script src="{{ site.baseurl }}/assets/js/carousel-logic.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            if (typeof initCarousel === 'function') {
+                initCarousel('featured-posts-carousel', 'featured-carousel-track', {
+                    autoScroll: true,
+                    scrollSpeed: 1,
+                    scrollAmount: 320
+                });
+            }
+        });
+    </script>
+</section>
+
 <!-- Past Mini's Section -->
 <section
   class="mt-5 pt-5 border-top fade-up-element"

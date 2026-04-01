@@ -41,15 +41,14 @@ title: Home
         <h2><span>LATEST READS</span></h2>
     </div>
     
-    <div class="carousel-container position-relative px-4 fade-up-element">
+    <div class="carousel-container fade-up-element">
         <!-- Left Arrow -->
-        <button class="carousel-arrow left" onclick="scrollCarousel('left')" aria-label="Scroll Left">
+        <button class="carousel-arrow left" onclick="window.scroll_latest_posts_carousel('left')" aria-label="Scroll Left">
             <i class="fas fa-chevron-left"></i>
         </button>
         
-        <div class="latest-carousel" id="latest-posts-carousel" style="display: flex; overflow-x: auto; gap: 20px; padding-bottom: 20px; scrollbar-width: none;">
-
-            <div id="carousel-track" style="display: flex; gap: 20px;">
+        <div class="latest-carousel" id="latest-posts-carousel">
+            <div id="carousel-track" class="carousel-track">
                 {% assign recent_stories = site.categories.stories | where_exp: "item", "item.featured != true" | sort: "date" | reverse | limit: 5 %}
                 {% assign recent_poems = site.categories.poems | where_exp: "item", "item.featured != true" | sort: "date" | reverse | limit: 5 %}
                 {% assign recent_pictures = site.categories.pictures | where_exp: "item", "item.featured != true" | sort: "date" | reverse | limit: 5 %}
@@ -74,67 +73,19 @@ title: Home
         </div>
         
         <!-- Right Arrow -->
-        <button class="carousel-arrow right" onclick="scrollCarousel('right')" aria-label="Scroll Right">
+        <button class="carousel-arrow right" onclick="window.scroll_latest_posts_carousel('right')" aria-label="Scroll Right">
             <i class="fas fa-chevron-right"></i>
         </button>
     </div>
 
+    <script src="{{ site.baseurl }}/assets/js/carousel-logic.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            const carousel = document.getElementById('latest-posts-carousel');
-            const track = document.getElementById('carousel-track');
-            
-            // Duplicate the track content to allow seamless infinite scrolling
-            track.innerHTML += track.innerHTML;
-            
-            // Set to true to enable auto-scrolling
-            const AUTO_SCROLL_ENABLED = true;
-            let isAutoScrolling = AUTO_SCROLL_ENABLED;
-            let scrollSpeed = 1; // Pixels per frame
-            let animationFrameId;
-
-            function autoScroll() {
-                if (isAutoScrolling) {
-                    carousel.scrollLeft += scrollSpeed;
-                    
-                    // Seamless loop: If scrolled past half the total width (the original content), reset to 0
-                    if (carousel.scrollLeft >= track.scrollWidth / 2) {
-                        carousel.scrollLeft -= track.scrollWidth / 2;
-                    }
-                }
-                animationFrameId = requestAnimationFrame(autoScroll);
-            }
-            
-            // Start scrolling
-            if (AUTO_SCROLL_ENABLED) {
-                animationFrameId = requestAnimationFrame(autoScroll);
-            }
-
-            // Manual scroll with arrows (temporarily disables auto-scroll to avoid conflict)
-            window.scrollCarousel = function(direction) {
-                // Temporarily pause auto-scrolling so the user can take control
-                if (AUTO_SCROLL_ENABLED) {
-                    isAutoScrolling = false;
-                    // Resume after 3 seconds of inactivity
-                    clearTimeout(window.resumeScrollTimeout);
-                    window.resumeScrollTimeout = setTimeout(() => {
-                        isAutoScrolling = true;
-                    }, 3000);
-                }
-                
-                const scrollAmount = 300; // Scroll by roughly one card width
-                
-                carousel.scrollBy({
-                    left: direction === 'left' ? -scrollAmount : scrollAmount,
-                    behavior: 'smooth'
-                });
-            };
-            
-            // Optional: Pause auto-scroll when user hovers or touches the carousel
-            carousel.addEventListener('mouseenter', () => { if (AUTO_SCROLL_ENABLED) isAutoScrolling = false; });
-            carousel.addEventListener('mouseleave', () => { if (AUTO_SCROLL_ENABLED) isAutoScrolling = true; });
-            carousel.addEventListener('touchstart', () => { if (AUTO_SCROLL_ENABLED) isAutoScrolling = false; });
-            carousel.addEventListener('touchend', () => { if (AUTO_SCROLL_ENABLED) isAutoScrolling = true; });
+            initCarousel('latest-posts-carousel', 'carousel-track', {
+                autoScroll: true,
+                scrollSpeed: 1,
+                scrollAmount: 320
+            });
         });
     </script>
 </section>
