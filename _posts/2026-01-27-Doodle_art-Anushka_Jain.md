@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Doodle art"
+title: "Spidey"
 author: "Anushka Jain"
-description: "Doodle art by Anushka Jain"
+description: "Spidey by Anushka Jain"
 categories: [pictures]
 image: "/assets/images/Pictures/Doodle_art-Anushka_Jain.jpg"
 ---
