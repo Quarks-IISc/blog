@@ -189,10 +189,13 @@ title: Crosswords
 
 <script>
   // PuzParser: Parse binary .puz crossword format
+  // PuzParser: Parse binary .puz crossword format
   class PuzParser {
     constructor(buffer) {
       this.data = new Uint8Array(buffer);
       this.view = new DataView(buffer);
+      // ADD THIS LINE: Define the decoder
+      this.decoder = new TextDecoder('windows-1252'); 
     }
     
     parse() {
@@ -205,8 +208,9 @@ title: Crosswords
         const solutionOffset = 0x34;
         const gridOffset = solutionOffset + gridSize;
         
-        const solution = String.fromCharCode(...Array.from(this.data.slice(solutionOffset, solutionOffset + gridSize)));
-        const grid = String.fromCharCode(...Array.from(this.data.slice(gridOffset, gridOffset + gridSize)));
+        // UPDATE THESE TWO LINES: Use the decoder instead of String.fromCharCode
+        const solution = this.decoder.decode(this.data.slice(solutionOffset, solutionOffset + gridSize));
+        const grid = this.decoder.decode(this.data.slice(gridOffset, gridOffset + gridSize));
         
         let offset = gridOffset + gridSize;
         const strings = [];
@@ -214,7 +218,9 @@ title: Crosswords
         while (strings.length < (numClues + 3) && offset < this.data.length) {
           let start = offset;
           while (offset < this.data.length && this.data[offset] !== 0) offset++;
-          strings.push(String.fromCharCode(...Array.from(this.data.slice(start, offset))));
+          
+          // UPDATE THIS LINE: Use the decoder for clues and metadata
+          strings.push(this.decoder.decode(this.data.slice(start, offset)));
           offset++;
         }
         
