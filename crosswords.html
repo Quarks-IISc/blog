@@ -344,7 +344,9 @@ title: Crosswords
           return {
             key: key,
             date: dateStr,
-            ...converted
+            name: item.name || key,
+            ...converted,
+            author: item.author || converted.author || "Anonymous"
           };
         } catch (e) {
           console.warn(`Failed to load ${item.file}:`, e);
@@ -362,6 +364,7 @@ title: Crosswords
           crosswordSchedule.push({
             key: res.key,
             date: new Date(res.date + "T00:00:00"),
+            name: res.name
           });
           loadedCount++;
         } else if (res && res.error) {
@@ -474,7 +477,7 @@ title: Crosswords
       const card = document.createElement("div");
       card.className = `mini-card ${i === currentIndex ? "active-mini" : ""}`;
       card.innerHTML = `
-              <h5>Mini ${i + 1}</h5>
+              <h5>${item.name || `Mini ${i + 1}`}</h5>
               <p>${formatDate(item.date)}</p>
           `;
       card.onclick = () => loadCrossword(i);
@@ -499,7 +502,7 @@ title: Crosswords
     if (index === maxUnlockedIdx) {
       statusHeader.textContent = "Crossword Mini for Today!";
     } else {
-      statusHeader.textContent = `Crossword Mini #${index + 1}`;
+      statusHeader.textContent = item.name || `Crossword Mini #${index + 1}`;
     }
     dateHeader.textContent = "Published On: " + formatDate(item.date);
 

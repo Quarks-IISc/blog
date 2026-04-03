@@ -1,10 +1,10 @@
 [
-  { "file": "mini-1.puz", "date": "2026-03-19" },
-  { "file": "mini-2.puz", "date": "2026-03-21" },
-  { "file": "mini-3.puz", "date": "2026-03-23" },
-  { "file": "mini-4.puz", "date": "2026-03-26" },
-  { "file": "mini-5.puz", "date": "2026-04-01" },
-  { "file": "mini-6.puz", "date": "2026-04-03" },
-  { "file": "mini-7.puz", "date": "2026-04-05" },
-  { "file": "mini-8.puz", "date": "2026-04-07" }
+  { "file": "mini-1.puz", "date": "2026-03-19", "name": "Mini-1", "author": "Ananth" },
+  { "file": "mini-2.puz", "date": "2026-03-21", "name": "Mini-2", "author": "Ananth" },
+  { "file": "mini-3.puz", "date": "2026-03-23", "name": "Mini-3", "author": "Ananth" },
+  { "file": "mini-4.puz", "date": "2026-03-26", "name": "Mini-4", "author": "Ananth" },
+  { "file": "mini-5.puz", "date": "2026-04-01", "name": "Mini-5", "author": "Ananth" },
+  { "file": "mini-6.puz", "date": "2026-04-03", "name": "Mini-6", "author": "Ananth" },
+  { "file": "mini-7.puz", "date": "2026-04-05", "name": "Mini-7", "author": "Ananth" },
+  { "file": "mini-8.puz", "date": "2026-04-07", "name": "Mini-8", "author": "Ananth" }
 ]
