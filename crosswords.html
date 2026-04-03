@@ -7,6 +7,15 @@ title: Crosswords
   <h2 style="font-size: 2.5rem">CROSSWORDS</h2>
 </div>
 
+<!-- Loading State -->
+<div id="crossword-loader" class="text-center my-5">
+  <div class="spinner-border text-secondary" role="status" style="width: 3rem; height: 3rem;">
+    <span class="sr-only">Loading...</span>
+  </div>
+  <p class="mt-3 text-muted" style="font-style: italic;">Loading today's crossword...</p>
+</div>
+
+<div id="crossword-main-ui" style="display: none;">
 <!-- Next Unlock Banner -->
 <div
   id="next-unlock-container"
@@ -107,6 +116,8 @@ title: Crosswords
     </div>
   </div>
 </div>
+</div>
+
 
 <!-- Featured Posts Section -->
 <section class="featured-posts mt-5 pt-5 border-top fade-up-element" id="featured-posts-section">
@@ -193,6 +204,7 @@ title: Crosswords
     constructor(buffer) {
       this.data = new Uint8Array(buffer);
       this.view = new DataView(buffer);
+      this.decoder = new TextDecoder('windows-1252'); // .puz usually uses latin1/windows-1252
     }
     
     parse() {
@@ -214,7 +226,8 @@ title: Crosswords
         while (strings.length < (numClues + 3) && offset < this.data.length) {
           let start = offset;
           while (offset < this.data.length && this.data[offset] !== 0) offset++;
-          strings.push(String.fromCharCode(...Array.from(this.data.slice(start, offset))));
+          // Use decoder for special character support
+          strings.push(this.decoder.decode(this.data.slice(start, offset)));
           offset++;
         }
         
@@ -303,75 +316,88 @@ title: Crosswords
     return ans;
   }
 
-  const puzFiles = {
-    'mini-1': '2026-03-19',
-    'mini-2': '2026-03-20',
-    'mini-3': '2026-03-21',
-    'mini-4': '2026-03-22',
-    'mini-5': '2026-03-26',
-    'Mar_26': '2026-03-26'
-  };
-
   let allCrosswordData = {};
   const crosswordSchedule = [];
 
   async function loadCrosswords(baseurl = '') {
-    let loadedCount = 0;
-    let failedFiles = [];
+    const loader = document.getElementById('crossword-loader');
+    const mainUI = document.getElementById('crossword-main-ui');
     
-    for (const [key, dateStr] of Object.entries(puzFiles)) {
-      try {
-        const response = await fetch(`${baseurl}/assets/data/crosswords/${key}.puz`);
-        
-        if (!response.ok) {
-          failedFiles.push(`${key}.puz (HTTP ${response.status})`);
-          console.warn(`Failed to load ${key}.puz: HTTP ${response.status}`);
-          continue;
-        }
-        
-        const buffer = await response.arrayBuffer();
-        const parsed = new PuzParser(buffer).parse();
+    try {
+      const scheduleRes = await fetch(`${baseurl}/assets/data/crosswords/mini.json`);
+      if (!scheduleRes.ok) throw new Error('Failed to load schedule');
+      const puzList = await scheduleRes.json();
 
-        if (!parsed) {
-          failedFiles.push(`${key}.puz (parse error)`);
-          console.warn(`Failed to parse ${key}.puz`);
-          continue;
-        }
-        
-        const converted = convertPuzToFormat(parsed);
-        allCrosswordData[key] = {
-          date: dateStr,
-          ...converted
-        };
+      const fetchPromises = puzList.map(async (item) => {
+        const key = item.file.replace('.puz', '');
+        const dateStr = item.date;
+        try {
+          const response = await fetch(`${baseurl}/assets/data/crosswords/${item.file}`);
+          if (!response.ok) throw new Error(`HTTP ${response.status}`);
+          
+          const buffer = await response.arrayBuffer();
+          const parsed = new PuzParser(buffer).parse();
 
-        crosswordSchedule.push({
-          key: key,
-          date: new Date(dateStr + "T00:00:00"),
-        });
-        
-        loadedCount++;
-      } catch (e) {
-        failedFiles.push(`${key}.puz (${e.message})`);
-        console.warn(`Failed to load ${key}.puz:`, e);
+          if (!parsed) throw new Error('Parse error');
+          
+          const converted = convertPuzToFormat(parsed);
+          return {
+            key: key,
+            date: dateStr,
+            ...converted
+          };
+        } catch (e) {
+          console.warn(`Failed to load ${item.file}:`, e);
+          return { key: key, error: e.message };
+        }
+      });
+
+      const results = await Promise.all(fetchPromises);
+      let loadedCount = 0;
+      let failedFiles = [];
+
+      results.forEach(res => {
+        if (res && !res.error) {
+          allCrosswordData[res.key] = res;
+          crosswordSchedule.push({
+            key: res.key,
+            date: new Date(res.date + "T00:00:00"),
+          });
+          loadedCount++;
+        } else if (res && res.error) {
+          failedFiles.push(`${res.key}.puz (${res.error})`);
+        }
+      });
+
+      // Toggle UI
+      if (loader) loader.style.display = 'none';
+      if (mainUI) {
+        mainUI.style.display = 'block';
+        mainUI.style.opacity = '1';
       }
-    }
 
-    if (loadedCount === 0) {
-      statusHeader.textContent = "Unable to Load Crosswords";
-      dateHeader.textContent = "Sorry, there was an error loading the crossword files. Please try refreshing.";
-      document.getElementById('crossword-container').style.display = 'none';
-      document.querySelector('.clues-container').style.display = 'none';
-      msgEl.textContent = `Error: No crossword files loaded. ${failedFiles.length > 0 ? 'Failed: ' + failedFiles.join(', ') : ''}`;
-      msgEl.style.color = '#dc3545';
-      return;
-    }
-    
-    if (failedFiles.length > 0) {
-      console.error('Failed to load some crossword files:', failedFiles.join(', '));
-    }
+      if (loadedCount === 0) {
+        statusHeader.textContent = "Unable to Load Crosswords";
+        dateHeader.textContent = "Sorry, there was an error loading the crossword files. Please try refreshing.";
+        document.getElementById('crossword-container').style.display = 'none';
+        document.querySelector('.clues-container').style.display = 'none';
+        msgEl.textContent = `Error: No crossword files loaded. ${failedFiles.length > 0 ? 'Failed: ' + failedFiles.join(', ') : ''}`;
+        msgEl.style.color = '#dc3545';
+        return;
+      }
+      
+      if (failedFiles.length > 0) {
+        console.error('Failed to load some crossword files:', failedFiles.join(', '));
+      }
 
-    crosswordSchedule.sort((a, b) => a.date - b.date);
-    initScheduler();
+      crosswordSchedule.sort((a, b) => a.date - b.date);
+      initScheduler();
+    } catch (e) {
+      console.error('loadCrosswords error:', e);
+      if (loader) loader.style.display = 'none';
+      statusHeader.textContent = "Error Loading Crosswords";
+      dateHeader.textContent = e.message;
+    }
   }
   
   // Load external crosswords loader script which provides:
@@ -475,7 +501,7 @@ title: Crosswords
     } else {
       statusHeader.textContent = `Crossword Mini #${index + 1}`;
     }
-    dateHeader.textContent = formatDate(item.date);
+    dateHeader.textContent = "Published On: " + formatDate(item.date);
 
     // Update Author display
     const authorEl = document.getElementById("current-display-author");
