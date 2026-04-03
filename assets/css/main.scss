@@ -417,6 +417,7 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
 /* --- Picture Card Hover Effects --- */
 .picture-card {
     transition: all 0.3s ease;
+    will-change: transform, box-shadow;
 }
 
 .picture-card:hover {
@@ -426,10 +427,15 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
 
 .picture-card img {
     transition: transform 0.5s cubic-bezier(0.2, 0, 0, 1);
+    will-change: transform;
 }
 
 .picture-card:hover img {
     transform: scale(1.1);
+}
+
+.picture-card:hover .picture-overlay {
+    transform: translateY(-5px) translateZ(0) !important;
 }
 
 .dark-mode .picture-card:hover {

@@ -21,7 +21,7 @@
             </picture>
         {% endif %}
         
-        <div class="picture-overlay" style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 60%, transparent 100%); padding: 30px 15px 15px; text-align: left; transition: all 0.3s ease;">
+        <div class="picture-overlay" style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 60%, transparent 100%); padding: 30px 15px 15px; text-align: left; transition: all 0.3s ease; z-index: 2; transform: translateZ(0); backface-visibility: hidden;">
             <h2 class="card-title" style="font-family: 'Playfair Display', serif; font-size: 1.2rem; margin-bottom: 2px; color: #fff; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">
                 {{ post.title }}
             </h2>
