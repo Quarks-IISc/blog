@@ -36,16 +36,18 @@ jobs:
       - name: Convert images to WebP
         run: |
           echo "Converting images to WebP..."
-          find assets/images -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" \) | while read img; do
+          find assets/images -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" \) -print0 | \
+          xargs -0 -P $(nproc || echo 2) -n 1 bash -c '
+            img="$0"
             webp_file="${img%.*}.webp"
             if [ ! -f "$webp_file" ]; then
               if convert "$img" -quality 80 -define webp:method=6 "$webp_file" 2>/dev/null; then
                 echo "✓ ${img##*/} -> ${webp_file##*/}"
               else
-                echo "✗ ${img##*/} (skipped - corrupted)"
+                echo "✗ ${img##*/} (conversion failed)"
               fi
             fi
-          done
+          '
           echo "WebP conversion complete!"
 
       - name: Setup Pages
