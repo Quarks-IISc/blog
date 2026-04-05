@@ -9,16 +9,16 @@
                 </button>
             </div>
             <div class="modal-body pt-2 pb-4 px-4 modal-scrollable">
+                <h2 id="modal-news-title" class="mb-3 font-weight-bold" style="font-family: 'Playfair Display', serif; line-height: 1.2; color: #fff;"></h2>
                 <div id="modal-news-image-container" class="mb-4 text-center d-none">
-                    <img id="modal-news-image" src="" alt="" class="img-fluid rounded shadow-sm" style="max-height: 400px; width: 100%; object-fit: cover;">
+                    <img id="modal-news-image" src="" alt="" class="img-fluid rounded shadow-sm" style="max-height: 600px; width: 100%; object-fit: contain; margin: 0 auto; display: block;">
                 </div>
-                <h2 id="modal-news-title" class="mb-3 font-weight-bold" style="font-family: 'Playfair Display', serif; line-height: 1.2;"></h2>
                 <hr class="my-3" style="opacity: 0.1;">
                 <div id="modal-news-description" class="news-full-content mb-4" style="font-size: 1.1rem; line-height: 1.6; color: #eee;"></div>
                 
-                <div class="d-flex align-items-center justify-content-between flex-wrap mt-auto pt-3 border-top" style="gap: 15px;">
+                <div class="d-flex align-items-center justify-content-between flex-wrap mt-auto pt-3 border-top" style="gap: 15px; border-top-color: rgba(255,255,255,0.1) !important;">
                     <div id="modal-news-date-container">
-                        <span id="modal-news-date" class="deadline-badge"></span>
+                        <span id="modal-news-date" class="deadline-badge-modal"></span>
                     </div>
                     <a id="modal-news-link" href="#" target="_blank" rel="noopener noreferrer" class="magazine-link" style="font-size: 1.1rem;">
                         <span id="modal-news-link-text">Read More</span> <span class="arrow">&xrarr;</span>
@@ -30,6 +30,17 @@
 </div>
 
 <style>
+.deadline-badge-modal {
+    background: rgba(255,255,255,0.15);
+    padding: 6px 15px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.3);
+    display: inline-flex;
+    align-items: center;
+    font-weight: 500;
+}
 .news-insta-modal {
     background-color: #1a1a1a;
     color: #fff;
@@ -54,8 +65,12 @@
     background: rgba(255, 255, 255, 0.05);
 }
 .modal-scrollable::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.6);
     border-radius: 10px;
+    border: 2px solid #1a1a1a;
+}
+.modal-scrollable::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.9);
 }
 
 .news-modal-close {
@@ -112,12 +127,15 @@ window.showNewsDetails = function(data) {
     const type = data.type || 'News';
     const imageUrl = data.image || '';
 
+    // Reset image first
+    const imgEl = document.getElementById('modal-news-image');
+    imgEl.src = '';
+    
     document.getElementById('newsModalLabel').textContent = type;
     document.getElementById('modal-news-title').textContent = title;
     document.getElementById('modal-news-description').textContent = description;
     
     const imgContainer = document.getElementById('modal-news-image-container');
-    const imgEl = document.getElementById('modal-news-image');
     if (imageUrl) {
         imgEl.src = imageUrl;
         imgEl.alt = title;

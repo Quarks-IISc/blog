@@ -36,6 +36,7 @@
           description: f['Description'] || f['description'] || '',
           link: f['Link'] || f['link'] || '#',
           link_text: f['Link Text'] || f['link text'] || 'Apply Here',
+          image: f['Image'] && f['Image'][0] ? f['Image'][0].url : (f['image'] && f['image'][0] ? f['image'][0].url : ''),
           deadline: f['Deadline'] || f['deadline'] || '',
           deadline_text: (typeof formatHumanDate === 'function' ? formatHumanDate(f['Deadline'] || f['deadline']) : (f['Deadline'] || f['deadline'] || ''))
         };
@@ -71,6 +72,7 @@
           description: a.description,
           link: a.link,
           linkText: a.link_text,
+          image: a.image,
           dateText: a.deadline_text || a.deadline,
           type: 'Announcements'
         }).replace(/"/g, '&quot;');
@@ -135,11 +137,6 @@
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', loadAnnouncements);
-  } else {
-    loadAnnouncements();
-  }
-})();
-Listener('DOMContentLoaded', loadAnnouncements);
   } else {
     loadAnnouncements();
   }
