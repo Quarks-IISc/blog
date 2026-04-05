@@ -65,35 +65,64 @@
         return bDate - aDate;
       });
       
-      const html = active.map(a => `
+      const html = active.map(a => {
+        const itemData = JSON.stringify({
+          title: a.title,
+          description: a.description,
+          link: a.link,
+          linkText: a.link_text,
+          dateText: a.deadline_text || a.deadline,
+          type: 'Announcements'
+        }).replace(/"/g, '&quot;');
+
+        return `
         <li class="mb-4 pb-3 border-bottom">
-          <div class="font-weight-bold" style="font-size: 1.15rem; line-height: 1.4;">
-            ${a.title}
-            <span class="text-muted" style="font-weight: 400; font-size: 0.95rem; margin-left: 8px;">— ${a.description}</span>
+          <div class="news-item-content">
+            <div class="font-weight-bold" style="font-size: 1.15rem; line-height: 1.4;">
+              ${a.title}
+            </div>
+            <div class="news-desc-preview text-muted" style="font-weight: 400; font-size: 0.95rem;">
+              ${a.description}
+            </div>
           </div>
           <div class="mt-3 ${a.deadline ? 'd-flex align-items-center justify-content-between flex-wrap' : ''}" style="gap: 10px;">
-            <a href="${a.link}" target="_blank" rel="noopener noreferrer" class="magazine-link" style="font-size: 0.95rem; padding-bottom: 2px;">${a.link_text} <span class="arrow" style="font-size: 1.2rem; margin-left: 8px;">&xrarr;</span></a>
+            <a href="javascript:void(0)" onclick="showNewsDetails(${itemData})" class="magazine-link" style="font-size: 0.95rem; padding-bottom: 2px;">Read More <span class="arrow" style="font-size: 1.2rem; margin-left: 8px;">&xrarr;</span></a>
             ${a.deadline ? `<span class="deadline-badge"><i class="far fa-calendar-alt mr-1"></i> Deadline: ${a.deadline_text || a.deadline}</span>` : ''}
           </div>
         </li>
-      `).join('');
+      `;}).join('');
       
       const pastHtml = past.length > 0 ? `
         <div class="mt-5 mb-3">
           <h5 class="text-muted text-uppercase" style="letter-spacing: 2px; font-size: 0.9rem; font-weight: 700; border-bottom: 1px solid rgba(128,128,128,0.2); padding-bottom: 10px;">Past Announcements</h5>
         </div>
-        ${past.map(a => `
+        ${past.map(a => {
+          const itemData = JSON.stringify({
+            title: a.title,
+            description: a.description,
+            link: a.link,
+            linkText: a.link_text,
+            image: a.image,
+            dateText: a.deadline_text || a.deadline,
+            type: 'Past Announcements'
+          }).replace(/"/g, '&quot;');
+          
+          return `
           <li class="mb-3 pb-2 border-bottom">
-            <div class="font-weight-bold" style="font-size: 1.15rem; line-height: 1.4;">
-              ${a.title}
-              <span class="text-muted" style="font-weight: 400; font-size: 0.95rem; margin-left: 8px;">— ${a.description}</span>
+            <div class="news-item-content">
+              <div class="font-weight-bold" style="font-size: 1.15rem; line-height: 1.4;">
+                ${a.title}
+              </div>
+              <div class="news-desc-preview text-muted" style="font-weight: 400; font-size: 0.95rem;">
+                ${a.description}
+              </div>
             </div>
             <div class="mt-2 d-flex align-items-center justify-content-between flex-wrap" style="gap: 10px;">
-              <a href="${a.link}" target="_blank" rel="noopener noreferrer" class="magazine-link" style="font-size: 0.85rem; padding-bottom: 2px;">Details <span class="arrow" style="font-size: 1rem; margin-left: 5px;">&xrarr;</span></a>
+              <a href="javascript:void(0)" onclick="showNewsDetails(${itemData})" class="magazine-link" style="font-size: 0.85rem; padding-bottom: 2px;">Read More <span class="arrow" style="font-size: 1rem; margin-left: 5px;">&xrarr;</span></a>
               <span class="deadline-badge"><i class="far fa-calendar-alt mr-1"></i> Deadline: ${a.deadline_text || a.deadline}</span>
             </div>
           </li>
-        `).join('')}
+        `;}).join('')}
       ` : '';
       
       listEl.innerHTML = html + pastHtml || '<li class="text-muted text-center py-3">No announcements</li>';
@@ -106,6 +135,11 @@
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', loadAnnouncements);
+  } else {
+    loadAnnouncements();
+  }
+})();
+Listener('DOMContentLoaded', loadAnnouncements);
   } else {
     loadAnnouncements();
   }

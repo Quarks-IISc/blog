@@ -771,6 +771,15 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
 
 
 /* --- Announcements Styles --- */
+.news-desc-preview {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    line-height: 1.5;
+    margin-top: 5px;
+}
+
 .deadline-badge {
     background: rgba(0,0,0,0.05);
     padding: 4px 12px;
