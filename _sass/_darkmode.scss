@@ -307,15 +307,31 @@ html.dark-mode body,
     background-size: 200% 100%;
 }
 
-/* Scrollbar Dark Mode */
-.dark-mode .announcements-scroll-container::-webkit-scrollbar-track {
+/* Scrollbar Dark Mode - Simple & Global */
+.dark-mode {
+    scrollbar-color: rgba(255, 255, 255, 0.5) rgba(0, 0, 0, 0.1);
+    scrollbar-width: thin;
+}
+
+/* Webkit Scrollbars in Dark Mode */
+.dark-mode ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+}
+
+.dark-mode ::-webkit-scrollbar-track {
     background: rgba(255, 255, 255, 0.05) !important;
 }
-.dark-mode .announcements-scroll-container::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.3) !important;
-    border: 2px solid #121212 !important;
+
+.dark-mode ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.4) !important;
+    border-radius: 10px !important;
+    border: 2px solid transparent !important;
+    background-clip: padding-box !important;
 }
-.dark-mode .announcements-scroll-container::-webkit-scrollbar-thumb:hover {
-    background: rgba(255, 255, 255, 0.5) !important;
+
+.dark-mode ::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.6) !important;
+    background-clip: padding-box !important;
 }
 
