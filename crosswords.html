@@ -588,6 +588,9 @@ title: Crosswords
           input.addEventListener("focus", (e) => {
             handleFocus(r, c);
           });
+          input.addEventListener("mousedown", (e) => {
+            handleMouseDown(r, c, e);
+          });
           input.addEventListener("input", (e) => handleInput(e, r, c));
           input.addEventListener("keydown", (e) => handleKeydown(e, r, c));
           cell.appendChild(input);
@@ -608,8 +611,9 @@ title: Crosswords
     }
     li.innerHTML = html;
     li.onclick = () => {
+      currentDir = dir; // Switch to the direction of the clicked clue
       focusCell(clue.r, clue.c);
-      updateUI(clue.r, clue.c, { dir, clue });
+      updateUI(clue.r, clue.c);
     };
     (dir === "across" ? acrossCluesEl : downCluesEl).appendChild(li);
   }
@@ -618,18 +622,35 @@ title: Crosswords
     return { r: clue.r, c: clue.c };
   }
 
+  let lastFocusedCell = { r: null, c: null };
+
   function handleFocus(r, c) {
     const cellClues = grid[r][c].clues;
-    if (
-      !cellClues[currentDir] &&
-      cellClues[currentDir === "across" ? "down" : "across"]
-    ) {
-      currentDir = currentDir === "across" ? "down" : "across";
+    
+    // If we're focusing a new cell, only change direction if current direction isn't valid here
+    if (lastFocusedCell.r !== r || lastFocusedCell.c !== c) {
+      if (!cellClues[currentDir]) {
+        currentDir = currentDir === "across" ? "down" : "across";
+      }
+      lastFocusedCell = { r, c };
     }
+    
     updateUI(r, c);
   }
 
-  function updateUI(r, c, specificClue = null) {
+  function handleMouseDown(r, c, e) {
+    // If clicking an already focused cell, toggle direction
+    // At mousedown time, document.activeElement is still the previously focused element
+    if (document.activeElement === e.target) {
+      const cellClues = grid[r][c].clues;
+      if (cellClues.across && cellClues.down) {
+        currentDir = currentDir === "across" ? "down" : "across";
+        updateUI(r, c);
+      }
+    }
+  }
+
+  function updateUI(r, c) {
     document
       .querySelectorAll(".crossword-cell")
       .forEach((el) => el.classList.remove("active-word", "focused-cell"));
@@ -637,41 +658,23 @@ title: Crosswords
       .querySelectorAll(".clue-item")
       .forEach((el) => el.classList.remove("active-clue"));
 
-    if (specificClue) {
-      const dir = specificClue.dir;
-      const clue = specificClue.clue;
+    const activeClue = grid[r][c].clues[currentDir];
+    
+    if (activeClue) {
       document.querySelectorAll(`.crossword-cell input`).forEach((input) => {
         const ir = input.dataset.r,
           ic = input.dataset.c;
-        if (grid[ir][ic].clues[dir] === clue)
+        if (grid[ir][ic].clues[currentDir] === activeClue)
           input.parentElement.classList.add("active-word");
       });
-      const clueEl = document.getElementById(`clue-${dir}-${clue.n}`);
-      if (clueEl) clueEl.classList.add("active-clue");
-    } else {
-      const acrossClue = grid[r][c].clues.across;
-      const downClue = grid[r][c].clues.down;
-      if (acrossClue) {
-        document.querySelectorAll(`.crossword-cell input`).forEach((input) => {
-          const ir = input.dataset.r,
-            ic = input.dataset.c;
-          if (grid[ir][ic].clues.across === acrossClue)
-            input.parentElement.classList.add("active-word");
-        });
-        const clueEl = document.getElementById(`clue-across-${acrossClue.n}`);
-        if (clueEl) clueEl.classList.add("active-clue");
-      }
-      if (downClue) {
-        document.querySelectorAll(`.crossword-cell input`).forEach((input) => {
-          const ir = input.dataset.r,
-            ic = input.dataset.c;
-          if (grid[ir][ic].clues.down === downClue)
-            input.parentElement.classList.add("active-word");
-        });
-        const clueEl = document.getElementById(`clue-down-${downClue.n}`);
-        if (clueEl) clueEl.classList.add("active-clue");
+      const clueEl = document.getElementById(`clue-${currentDir}-${activeClue.n}`);
+      if (clueEl) {
+        clueEl.classList.add("active-clue");
+        // Scroll clue into view
+        clueEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
       }
     }
+    
     const focusedInput = document.querySelector(
       `input[data-r="${r}"][data-c="${c}"]`,
     );
@@ -694,17 +697,28 @@ title: Crosswords
       return;
     }
 
-    if (e.key === "Backspace" && !e.target.value) {
-      e.preventDefault();
-      currentDir === "across" ? focusCell(r, c - 1) : focusCell(r - 1, c);
+    if (e.key === "Backspace") {
+      if (!e.target.value) {
+        e.preventDefault();
+        currentDir === "across" ? focusCell(r, c - 1) : focusCell(r - 1, c);
+      }
     } else if (
       ["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"].includes(e.key)
     ) {
       e.preventDefault();
-      if (e.key === "ArrowUp") focusCell(r - 1, c);
-      if (e.key === "ArrowDown") focusCell(r + 1, c);
-      if (e.key === "ArrowLeft") focusCell(r, c - 1);
-      if (e.key === "ArrowRight") focusCell(r, c + 1);
+      if (e.key === "ArrowUp") {
+        currentDir = "down";
+        focusCell(r - 1, c);
+      } else if (e.key === "ArrowDown") {
+        currentDir = "down";
+        focusCell(r + 1, c);
+      } else if (e.key === "ArrowLeft") {
+        currentDir = "across";
+        focusCell(r, c - 1);
+      } else if (e.key === "ArrowRight") {
+        currentDir = "across";
+        focusCell(r, c + 1);
+      }
     }
   }
 
