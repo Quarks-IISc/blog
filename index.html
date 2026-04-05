@@ -79,13 +79,20 @@ title: Home
         
         <div class="latest-carousel" id="latest-posts-carousel">
             <div id="carousel-track" class="carousel-track">
-                {% assign recent_stories = site.categories.stories | where_exp: "item", "item.featured != true" | sort: "date" | reverse | limit: 5 %}
-                {% assign recent_poems = site.categories.poems | where_exp: "item", "item.featured != true" | sort: "date" | reverse | limit: 5 %}
-                {% assign recent_pictures = site.categories.pictures | where_exp: "item", "item.featured != true" | sort: "date" | reverse | limit: 5 %}
+                {% assign all_recent = "" | split: "" %}
                 
-                {% assign all_recent = recent_stories | concat: recent_poems | concat: recent_pictures | sort: "date" | reverse %}
+                {% assign stories = site.categories.stories | where_exp: "item", "item.featured != true" | sort: "date" | reverse %}
+                {% for post in stories limit:5 %}{% assign all_recent = all_recent | push: post %}{% endfor %}
                 
-                {% for post in all_recent %}
+                {% assign poems = site.categories.poems | where_exp: "item", "item.featured != true" | sort: "date" | reverse %}
+                {% for post in poems limit:5 %}{% assign all_recent = all_recent | push: post %}{% endfor %}
+                
+                {% assign pictures = site.categories.pictures | where_exp: "item", "item.featured != true" | sort: "date" | reverse %}
+                {% for post in pictures limit:5 %}{% assign all_recent = all_recent | push: post %}{% endfor %}
+                
+                {% assign all_recent = all_recent | uniq | sort: "date" | reverse %}
+                
+                {% for post in all_recent limit:15 %}
                     <div class="carousel-item-custom mb-30px">
                         {% assign is_picture = false %}
                         {% if post.categories contains "pictures" or post.categories contains "Pictures" %}
