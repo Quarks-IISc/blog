@@ -9,166 +9,181 @@ title: Crosswords
 
 <!-- Loading State -->
 <div id="crossword-loader" class="text-center my-5">
-  <div class="spinner-border text-secondary" role="status" style="width: 3rem; height: 3rem;">
+  <div
+    class="spinner-border text-secondary"
+    role="status"
+    style="width: 3rem; height: 3rem"
+  >
     <span class="sr-only">Loading...</span>
   </div>
-  <p class="mt-3 text-muted" style="font-style: italic;">Loading today's crossword...</p>
+  <p class="mt-3 text-muted" style="font-style: italic">
+    Loading today's crossword...
+  </p>
 </div>
 
-<div id="crossword-main-ui" style="display: none;">
-<!-- Next Unlock Banner -->
-<div
-  id="next-unlock-container"
-  class="text-center mb-4 fade-up-element"
-  style="display: none"
->
-  <span
-    class="text-muted italic"
-    style="font-size: 0.95rem; letter-spacing: 0.5px"
-  >
-    Next one coming up on
-    <span id="next-unlock-date" class="font-weight-bold"></span>
-  </span>
-</div>
-
-<!-- Today's Header -->
-<div class="text-center mb-5 fade-up-element">
-  <h3
-    id="current-status-header"
-    class="font-weight-bold"
-    style="font-family: &quot;Playfair Display&quot;, serif; font-size: 2rem"
-  >
-    Crossword Mini for Today!
-  </h3>
+<div id="crossword-main-ui" style="display: none">
+  <!-- Next Unlock Banner -->
   <div
-    class="d-flex justify-content-center align-items-center text-muted flex-wrap"
-    style="font-size: 1.1rem"
+    id="next-unlock-container"
+    class="text-center mb-4 fade-up-element"
+    style="display: none"
   >
-    <span id="current-display-date"></span>
     <span
-      id="author-separator"
-      class="mx-3 d-none d-md-inline"
-      style="height: 1.2rem; border-left: 1px solid currentColor; opacity: 0.4"
-    ></span>
-    <span id="current-display-author" style="font-style: italic"></span>
-  </div>
-</div>
-
-<div class="row fade-up-element">
-  <!-- Left: Crossword Grid -->
-  <div class="col-lg-7 mb-5 text-center">
-    <div id="crossword-container" class="d-inline-block">
-      <div class="crossword-grid" id="crossword-grid"></div>
-
-      <div
-        class="mt-4 d-flex justify-content-center align-items-center flex-wrap"
-        style="gap: 25px"
-      >
-        <button class="check-answer-btn" onclick="checkCrossword()">
-          Check Your Answer
-        </button>
-        <button
-          class="magazine-link border-0 bg-transparent p-0 text-muted"
-          onclick="resetCrossword()"
-          style="font-size: 1.05rem"
-        >
-          Reset
-        </button>
-      </div>
-      <div
-        id="check-message"
-        class="mt-3 font-weight-bold"
-        style="min-height: 24px"
-      ></div>
-    </div>
-  </div>
-
-  <!-- Right: Clues -->
-  <div class="col-lg-5">
-    <div
-      class="clues-container p-4"
-      style="background: rgba(128, 128, 128, 0.05); border-radius: 15px"
+      class="text-muted italic"
+      style="font-size: 0.95rem; letter-spacing: 0.5px"
     >
-      <h3
-        class="font-weight-bold mb-4"
-        style="font-family: &quot;Playfair Display&quot;, serif"
-      >
-        Clues
-      </h3>
+      Next one coming up on
+      <span id="next-unlock-date" class="font-weight-bold"></span>
+    </span>
+  </div>
 
-      <div class="mb-5">
-        <h5
-          class="text-uppercase font-weight-bold border-bottom pb-2 clue-header"
+  <!-- Today's Header -->
+  <div class="text-center mb-5 fade-up-element">
+    <h3
+      id="current-status-header"
+      class="font-weight-bold"
+      style="font-family: &quot;Playfair Display&quot;, serif; font-size: 2rem"
+    >
+      Crossword Mini for Today!
+    </h3>
+    <div
+      class="d-flex justify-content-center align-items-center text-muted flex-wrap"
+      style="font-size: 1.1rem"
+    >
+      <span id="current-display-date"></span>
+      <span
+        id="author-separator"
+        class="mx-3 d-none d-md-inline"
+        style="
+          height: 1.2rem;
+          border-left: 1px solid currentColor;
+          opacity: 0.4;
+        "
+      ></span>
+      <span id="current-display-author" style="font-style: italic"></span>
+    </div>
+  </div>
+
+  <div class="row fade-up-element">
+    <!-- Left: Crossword Grid -->
+    <div class="col-lg-7 mb-5 text-center">
+      <div id="crossword-container" class="d-inline-block">
+        <div class="crossword-grid" id="crossword-grid"></div>
+
+        <div
+          class="mt-4 d-flex justify-content-center align-items-center flex-wrap"
+          style="gap: 25px"
         >
-          Across
-        </h5>
-        <ul class="list-unstyled mt-3" id="across-clues"></ul>
+          <button class="check-answer-btn" onclick="checkCrossword()">
+            Check Your Answer
+          </button>
+          <button
+            class="magazine-link border-0 bg-transparent p-0 text-muted"
+            onclick="resetCrossword()"
+            style="font-size: 1.05rem"
+          >
+            Reset
+          </button>
+        </div>
+        <div
+          id="check-message"
+          class="mt-3 font-weight-bold"
+          style="min-height: 24px"
+        ></div>
       </div>
+    </div>
 
-      <div>
-        <h5
-          class="text-uppercase font-weight-bold border-bottom pb-2 clue-header"
+    <!-- Right: Clues -->
+    <div class="col-lg-5">
+      <div
+        class="clues-container p-4"
+        style="background: rgba(128, 128, 128, 0.05); border-radius: 15px"
+      >
+        <h3
+          class="font-weight-bold mb-4"
+          style="font-family: &quot;Playfair Display&quot;, serif"
         >
-          Down
-        </h5>
-        <ul class="list-unstyled mt-3" id="down-clues"></ul>
+          Clues
+        </h3>
+
+        <div class="mb-5">
+          <h5
+            class="text-uppercase font-weight-bold border-bottom pb-2 clue-header"
+          >
+            Across
+          </h5>
+          <ul class="list-unstyled mt-3" id="across-clues"></ul>
+        </div>
+
+        <div>
+          <h5
+            class="text-uppercase font-weight-bold border-bottom pb-2 clue-header"
+          >
+            Down
+          </h5>
+          <ul class="list-unstyled mt-3" id="down-clues"></ul>
+        </div>
       </div>
     </div>
   </div>
 </div>
-</div>
-
 
 <!-- Featured Posts Section -->
-<section class="featured-posts mt-5 pt-5 border-top fade-up-element" id="featured-posts-section">
-    <div class="section-title section-hero-header mb-4">
-        <h2 style="font-size: 2.2rem;"><span>FEATURED</span></h2>
-    </div>
-    
-    <div class="carousel-container fade-up-element">
-        <!-- Left Arrow -->
-        <button class="carousel-arrow left" onclick="window.scroll_featured_posts_carousel('left')" aria-label="Scroll Left">
-            <i class="fas fa-chevron-left"></i>
-        </button>
-        
-        <div class="latest-carousel" id="featured-posts-carousel">
-            <div id="featured-carousel-track" class="carousel-track">
-                {% assign featured_posts = site.posts | where: "featured", true %}
-                {% for post in featured_posts limit:8 %}
-                    <div class="carousel-item-custom mb-30px">
-                        {% assign is_picture = false %}
-                        {% if post.categories contains "pictures" or post.categories contains "Pictures" %}
-                            {% assign is_picture = true %}
-                        {% endif %}
-                        
-                        {% if is_picture %}
-                            {% include picturebox.html disable_lazy=true %}
-                        {% else %}
-                            {% include postbox.html disable_lazy=true %}
-                        {% endif %}
-                    </div>
-                {% endfor %}
-            </div>
+<section
+  class="featured-posts mt-5 pt-5 border-top fade-up-element"
+  id="featured-posts-section"
+>
+  <div class="section-title section-hero-header mb-4">
+    <h2 style="font-size: 2.2rem"><span>FEATURED</span></h2>
+  </div>
+
+  <div class="carousel-container fade-up-element">
+    <!-- Left Arrow -->
+    <button
+      class="carousel-arrow left"
+      onclick="window.scroll_featured_posts_carousel('left')"
+      aria-label="Scroll Left"
+    >
+      <i class="fas fa-chevron-left"></i>
+    </button>
+
+    <div class="latest-carousel" id="featured-posts-carousel">
+      <div id="featured-carousel-track" class="carousel-track">
+        {% assign featured_posts = site.posts | where: "featured", true %} {%
+        for post in featured_posts limit:8 %}
+        <div class="carousel-item-custom mb-30px">
+          {% assign is_picture = false %} {% if post.categories contains
+          "pictures" or post.categories contains "Pictures" %} {% assign
+          is_picture = true %} {% endif %} {% if is_picture %} {% include
+          picturebox.html disable_lazy=true %} {% else %} {% include
+          postbox.html disable_lazy=true %} {% endif %}
         </div>
-        
-        <!-- Right Arrow -->
-        <button class="carousel-arrow right" onclick="window.scroll_featured_posts_carousel('right')" aria-label="Scroll Right">
-            <i class="fas fa-chevron-right"></i>
-        </button>
+        {% endfor %}
+      </div>
     </div>
 
-    <script src="{{ site.baseurl }}/assets/js/carousel-logic.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            if (typeof initCarousel === 'function') {
-                initCarousel('featured-posts-carousel', 'featured-carousel-track', {
-                    autoScroll: true,
-                    scrollSpeed: 1,
-                    scrollAmount: 320
-                });
-            }
+    <!-- Right Arrow -->
+    <button
+      class="carousel-arrow right"
+      onclick="window.scroll_featured_posts_carousel('right')"
+      aria-label="Scroll Right"
+    >
+      <i class="fas fa-chevron-right"></i>
+    </button>
+  </div>
+
+  <script src="{{ site.baseurl }}/assets/js/carousel-logic.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (typeof initCarousel === "function") {
+        initCarousel("featured-posts-carousel", "featured-carousel-track", {
+          autoScroll: true,
+          scrollSpeed: 1,
+          scrollAmount: 320,
         });
-    </script>
+      }
+    });
+  </script>
 </section>
 
 <!-- Past Mini's Section -->
@@ -204,41 +219,56 @@ title: Crosswords
     constructor(buffer) {
       this.data = new Uint8Array(buffer);
       this.view = new DataView(buffer);
-      this.decoder = new TextDecoder('windows-1252'); // .puz usually uses latin1/windows-1252
+      this.decoder = new TextDecoder("windows-1252"); // .puz usually uses latin1/windows-1252
     }
-    
+
     parse() {
       try {
-        const width = this.data[0x2C];
-        const height = this.data[0x2D];
-        const numClues = this.view.getUint16(0x2E, true);
+        const width = this.data[0x2c];
+        const height = this.data[0x2d];
+        const numClues = this.view.getUint16(0x2e, true);
         const gridSize = width * height;
-        
+
         const solutionOffset = 0x34;
         const gridOffset = solutionOffset + gridSize;
-        
-        const solution = String.fromCharCode(...Array.from(this.data.slice(solutionOffset, solutionOffset + gridSize)));
-        const grid = String.fromCharCode(...Array.from(this.data.slice(gridOffset, gridOffset + gridSize)));
-        
+
+        const solution = String.fromCharCode(
+          ...Array.from(
+            this.data.slice(solutionOffset, solutionOffset + gridSize),
+          ),
+        );
+        const grid = String.fromCharCode(
+          ...Array.from(this.data.slice(gridOffset, gridOffset + gridSize)),
+        );
+
         let offset = gridOffset + gridSize;
         const strings = [];
-        
-        while (strings.length < (numClues + 3) && offset < this.data.length) {
+
+        while (strings.length < numClues + 3 && offset < this.data.length) {
           let start = offset;
           while (offset < this.data.length && this.data[offset] !== 0) offset++;
           // Use decoder for special character support
           strings.push(this.decoder.decode(this.data.slice(start, offset)));
           offset++;
         }
-        
-        const title = strings[0] || '';
-        const author = strings[1] || '';
-        const copyright = strings[2] || '';
+
+        const title = strings[0] || "";
+        const author = strings[1] || "";
+        const copyright = strings[2] || "";
         const clues = strings.slice(3);
-        
-        return { width, height, solution, clues, title, author, copyright, numClues };
+
+        return {
+          width,
+          height,
+          solution,
+          clues,
+          title,
+          author,
+          copyright,
+          numClues,
+        };
       } catch (e) {
-        console.error('PuzParser error:', e);
+        console.error("PuzParser error:", e);
         return null;
       }
     }
@@ -249,68 +279,74 @@ title: Crosswords
     const blocks = [];
     const acrossClues = [];
     const downClues = [];
-    
+
     let cellNum = 1;
     let clueIdx = 0;
-    
+
     for (let i = 0; i < solution.length; i++) {
       const r = Math.floor(i / width);
       const c = i % width;
       const char = solution[i];
-      
-      if (char === '.') {
+
+      if (char === ".") {
         blocks.push([r + 1, c + 1]);
         continue;
       }
-      
-      const isAcrossStart = (c === 0 || solution[i - 1] === '.') && (c + 1 < width && solution[i + 1] !== '.');
-      const isDownStart = (r === 0 || solution[i - width] === '.') && (r + 1 < height && solution[i + width] !== '.');
-      
+
+      const isAcrossStart =
+        (c === 0 || solution[i - 1] === ".") &&
+        c + 1 < width &&
+        solution[i + 1] !== ".";
+      const isDownStart =
+        (r === 0 || solution[i - width] === ".") &&
+        r + 1 < height &&
+        solution[i + width] !== ".";
+
       if (isAcrossStart || isDownStart) {
         if (isAcrossStart) {
           acrossClues.push({
             n: cellNum,
             r: r + 1,
             c: c + 1,
-            clue: clues[clueIdx++] || '',
-            ans: extractAnswerAcross(solution, r, c, width, height)
+            clue: clues[clueIdx++] || "",
+            ans: extractAnswerAcross(solution, r, c, width, height),
           });
         }
-        
+
         if (isDownStart) {
           downClues.push({
             n: cellNum,
             r: r + 1,
             c: c + 1,
-            clue: clues[clueIdx++] || '',
-            ans: extractAnswerDown(solution, r, c, width, height)
+            clue: clues[clueIdx++] || "",
+            ans: extractAnswerDown(solution, r, c, width, height),
           });
         }
-        
+
         cellNum++;
       }
     }
-    
+
     return {
       size: [height, width],
       blocks: blocks,
       author: author.trim(),
       across: acrossClues,
-      down: downClues
+      down: downClues,
     };
   }
 
   function extractAnswerAcross(solution, row, col, width, height) {
-    let ans = '';
-    for (let c = col; c < width && solution[row * width + c] !== '.'; c++) {
+    let ans = "";
+    for (let c = col; c < width && solution[row * width + c] !== "."; c++) {
       ans += solution[row * width + c];
     }
     return ans;
   }
 
   function extractAnswerDown(solution, row, col, width, height) {
-    let ans = '';
-    for (let r = row; r < height && solution[r * width + col] !== '.'; r++) {
+    let ans = "";
+    for (let r = row; r < height && solution[r * width + col] !== "."; r++) {
       ans += solution[r * width + col];
     }
     return ans;
@@ -319,34 +355,38 @@ title: Crosswords
   let allCrosswordData = {};
   const crosswordSchedule = [];
 
-  async function loadCrosswords(baseurl = '') {
-    const loader = document.getElementById('crossword-loader');
-    const mainUI = document.getElementById('crossword-main-ui');
-    
+  async function loadCrosswords(baseurl = "") {
+    const loader = document.getElementById("crossword-loader");
+    const mainUI = document.getElementById("crossword-main-ui");
+
     try {
-      const scheduleRes = await fetch(`${baseurl}/assets/data/crosswords/mini.json`);
-      if (!scheduleRes.ok) throw new Error('Failed to load schedule');
+      const scheduleRes = await fetch(
+        `${baseurl}/assets/data/crosswords/mini.json`,
+      );
+      if (!scheduleRes.ok) throw new Error("Failed to load schedule");
       const puzList = await scheduleRes.json();
 
       const fetchPromises = puzList.map(async (item) => {
-        const key = item.file.replace('.puz', '');
+        const key = item.file.replace(".puz", "");
         const dateStr = item.date;
         try {
-          const response = await fetch(`${baseurl}/assets/data/crosswords/${item.file}`);
+          const response = await fetch(
+            `${baseurl}/assets/data/crosswords/${item.file}`,
+          );
           if (!response.ok) throw new Error(`HTTP ${response.status}`);
-          
+
           const buffer = await response.arrayBuffer();
           const parsed = new PuzParser(buffer).parse();
 
-          if (!parsed) throw new Error('Parse error');
-          
+          if (!parsed) throw new Error("Parse error");
+
           const converted = convertPuzToFormat(parsed);
           return {
             key: key,
             date: dateStr,
             name: item.name || key,
             ...converted,
-            author: item.author || converted.author || "Anonymous"
+            author: item.author || converted.author || "Anonymous",
           };
         } catch (e) {
           console.warn(`Failed to load ${item.file}:`, e);
@@ -358,13 +398,13 @@ title: Crosswords
       let loadedCount = 0;
       let failedFiles = [];
 
-      results.forEach(res => {
+      results.forEach((res) => {
         if (res && !res.error) {
           allCrosswordData[res.key] = res;
           crosswordSchedule.push({
             key: res.key,
             date: new Date(res.date + "T00:00:00"),
-            name: res.name
+            name: res.name,
           });
           loadedCount++;
         } else if (res && res.error) {
@@ -373,45 +413,49 @@ title: Crosswords
       });
 
       // Toggle UI
-      if (loader) loader.style.display = 'none';
+      if (loader) loader.style.display = "none";
       if (mainUI) {
-        mainUI.style.display = 'block';
-        mainUI.style.opacity = '1';
+        mainUI.style.display = "block";
+        mainUI.style.opacity = "1";
       }
 
       if (loadedCount === 0) {
         statusHeader.textContent = "Unable to Load Crosswords";
-        dateHeader.textContent = "Sorry, there was an error loading the crossword files. Please try refreshing.";
-        document.getElementById('crossword-container').style.display = 'none';
-        document.querySelector('.clues-container').style.display = 'none';
-        msgEl.textContent = `Error: No crossword files loaded. ${failedFiles.length > 0 ? 'Failed: ' + failedFiles.join(', ') : ''}`;
-        msgEl.style.color = '#dc3545';
+        dateHeader.textContent =
+          "Sorry, there was an error loading the crossword files. Please try refreshing.";
+        document.getElementById("crossword-container").style.display = "none";
+        document.querySelector(".clues-container").style.display = "none";
+        msgEl.textContent = `Error: No crossword files loaded. ${failedFiles.length > 0 ? "Failed: " + failedFiles.join(", ") : ""}`;
+        msgEl.style.color = "#dc3545";
         return;
       }
-      
+
       if (failedFiles.length > 0) {
-        console.error('Failed to load some crossword files:', failedFiles.join(', '));
+        console.error(
+          "Failed to load some crossword files:",
+          failedFiles.join(", "),
+        );
       }
 
       crosswordSchedule.sort((a, b) => a.date - b.date);
       initScheduler();
     } catch (e) {
-      console.error('loadCrosswords error:', e);
-      if (loader) loader.style.display = 'none';
+      console.error("loadCrosswords error:", e);
+      if (loader) loader.style.display = "none";
       statusHeader.textContent = "Error Loading Crosswords";
       dateHeader.textContent = e.message;
     }
   }
-  
+
   // Load external crosswords loader script which provides:
   // - PuzParser class
   // - allCrosswordData, crosswordSchedule, loadCrosswords()
-  
+
   // UI state variables
   let currentIndex = 0;
   let crosswordData = null;
   let grid = [];
-  let currentDir = 'across';
+  let currentDir = "across";
 
   const gridEl = document.getElementById("crossword-grid");
   const acrossCluesEl = document.getElementById("across-clues");
@@ -480,7 +524,14 @@ title: Crosswords
               <h5>${item.name || `Mini ${i + 1}`}</h5>
               <p>${formatDate(item.date)}</p>
           `;
-      card.onclick = () => loadCrossword(i);
+      card.onclick = () => {
+        loadCrossword(i);
+        const yOffset = -20; // Offset to account for the header
+        const element = document.getElementById("crossword-main-ui");
+        const y =
+          element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        window.scrollTo({ top: y, behavior: "smooth" });
+      };
       pastMinisList.appendChild(card);
     }
     // Auto-scroll to the right to show the latest ones
@@ -626,7 +677,7 @@ title: Crosswords
 
   function handleFocus(r, c) {
     const cellClues = grid[r][c].clues;
-    
+
     // If we're focusing a new cell, only change direction if current direction isn't valid here
     if (lastFocusedCell.r !== r || lastFocusedCell.c !== c) {
       if (!cellClues[currentDir]) {
@@ -634,7 +685,7 @@ title: Crosswords
       }
       lastFocusedCell = { r, c };
     }
-    
+
     updateUI(r, c);
   }
 
@@ -659,7 +710,7 @@ title: Crosswords
       .forEach((el) => el.classList.remove("active-clue"));
 
     const activeClue = grid[r][c].clues[currentDir];
-    
+
     if (activeClue) {
       document.querySelectorAll(`.crossword-cell input`).forEach((input) => {
         const ir = input.dataset.r,
@@ -667,12 +718,14 @@ title: Crosswords
         if (grid[ir][ic].clues[currentDir] === activeClue)
           input.parentElement.classList.add("active-word");
       });
-      const clueEl = document.getElementById(`clue-${currentDir}-${activeClue.n}`);
+      const clueEl = document.getElementById(
+        `clue-${currentDir}-${activeClue.n}`,
+      );
       if (clueEl) {
         clueEl.classList.add("active-clue");
       }
     }
-    
+
     const focusedInput = document.querySelector(
       `input[data-r="${r}"][data-c="${c}"]`,
     );
@@ -774,14 +827,13 @@ title: Crosswords
     });
     msgEl.textContent = "";
   }
-
 </script>
 
 <script>
   // Load .puz files and initialize
-  if (typeof loadCrosswords === 'function') {
-    loadCrosswords('{{ site.baseurl }}');
+  if (typeof loadCrosswords === "function") {
+    loadCrosswords("{{ site.baseurl }}");
   } else {
-    console.error('loadCrosswords function not found');
+    console.error("loadCrosswords function not found");
   }
 </script>
