@@ -37,6 +37,7 @@
           description: f['Description'] || f['description'] || '',
           link: f['Link'] || f['link'] || '#',
           link_text: f['Link Text'] || f['link text'] || 'Read More',
+          image: f['Image'] && f['Image'][0] ? f['Image'][0].url : (f['image'] && f['image'][0] ? f['image'][0].url : ''),
           published_date: f['Published Date'] || '',
           published_date_text: typeof formatHumanDate === 'function' ? formatHumanDate(f['Published Date']) : (f['Published Date'] || '')
         };
@@ -45,18 +46,33 @@
         return new Date(b.published_date) - new Date(a.published_date);
       });
 
-      const html = newsItems.length > 0 ? newsItems.map(item => `
+      const html = newsItems.length > 0 ? newsItems.map(item => {
+        const itemData = JSON.stringify({
+          title: item.title,
+          description: item.description,
+          link: item.link,
+          linkText: item.link_text,
+          image: item.image,
+          dateText: item.published_date_text,
+          type: 'News & Updates'
+        }).replace(/"/g, '&quot;');
+
+        return `
         <li class="mb-4 pb-3 border-bottom">
-          <div class="font-weight-bold" style="font-size: 1.15rem; line-height: 1.4;">
-            ${item.title}
-            <span class="text-muted" style="font-weight: 400; font-size: 0.95rem; margin-left: 8px;">— ${item.description}</span>
+          <div class="news-item-content">
+            <div class="font-weight-bold" style="font-size: 1.15rem; line-height: 1.4;">
+              ${item.title}
+            </div>
+            <div class="news-desc-preview text-muted" style="font-weight: 400; font-size: 0.95rem;">
+              ${item.description}
+            </div>
           </div>
           <div class="mt-3 d-flex align-items-center justify-content-between flex-wrap" style="gap: 10px;">
-            <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="magazine-link" style="font-size: 0.95rem; padding-bottom: 2px;">${item.link_text} <span class="arrow" style="font-size: 1.2rem; margin-left: 8px;">&xrarr;</span></a>
+            <a href="javascript:void(0)" onclick="showNewsDetails(${itemData})" class="magazine-link" style="font-size: 0.95rem; padding-bottom: 2px;">Read More <span class="arrow" style="font-size: 1.2rem; margin-left: 8px;">&xrarr;</span></a>
             ${item.published_date_text ? `<span class="deadline-badge"><i class="far fa-calendar-alt mr-1"></i> Posted: ${item.published_date_text}</span>` : ''}
           </div>
         </li>
-      `).join('') : '<li class="text-muted text-center py-3">No updates yet</li>';
+      `;}).join('') : '<li class="text-muted text-center py-3">No updates yet</li>';
       
       listEl.innerHTML = html;
       

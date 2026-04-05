@@ -478,25 +478,7 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
     margin-top: 15px;
     padding-right: 10px;
     overflow-y: auto;
-    scrollbar-width: thin;
     flex-grow: 1;
-}
-
-.side-scroll-list-container::-webkit-scrollbar {
-    width: 6px;
-}
-.side-scroll-list-container::-webkit-scrollbar-track {
-    background: rgba(128, 128, 128, 0.05);
-    border-radius: 10px;
-}
-.side-scroll-list-container::-webkit-scrollbar-thumb {
-    background: rgba(128, 128, 128, 0.2);
-    border-radius: 10px;
-}
-
-.side-scroll-list-widget .section-title h2 {
-    font-size: 1.8rem !important;
-    margin-bottom: 0;
 }
 
 /* --- Reusable Carousel Widget Style --- */
@@ -746,31 +728,16 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
 .mini-card h5 { font-weight: 700; margin-bottom: 5px; }
 .mini-card p { font-size: 0.85rem; margin-bottom: 0; opacity: 0.7; }
 
-/* Custom Scrollbar for Past Minis & Announcements */
-#past-minis-list::-webkit-scrollbar,
-.announcements-scroll-container::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
-}
-#past-minis-list::-webkit-scrollbar-track,
-.announcements-scroll-container::-webkit-scrollbar-track {
-    background: rgba(0, 0, 0, 0.05);
-    border-radius: 10px;
-}
-#past-minis-list::-webkit-scrollbar-thumb,
-.announcements-scroll-container::-webkit-scrollbar-thumb {
-    background: rgba(0, 0, 0, 0.2); /* Default for light mode */
-    border: 2px solid transparent;
-    background-clip: content-box;
-    border-radius: 10px;
-}
-#past-minis-list::-webkit-scrollbar-thumb:hover,
-.announcements-scroll-container::-webkit-scrollbar-thumb:hover {
-    background: rgba(0, 0, 0, 0.4);
-}
-
-
 /* --- Announcements Styles --- */
+.news-desc-preview {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    line-height: 1.5;
+    margin-top: 5px;
+}
+
 .deadline-badge {
     background: rgba(0,0,0,0.05);
     padding: 4px 12px;
