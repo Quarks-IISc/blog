@@ -27,6 +27,7 @@
     background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('../images/header_bg.webp');
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
     min-height: 50vh; /* Original hero height */
     display: flex;
     align-items: center;
@@ -224,7 +225,7 @@
 /* --- Section Hero Headers --- */
 .section-hero-header {
     background-image: linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)), url('{{ site.baseurl }}/assets/images/Pictures/Flowers2-Krishna_Bhikadiya.jpg');
-    background-size: cover; background-position: center; background-attachment: scroll; /* Fixed causes major scroll lag */
+    background-size: cover; background-position: center; background-attachment: fixed;
     min-height: 150px; display: flex; align-items: center; justify-content: center;
     padding: 1.5rem 2rem; box-sizing: border-box; margin-bottom: 3rem;
     border-radius: 10px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); overflow: hidden;
@@ -461,6 +462,7 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
     
     .hero-header {
         min-height: 40vh;
+        background-attachment: scroll;
     }
 }
 
