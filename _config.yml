@@ -54,6 +54,8 @@ paginate_path: /page:num/
     
 # Other
 markdown: kramdown
+future: true
+timezone: Asia/Kolkata
 
 kramdown:
   input: GFM
