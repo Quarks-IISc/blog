@@ -13,9 +13,62 @@
 <form class="bd-search" onSubmit="return lunr_search(document.getElementById('lunrsearch').value);">
     <input type="text" class="form-control text-small launch-modal-search" id="lunrsearch" name="q" maxlength="255" value="" placeholder="Search..."/>
 </form>
+<div id="lunrsearchresults" style="display:none;">
 
-<div id="lunrsearchresults">
-    <ul></ul>
+  <!-- THIS BLOCKS EVERYTHING BEHIND -->
+  <div class="search-backdrop"></div>
+
+  <div class="search-box">
+
+    <div id="modtit"></div>
+
+    <ul class="mb-0"></ul>
+
+    <button class="btn btn-danger btn-sm btnx">Close</button>
+
+  </div>
 </div>
+<style>
+#lunrsearchresults {
+    position: fixed;
+    inset: 0;
+    z-index: 999999;
+}
 
+/* THIS LAYER BLOCKS PAGE COMPLETELY */
+.search-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    z-index: 1;
+}
+
+/* search box above everything */
+.search-box {
+    position: relative;
+    z-index: 2;
+
+    width: 600px;
+    max-width: 90%;
+    margin: 8% auto;
+
+    background: #111;
+    color: white;
+    border-radius: 10px;
+
+    max-height: 70vh;
+    overflow: hidden;
+}
+
+/* scroll only results */
+.search-box ul {
+    max-height: 50vh;
+    overflow-y: auto;
+}
+
+/* prevent background interaction */
+body.modal-open {
+    overflow: hidden;
+}
+</style>
 <script src="{{site.baseurl}}/assets/js/lunrsearchengine.js"></script>
