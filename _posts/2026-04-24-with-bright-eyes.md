@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "with bright eyes"
-author: Sankalp Malkapure and Kushal Chaudhari
+author: Sankalp Malkapure
 categories: [poems]
 image: "/assets/images/Poems/with_bright_eyes.png"
 excerpt: "A sunflower's dance with the distant sun. A story of growth, tropism, and the beautiful fallacy of a heart that burns while rooted to home."
