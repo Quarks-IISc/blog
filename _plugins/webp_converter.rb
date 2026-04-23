@@ -2,8 +2,14 @@ require 'fileutils'
 require 'thread'
 
 Jekyll::Hooks.register :site, :post_write do |site|
-  if ENV['SKIP_WEBP'] == 'true'
-    puts "Skipping WebP conversion (SKIP_WEBP=true)"
+  # Skip if explicitly requested OR if we're in development mode and haven't forced it
+  if ENV['SKIP_WEBP'] == 'true' || (Jekyll.env == 'development' && ENV['FORCE_WEBP'] != 'true')
+    # Use a simple check to only print this message once to keep logs clean
+    @webp_skipped_msg_shown ||= false
+    unless @webp_skipped_msg_shown
+      puts "Skipping WebP conversion in development (set FORCE_WEBP=true to run)"
+      @webp_skipped_msg_shown = true
+    end
     next
   end
   

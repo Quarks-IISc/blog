@@ -435,6 +435,12 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
     transform: scale(1.1);
 }
 
+.picture-overlay {
+    /* Fixed the gap on hover by adding a shadow extension below the overlay */
+    /* This shadow moves with the overlay, keeping the bottom edge covered */
+    box-shadow: 0 40px 0 0 rgba(0,0,0,0.9);
+}
+
 .picture-card:hover .picture-overlay {
     transform: translateY(-5px) translateZ(0) !important;
 }
