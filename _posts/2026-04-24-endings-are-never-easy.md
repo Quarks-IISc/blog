@@ -31,7 +31,7 @@ Share a moment with that same group<br>
 And remember.<br><br>
 
 How lucky I feel<br>
-To be privileged to miss someone<br>
+To be privileged to miss some people<br>
 To have walked the same roads alongside<br>
 To have shared a piece of my life<br><br>
 
