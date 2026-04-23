@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "The end of my world"
+title: "The End of My World"
 author: Soham Acharya
 categories: [stories]
 image: "/assets/images/Stories/Nature.jpeg"
