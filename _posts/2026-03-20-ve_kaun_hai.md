@@ -5,7 +5,6 @@ author: "Parth Kalani"
 categories: [poems]
 image: "/assets/images/Poems/ve_kaun_hai.png"
 excerpt: "प्रेम और स्वतंत्रता पर एक तीखा प्रहार करती कविता।"
-featured: true
 ---
 
 
