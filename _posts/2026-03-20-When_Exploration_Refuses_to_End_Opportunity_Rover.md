@@ -5,7 +5,6 @@ author: "Abhimanyu Ambikapathy"
 categories: [stories]
 image: "/assets/images/Stories/When_Exploration_Refuses_to_End_Opportunity_Rover.jpg"
 excerpt: "A look at the legacy of the Opportunity Rover, a mission that redefined our understanding of Mars and the endurance of human curiosity."
-featured: true
 ---
 
 
