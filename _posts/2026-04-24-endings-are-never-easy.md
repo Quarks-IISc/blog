@@ -5,6 +5,7 @@ author: Mihir Kapse
 categories: [poems]
 image: "/assets/images/Stories/Nature.jpeg"
 excerpt: "The corridors feel longer today. A final cycle ride through old routes, cherishing the privilege of having something—and someone—so precious to miss."
+featured: true
 ---
 
 <div style="text-align: center;">
