@@ -5,7 +5,6 @@ author: "Aaitijhya Goswami"
 categories: [poems]
 image: "/assets/images/Poems/a_soldiers_ballad.jpg"
 excerpt: "A haunting reflection on the hidden costs of duty and the weight of unerasable memories."
-featured: true
 ---
 
 
