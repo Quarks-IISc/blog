@@ -5,7 +5,6 @@ author: "Manya Ganapathy"
 categories: [stories]
 image: "/assets/images/Stories/women_of_march.jpg"
 excerpt: "A reflection on the March sisters from 'Little Women' and how their story continues to celebrate womanhood across generations."
-featured: true
 ---
 
 
