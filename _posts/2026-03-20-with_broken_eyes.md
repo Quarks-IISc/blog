@@ -5,7 +5,6 @@ author: "Sankalp Malkapure and Kushal Chaudhari"
 categories: [poems]
 image: "/assets/images/Poems/with_broken_eyes.jpg"
 excerpt: "A poem about awakening, new beginnings, and the quiet acceptance of reality."
-featured: true
 ---
 
 <div style="text-align: center;">
