@@ -5,7 +5,6 @@ author: "Kushal Chaudhari"
 categories: [stories]
 image: "/assets/images/Stories/The_Sixth_Sense_Biological_right_to_art.jpg"
 excerpt: "Every human being is blessed with a natural ability to appreciate and interpret art—a 'sixth sense' that is an integral part of being human."
-featured: true
 ---
 
 
