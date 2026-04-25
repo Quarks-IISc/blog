@@ -10,37 +10,31 @@
 </style>
 
 
-<form class="bd-search" onSubmit="return lunr_search(document.getElementById('lunrsearch').value);">
-    <input type="text" class="form-control text-small launch-modal-search" id="lunrsearch" name="q" maxlength="255" value="" placeholder="Search..."/>
-</form>
-<div id="lunrsearchresults" style="display:none;">
+<div class="lunrsearch-wrapper" style="position: relative;">
+    <form class="bd-search" onSubmit="return lunr_search(document.getElementById('lunrsearch').value);">
+        <input type="text" class="form-control text-small launch-modal-search" id="lunrsearch" name="q" maxlength="255" value="" placeholder="Search..."/>
+    </form>
+    <div id="lunrsearchresults" style="display:none;">
 
-  <!-- THIS BLOCKS EVERYTHING BEHIND -->
-  <div class="search-backdrop"></div>
+      <div class="search-box">
 
-  <div class="search-box">
+        <div id="modtit"></div>
 
-    <div id="modtit"></div>
+        <ul class="mb-0"></ul>
 
-    <ul class="mb-0"></ul>
+        <button class="btn btn-danger btn-sm btnx">Close</button>
 
-    <button class="btn btn-danger btn-sm btnx">Close</button>
-
-  </div>
+      </div>
+    </div>
 </div>
 <style>
 #lunrsearchresults {
-    position: fixed;
-    inset: 0;
-    z-index: 999999;
-}
-
-/* THIS LAYER BLOCKS PAGE COMPLETELY */
-.search-backdrop {
     position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.6);
-    z-index: 1;
+    top: 100%;
+    right: 0;
+    z-index: 1020;
+    width: 600px;
+    max-width: 90vw;
 }
 
 /* search box above everything */
@@ -48,34 +42,34 @@
     position: relative;
     z-index: 2;
     padding: 2pc;
-    width: 600px;
-    max-width: 90%;
-    margin: 8% auto;
+    width: 100%;
+    margin-top: 10px;
 
     background: #111;
     color: white;
-    border-radius: 10px;
+    border-radius: 12px;
 
     max-height: 70vh;
     overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.7);
 }
 
 /* scroll only results */
 .search-box ul {
     max-height: 50vh;
     overflow-y: auto;
+    padding-bottom: 20px;
 }
 .search-box::before {
     content: "";
     position: absolute;
-    inset: 0px;
+    inset: -2px;
     border-radius: 12px;
-    padding: 3px;
-    border-radius: 12px;
+    padding: 5px;
     background: linear-gradient(
         120deg,
         transparent,
-        rgba(255,255,255,0.99),
+        rgba(255,255,255,0.9),
         transparent
 
     );
@@ -115,7 +109,6 @@ body.modal-open {
 }
 .btnx {
     margin-top: 15px;
-    padding-bottom: -3px;   /* space above the button */
 }
 </style>
 <script src="{{site.baseurl}}/assets/js/lunrsearchengine.js"></script>
