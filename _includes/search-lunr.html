@@ -13,9 +13,109 @@
 <form class="bd-search" onSubmit="return lunr_search(document.getElementById('lunrsearch').value);">
     <input type="text" class="form-control text-small launch-modal-search" id="lunrsearch" name="q" maxlength="255" value="" placeholder="Search..."/>
 </form>
+<div id="lunrsearchresults" style="display:none;">
 
-<div id="lunrsearchresults">
-    <ul></ul>
+  <!-- THIS BLOCKS EVERYTHING BEHIND -->
+  <div class="search-backdrop"></div>
+
+  <div class="search-box">
+
+    <div id="modtit"></div>
+
+    <ul class="mb-0"></ul>
+
+    <button class="btn btn-danger btn-sm btnx">Close</button>
+
+  </div>
 </div>
+<style>
+#lunrsearchresults {
+    position: fixed;
+    inset: 0;
+    z-index: 999999;
+}
 
+/* THIS LAYER BLOCKS PAGE COMPLETELY */
+.search-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    z-index: 1;
+}
+
+/* search box above everything */
+.search-box {
+    position: relative;
+    z-index: 2;
+    padding: 2pc;
+    width: 600px;
+    max-width: 90%;
+    margin: 8% auto;
+
+    background: #111;
+    color: white;
+    border-radius: 10px;
+
+    max-height: 70vh;
+    overflow: hidden;
+}
+
+/* scroll only results */
+.search-box ul {
+    max-height: 50vh;
+    overflow-y: auto;
+}
+.search-box::before {
+    content: "";
+    position: absolute;
+    inset: 0px;
+    border-radius: 12px;
+    padding: 3px;
+    border-radius: 12px;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.99),
+        transparent
+
+    );
+    background-size: 300% 300%;
+    animation: moveBorder 8s linear infinite;
+
+    -webkit-mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+
+    pointer-events: none;
+}
+
+@keyframes moveBorder {
+    0% {
+        background-position: 0% 50%;
+
+    }
+    100% {
+        background-position: 200% 50%;
+    }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,500&display=swap');
+
+#modtit, 
+#modtit * {
+    font-family: 'Lora', serif !important;
+    font-weight: 500;
+    font-style: italic;
+}
+/* prevent background interaction */
+body.modal-open {
+    overflow: hidden;
+}
+.btnx {
+    margin-top: 15px;
+    padding-bottom: -3px;   /* space above the button */
+}
+</style>
 <script src="{{site.baseurl}}/assets/js/lunrsearchengine.js"></script>
