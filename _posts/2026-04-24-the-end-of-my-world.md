@@ -3,7 +3,7 @@ layout: post
 title: "The End of My World"
 author: Soham Acharya
 categories: [stories]
-image: "/assets/images/Stories/Nature.jpeg"
+image: "/assets/images/Stories/end_of_my_world.jpg"
 excerpt: "When the train of existence roars past, leaving us on a cold platform of loss, can we find the strength to keep the fire burning for those who left?"
 description: "A poignant narrative on grief, loss, and the strength to carry on for those who believed in us."
 ---
