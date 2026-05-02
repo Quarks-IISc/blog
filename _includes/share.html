@@ -27,7 +27,7 @@ Read more at: {{ share_url }}{% endcapture %}
 
         <!-- Instagram (Copy Content) -->
         <li class="ml-1 mr-1">
-            <a href="javascript:void(0)" onclick='navigator.clipboard.writeText({{ full_share_text | jsonify }}).then(() => alert("Content copied! You can now paste it into your Instagram Story or DM."))' title="Copy for Instagram">
+            <a href="javascript:void(0)" data-share-text="{{ full_share_text | escape }}" onclick="navigator.clipboard.writeText(this.getAttribute('data-share-text')).then(() => alert('Content copied! You can now paste it into your Instagram Story or DM.'))" title="Copy for Instagram">
                 <i class="fab fa-instagram"></i>
             </a>
         </li>
