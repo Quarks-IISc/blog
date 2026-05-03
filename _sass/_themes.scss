@@ -1,0 +1,59 @@
+:root {
+  /* Core Colors */
+  --bg-color: #ffffff;
+  --text-color: #343a40;
+  --text-muted: #666666;
+  --heading-color: #343a40;
+  --link-color: #007bff;
+  --link-hover-color: #0056b3;
+  
+  /* Components */
+  --navbar-bg: #ffffff;
+  --navbar-text: #343a40;
+  --card-bg: #ffffff;
+  --card-border: rgba(0, 0, 0, 0.125);
+  --card-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+  --card-shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.12);
+  
+  /* UI Elements */
+  --border-color: #dee2e6;
+  --blockquote-bg: #f8f9fa;
+  --blockquote-border: #007bff;
+  --code-bg: #f8f9fa;
+  --code-text: #e83e8c;
+  
+  /* Specialized */
+  --accent-color: #000000;
+  --highlight-color: rgba(0, 123, 255, 0.1);
+  --active-cell-color: rgba(0, 123, 255, 0.2);
+  --block-color: #000000;
+}
+
+/* Dark Mode Overrides */
+html.dark-mode, 
+.dark-mode {
+  --bg-color: #121212;
+  --text-color: #e0e0e0;
+  --text-muted: #bdbdbd;
+  --heading-color: #e0e0e0;
+  --link-color: #90caf9;
+  --link-hover-color: #bbdefb;
+  
+  --navbar-bg: #1e1e1e;
+  --navbar-text: #e0e0e0;
+  --card-bg: #1e1e1e;
+  --card-border: #333333;
+  --card-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  --card-shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.5);
+  
+  --border-color: #333333;
+  --blockquote-bg: #2a2a2a;
+  --blockquote-border: #90caf9;
+  --code-bg: #2a2a2a;
+  --code-text: #e0e0e0;
+  
+  --accent-color: #ffffff;
+  --highlight-color: rgba(255, 255, 255, 0.1);
+  --active-cell-color: rgba(255, 255, 255, 0.2);
+  --block-color: #ffffff;
+}

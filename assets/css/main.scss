@@ -6,7 +6,7 @@
 .post-excerpt p { display:inline; }
 
 // Import partials from sass_dir (defaults to _sass)
-@import "syntax", "starsnonscss", "darkmode";
+@import "themes", "syntax", "starsnonscss", "darkmode";
 
 /* --- Hero Header --- */
 @keyframes fastFadeIn {
@@ -50,7 +50,7 @@
 .intro-section .powerful-intro-text {
     font-size: 2.2rem;
     font-weight: 600;
-    color: #343a40;
+    color: var(--text-color);
     line-height: 1.4;
     max-width: 1100px; /* Increased width */
     margin: 0 auto;
@@ -61,17 +61,20 @@
 /* --- Card Widget Improvements (General) --- */
 .card {
     transition: transform 0.2s cubic-bezier(0.2, 0, 0.4, 1), box-shadow 0.2s cubic-bezier(0.2, 0, 0.4, 1);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.06); border-radius: 8px;
+    background-color: var(--card-bg);
+    box-shadow: var(--card-shadow); 
+    border-radius: 8px;
+    border: 1px solid var(--card-border);
     overflow: hidden; /* Ensure aspect ratio clipping */
     contain: paint; /* Performance: helps browser isolate rendering */
 }
-.card:hover { transform: translateY(-5px); box-shadow: 0 8px 16px rgba(0,0,0,0.12); }
+.card:hover { transform: translateY(-5px); box-shadow: var(--card-shadow-hover); }
 
 /* Aspect Ratio Reservation to prevent Layout Shift */
 .maxthumb {
     width: 100%;
     aspect-ratio: 16 / 9; /* Standard post image ratio */
-    background-color: #f8f8f8; /* Placeholder color */
+    background-color: var(--blockquote-bg); /* Placeholder color */
     overflow: hidden;
     contain: strict;
 }
@@ -79,7 +82,7 @@
 .wrapthumbnail {
     width: 100%;
     aspect-ratio: 4 / 5; /* Featured box image ratio (vertical focus) */
-    background-color: #f8f8f8;
+    background-color: var(--blockquote-bg);
     overflow: hidden;
     contain: strict;
 }
@@ -90,10 +93,15 @@
     }
 }
 
-.card .card-body h2.card-title a { font-size: 1.3rem; line-height: 1.4; }
-.card .card-body h4.card-text { font-size: 0.95rem; color: #666; }
+.card .card-body h2.card-title a { font-size: 1.3rem; line-height: 1.4; color: var(--heading-color); }
+.card .card-body h4.card-text { font-size: 0.95rem; color: var(--text-muted); }
 .card .maxthumb img { border-top-left-radius: 8px; border-top-right-radius: 8px; }
-.card .card-footer { border-bottom-left-radius: 8px; border-bottom-right-radius: 8px; }
+.card .card-footer { 
+    border-bottom-left-radius: 8px; 
+    border-bottom-right-radius: 8px;
+    background-color: var(--card-bg);
+    border-top: 1px solid var(--card-border);
+}
 
 /* --- Edition Card Improvements (Revised) --- */
 .edition-grid {
@@ -112,10 +120,10 @@
 
 .edition-card {
     position: relative;
-    background: rgba(255, 255, 255, 0.7);
+    background: var(--card-bg);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    border: 2px solid #000;
+    border: 2px solid var(--accent-color);
     border-radius: 20px;
     padding: 30px;
     text-align: center;
@@ -125,23 +133,12 @@
     flex-direction: column;
     justify-content: space-between;
     min-height: 250px;
-}
-
-.dark-mode .edition-card {
-    background: #252525;
-    border: 2px solid #444;
+    color: var(--text-color);
 }
 
 .edition-card:hover {
     transform: translate(-4px, -4px);
-    box-shadow: 8px 8px 0px #000;
-}
-
-.dark-mode .edition-card:hover {
-    transform: translate(-4px, -4px);
-    box-shadow: 8px 8px 0px #777;
-    border-color: #888;
-    background: #252525;
+    box-shadow: 8px 8px 0px var(--accent-color);
 }
 
 .edition-card a {
@@ -155,7 +152,7 @@
 .edition-icon {
     width: 60px;
     height: 60px;
-    background: #f8f9fa;
+    background: var(--blockquote-bg);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -164,11 +161,7 @@
     font-size: 1.5rem;
     transition: all 0.3s ease;
     box-shadow: 0 5px 15px rgba(0,0,0,0.03);
-}
-
-.dark-mode .edition-icon {
-    background: #2a2a2a;
-    color: #fff;
+    color: var(--text-color);
 }
 
 .edition-card:hover .edition-icon {
@@ -179,32 +172,24 @@
     font-family: 'Playfair Display', serif;
     font-size: 1.6rem;
     font-weight: 700;
-    color: #333;
+    color: var(--heading-color);
     margin-bottom: 10px;
     display: block;
 }
 
-.dark-mode .edition-title {
-    color: #fff;
-}
-
 .edition-description {
     font-size: 0.95rem;
-    color: #666;
+    color: var(--text-muted);
     margin-bottom: 25px;
     display: block;
     line-height: 1.5;
-}
-
-.dark-mode .edition-description {
-    color: #aaa;
 }
 
 .edition-action {
     margin-top: auto;
     font-weight: 600;
     font-size: 0.9rem;
-    color: #333;
+    color: var(--text-color);
     text-transform: uppercase;
     letter-spacing: 1px;
     display: flex;
@@ -212,10 +197,6 @@
     justify-content: center;
     gap: 8px;
     transition: all 0.3s ease;
-}
-
-.dark-mode .edition-action {
-    color: #eee;
 }
 
 .edition-card:hover .edition-action {
@@ -232,7 +213,7 @@
     will-change: transform; /* Hint to browser for optimization */
 }
 .section-hero-header h2, .section-hero-header h1 {
-    font-family: 'Playfair Display', serif; color: #343a40; font-size: 3.5rem;
+    font-family: 'Playfair Display', serif; color: var(--heading-color); font-size: 3.5rem;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.2); text-align: center; line-height: 1.2; margin: 0;
 }
 
@@ -250,15 +231,16 @@
     justify-content: center;
     width: 35px;
     height: 35px;
-    border: 1px solid #ddd;
+    border: 1px solid var(--border-color);
     border-radius: 50%;
     padding: 0 !important;
     margin-left: 10px;
     transition: all 0.2s ease;
+    color: var(--text-color);
 }
 .dark-mode-toggle:hover {
-    background-color: #f8f9fa;
-    border-color: #ccc;
+    background-color: var(--blockquote-bg);
+    border-color: var(--text-muted);
 }
 .dark-mode-toggle i {
     font-size: 0.9rem;
@@ -267,7 +249,7 @@
 .magazine-link {
     font-size: 1.5rem; /* Slightly larger */
     font-weight: 600; /* Match powerful-intro-text weight */
-    color: #000;
+    color: var(--text-color);
     text-decoration: none;
     position: relative;
     display: inline-flex;
@@ -280,16 +262,19 @@
 /* --- Typography Pairing --- */
 body {
     font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
 }
 h1, h2, h3, h4, h5, h6, .navbar-brand {
     font-family: 'Playfair Display', serif !important;
+    color: var(--heading-color);
 }
 
 /* --- Micro-Interactions: Independent Image Fade-in --- */
 .featured-image {
     opacity: 0;
     transition: opacity 0.6s ease-in-out;
-    background-color: #f0f0f0; /* Placeholder color */
+    background-color: var(--blockquote-bg); /* Placeholder color */
 }
 
 .featured-image.loaded {
@@ -339,7 +324,7 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
 .skeleton-card {
     width: 100%;
     height: 350px;
-    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background: linear-gradient(90deg, var(--blockquote-bg) 25%, var(--border-color) 50%, var(--blockquote-bg) 75%);
     background-size: 200% 100%;
     animation: loading 1.5s infinite;
     border-radius: 8px;
@@ -360,7 +345,7 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
 }
 
 .magazine-link:hover {
-    color: #000;
+    color: var(--text-color);
     transform: scale(1.02);
     text-decoration: none;
 }
@@ -384,22 +369,15 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
     width: 100%;
 }
 
-/* Dark Mode Support for Magazine Link */
-.dark-mode .magazine-link {
-    color: #fff;
-}
-.dark-mode .magazine-link:hover {
-    color: #fff;
-}
-
 /* --- Team Card Hover Effects --- */
 .team-card {
     cursor: pointer;
+    background-color: var(--card-bg);
 }
 
 .team-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15) !important;
+    box-shadow: var(--card-shadow-hover) !important;
 }
 
 .team-card img {
@@ -410,20 +388,16 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
     transform: scale(1.1);
 }
 
-/* Dark Mode adjustment for shadow */
-.dark-mode .team-card:hover {
-    box-shadow: 0 10px 25px rgba(0,0,0,0.5) !important;
-}
-
 /* --- Picture Card Hover Effects --- */
 .picture-card {
     transition: all 0.3s ease;
     will-change: transform, box-shadow;
+    background-color: var(--card-bg);
 }
 
 .picture-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15) !important;
+    box-shadow: var(--card-shadow-hover) !important;
 }
 
 .picture-card img {
@@ -443,10 +417,6 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
 
 .picture-card:hover .picture-overlay {
     transform: translateY(-5px) translateZ(0) !important;
-}
-
-.dark-mode .picture-card:hover {
-    box-shadow: 0 10px 25px rgba(0,0,0,0.5) !important;
 }
 
 
@@ -474,7 +444,7 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
 
 /* --- Side-Scroll List Widget (Common for Announcements, News, etc.) --- */
 .side-scroll-list-widget {
-    background: rgba(128, 128, 128, 0.05);
+    background: var(--blockquote-bg);
     border-radius: 15px;
     padding: 25px;
     height: 450px;
@@ -525,8 +495,8 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
     height: 560px !important; /* Substantially larger fixed height */
     display: flex; 
     flex-direction: column; 
-    border: 1px solid rgba(0,0,0,0.08);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    border: 1px solid var(--card-border);
+    box-shadow: var(--card-shadow);
 }
 
 .carousel-item-custom .maxthumb { 
@@ -561,7 +531,7 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
 .carousel-item-custom h4.card-text { 
     font-size: 0.9rem !important; 
     line-height: 1.5 !important; 
-    color: #666; 
+    color: var(--text-muted); 
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 4; /* More room for text */
@@ -571,7 +541,7 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
 .carousel-item-custom .card-footer {
     padding: 1rem 1.25rem;
     background: transparent !important;
-    border-top: 1px solid rgba(0,0,0,0.05) !important;
+    border-top: 1px solid var(--card-border) !important;
     flex-shrink: 0;
 }
 
@@ -582,35 +552,27 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
     transform: translateY(-50%); 
     width: 40px; 
     height: 40px;
-    background: #fff; 
-    border: 1px solid #ddd; 
+    background: var(--card-bg); 
+    border: 1px solid var(--border-color); 
     border-radius: 50%; 
     display: flex; 
     align-items: center; 
     justify-content: center;
     cursor: pointer; 
     z-index: 10; 
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
-    color: #333; 
+    box-shadow: var(--card-shadow); 
+    color: var(--text-color); 
     transition: all 0.3s ease; 
     outline: none;
 }
-.carousel-arrow:hover { background: #333; color: #fff; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+.carousel-arrow:hover { background: var(--text-color); color: var(--card-bg); box-shadow: var(--card-shadow-hover); }
 .carousel-arrow.left { left: 0; }
 .carousel-arrow.right { right: 0; }
 
-.dark-mode .carousel-arrow { background: #222; border-color: #444; color: #fff; }
-.dark-mode .carousel-arrow:hover { background: #fff; color: #222; }
-
-
-/* Dark Mode overrides */
-.dark-mode .carousel-arrow { background: #222; border-color: #444; color: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.5); }
-.dark-mode .carousel-arrow:hover { background: #fff; color: #222; }
-
 /* --- Crossword Page & Widget Styles --- */
 .check-answer-btn {
-    background: #000;
-    color: #fff;
+    background: var(--text-color);
+    color: var(--bg-color);
     border: none;
     padding: 8px 24px;
     border-radius: 50px;
@@ -619,15 +581,15 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
     font-size: 0.95rem;
     letter-spacing: 0.5px;
     transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--card-shadow);
     cursor: pointer;
     outline: none;
 }
 .check-answer-btn:hover {
-    background: #333;
+    background: var(--text-muted);
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-    color: #fff;
+    box-shadow: var(--card-shadow-hover);
+    color: var(--bg-color);
     text-decoration: none;
 }
 .check-answer-btn:active {
@@ -636,19 +598,6 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
 
 :root {
     --cell-size: clamp(40px, 9vw, 65px);
-    --accent-color: #000;
-    --border-color: #ddd;
-    --highlight-color: rgba(0, 123, 255, 0.1);
-    --active-cell-color: rgba(0, 123, 255, 0.2);
-    --block-color: #000;
-}
-
-.dark-mode {
-    --accent-color: #fff;
-    --border-color: #555;
-    --highlight-color: rgba(255, 255, 255, 0.1);
-    --active-cell-color: rgba(255, 255, 255, 0.2);
-    --block-color: #fff;
 }
 
 .clue-header { color: #fff !important; }
@@ -689,7 +638,7 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
 
 .crossword-cell .cell-number {
     position: absolute; top: 2px; left: 4px; font-size: 0.7rem;
-    font-weight: 700; color: #888; line-height: 1;
+    font-weight: 700; color: var(--text-muted); line-height: 1;
 }
 
 .crossword-cell.active-word { background-color: var(--highlight-color) !important; }
@@ -714,8 +663,8 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
 
 /* Past Mini Cards */
 .mini-card {
-    background: rgba(128,128,128,0.05);
-    border: 1px solid rgba(128,128,128,0.1);
+    background: var(--blockquote-bg);
+    border: 1px solid var(--border-color);
     border-radius: 12px;
     padding: 20px;
     min-width: 180px;
@@ -751,21 +700,17 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
     padding: 4px 12px;
     border-radius: 50px;
     font-size: 0.8rem;
-    color: #555;
-    border: 1px solid rgba(0,0,0,0.1);
+    color: var(--text-muted);
+    border: 1px solid var(--border-color);
     display: inline-flex;
     align-items: center;
     font-weight: 500;
 }
-.dark-mode .deadline-badge {
-    background: rgba(255,255,255,0.1);
-    color: #ccc;
-    border-color: rgba(255,255,255,0.2);
-}
 
 /* --- Home Crossword Visual (Professional Refinement) --- */
 .crossword-visual {
-    background-image: radial-gradient(#ccc 1px, transparent 1px);
+    background-image: radial-gradient(var(--border-color) 1px, transparent 1px);
+    background-size: 200% 100%; /* animation needs this or similar */
     background-size: 20px 20px; /* Subtle anchor dots */
     padding: 20px;
     border-radius: 20px;
@@ -780,25 +725,25 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
 .cw-tile {
     width: 38px;
     height: 38px;
-    background: #ffffff;
+    background: var(--card-bg);
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: 800;
-    color: #1a1a1a;
+    color: var(--text-color);
     font-size: 1.1rem;
     font-family: 'Inter', sans-serif;
     text-transform: uppercase;
     border-radius: 4px;
     position: relative;
-    border: 1px solid rgba(0,0,0,0.1);
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    border: 1px solid var(--card-border);
+    box-shadow: var(--card-shadow);
     transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
 }
 .cw-tile:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
-    border-color: #000;
+    box-shadow: var(--card-shadow-hover);
+    border-color: var(--accent-color);
 }
 .cw-number {
     position: absolute;
@@ -806,24 +751,11 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
     left: 4px;
     font-size: 0.55rem;
     font-weight: 600;
-    color: #666;
+    color: var(--text-muted);
     line-height: 1;
 }
 .cw-tile.black {
     visibility: hidden;
-}
-.dark-mode .crossword-visual {
-    background-image: radial-gradient(#444 1px, transparent 1px);
-}
-.dark-mode .cw-tile:not(.black) {
-    background: #2a2a2a;
-    color: #f0f0f0;
-    border-color: #444;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-}
-.dark-mode .cw-tile:hover {
-    border-color: #90caf9;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
 }
 @media (max-width: 576px) {
     .crossword-visual { padding: 20px; }
