@@ -21,7 +21,7 @@ html.dark-mode body,
     color: var(--text-color);
 }
 .dark-mode .mainheading h1, .dark-mode .mainheading .lead, .dark-mode .intro-section .powerful-intro-text, .dark-mode .section-title h2 span {
-    color: var(--text-color);
+    color: var(--heading-color);
 }
 .dark-mode .section-title h2 {
     border-bottom-color: var(--card-border);
@@ -30,7 +30,7 @@ html.dark-mode body,
     border-bottom-color: var(--text-muted);
 }
 .dark-mode .article-post, .dark-mode .article-post p, .dark-mode .article-post h1, .dark-mode .article-post h2, .dark-mode .article-post h3, .dark-mode .article-post h4, .dark-mode .article-post h5, .dark-mode .article-post h6, .dark-mode .article-post blockquote, .dark-mode .article-post div {
-    color: var(--text-color) !important;
+    color: var(--post-text-color) !important;
 }
 .dark-mode blockquote {
     background-color: var(--blockquote-bg);
@@ -86,13 +86,13 @@ html.dark-mode body,
     background-color: var(--text-color);
 }
 .dark-mode .navbar-brand {
-    color: var(--text-color);
+    color: var(--heading-color);
 }
 .dark-mode .navbar-brand img, .dark-mode .hero-header .hero-logo, .dark-mode .footer-logo {
     filter: invert(1);
 }
 .dark-mode .nav-link {
-    color: var(--text-color) !important;
+    color: var(--navbar-link) !important;
 }
 .dark-mode .nav-link:hover {
     color: var(--link-color) !important;
@@ -189,17 +189,7 @@ html.dark-mode body,
     color: var(--text-color);
 }
 
-/* Hero Headers */
-.dark-mode .section-hero-header {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/Pictures/Flowers2-Krishna_Bhikadiya.jpg');
-    background-size: cover; 
-    background-position: center; 
-    background-attachment: fixed;
-}
-.dark-mode .section-hero-header h2, .dark-mode .section-hero-header h1 {
-    color: var(--text-color) !important;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.8) !important;
-}
+/* Hero Headers are handled in main.scss with var(--header-overlay) */
 
 /* Pictures Page Dark Mode */
 .dark-mode .picture-inner-rectangle {
@@ -213,7 +203,7 @@ html.dark-mode body,
     color: var(--text-muted);
 }
 .dark-mode .pictures-desc {
-    color: #a0a0a0;
+    color: var(--text-muted);
 }
 
 /* Cards */
@@ -226,7 +216,7 @@ html.dark-mode body,
     box-shadow: var(--card-shadow-hover);
 }
 .dark-mode .card .card-body a, .dark-mode .card .card-body h2.card-title a, .dark-mode .card .card-body a.text-dark {
-    color: var(--text-color) !important;
+    color: var(--heading-color) !important;
 }
 .dark-mode .card .card-body a:hover {
     color: var(--link-color) !important;
@@ -235,15 +225,13 @@ html.dark-mode body,
     color: var(--text-muted);
 }
 .dark-mode .card .card-footer, .dark-mode .card .card-footer.bg-white {
-    background-color: var(--card-bg) !important;
+    background-color: var(--card-footer-bg) !important;
     border-top: 1px solid var(--card-border);
     color: var(--text-color);
 }
 .dark-mode .card .post-date, .dark-mode .card .wrapfooter .post-name, .dark-mode .card .wrapfooter .post-date {
     color: var(--text-muted);
 }
-
-/* Edition Cards are now handled in main.scss */
 
 /* Share Sidebar */
 .dark-mode .share {
@@ -252,11 +240,11 @@ html.dark-mode body,
     padding: 0;
 }
 .dark-mode .share p {
-    color: rgba(255, 255, 255, 0.9);
+    color: var(--text-color);
 }
 .dark-mode .share ul li i {
-    color: rgba(255, 255, 255, 0.9);
-    border-color: rgba(255, 255, 255, 0.3);
+    color: var(--text-color);
+    border-color: var(--border-color);
     background: transparent;
 }
 .dark-mode .share ul li a:hover i {
@@ -274,9 +262,9 @@ html.dark-mode body,
     color: #ffffff !important;
 }
 .dark-mode .article-post blockquote {
-    background-color: rgba(144, 202, 249, 0.05);
+    background-color: var(--blockquote-bg);
     border-left-color: var(--link-color);
-    color: var(--text-color) !important;
+    color: var(--post-text-color) !important;
 }
 
 /* Footer */
@@ -294,13 +282,13 @@ html.dark-mode body,
 
 /* --- Crossword Page & Widget Styles --- */
 .dark-mode .check-answer-btn {
-    background: #fff;
-    color: #000 !important;
+    background: var(--text-color);
+    color: var(--bg-color) !important;
 }
 .dark-mode .check-answer-btn:hover {
-    background: #eee;
-    color: #000 !important;
-    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.1);
+    background: var(--text-muted);
+    color: var(--bg-color) !important;
+    box-shadow: var(--card-shadow-hover);
 }
 
 /* Gallery Loading Skeleton Dark Mode */
@@ -311,7 +299,7 @@ html.dark-mode body,
 
 /* Scrollbar Dark Mode - Simple & Global */
 .dark-mode {
-    scrollbar-color: rgba(255, 255, 255, 0.5) rgba(0, 0, 0, 0.1);
+    scrollbar-color: var(--text-muted) var(--bg-color);
     scrollbar-width: thin;
 }
 
@@ -322,17 +310,10 @@ html.dark-mode body,
 }
 
 .dark-mode ::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.05) !important;
+    background: var(--bg-color) !important;
 }
 
 .dark-mode ::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.4) !important;
+    background: var(--text-muted) !important;
     border-radius: 10px !important;
-    border: 2px solid transparent !important;
-    background-clip: padding-box !important;
-}
-
-.dark-mode ::-webkit-scrollbar-thumb:hover {
-    background: rgba(255, 255, 255, 0.6) !important;
-    background-clip: padding-box !important;
 }

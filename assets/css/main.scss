@@ -24,24 +24,42 @@
     left: 50%;
     transform: translateX(-50%);
     /* --- Styling & Centering --- */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('../images/header_bg.webp');
+    background-image: linear-gradient(var(--header-overlay), var(--header-overlay)), url('../images/header_bg.webp');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    min-height: 50vh; /* Original hero height */
+    min-height: 50vh;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 2rem;
     box-sizing: border-box;
 }
+
 .hero-header .hero-logo {
-    filter: invert(1); /* Turns the black logo to white */
+    filter: invert(1);
     max-width: 500px;
     width: 80%;
-    opacity: 0; /* Start hidden for animation */
-    animation: fastFadeIn 0.8s ease-out 0.2s forwards; /* Stable fade-in with 0.2s delay */
+    opacity: 0;
+    animation: fastFadeIn 0.8s ease-out 0.2s forwards;
 }
+
+.section-title h2 {
+    border-bottom: 1px solid var(--card-border);
+    margin-bottom: 3rem;
+    font-weight: 700;
+    font-size: 2.2rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.section-title h2 span {
+    border-bottom: 1px solid var(--text-color);
+    display: inline-block;
+    padding-bottom: 10px;
+    margin-bottom: -1px;
+    color: var(--heading-color);
+}
+
 
 .intro-section {
     padding: 2rem 2rem 4rem 2rem; /* Consistent padding */
@@ -68,13 +86,16 @@
     overflow: hidden; /* Ensure aspect ratio clipping */
     contain: paint; /* Performance: helps browser isolate rendering */
 }
-.card:hover { transform: translateY(-5px); box-shadow: var(--card-shadow-hover); }
+.card:hover { 
+    transform: translateY(-5px); 
+    box-shadow: var(--card-shadow-brutal) !important; 
+}
 
 /* Aspect Ratio Reservation to prevent Layout Shift */
 .maxthumb {
     width: 100%;
     aspect-ratio: 16 / 9; /* Standard post image ratio */
-    background-color: var(--blockquote-bg); /* Placeholder color */
+    background-color: var(--card-footer-bg); /* Placeholder color */
     overflow: hidden;
     contain: strict;
 }
@@ -82,7 +103,7 @@
 .wrapthumbnail {
     width: 100%;
     aspect-ratio: 4 / 5; /* Featured box image ratio (vertical focus) */
-    background-color: var(--blockquote-bg);
+    background-color: var(--card-footer-bg);
     overflow: hidden;
     contain: strict;
 }
@@ -99,7 +120,7 @@
 .card .card-footer { 
     border-bottom-left-radius: 8px; 
     border-bottom-right-radius: 8px;
-    background-color: var(--card-bg);
+    background-color: var(--card-footer-bg);
     border-top: 1px solid var(--card-border);
 }
 
@@ -152,7 +173,7 @@
 .edition-icon {
     width: 60px;
     height: 60px;
-    background: var(--blockquote-bg);
+    background: var(--card-footer-bg);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -205,17 +226,17 @@
 
 /* --- Section Hero Headers --- */
 .section-hero-header {
-    background-image: linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)), url('{{ site.baseurl }}/assets/images/Pictures/Flowers2-Krishna_Bhikadiya.jpg');
+    background-image: linear-gradient(var(--header-overlay), var(--header-overlay)), url('{{ site.baseurl }}/assets/images/Pictures/Flowers2-Krishna_Bhikadiya.jpg');
     background-size: cover; background-position: center; background-attachment: fixed;
     min-height: 150px; display: flex; align-items: center; justify-content: center;
     padding: 1.5rem 2rem; box-sizing: border-box; margin-bottom: 3rem;
-    border-radius: 10px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); overflow: hidden;
-    will-change: transform; /* Hint to browser for optimization */
+    border-radius: 10px; box-shadow: var(--card-shadow); overflow: hidden;
 }
 .section-hero-header h2, .section-hero-header h1 {
-    font-family: 'Playfair Display', serif; color: var(--heading-color); font-size: 3.5rem;
+    font-family: 'Playfair Display', serif; color: var(--header-text-color); font-size: 3.5rem;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.2); text-align: center; line-height: 1.2; margin: 0;
 }
+
 
 /* Navbar Search & Toggle Alignment */
 .navbar-nav {
@@ -672,11 +693,13 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
     transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
     text-align: center;
     flex: 0 0 auto;
+    margin-top: 10px; /* Space for upward movement */
 }
 .mini-card:hover {
     transform: translateY(-5px);
-    background: rgba(128,128,128,0.1);
+    background: var(--blockquote-bg);
     border-color: var(--accent-color);
+    box-shadow: var(--card-shadow-brutal);
 }
 .mini-card.active-mini {
     border-color: var(--accent-color);
@@ -712,7 +735,7 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
     background-image: radial-gradient(var(--border-color) 1px, transparent 1px);
     background-size: 200% 100%; /* animation needs this or similar */
     background-size: 20px 20px; /* Subtle anchor dots */
-    padding: 20px;
+    padding: 30px 20px 20px 20px; /* Extra top padding for hover room */
     border-radius: 20px;
 }
 .cw-grid {
@@ -741,8 +764,8 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
     transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
 }
 .cw-tile:hover {
-    transform: translateY(-3px);
-    box-shadow: var(--card-shadow-hover);
+    transform: translateY(-5px);
+    box-shadow: var(--card-shadow-brutal);
     border-color: var(--accent-color);
 }
 .cw-number {
