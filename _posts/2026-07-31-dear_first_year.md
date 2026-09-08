@@ -6,7 +6,6 @@ categories: [stories]
 image: "/assets/images/Stories/dear_first_year.jpg"
 excerpt: "You are not the label you wear today. This essay celebrates the beautiful chaos of college, where changing your mind, your passions, and even yourself isn't failure—it's growth."
 all: true
-featured: true
 ---
 
 Dear first-year,  

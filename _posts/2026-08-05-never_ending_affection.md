@@ -6,7 +6,6 @@ categories: [stories]
 image: "/assets/images/Stories/never_ending_affection.jpg"
 excerpt: "Some bonds never ask for words—they simply wait, quietly and faithfully, until the right moment brings them home. A gentle tale of autumn, kindness, and an affection that time could never erase."
 all: true
-featured: true
 ---
 
 The days of autumn were about to be over. Winter was slowly setting in. The yellowed leaves of the trees in my yard had started falling one by one, covering the ground in a golden blanket. Every now and then, a gentle breeze would carry a few more leaves through the air before they quietly settled on the grass. The sky remained grey for most of the day, and the cold air had begun to creep into the mornings.

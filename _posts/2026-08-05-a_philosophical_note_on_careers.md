@@ -7,7 +7,6 @@ categories: [stories]
 image: "/assets/images/Stories/philosophical_note_careers.jpg"
 excerpt: "An AI interviews a fourth-year undergraduate on what 'having a career' really means once you stop taking the sentence at face value, breadth vs. depth, borrowed dreams, and what's still worth mastering when AI can do the rest."
 description: "A long-form interview between an AI and a student on how to actually think about a career: breadth vs. depth, love vs. inherited love, and the meaning hidden inside every 'YOU THINK'."
-featured: true
 ---
 
 <style>

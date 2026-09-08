@@ -7,7 +7,6 @@ image: "/assets/images/Stories/jantar_mantar_democracy.jpg"
 excerpt: ""
 desc: "A report of important developments around us"
 all: true
-featured: true
 ---
 
 <div style="border:1px solid #d0d7de; border-left:4px solid #451515; padding:1rem 1.25rem; background:#f8f8f8; margin:1rem 0;">

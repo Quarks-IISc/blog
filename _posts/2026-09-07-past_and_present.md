@@ -8,6 +8,7 @@ categories: [poems]
 image: "/assets/images/Poems/past_and_present.jpg"
 excerpt: "A reflection on the climb from uncertainty to achievement, and the many peaks that still lie ahead."
 all: true
+featured: true
 ---
 
 | Past | Present |
