@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Student Suicides: Some Underlying Issues
+title: Student Suicides - Some Underlying Issues
 author: Anonymous
 categories: [stories]
 image: "/assets/images/Stories/student-suicide/Picture1.jpg"
