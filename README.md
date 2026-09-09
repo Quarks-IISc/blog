@@ -38,6 +38,12 @@ To set up the project locally and view changes before submitting them, you'll ne
 
    The website will now be available locally at `http://127.0.0.1:4000/`. The server will automatically watch for file changes and rebuild the site (refresh your browser to see updates).
 
+   This command will also start converting the images into WEBP too. So you would have to run the below flag to skip their creation every edit. **RECOMMENDED**! Unless you are working on images, run the below command to skip image conversion:
+
+   ```bash
+   SKIP_WEBP=true bundle exec jekyll serve
+   ```
+
 ---
 
 ## Contributing
@@ -97,10 +103,13 @@ description: "A short description of the photograph."
 3. Add your Markdown file to `_posts/` and any accompanying images to `assets/images/Stories/`, `assets/images/Poems/`, or `assets/images/Pictures/`.
 4. Run `bundle exec jekyll serve` locally to make sure your post looks great!
 5. **Commit and Push:**
+
    ```bash
    git add .
    git commit -m "Add new post: [Your Post Title]"
    git push origin new-post-title
    ```
-6. **Open a Pull Request (PR)** against the main repository. The Quarks editorial team will review your submission and merge it!
 
+   It is usually a good idea to include multiple files(reasonably bunched up few > 1) in your commit(if you are posting a story/poem, etc.). Even for coding, one small edit or feature deserves atleast 1 commit.
+
+6. **Open a Pull Request (PR)** against the main repository. The Quarks editorial team will review your submission and merge it! It is a good idea to include multiple commits in your PR if you are making significant changes.
