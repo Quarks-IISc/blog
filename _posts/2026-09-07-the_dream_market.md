@@ -6,7 +6,6 @@ categories: [stories]
 image: "/assets/images/Stories/dream_market.jpg"
 excerpt: "A little boy, a big dream, and a promise to himself."
 all: true
-featured: true
 ---
 
 Ring ring ring...
